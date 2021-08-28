@@ -22,14 +22,8 @@ class ProductRecipesFixture extends TestFixture
         'recipe_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'pro_rec_title' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => 'product recipes title', 'precision' => null],
         'last_modify_time' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => 'the date and time last edit it', 'precision' => null],
-        '_indexes' => [
-            'recipe_id' => ['type' => 'index', 'columns' => ['recipe_id'], 'length' => []],
-            'product_id' => ['type' => 'index', 'columns' => ['product_id'], 'length' => []],
-        ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'product_recipes_ibfk_2' => ['type' => 'foreign', 'columns' => ['recipe_id'], 'references' => ['recipes', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
-            'product_recipes_ibfk_1' => ['type' => 'foreign', 'columns' => ['product_id'], 'references' => ['products', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',

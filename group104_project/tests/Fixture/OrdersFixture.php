@@ -25,14 +25,8 @@ class OrdersFixture extends TestFixture
         'shipping_address' => ['type' => 'text', 'length' => null, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'customer_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'agent_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        '_indexes' => [
-            'agent_id' => ['type' => 'index', 'columns' => ['agent_id'], 'length' => []],
-            'customer_id' => ['type' => 'index', 'columns' => ['customer_id'], 'length' => []],
-        ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'orders_ibfk_2' => ['type' => 'foreign', 'columns' => ['agent_id'], 'references' => ['agents', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
-            'orders_ibfk_1' => ['type' => 'foreign', 'columns' => ['customer_id'], 'references' => ['customers', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
