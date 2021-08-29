@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 /**
- * Agents Controller
+ * Admins Controller
  *
- * @property \App\Model\Table\AgentsTable $Agents
- * @method \App\Model\Entity\Agent[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @property \App\Model\Table\AdminsTable $Admins
+ * @method \App\Model\Entity\Admin[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class AgentsController extends AppController
+class AdminsController extends AppController
 {
     /**
      * Index method
@@ -18,25 +18,25 @@ class AgentsController extends AppController
      */
     public function index()
     {
-        $agents = $this->paginate($this->Agents);
+        $admins = $this->paginate($this->Admins);
 
-        $this->set(compact('agents'));
+        $this->set(compact('admins'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Agent id.
+     * @param string|null $id Admin id.
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $agent = $this->Agents->get($id, [
-            'contain' => [],
+        $admin = $this->Admins->get($id, [
+            'contain' => ['AdminAgents'],
         ]);
 
-        $this->set(compact('agent'));
+        $this->set(compact('admin'));
     }
 
     /**
@@ -46,58 +46,58 @@ class AgentsController extends AppController
      */
     public function add()
     {
-        $agent = $this->Agents->newEmptyEntity();
+        $admin = $this->Admins->newEmptyEntity();
         if ($this->request->is('post')) {
-            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
-            if ($this->Agents->save($agent)) {
-                $this->Flash->success(__('The agent has been saved.'));
+            $admin = $this->Admins->patchEntity($admin, $this->request->getData());
+            if ($this->Admins->save($admin)) {
+                $this->Flash->success(__('The admin has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
+            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
         }
-        $this->set(compact('agent'));
+        $this->set(compact('admin'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Agent id.
+     * @param string|null $id Admin id.
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $agent = $this->Agents->get($id, [
+        $admin = $this->Admins->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
-            if ($this->Agents->save($agent)) {
-                $this->Flash->success(__('The agent has been saved.'));
+            $admin = $this->Admins->patchEntity($admin, $this->request->getData());
+            if ($this->Admins->save($admin)) {
+                $this->Flash->success(__('The admin has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
+            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
         }
-        $this->set(compact('agent'));
+        $this->set(compact('admin'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Agent id.
+     * @param string|null $id Admin id.
      * @return \Cake\Http\Response|null|void Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $agent = $this->Agents->get($id);
-        if ($this->Agents->delete($agent)) {
-            $this->Flash->success(__('The agent has been deleted.'));
+        $admin = $this->Admins->get($id);
+        if ($this->Admins->delete($admin)) {
+            $this->Flash->success(__('The admin has been deleted.'));
         } else {
-            $this->Flash->error(__('The agent could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The admin could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

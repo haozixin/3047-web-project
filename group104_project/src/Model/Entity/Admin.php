@@ -6,16 +6,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Agent Entity
+ * Admin Entity
  *
  * @property int $id
  * @property string $given_name
- * @property string|null $family_name
- * @property string $email
- * @property string $address
- * @property string $subscription_status
+ * @property string $family_name
+ * @property string $eamil
+ * @property string $password
+ *
+ * @property \App\Model\Entity\AdminAgent[] $admin_agents
  */
-class Agent extends Entity
+class Admin extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -29,8 +30,17 @@ class Agent extends Entity
     protected $_accessible = [
         'given_name' => true,
         'family_name' => true,
-        'email' => true,
-        'address' => true,
-        'subscription_status' => true,
+        'eamil' => true,
+        'password' => true,
+        'admin_agents' => true,
+    ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'password',
     ];
 }

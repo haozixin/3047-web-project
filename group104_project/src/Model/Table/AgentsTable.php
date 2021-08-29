@@ -11,8 +11,6 @@ use Cake\Validation\Validator;
 /**
  * Agents Model
  *
- * @property \App\Model\Table\OrdersTable&\Cake\ORM\Association\HasMany $Orders
- *
  * @method \App\Model\Entity\Agent newEmptyEntity()
  * @method \App\Model\Entity\Agent newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Agent[] newEntities(array $data, array $options = [])
@@ -43,7 +41,7 @@ class AgentsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('Orders', [
+        $this->hasMany('AdminAgents', [
             'foreignKey' => 'agent_id',
         ]);
     }

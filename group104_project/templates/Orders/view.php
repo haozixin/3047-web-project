@@ -23,10 +23,6 @@
                     <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Agent') ?></th>
-                    <td><?= $order->has('agent') ? $this->Html->link($order->agent->id, ['controller' => 'Agents', 'action' => 'view', $order->agent->id]) : '' ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($order->id) ?></td>
                 </tr>

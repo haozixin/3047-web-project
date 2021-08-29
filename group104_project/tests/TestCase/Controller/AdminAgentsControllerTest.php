@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\AgentsController;
+use App\Controller\AdminAgentsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\AgentsController Test Case
+ * App\Controller\AdminAgentsController Test Case
  *
- * @uses \App\Controller\AgentsController
+ * @uses \App\Controller\AdminAgentsController
  */
-class AgentsControllerTest extends TestCase
+class AdminAgentsControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,14 +22,16 @@ class AgentsControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
+        'app.AdminAgents',
         'app.Agents',
+        'app.Admins',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\AgentsController::index()
+     * @uses \App\Controller\AdminAgentsController::index()
      */
     public function testIndex(): void
     {
@@ -40,7 +42,7 @@ class AgentsControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\AgentsController::view()
+     * @uses \App\Controller\AdminAgentsController::view()
      */
     public function testView(): void
     {
@@ -51,7 +53,7 @@ class AgentsControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\AgentsController::add()
+     * @uses \App\Controller\AdminAgentsController::add()
      */
     public function testAdd(): void
     {
@@ -62,7 +64,7 @@ class AgentsControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\AgentsController::edit()
+     * @uses \App\Controller\AdminAgentsController::edit()
      */
     public function testEdit(): void
     {
@@ -73,7 +75,7 @@ class AgentsControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\AgentsController::delete()
+     * @uses \App\Controller\AdminAgentsController::delete()
      */
     public function testDelete(): void
     {

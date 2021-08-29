@@ -6,21 +6,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Order Entity
+ * AdminAgent Entity
  *
  * @property int $id
- * @property int $amount
- * @property int $quantity
- * @property \Cake\I18n\FrozenDate $deal_date
- * @property string $deal_comment
- * @property string $shipping_address
- * @property int $customer_id
+ * @property int $agent_id
+ * @property int $admin_id
+ * @property \Cake\I18n\FrozenDate $cooperation_start_date
+ * @property \Cake\I18n\FrozenDate $cooperation_end_date
+ * @property int $price
+ * @property string $comments
  *
- * @property \App\Model\Entity\Customer $customer
  * @property \App\Model\Entity\Agent $agent
- * @property \App\Model\Entity\Product[] $products
+ * @property \App\Model\Entity\Admin $admin
  */
-class Order extends Entity
+class AdminAgent extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -32,14 +31,13 @@ class Order extends Entity
      * @var array
      */
     protected $_accessible = [
-        'amount' => true,
-        'quantity' => true,
-        'deal_date' => true,
-        'deal_comment' => true,
-        'shipping_address' => true,
-        'customer_id' => true,
-        'customer' => true,
+        'agent_id' => true,
+        'admin_id' => true,
+        'cooperation_start_date' => true,
+        'cooperation_end_date' => true,
+        'price' => true,
+        'comments' => true,
         'agent' => true,
-        'products' => true,
+        'admin' => true,
     ];
 }

@@ -30,7 +30,6 @@
                     echo $this->Form->control('deal_comment');
                     echo $this->Form->control('shipping_address');
                     echo $this->Form->control('customer_id', ['options' => $customers]);
-                    echo $this->Form->control('agent_id', ['options' => $agents]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

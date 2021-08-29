@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  * Orders Model
  *
  * @property \App\Model\Table\CustomersTable&\Cake\ORM\Association\BelongsTo $Customers
- * @property \App\Model\Table\AgentsTable&\Cake\ORM\Association\BelongsTo $Agents
  * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\HasMany $Products
  *
  * @method \App\Model\Entity\Order newEmptyEntity()
@@ -47,10 +46,6 @@ class OrdersTable extends Table
 
         $this->belongsTo('Customers', [
             'foreignKey' => 'customer_id',
-            'joinType' => 'INNER',
-        ]);
-        $this->belongsTo('Agents', [
-            'foreignKey' => 'agent_id',
             'joinType' => 'INNER',
         ]);
         $this->hasMany('Products', [
@@ -108,7 +103,6 @@ class OrdersTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['customer_id'], 'Customers'), ['errorField' => 'customer_id']);
-        $rules->add($rules->existsIn(['agent_id'], 'Agents'), ['errorField' => 'agent_id']);
 
         return $rules;
     }

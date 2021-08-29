@@ -45,43 +45,6 @@
                     <?= $this->Text->autoParagraph(h($agent->address)); ?>
                 </blockquote>
             </div>
-            <div class="related">
-                <h4><?= __('Related Orders') ?></h4>
-                <?php if (!empty($agent->orders)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Amount') ?></th>
-                            <th><?= __('Quantity') ?></th>
-                            <th><?= __('Deal Date') ?></th>
-                            <th><?= __('Deal Comment') ?></th>
-                            <th><?= __('Shipping Address') ?></th>
-                            <th><?= __('Customer Id') ?></th>
-                            <th><?= __('Agent Id') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($agent->orders as $orders) : ?>
-                        <tr>
-                            <td><?= h($orders->id) ?></td>
-                            <td><?= h($orders->amount) ?></td>
-                            <td><?= h($orders->quantity) ?></td>
-                            <td><?= h($orders->deal_date) ?></td>
-                            <td><?= h($orders->deal_comment) ?></td>
-                            <td><?= h($orders->shipping_address) ?></td>
-                            <td><?= h($orders->customer_id) ?></td>
-                            <td><?= h($orders->agent_id) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $orders->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Orders', 'action' => 'edit', $orders->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orders->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </div>
