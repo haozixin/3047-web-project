@@ -19,7 +19,7 @@ class OrdersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Customers', 'Agents'],
+            'contain' => ['Customers'],
         ];
         $orders = $this->paginate($this->Orders);
 
@@ -36,7 +36,7 @@ class OrdersController extends AppController
     public function view($id = null)
     {
         $order = $this->Orders->get($id, [
-            'contain' => ['Customers', 'Agents', 'Products'],
+            'contain' => ['Customers', 'Products'],
         ]);
 
         $this->set(compact('order'));
@@ -60,8 +60,7 @@ class OrdersController extends AppController
             $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
-        $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
-        $this->set(compact('order', 'customers', 'agents'));
+        $this->set(compact('order', 'customers'));
     }
 
     /**
@@ -86,8 +85,7 @@ class OrdersController extends AppController
             $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
-        $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
-        $this->set(compact('order', 'customers', 'agents'));
+        $this->set(compact('order', 'customers'));
     }
 
     /**

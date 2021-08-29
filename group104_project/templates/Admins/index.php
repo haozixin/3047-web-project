@@ -14,8 +14,9 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('given_name') ?></th>
                     <th><?= $this->Paginator->sort('family_name') ?></th>
-                    <th><?= $this->Paginator->sort('eamil') ?></th>
+                    <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('password') ?></th>
+                    <th><?= $this->Paginator->sort('user_name') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -25,8 +26,9 @@
                     <td><?= $this->Number->format($admin->id) ?></td>
                     <td><?= h($admin->given_name) ?></td>
                     <td><?= h($admin->family_name) ?></td>
-                    <td><?= h($admin->eamil) ?></td>
+                    <td><?= h($admin->email) ?></td>
                     <td><?= h($admin->password) ?></td>
+                    <td><?= h($admin->user_name) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $admin->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $admin->id]) ?>

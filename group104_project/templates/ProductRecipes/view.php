@@ -19,16 +19,16 @@
             <h3><?= h($productRecipe->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Product') ?></th>
-                    <td><?= $productRecipe->has('product') ? $this->Html->link($productRecipe->product->name, ['controller' => 'Products', 'action' => 'view', $productRecipe->product->id]) : '' ?></td>
+                    <th><?= __('Recipe Title') ?></th>
+                    <td><?= h($productRecipe->recipe_title) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Recipe') ?></th>
                     <td><?= $productRecipe->has('recipe') ? $this->Html->link($productRecipe->recipe->title, ['controller' => 'Recipes', 'action' => 'view', $productRecipe->recipe->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Pro Rec Title') ?></th>
-                    <td><?= h($productRecipe->pro_rec_title) ?></td>
+                    <th><?= __('Product') ?></th>
+                    <td><?= $productRecipe->has('product') ? $this->Html->link($productRecipe->product->name, ['controller' => 'Products', 'action' => 'view', $productRecipe->product->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>

@@ -14,6 +14,8 @@ use Cake\ORM\Entity;
  * @property string $email
  * @property string $address
  * @property string $subscription_status
+ *
+ * @property \App\Model\Entity\AdminAgent[] $admin_agents
  */
 class Agent extends Entity
 {
@@ -32,5 +34,6 @@ class Agent extends Entity
         'email' => true,
         'address' => true,
         'subscription_status' => true,
+        'admin_agents' => true,
     ];
 }

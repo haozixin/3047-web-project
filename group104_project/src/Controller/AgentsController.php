@@ -33,7 +33,7 @@ class AgentsController extends AppController
     public function view($id = null)
     {
         $agent = $this->Agents->get($id, [
-            'contain' => [],
+            'contain' => ['AdminAgents'],
         ]);
 
         $this->set(compact('agent'));

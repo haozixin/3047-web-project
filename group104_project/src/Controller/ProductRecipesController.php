@@ -19,7 +19,7 @@ class ProductRecipesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Products', 'Recipes'],
+            'contain' => ['Recipes', 'Products'],
         ];
         $productRecipes = $this->paginate($this->ProductRecipes);
 
@@ -36,7 +36,7 @@ class ProductRecipesController extends AppController
     public function view($id = null)
     {
         $productRecipe = $this->ProductRecipes->get($id, [
-            'contain' => ['Products', 'Recipes'],
+            'contain' => ['Recipes', 'Products'],
         ]);
 
         $this->set(compact('productRecipe'));
@@ -59,9 +59,9 @@ class ProductRecipesController extends AppController
             }
             $this->Flash->error(__('The product recipe could not be saved. Please, try again.'));
         }
-        $products = $this->ProductRecipes->Products->find('list', ['limit' => 200]);
         $recipes = $this->ProductRecipes->Recipes->find('list', ['limit' => 200]);
-        $this->set(compact('productRecipe', 'products', 'recipes'));
+        $products = $this->ProductRecipes->Products->find('list', ['limit' => 200]);
+        $this->set(compact('productRecipe', 'recipes', 'products'));
     }
 
     /**
@@ -85,9 +85,9 @@ class ProductRecipesController extends AppController
             }
             $this->Flash->error(__('The product recipe could not be saved. Please, try again.'));
         }
-        $products = $this->ProductRecipes->Products->find('list', ['limit' => 200]);
         $recipes = $this->ProductRecipes->Recipes->find('list', ['limit' => 200]);
-        $this->set(compact('productRecipe', 'products', 'recipes'));
+        $products = $this->ProductRecipes->Products->find('list', ['limit' => 200]);
+        $this->set(compact('productRecipe', 'recipes', 'products'));
     }
 
     /**

@@ -11,6 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Agents Model
  *
+ * @property \App\Model\Table\AdminAgentsTable&\Cake\ORM\Association\HasMany $AdminAgents
+ *
  * @method \App\Model\Entity\Agent newEmptyEntity()
  * @method \App\Model\Entity\Agent newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Agent[] newEntities(array $data, array $options = [])

@@ -72,7 +72,7 @@ class RecipesTable extends Table
 
         $validator
             ->scalar('title')
-            ->maxLength('title', 256)
+            ->maxLength('title', 64)
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
 
@@ -80,12 +80,6 @@ class RecipesTable extends Table
             ->scalar('description')
             ->requirePresence('description', 'create')
             ->notEmptyString('description');
-
-        $validator
-            ->scalar('category')
-            ->maxLength('category', 64)
-            ->requirePresence('category', 'create')
-            ->notEmptyString('category');
 
         return $validator;
     }

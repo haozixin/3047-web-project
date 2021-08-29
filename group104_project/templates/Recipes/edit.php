@@ -24,7 +24,6 @@
                 <?php
                     echo $this->Form->control('title');
                     echo $this->Form->control('description');
-                    echo $this->Form->control('category');
                     echo $this->Form->control('video_id');
                     echo $this->Form->control('photo_id');
                 ?>

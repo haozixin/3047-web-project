@@ -11,8 +11,8 @@ use Cake\Validation\Validator;
 /**
  * ProductRecipes Model
  *
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  * @property \App\Model\Table\RecipesTable&\Cake\ORM\Association\BelongsTo $Recipes
+ * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  *
  * @method \App\Model\Entity\ProductRecipe newEmptyEntity()
  * @method \App\Model\Entity\ProductRecipe newEntity(array $data, array $options = [])
@@ -44,12 +44,12 @@ class ProductRecipesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Products', [
-            'foreignKey' => 'product_id',
-            'joinType' => 'INNER',
-        ]);
         $this->belongsTo('Recipes', [
             'foreignKey' => 'recipe_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Products', [
+            'foreignKey' => 'product_id',
             'joinType' => 'INNER',
         ]);
     }
@@ -67,10 +67,10 @@ class ProductRecipesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('pro_rec_title')
-            ->maxLength('pro_rec_title', 64)
-            ->requirePresence('pro_rec_title', 'create')
-            ->notEmptyString('pro_rec_title');
+            ->scalar('recipe_title')
+            ->maxLength('recipe_title', 64)
+            ->requirePresence('recipe_title', 'create')
+            ->notEmptyString('recipe_title');
 
         $validator
             ->date('last_modify_time')
@@ -89,8 +89,8 @@ class ProductRecipesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['product_id'], 'Products'), ['errorField' => 'product_id']);
         $rules->add($rules->existsIn(['recipe_id'], 'Recipes'), ['errorField' => 'recipe_id']);
+        $rules->add($rules->existsIn(['product_id'], 'Products'), ['errorField' => 'product_id']);
 
         return $rules;
     }

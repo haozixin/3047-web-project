@@ -16,7 +16,7 @@ use Cake\ORM\Entity;
  * @property string $product_type
  * @property \Cake\I18n\FrozenDate $date_of_manufacture
  * @property \Cake\I18n\FrozenDate $expired_date
- * @property int $order_id
+ * @property int|null $order_id
  *
  * @property \App\Model\Entity\Order $order
  * @property \App\Model\Entity\ProductRecipe[] $product_recipes

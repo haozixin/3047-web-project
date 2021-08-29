@@ -12,8 +12,8 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $adminAgent->agent_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $adminAgent->agent_id), 'class' => 'side-nav-item']
+                ['action' => 'delete', $adminAgent->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $adminAgent->id), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Admin Agents'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -24,11 +24,12 @@
             <fieldset>
                 <legend><?= __('Edit Admin Agent') ?></legend>
                 <?php
-                    echo $this->Form->control('id');
-                    echo $this->Form->control('cooperation_start_date');
-                    echo $this->Form->control('cooperation_end_date');
                     echo $this->Form->control('price');
                     echo $this->Form->control('comments');
+                    echo $this->Form->control('cooperation_start_date');
+                    echo $this->Form->control('cooperation_end_date');
+                    echo $this->Form->control('agent_id', ['options' => $agents]);
+                    echo $this->Form->control('admin_id', ['options' => $admins]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

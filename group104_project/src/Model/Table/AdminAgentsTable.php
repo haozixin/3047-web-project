@@ -41,8 +41,8 @@ class AdminAgentsTable extends Table
         parent::initialize($config);
 
         $this->setTable('admin_agents');
-        $this->setDisplayField('agent_id');
-        $this->setPrimaryKey(['agent_id', 'admin_id']);
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Agents', [
             'foreignKey' => 'agent_id',
@@ -67,16 +67,6 @@ class AdminAgentsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->date('cooperation_start_date')
-            ->requirePresence('cooperation_start_date', 'create')
-            ->notEmptyDate('cooperation_start_date');
-
-        $validator
-            ->date('cooperation_end_date')
-            ->requirePresence('cooperation_end_date', 'create')
-            ->notEmptyDate('cooperation_end_date');
-
-        $validator
             ->integer('price')
             ->requirePresence('price', 'create')
             ->notEmptyString('price');
@@ -86,6 +76,16 @@ class AdminAgentsTable extends Table
             ->maxLength('comments', 256)
             ->requirePresence('comments', 'create')
             ->notEmptyString('comments');
+
+        $validator
+            ->date('cooperation_start_date')
+            ->requirePresence('cooperation_start_date', 'create')
+            ->notEmptyDate('cooperation_start_date');
+
+        $validator
+            ->date('cooperation_end_date')
+            ->requirePresence('cooperation_end_date', 'create')
+            ->notEmptyDate('cooperation_end_date');
 
         return $validator;
     }

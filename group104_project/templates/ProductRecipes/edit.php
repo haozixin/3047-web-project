@@ -2,8 +2,8 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\ProductRecipe $productRecipe
- * @var string[]|\Cake\Collection\CollectionInterface $products
  * @var string[]|\Cake\Collection\CollectionInterface $recipes
+ * @var string[]|\Cake\Collection\CollectionInterface $products
  */
 ?>
 <div class="row">
@@ -24,10 +24,10 @@
             <fieldset>
                 <legend><?= __('Edit Product Recipe') ?></legend>
                 <?php
-                    echo $this->Form->control('product_id', ['options' => $products]);
-                    echo $this->Form->control('recipe_id', ['options' => $recipes]);
-                    echo $this->Form->control('pro_rec_title');
+                    echo $this->Form->control('recipe_title');
                     echo $this->Form->control('last_modify_time');
+                    echo $this->Form->control('recipe_id', ['options' => $recipes]);
+                    echo $this->Form->control('product_id', ['options' => $products]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

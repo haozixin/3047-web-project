@@ -11,7 +11,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $title
  * @property string $description
- * @property string $category
  * @property int $video_id
  * @property int $photo_id
  *
@@ -33,7 +32,6 @@ class Recipe extends Entity
     protected $_accessible = [
         'title' => true,
         'description' => true,
-        'category' => true,
         'video_id' => true,
         'photo_id' => true,
         'video' => true,

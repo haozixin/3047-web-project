@@ -46,7 +46,6 @@ class ProductsTable extends Table
 
         $this->belongsTo('Orders', [
             'foreignKey' => 'order_id',
-            'joinType' => 'INNER',
         ]);
         $this->hasMany('ProductRecipes', [
             'foreignKey' => 'product_id',

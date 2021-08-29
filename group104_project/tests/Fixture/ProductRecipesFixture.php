@@ -17,17 +17,17 @@ class ProductRecipesFixture extends TestFixture
      */
     // phpcs:disable
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'product_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'recipe_title' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
+        'last_modify_time' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'recipe_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'pro_rec_title' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => 'product recipes title', 'precision' => null],
-        'last_modify_time' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => 'the date and time last edit it', 'precision' => null],
+        'product_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'utf8mb4_general_ci'
+            'collation' => 'latin1_swedish_ci'
         ],
     ];
     // phpcs:enable
@@ -41,10 +41,10 @@ class ProductRecipesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'product_id' => 1,
+                'recipe_title' => 'Lorem ipsum dolor sit amet',
+                'last_modify_time' => '2021-08-29',
                 'recipe_id' => 1,
-                'pro_rec_title' => 'Lorem ipsum dolor sit amet',
-                'last_modify_time' => '2021-08-28',
+                'product_id' => 1,
             ],
         ];
         parent::init();

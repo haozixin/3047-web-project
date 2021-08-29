@@ -25,6 +25,7 @@ class AgentsTableTest extends TestCase
      */
     protected $fixtures = [
         'app.Agents',
+        'app.AdminAgents',
     ];
 
     /**

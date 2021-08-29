@@ -73,16 +73,21 @@ class AdminsTable extends Table
             ->notEmptyString('family_name');
 
         $validator
-            ->scalar('eamil')
-            ->maxLength('eamil', 256)
-            ->requirePresence('eamil', 'create')
-            ->notEmptyString('eamil');
+            ->email('email')
+            ->requirePresence('email', 'create')
+            ->notEmptyString('email');
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 64)
+            ->maxLength('password', 20)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
+
+        $validator
+            ->scalar('user_name')
+            ->maxLength('user_name', 64)
+            ->requirePresence('user_name', 'create')
+            ->notEmptyString('user_name');
 
         return $validator;
     }

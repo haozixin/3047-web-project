@@ -23,6 +23,7 @@ class AgentsControllerTest extends TestCase
      */
     protected $fixtures = [
         'app.Agents',
+        'app.AdminAgents',
     ];
 
     /**

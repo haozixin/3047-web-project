@@ -25,7 +25,7 @@
                     echo $this->Form->control('product_type');
                     echo $this->Form->control('date_of_manufacture');
                     echo $this->Form->control('expired_date');
-                    echo $this->Form->control('order_id', ['options' => $orders]);
+                    echo $this->Form->control('order_id', ['options' => $orders, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

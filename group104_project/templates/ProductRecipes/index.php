@@ -12,10 +12,10 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('product_id') ?></th>
-                    <th><?= $this->Paginator->sort('recipe_id') ?></th>
-                    <th><?= $this->Paginator->sort('pro_rec_title') ?></th>
+                    <th><?= $this->Paginator->sort('recipe_title') ?></th>
                     <th><?= $this->Paginator->sort('last_modify_time') ?></th>
+                    <th><?= $this->Paginator->sort('recipe_id') ?></th>
+                    <th><?= $this->Paginator->sort('product_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -23,10 +23,10 @@
                 <?php foreach ($productRecipes as $productRecipe): ?>
                 <tr>
                     <td><?= $this->Number->format($productRecipe->id) ?></td>
-                    <td><?= $productRecipe->has('product') ? $this->Html->link($productRecipe->product->name, ['controller' => 'Products', 'action' => 'view', $productRecipe->product->id]) : '' ?></td>
-                    <td><?= $productRecipe->has('recipe') ? $this->Html->link($productRecipe->recipe->title, ['controller' => 'Recipes', 'action' => 'view', $productRecipe->recipe->id]) : '' ?></td>
-                    <td><?= h($productRecipe->pro_rec_title) ?></td>
+                    <td><?= h($productRecipe->recipe_title) ?></td>
                     <td><?= h($productRecipe->last_modify_time) ?></td>
+                    <td><?= $productRecipe->has('recipe') ? $this->Html->link($productRecipe->recipe->title, ['controller' => 'Recipes', 'action' => 'view', $productRecipe->recipe->id]) : '' ?></td>
+                    <td><?= $productRecipe->has('product') ? $this->Html->link($productRecipe->product->name, ['controller' => 'Products', 'action' => 'view', $productRecipe->product->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $productRecipe->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $productRecipe->id]) ?>

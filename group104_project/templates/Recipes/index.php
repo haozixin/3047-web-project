@@ -13,7 +13,6 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
-                    <th><?= $this->Paginator->sort('category') ?></th>
                     <th><?= $this->Paginator->sort('video_id') ?></th>
                     <th><?= $this->Paginator->sort('photo_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -24,7 +23,6 @@
                 <tr>
                     <td><?= $this->Number->format($recipe->id) ?></td>
                     <td><?= h($recipe->title) ?></td>
-                    <td><?= h($recipe->category) ?></td>
                     <td><?= $this->Number->format($recipe->video_id) ?></td>
                     <td><?= $this->Number->format($recipe->photo_id) ?></td>
                     <td class="actions">

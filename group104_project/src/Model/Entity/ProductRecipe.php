@@ -9,13 +9,13 @@ use Cake\ORM\Entity;
  * ProductRecipe Entity
  *
  * @property int $id
- * @property int $product_id
- * @property int $recipe_id
- * @property string $pro_rec_title
+ * @property string $recipe_title
  * @property \Cake\I18n\FrozenDate $last_modify_time
+ * @property int $recipe_id
+ * @property int $product_id
  *
- * @property \App\Model\Entity\Product $product
  * @property \App\Model\Entity\Recipe $recipe
+ * @property \App\Model\Entity\Product $product
  */
 class ProductRecipe extends Entity
 {
@@ -29,11 +29,11 @@ class ProductRecipe extends Entity
      * @var array
      */
     protected $_accessible = [
-        'product_id' => true,
-        'recipe_id' => true,
-        'pro_rec_title' => true,
+        'recipe_title' => true,
         'last_modify_time' => true,
-        'product' => true,
+        'recipe_id' => true,
+        'product_id' => true,
         'recipe' => true,
+        'product' => true,
     ];
 }

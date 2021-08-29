@@ -3,7 +3,6 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Order $order
  * @var \Cake\Collection\CollectionInterface|string[] $customers
- * @var \Cake\Collection\CollectionInterface|string[] $agents
  */
 ?>
 <div class="row">

@@ -19,11 +19,12 @@
             <fieldset>
                 <legend><?= __('Add Admin Agent') ?></legend>
                 <?php
-                    echo $this->Form->control('id');
-                    echo $this->Form->control('cooperation_start_date');
-                    echo $this->Form->control('cooperation_end_date');
                     echo $this->Form->control('price');
                     echo $this->Form->control('comments');
+                    echo $this->Form->control('cooperation_start_date');
+                    echo $this->Form->control('cooperation_end_date');
+                    echo $this->Form->control('agent_id', ['options' => $agents]);
+                    echo $this->Form->control('admin_id', ['options' => $admins]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

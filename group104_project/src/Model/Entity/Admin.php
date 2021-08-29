@@ -11,8 +11,9 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $given_name
  * @property string $family_name
- * @property string $eamil
+ * @property string $email
  * @property string $password
+ * @property string $user_name
  *
  * @property \App\Model\Entity\AdminAgent[] $admin_agents
  */
@@ -30,8 +31,9 @@ class Admin extends Entity
     protected $_accessible = [
         'given_name' => true,
         'family_name' => true,
-        'eamil' => true,
+        'email' => true,
         'password' => true,
+        'user_name' => true,
         'admin_agents' => true,
     ];
 

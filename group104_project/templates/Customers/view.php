@@ -58,7 +58,6 @@
                             <th><?= __('Deal Comment') ?></th>
                             <th><?= __('Shipping Address') ?></th>
                             <th><?= __('Customer Id') ?></th>
-                            <th><?= __('Agent Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($customer->orders as $orders) : ?>
@@ -70,7 +69,6 @@
                             <td><?= h($orders->deal_comment) ?></td>
                             <td><?= h($orders->shipping_address) ?></td>
                             <td><?= h($orders->customer_id) ?></td>
-                            <td><?= h($orders->agent_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $orders->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Orders', 'action' => 'edit', $orders->id]) ?>

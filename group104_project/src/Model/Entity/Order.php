@@ -17,7 +17,6 @@ use Cake\ORM\Entity;
  * @property int $customer_id
  *
  * @property \App\Model\Entity\Customer $customer
- * @property \App\Model\Entity\Agent $agent
  * @property \App\Model\Entity\Product[] $products
  */
 class Order extends Entity
@@ -39,7 +38,6 @@ class Order extends Entity
         'shipping_address' => true,
         'customer_id' => true,
         'customer' => true,
-        'agent' => true,
         'products' => true,
     ];
 }
