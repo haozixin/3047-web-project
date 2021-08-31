@@ -11,11 +11,9 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $title
  * @property string $description
- * @property int $video_id
- * @property int $photo_id
+ * @property int $video_link
+ * @property string|resource $photo
  *
- * @property \App\Model\Entity\Video $video
- * @property \App\Model\Entity\Photo $photo
  * @property \App\Model\Entity\ProductRecipe[] $product_recipes
  */
 class Recipe extends Entity
@@ -32,9 +30,7 @@ class Recipe extends Entity
     protected $_accessible = [
         'title' => true,
         'description' => true,
-        'video_id' => true,
-        'photo_id' => true,
-        'video' => true,
+        'video_link' => true,
         'photo' => true,
         'product_recipes' => true,
     ];

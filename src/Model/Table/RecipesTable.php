@@ -11,8 +11,6 @@ use Cake\Validation\Validator;
 /**
  * Recipes Model
  *
- * @property \App\Model\Table\VideosTable&\Cake\ORM\Association\BelongsTo $Videos
- * @property \App\Model\Table\PhotosTable&\Cake\ORM\Association\BelongsTo $Photos
  * @property \App\Model\Table\ProductRecipesTable&\Cake\ORM\Association\HasMany $ProductRecipes
  *
  * @method \App\Model\Entity\Recipe newEmptyEntity()
@@ -45,14 +43,6 @@ class RecipesTable extends Table
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Videos', [
-            'foreignKey' => 'video_id',
-            'joinType' => 'INNER',
-        ]);
-        $this->belongsTo('Photos', [
-            'foreignKey' => 'photo_id',
-            'joinType' => 'INNER',
-        ]);
         $this->hasMany('ProductRecipes', [
             'foreignKey' => 'recipe_id',
         ]);
@@ -81,21 +71,15 @@ class RecipesTable extends Table
             ->requirePresence('description', 'create')
             ->notEmptyString('description');
 
+        $validator
+            ->integer('video_link')
+            ->requirePresence('video_link', 'create')
+            ->notEmptyString('video_link');
+
+        $validator
+            ->requirePresence('photo', 'create')
+            ->notEmptyString('photo');
+
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->existsIn(['video_id'], 'Videos'), ['errorField' => 'video_id']);
-        $rules->add($rules->existsIn(['photo_id'], 'Photos'), ['errorField' => 'photo_id']);
-
-        return $rules;
     }
 }

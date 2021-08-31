@@ -27,12 +27,8 @@
                     <td><?= $this->Number->format($recipe->id) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Video Id') ?></th>
-                    <td><?= $this->Number->format($recipe->video_id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Photo Id') ?></th>
-                    <td><?= $this->Number->format($recipe->photo_id) ?></td>
+                    <th><?= __('Video Link') ?></th>
+                    <td><?= $this->Number->format($recipe->video_link) ?></td>
                 </tr>
             </table>
             <div class="text">

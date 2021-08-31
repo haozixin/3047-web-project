@@ -25,8 +25,6 @@ class RecipesTableTest extends TestCase
      */
     protected $fixtures = [
         'app.Recipes',
-        'app.Videos',
-        'app.Photos',
         'app.ProductRecipes',
     ];
 
@@ -61,17 +59,6 @@ class RecipesTableTest extends TestCase
      * @uses \App\Model\Table\RecipesTable::validationDefault()
      */
     public function testValidationDefault(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     * @uses \App\Model\Table\RecipesTable::buildRules()
-     */
-    public function testBuildRules(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
