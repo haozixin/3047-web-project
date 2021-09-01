@@ -10,6 +10,7 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('List Admins'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
+
     </aside>
     <div class="column-responsive column-80">
         <div class="admins form content">

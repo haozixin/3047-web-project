@@ -102,4 +102,16 @@ class RecipesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+public function display($id) {
+    $table = TableRegistry::get('Recipes');
+    $entity = $table->get($id);
+
+    $this->response->type('jpg');
+    $this->response->body(stream_get_contents($recipes->photo));
+
+    return $this->response;
+}
+
+
+
 }

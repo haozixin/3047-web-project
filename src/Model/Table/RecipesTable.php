@@ -68,11 +68,10 @@ class RecipesTable extends Table
 
         $validator
             ->scalar('description')
-            ->requirePresence('description', 'create')
-            ->notEmptyString('description');
+            ->allowEmptyString('description,null','create');
 
         $validator
-            ->integer('video_link')
+            ->scalar('video_link')
             ->requirePresence('video_link', 'create')
             ->notEmptyString('video_link');
 

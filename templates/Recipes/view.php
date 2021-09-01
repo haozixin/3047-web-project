@@ -5,18 +5,10 @@
  */
 ?>
 <div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Recipe'), ['action' => 'edit', $recipe->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Recipe'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Recipes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Recipe'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
+
     <div class="column-responsive column-80">
         <div class="recipes view content">
-            <h3><?= h($recipe->title) ?></h3>
+            <h3>List Recipes</h3>
             <table>
                 <tr>
                     <th><?= __('Title') ?></th>
@@ -28,8 +20,12 @@
                 </tr>
                 <tr>
                     <th><?= __('Video Link') ?></th>
-                    <td><?= $this->Number->format($recipe->video_link) ?></td>
+                    <td><?= h($recipe->video_link) ?></td>
                 </tr>
+                <tr>
+                                    <th><?= __('photo') ?></th>
+                                    <td><?= (stream_get_contents($recipe->photo)) ?></td>
+                                </tr>
             </table>
             <div class="text">
                 <strong><?= __('Description') ?></strong>
@@ -71,3 +67,6 @@
         </div>
     </div>
 </div>
+
+
+
