@@ -4,11 +4,18 @@
  * @var \App\Model\Entity\Recipe $recipe
  */
 ?>
+<aside class="column">
+    <div class="side-nav">
+        <h4 class="heading"><?= __('Actions') ?></h4>
+        <?= $this->Html->link(__('Edit The Recipe'), ['action' => 'edit', $recipe->id], ['class' => 'side-nav-item']) ?>
+
+    </div>
+</aside>
 <div class="row">
 
     <div class="column-responsive column-80">
         <div class="recipes view content">
-            <h3><?= h($recipe->title) ?></h3>
+            <h3><?= h("Details") ?></h3>
             <table>
                 <tr>
                     <th><?= __('Title') ?></th>

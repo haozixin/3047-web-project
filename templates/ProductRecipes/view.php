@@ -9,14 +9,12 @@
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Product Recipe'), ['action' => 'edit', $productRecipe->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Product Recipe'), ['action' => 'delete', $productRecipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productRecipe->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Product Recipes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Product Recipe'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="productRecipes view content">
-            <h3><?= h($productRecipe->id) ?></h3>
+            <h3><?= h("Details") ?></h3>
             <table>
                 <tr>
                     <th><?= __('Recipe Title') ?></th>

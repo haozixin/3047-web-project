@@ -3,11 +3,18 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product $product
  */
-?>
 
+?>
+<aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('Edit The Product'), ['action' => 'edit', $product->id], ['class' => 'side-nav-item']) ?>
+
+        </div>
+</aside>
     <div class="column-responsive column-80">
         <div class="products view content">
-            <h3><?= h($product->name) ?></h3>
+            <h3><?= h("Details") ?></h3>
             <table>
                 <tr>
                     <th><?= __('Name') ?></th>

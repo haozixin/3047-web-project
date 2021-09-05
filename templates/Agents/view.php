@@ -9,14 +9,12 @@
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Agent'), ['action' => 'edit', $agent->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Agent'), ['action' => 'delete', $agent->id], ['confirm' => __('Are you sure you want to delete # {0}?', $agent->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Agents'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Agent'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="agents view content">
-            <h3><?= h($agent->id) ?></h3>
+            <h3><?= h("Details") ?></h3>
             <table>
                 <tr>
                     <th><?= __('Given Name') ?></th>
