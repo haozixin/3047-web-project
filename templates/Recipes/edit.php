@@ -3,19 +3,18 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Recipe $recipe
  */
+ $formTemplate=[
+                'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+                'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+                'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+                'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+                'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+                'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+                ];
+ $this ->Form->setTemplates($formTemplate);
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $recipe->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Recipes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
+<h1 class="h3 mb-2 text-grey-800">Edit Recipes</h1>
     <div class="column-responsive column-80">
         <div class="recipes form content">
             <?= $this->Form->create($recipe) ?>
@@ -30,6 +29,6 @@
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
-        </div>
+
     </div>
 </div>
