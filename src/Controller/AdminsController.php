@@ -102,7 +102,7 @@ class AdminsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function beforeFilter(\Cake\Event\EventInterface $event)
+    /*public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
@@ -128,5 +128,5 @@ class AdminsController extends AppController
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid email or password'));
         }
-    }
+    }*/
 }
