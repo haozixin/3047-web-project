@@ -18,11 +18,12 @@ $formTemplate=[
 $this ->Form->setTemplates($formTemplate);
 ?>
 <h1 class="h3 mb-2 text-grey-800">Add Products</h1>
-<div class="row">
+
     <div class="column-responsive column-80">
         <div class="products form content">
             <?= $this->Form->create($product) ?>
-            <form>
+            <fieldset>
+            <legend><?= __('Add Product') ?></legend>
               <?php
                     echo $this->Form->control('name');
                     echo $this->Form->control('description');
@@ -37,9 +38,9 @@ $this ->Form->setTemplates($formTemplate);
                <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
                           <?= $this->Form->end() ?>
 
-            </form>
+            </fieldset>
 
-        </div>
+
     </div>
 </div>
 

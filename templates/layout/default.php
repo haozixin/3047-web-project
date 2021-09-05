@@ -102,12 +102,12 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseproducts"
                        aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-beer"></i>
                         <span>Products</span>
                     </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    <div id="collapseproducts" class="collapse" aria-labelledby="headingproducts"
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Functions:</h6>

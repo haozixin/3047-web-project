@@ -5,20 +5,16 @@
  */
 ?>
 <div class="recipes index content">
-
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-     <h1 class="h3 mb-0 text-gray-800"><?= __('Recipes') ?></h1>
-     <a href="<?= $this->Url->build(['action' => 'add'])?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-      class="fas fa-plus fa-sm text-white-50"></i> New Recipe</a>
-         </div>
-          <div class="table-responsive" >
-        <table class= "table table bordered" id="recipeTable" width="100%" cellspacing="0">
+    <?= $this->Html->link(__('New Recipe'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Recipes') ?></h3>
+    <div class="table-responsive">
+        <table>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
                     <th><?= $this->Paginator->sort('video_link') ?></th>
+                    <th><?= $this->Paginator->sort('photo') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -27,8 +23,8 @@
                 <tr>
                     <td><?= $this->Number->format($recipe->id) ?></td>
                     <td><?= h($recipe->title) ?></td>
-                    <td> <?=h($recipe->video_link)?> </td>
-
+                    <td><?= h($recipe->video_link) ?></td>
+                    <td><?= h($recipe->photo) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>
