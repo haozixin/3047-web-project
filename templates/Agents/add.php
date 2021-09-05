@@ -3,18 +3,22 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Agent $agent
  */
+$formTemplate = [
+    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+    'label' => '<label{{attrs}} class="form-label">{{text}}</label>',
+    'input' => '<input type="{{type}}" name="{{name}}"{{attrs}} class="form-control"/>',
+    'textarea'=> '<textarea name="{{name}}" class="form-control" {{attrs}}>{{value}}</textarea>',
+    'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>',
+    'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}" class="form-check-input" {{attrs}}>',
+];
+$this->Form->setTemplates($formTemplate);
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Agents'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
+
     </aside>
     <div class="column-responsive column-80">
         <div class="agents form content">
             <?= $this->Form->create($agent) ?>
-            <fieldset>
+            <form>
                 <legend><?= __('Add Agent') ?></legend>
                 <?php
                     echo $this->Form->control('given_name');
@@ -23,7 +27,11 @@
                     echo $this->Form->control('address');
                     echo $this->Form->control('subscription_status');
                 ?>
-            </fieldset>
+            </form>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
