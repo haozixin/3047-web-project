@@ -7,6 +7,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+CREATE DATABASE IF NOT EXISTS `group104_project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `group104_project`;
 
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
@@ -14,9 +16,12 @@ CREATE TABLE `admins` (
   `given_name` varchar(64) NOT NULL,
   `family_name` varchar(64) NOT NULL,
   `email` varchar(256) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `user_name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `admins` (`id`, `given_name`, `family_name`, `email`, `password`, `user_name`) VALUES
+(1, 'zixin', 'hao', 'haozixin57@gmail.com', '$2y$10$rPHqmamFPH5QCq07G9jVWO4m5Q53annKpEim2Ee/FoUnW8TclJ5Ni', 'yyds');
 
 DROP TABLE IF EXISTS `admin_agents`;
 CREATE TABLE `admin_agents` (
@@ -35,30 +40,31 @@ CREATE TABLE `agents` (
   `given_name` varchar(64) NOT NULL,
   `family_name` varchar(64) DEFAULT NULL,
   `email` varchar(256) NOT NULL,
-  `address` text NOT NULL,
+  `country` varchar(64) NOT NULL,
+  `city` varchar(64) NOT NULL,
+  `state` varchar(64) NOT NULL,
+  `street` varchar(64) NOT NULL,
   `subscription_status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `agents` (`id`, `given_name`, `family_name`, `email`, `address`, `subscription_status`) VALUES
-(1, 'Zixin', 'Hao', 'zhao0004@student.monash.edu', '6 Cassia street', 'no'),
-(2, 'Zixin', 'Hao', 'zhao0004@student.monash.edu', '6 Cassia street', 'yes');
 
 DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
   `given_name` varchar(64) NOT NULL,
   `family_name` varchar(64) NOT NULL,
-  `address` text NOT NULL COMMENT 'including country,state, city, suburb,street',
+  `country` varchar(256) NOT NULL,
   `email` varchar(256) NOT NULL,
   `subscription_status` varchar(64) NOT NULL COMMENT 'if the customer has subscribed ',
   `user_name` varchar(64) NOT NULL,
-  `password` varchar(64) NOT NULL
+  `password` varchar(64) NOT NULL,
+  `state` varchar(64) NOT NULL,
+  `city` varchar(64) NOT NULL,
+  `street` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `customers` (`id`, `given_name`, `family_name`, `address`, `email`, `subscription_status`, `user_name`, `password`) VALUES
-(2, 'Zixin', 'Hao', '6 Cassia street', 'zhao0004@student.monash.edu', 'Yes', '', ''),
-(3, 'Zixin', 'Hao', '无', 'haozixin57@gmail.com', 'no', '', ''),
-(4, 'Zixin', 'Hao', '无', 'haozixin57@gmail.com', 'y', '', '');
+INSERT INTO `customers` (`id`, `given_name`, `family_name`, `country`, `email`, `subscription_status`, `user_name`, `password`, `state`, `city`, `street`) VALUES
+(11, 'zixin', 'hao', 'Austrilia', 'haozixin57@gmail.com', 'no', 'yyds', '$2y$10$p2ciV.HygQvuO8d57YdeMe/dV699Jqt1giwodA8OWzyHrjfVT0rEW', 'VIC', 'Melbourne', '6 sdefje'),
+(14, 'zixin', 'hao', 'Austrilia', 'haozixin157@gmail.com', '123456', 'yyds', '$2y$10$4WsVQR4h0GrxEjAbRA5IduXIdWYKmXxOg2j6SQBwI9daMXnoy/S1S', 'VIC', 'Melbourne', '6 sdefje');
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -88,6 +94,9 @@ CREATE TABLE `products` (
   `order_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `products` (`id`, `name`, `description`, `customer_price`, `agent_price`, `product_type`, `date_of_manufacture`, `expired_date`, `order_id`) VALUES
+(1, '1', 'des', 22, 12, '2', '2021-02-02', '2022-01-01', 3);
+
 DROP TABLE IF EXISTS `product_recipes`;
 CREATE TABLE `product_recipes` (
   `id` int(11) NOT NULL,
@@ -103,7 +112,7 @@ CREATE TABLE `recipes` (
   `title` varchar(64) NOT NULL,
   `description` text NOT NULL,
   `video_link` int(11) NOT NULL,
-  `photo` mediumblob NOT NULL
+  `photo` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -117,7 +126,8 @@ ALTER TABLE `agents`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
@@ -133,7 +143,7 @@ ALTER TABLE `recipes`
 
 
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 ALTER TABLE `admin_agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
@@ -142,19 +152,19 @@ ALTER TABLE `agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 ALTER TABLE `product_recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

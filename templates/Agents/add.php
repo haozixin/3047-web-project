@@ -14,26 +14,24 @@ $formTemplate = [
 $this->Form->setTemplates($formTemplate);
 ?>
 
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="agents form content">
-            <?= $this->Form->create($agent) ?>
-            <form>
-                <legend><?= __('Add Agent') ?></legend>
-                <?php
-                    echo $this->Form->control('given_name');
-                    echo $this->Form->control('family_name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('address');
-                    echo $this->Form->control('subscription_status');
-                ?>
-            </form>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
+<h1 class="h3 mb-2 text-gray-800">Add New Agent</h1>
+
+<?= $this->Form->create($agent) ?>
+    <?php
+    echo $this->Form->control('given_name');
+    echo $this->Form->control('family_name');
+    echo $this->Form->control('email');
+    echo $this->Form->control('country');
+    echo $this->Form->control('state');
+    echo $this->Form->control('city');
+    echo $this->Form->control('street');
+    echo $this->Form->control('subscription_status');
+    ?>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-</div>
+
+<?= $this->Form->button(__('Submit'),['class'=>'btn-primary' ]) ?>
+<?= $this->Form->end() ?>
+

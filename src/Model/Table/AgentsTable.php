@@ -72,6 +72,26 @@ class AgentsTable extends Table
             ->allowEmptyString('family_name');
 
         $validator
+            ->scalar('country')
+            ->requirePresence('country', 'create')
+            ->notEmptyString('country');
+
+        $validator
+            ->scalar('state')
+            ->requirePresence('state', 'create')
+            ->notEmptyString('state');
+
+        $validator
+            ->scalar('city')
+            ->requirePresence('city', 'create')
+            ->notEmptyString('city');
+
+        $validator
+            ->scalar('street')
+            ->requirePresence('street', 'create')
+            ->notEmptyString('street');
+
+        $validator
             ->email('email')
             ->requirePresence('email', 'create')
             ->notEmptyString('email');

@@ -74,10 +74,22 @@ class CustomersTable extends Table
             ->notEmptyString('family_name');
 
         $validator
-            ->scalar('address')
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
+            ->scalar('state')
+            ->requirePresence('state', 'create')
+            ->notEmptyString('state');
+        $validator
+            ->scalar('city')
+            ->requirePresence('city', 'create')
+            ->notEmptyString('city');
+        $validator
+            ->scalar('street')
+            ->requirePresence('street', 'create')
+            ->notEmptyString('street');
 
+        $validator
+            ->scalar('country')
+            ->requirePresence('country', 'create')
+            ->notEmptyString('country');
         $validator
             ->email('email')
             ->requirePresence('email', 'create')

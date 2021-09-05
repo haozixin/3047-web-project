@@ -31,6 +31,22 @@
                     <td><?= h($agent->email) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Country') ?></th>
+                    <td><?= h($agent->country) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('State') ?></th>
+                    <td><?= h($agent->state) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('City') ?></th>
+                    <td><?= h($agent->city) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Street') ?></th>
+                    <td><?= h($agent->street) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Subscription Status') ?></th>
                     <td><?= h($agent->subscription_status) ?></td>
                 </tr>
@@ -39,12 +55,7 @@
                     <td><?= $this->Number->format($agent->id) ?></td>
                 </tr>
             </table>
-            <div class="text">
-                <strong><?= __('Address') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($agent->address)); ?>
-                </blockquote>
-            </div>
+
             <div class="related">
                 <h4><?= __('Related Admin Agents') ?></h4>
                 <?php if (!empty($agent->admin_agents)) : ?>

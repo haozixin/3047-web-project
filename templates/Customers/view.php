@@ -35,6 +35,22 @@
                     <td><?= h($customer->user_name) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Country') ?></th>
+                    <td><?= h($customer->country) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('State') ?></th>
+                    <td><?= h($customer->state) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('City') ?></th>
+                    <td><?= h($customer->city) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Street') ?></th>
+                    <td><?= h($customer->street) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Password') ?></th>
                     <td><?= h($customer->password) ?></td>
                 </tr>
@@ -47,12 +63,7 @@
                     <td><?= $this->Number->format($customer->id) ?></td>
                 </tr>
             </table>
-            <div class="text">
-                <strong><?= __('Address') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($customer->address)); ?>
-                </blockquote>
-            </div>
+
             <div class="related">
                 <h4><?= __('Related Orders') ?></h4>
                 <?php if (!empty($customer->orders)) : ?>

@@ -31,6 +31,10 @@ class Agent extends Entity
     protected $_accessible = [
         'given_name' => true,
         'family_name' => true,
+        'country' => true,
+        'state'=>true,
+        'city'=>true,
+        'street'=>true,
         'email' => true,
         'address' => true,
         'subscription_status' => true,
