@@ -66,6 +66,7 @@ class CustomersTable extends Table
             ->requirePresence('given_name', 'create')
             ->notEmptyString('given_name');
 
+
         $validator
             ->scalar('family_name')
             ->maxLength('family_name', 64)
@@ -87,6 +88,18 @@ class CustomersTable extends Table
             ->maxLength('subscription_status', 64)
             ->requirePresence('subscription_status', 'create')
             ->notEmptyString('subscription_status');
+
+        $validator
+            ->scalar('user_name')
+            ->maxLength('user_name', 64)
+            ->requirePresence('user_name', 'create')
+            ->notEmptyString('user_name');
+
+        $validator
+            ->scalar('password')
+            ->maxLength('password', 64)
+            ->requirePresence('password', 'create')
+            ->notEmptyString('password');
 
         return $validator;
     }

@@ -7,8 +7,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `group104_project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `group104_project`;
 
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
@@ -41,6 +39,10 @@ CREATE TABLE `agents` (
   `subscription_status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `agents` (`id`, `given_name`, `family_name`, `email`, `address`, `subscription_status`) VALUES
+(1, 'Zixin', 'Hao', 'zhao0004@student.monash.edu', '6 Cassia street', 'no'),
+(2, 'Zixin', 'Hao', 'zhao0004@student.monash.edu', '6 Cassia street', 'yes');
+
 DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
@@ -48,12 +50,15 @@ CREATE TABLE `customers` (
   `family_name` varchar(64) NOT NULL,
   `address` text NOT NULL COMMENT 'including country,state, city, suburb,street',
   `email` varchar(256) NOT NULL,
-  `subscription_status` varchar(64) NOT NULL COMMENT 'if the customer has subscribed '
+  `subscription_status` varchar(64) NOT NULL COMMENT 'if the customer has subscribed ',
+  `user_name` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `customers` (`id`, `given_name`, `family_name`, `address`, `email`, `subscription_status`) VALUES
-(1, 'Zixin', 'Hao', '6 Cassia street', 'zhao0004@student.monash.edu', 'no'),
-(2, 'Zixin', 'Hao', '6 Cassia street', 'zhao0004@student.monash.edu', 'Yes');
+INSERT INTO `customers` (`id`, `given_name`, `family_name`, `address`, `email`, `subscription_status`, `user_name`, `password`) VALUES
+(2, 'Zixin', 'Hao', '6 Cassia street', 'zhao0004@student.monash.edu', 'Yes', '', ''),
+(3, 'Zixin', 'Hao', '无', 'haozixin57@gmail.com', 'no', '', ''),
+(4, 'Zixin', 'Hao', '无', 'haozixin57@gmail.com', 'y', '', '');
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -97,8 +102,8 @@ CREATE TABLE `recipes` (
   `id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
   `description` text NOT NULL,
-  `video_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
+  `video_link` int(11) NOT NULL,
+  `photo` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -134,10 +139,10 @@ ALTER TABLE `admin_agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `agents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

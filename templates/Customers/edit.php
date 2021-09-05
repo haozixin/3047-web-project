@@ -26,6 +26,8 @@
                     echo $this->Form->control('family_name');
                     echo $this->Form->control('address');
                     echo $this->Form->control('email');
+                    echo $this->Form->control('user_name');
+                    echo $this->Form->control('password');
                     echo $this->Form->control('subscription_status');
                 ?>
             </fieldset>

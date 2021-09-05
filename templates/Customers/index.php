@@ -15,6 +15,8 @@
                     <th><?= $this->Paginator->sort('given_name') ?></th>
                     <th><?= $this->Paginator->sort('family_name') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('user_name') ?></th>
+                    <th><?= $this->Paginator->sort('password') ?></th>
                     <th><?= $this->Paginator->sort('subscription_status') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -26,6 +28,8 @@
                     <td><?= h($customer->given_name) ?></td>
                     <td><?= h($customer->family_name) ?></td>
                     <td><?= h($customer->email) ?></td>
+                    <td><?= h($customer->user_name) ?></td>
+                    <td><?= h($customer->password) ?></td>
                     <td><?= h($customer->subscription_status) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $customer->id]) ?>

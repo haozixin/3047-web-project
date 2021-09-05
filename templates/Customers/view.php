@@ -31,6 +31,14 @@
                     <td><?= h($customer->email) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('User Name') ?></th>
+                    <td><?= h($customer->user_name) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Password') ?></th>
+                    <td><?= h($customer->password) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Subscription Status') ?></th>
                     <td><?= h($customer->subscription_status) ?></td>
                 </tr>

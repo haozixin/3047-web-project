@@ -1,8 +1,9 @@
 <?php
-declare(strict_types=1);
-
+//declare(strict_types=1);
 namespace App\Model\Entity;
 
+
+use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -14,6 +15,8 @@ use Cake\ORM\Entity;
  * @property string $address
  * @property string $email
  * @property string $subscription_status
+ * @property string $user_name
+ * @property string $password
  *
  * @property \App\Model\Entity\Order[] $orders
  */
@@ -34,6 +37,19 @@ class Customer extends Entity
         'address' => true,
         'email' => true,
         'subscription_status' => true,
+        'user_name'=>true,
+        'password'=>true,
         'orders' => true,
+
     ];
+//Zixin Add this method for sign in
+    protected function _setPassword(string $password) : ?string
+    {
+        if (strlen($password) > 0) {
+            return (new DefaultPasswordHasher())->hash($password);
+        }
+       return "you are not set password";
+    }
+
 }
+

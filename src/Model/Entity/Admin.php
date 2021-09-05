@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Entity;
 
+use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -45,4 +46,13 @@ class Admin extends Entity
     protected $_hidden = [
         'password',
     ];
+
+    //Zixin Add this method for sign in
+    protected function _setPassword(string $password) : ?string
+    {
+        if (strlen($password) > 0) {
+            return (new DefaultPasswordHasher())->hash($password);
+        }
+        return "no password";
+    }
 }
