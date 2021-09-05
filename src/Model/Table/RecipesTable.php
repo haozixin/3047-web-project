@@ -75,9 +75,23 @@ class RecipesTable extends Table
             ->requirePresence('video_link', 'create')
             ->notEmptyString('video_link');
 
+
+
         $validator
-            ->requirePresence('photo', 'create')
-            ->notEmptyString('photo');
+                    ->allowEmptyFile('photo')
+                    ->add( 'image', [
+                    'mimeType' => [
+                        'rule' => [ 'mimeType', [ 'image/jpg', 'image/png', 'image/jpeg' ] ],
+                        'message' => 'Please upload only jpg and png.',
+                    ],
+                    'fileSize' => [
+                        'rule' => [ 'fileSize', '<=', '1MB' ],
+                        'message' => 'Image file size must be less than 1MB.',
+                    ],
+                ] );
+
+
+
 
         return $validator;
     }

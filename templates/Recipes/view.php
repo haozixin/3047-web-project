@@ -8,24 +8,24 @@
 
     <div class="column-responsive column-80">
         <div class="recipes view content">
-            <h3>List Recipes</h3>
+            <h3><?= h($recipe->title) ?></h3>
             <table>
                 <tr>
                     <th><?= __('Title') ?></th>
                     <td><?= h($recipe->title) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($recipe->id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Video Link') ?></th>
                     <td><?= h($recipe->video_link) ?></td>
                 </tr>
                 <tr>
-                                    <th><?= __('photo') ?></th>
-                                    <td><?= (stream_get_contents($recipe->photo)) ?></td>
-                                </tr>
+                    <th><?= __('Photo') ?></th>
+                    <td><?= h($recipe->photo) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($recipe->id) ?></td>
+                </tr>
             </table>
             <div class="text">
                 <strong><?= __('Description') ?></strong>
@@ -53,6 +53,7 @@
                             <td><?= h($productRecipes->last_modify_time) ?></td>
                             <td><?= h($productRecipes->recipe_id) ?></td>
                             <td><?= h($productRecipes->product_id) ?></td>
+                            <td><?= $this -> Html->image($recipe->image) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'ProductRecipes', 'action' => 'view', $productRecipes->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'ProductRecipes', 'action' => 'edit', $productRecipes->id]) ?>
@@ -67,6 +68,3 @@
         </div>
     </div>
 </div>
-
-
-
