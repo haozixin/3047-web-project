@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <?= $this->Html->meta('icon') ?>
+
+
     <title><?= $this->Html->meta('icon') ?></title>
 
     <!-- Custom fonts for this template-->
@@ -29,6 +31,8 @@
 
 <body id="page-top">
 
+
+
 <!-- Page Wrapper -->
 <div id="wrapper">
 
@@ -36,7 +40,7 @@
     <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/admins/homepage') ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-blender fa-rotate-80"></i>
             </div>
@@ -48,7 +52,7 @@
 
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/admins/homepage') ?>">
+            <a class="nav-link" href="<?= $this->Url->build('/')?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span> Home Page</span></a>
         </li>
@@ -58,24 +62,8 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Functions
+            About Pauls Honey
         </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-users fa-cog"></i>
-                <span>Customers</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Customers functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>">List all customers</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'add']) ?>">Add new customer</a>
-                </div>
-            </div>
-        </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
@@ -88,15 +76,12 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'add']) ?>">Add Recipes</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>">List Recipes</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>">Display Recipes</a>
                 </div>
             </div>
         </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+
 
         <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
@@ -109,9 +94,7 @@
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Functions:</h6>
-                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'add']) ?>">Add Product</a>
-                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>">List Product</a>
-
+                           <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Products</a>
 
 
                         </div>
@@ -122,7 +105,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Addons
+            Account
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -141,7 +124,8 @@
                     <a class="collapse-item" href="FAQ">FAQ</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
-
+                    <a class="collapse-item" href="404.html">404 Page</a>
+                    <a class="collapse-item" href="blank.html">Blank Page</a>
                 </div>
             </div>
         </li>
@@ -161,17 +145,21 @@
     </ul>
     <!-- End of Sidebar -->
 
+
+
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
         <!-- Main Content -->
-        <div id="content">
+        <div id="content" style="color:DarkOrange;">
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
             <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
-            <button  style="background-color:green"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
+                        <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
+                        <button  style="background-color:green"<i class="fas fa-keyboard"></i> Customer Side </button>
+
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -209,17 +197,20 @@
                 <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
 
+
+
             </div>
             <!-- /.container-fluid -->
+
 
         </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Pauls Healthy Honey 2021 </span>
+                    <span style="color:AliceBLue;">Pauls Healthy Honey 2021 </span>
                 </div>
             </div>
         </footer>
@@ -256,6 +247,8 @@
     </div>
 </div>
 
+
+
 <!-- Bootstrap core JavaScript-->
 <?= $this->Html->script('/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>
 
@@ -269,7 +262,12 @@
 
 
 <?= $this->fetch('script') ?>
+
+
+
 </body>
+
+
 
 </html>
 

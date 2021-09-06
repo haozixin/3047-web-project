@@ -70,4 +70,9 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function switchAdmin(){
+     $this->layout='default';}
+     public function switchCustomer(){
+          $this->layout='default_customer';}
 }
