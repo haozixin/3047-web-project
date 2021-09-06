@@ -36,7 +36,7 @@
     <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/admins/homepage') ?>">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-blender fa-rotate-80"></i>
             </div>
@@ -48,7 +48,7 @@
 
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/') ?>">
+            <a class="nav-link" href="<?= $this->Url->build('/admins/homepage') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span> Home Page</span></a>
         </li>
@@ -141,7 +141,6 @@
                     <a class="collapse-item" href="FAQ">FAQ</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
 
                 </div>
             </div>

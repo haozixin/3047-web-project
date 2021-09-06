@@ -15,7 +15,7 @@
                 ['action' => 'delete', $productRecipe->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $productRecipe->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Product Recipes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">

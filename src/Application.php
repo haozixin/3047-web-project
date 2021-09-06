@@ -43,7 +43,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * want to use in your application.
  */
 class Application extends BaseApplication
-    //implements AuthenticationServiceProviderInterface
+    implements AuthenticationServiceProviderInterface
 
 {
     /**
@@ -102,7 +102,7 @@ class Application extends BaseApplication
             ->add(new RoutingMiddleware($this))
             // add Authentication after RoutingMiddleware
             //for sign in
-            //->add(new AuthenticationMiddleware($this))
+            ->add(new AuthenticationMiddleware($this))
 
             // Parse various types of encoded request bodies so that they are
             // available as array through $request->getData()
@@ -150,7 +150,8 @@ class Application extends BaseApplication
 
         // Load more plugins here
     }
-/*    public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
+
+    public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
         $authenticationService = new AuthenticationService([
             'unauthenticatedRedirect' => Router::url('/customers/login'),
@@ -177,5 +178,5 @@ class Application extends BaseApplication
         ]);
 
         return $authenticationService;
-    }*/
+    }
 }

@@ -7,8 +7,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `group104_project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `group104_project`;
 
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
@@ -21,7 +19,8 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `admins` (`id`, `given_name`, `family_name`, `email`, `password`, `user_name`) VALUES
-(1, 'zixin', 'hao', 'haozixin57@gmail.com', '$2y$10$rPHqmamFPH5QCq07G9jVWO4m5Q53annKpEim2Ee/FoUnW8TclJ5Ni', 'yyds');
+(1, 'zixin', 'hao', 'haozixin57@gmail.com', '$2y$10$rPHqmamFPH5QCq07G9jVWO4m5Q53annKpEim2Ee/FoUnW8TclJ5Ni', 'yyds'),
+(2, 'zixin', 'hao', 'haozixin557@gmail.com', '$2y$10$r8GHgi/RUVp8m6cJ4xPun.ujg4CCflu.n2S9340e8nWohCac0vxGq', 'yyds');
 
 DROP TABLE IF EXISTS `admin_agents`;
 CREATE TABLE `admin_agents` (
@@ -30,8 +29,8 @@ CREATE TABLE `admin_agents` (
   `comments` varchar(256) NOT NULL,
   `cooperation_start_date` date NOT NULL,
   `cooperation_end_date` date NOT NULL,
-  `agent_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL
+  `agent_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `agents`;
@@ -63,8 +62,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `customers` (`id`, `given_name`, `family_name`, `country`, `email`, `subscription_status`, `user_name`, `password`, `state`, `city`, `street`) VALUES
-(11, 'zixin', 'hao', 'Austrilia', 'haozixin57@gmail.com', 'no', 'yyds', '$2y$10$p2ciV.HygQvuO8d57YdeMe/dV699Jqt1giwodA8OWzyHrjfVT0rEW', 'VIC', 'Melbourne', '6 sdefje'),
-(14, 'zixin', 'hao', 'Austrilia', 'haozixin157@gmail.com', '123456', 'yyds', '$2y$10$4WsVQR4h0GrxEjAbRA5IduXIdWYKmXxOg2j6SQBwI9daMXnoy/S1S', 'VIC', 'Melbourne', '6 sdefje');
+(16, 'zixin', 'hao', 'Austrilia', 'haozixin57@gmail.com', '123456', 'allen', '$2y$10$TY3010JaP65Qy5tazZ6V/OV382deMrXa3ph9EKADoc4N0qb3luK..', 'VIC', 'Melbourne', '6 sdefje');
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -73,13 +71,12 @@ CREATE TABLE `orders` (
   `quantity` int(5) NOT NULL COMMENT 'product quantity',
   `deal_date` date NOT NULL,
   `deal_comment` text NOT NULL,
-  `shipping_address` text NOT NULL,
-  `customer_id` int(11) NOT NULL
+  `shipping_address` varchar(256) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `orders` (`id`, `amount`, `quantity`, `deal_date`, `deal_comment`, `shipping_address`, `customer_id`) VALUES
-(3, 1000, 3, '2021-08-14', '22', '6 Cassia street', 1),
-(4, 1000, 233, '2021-08-19', '33', '6 Cassia street', 1);
+(7, 11, 11, '2021-09-08', '11', '111', NULL);
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
@@ -95,15 +92,17 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `products` (`id`, `name`, `description`, `customer_price`, `agent_price`, `product_type`, `date_of_manufacture`, `expired_date`, `order_id`) VALUES
-(1, '1', 'des', 22, 12, '2', '2021-02-02', '2022-01-01', 3);
+(3, 'product3', 'des', 33, 23, 'fresh honey', '2021-09-21', '2021-09-30', NULL),
+(6, '1', 'wef', 234, 23, 'fresh honey', '2021-09-15', '2021-09-17', NULL),
+(7, 'ef', '123', 11, 20, '3', '2021-09-14', '2021-09-15', NULL);
 
 DROP TABLE IF EXISTS `product_recipes`;
 CREATE TABLE `product_recipes` (
   `id` int(11) NOT NULL,
   `recipe_title` varchar(64) NOT NULL,
   `last_modify_time` date NOT NULL,
-  `recipe_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `recipe_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `recipes`;
@@ -120,7 +119,9 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `admin_agents`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `agent_id` (`agent_id`),
+  ADD KEY `admin_id` (`admin_id`);
 
 ALTER TABLE `agents`
   ADD PRIMARY KEY (`id`);
@@ -130,20 +131,24 @@ ALTER TABLE `customers`
   ADD UNIQUE KEY `email` (`email`);
 
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_id` (`customer_id`);
 
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`);
 
 ALTER TABLE `product_recipes`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `recipe_id` (`recipe_id`),
+  ADD KEY `product_id` (`product_id`);
 
 ALTER TABLE `recipes`
   ADD PRIMARY KEY (`id`);
 
 
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `admin_agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
@@ -152,19 +157,34 @@ ALTER TABLE `agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 ALTER TABLE `product_recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+ALTER TABLE `admin_agents`
+  ADD CONSTRAINT `admin_agents_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `admin_agents_ibfk_2` FOREIGN KEY (`agent_id`) REFERENCES `agents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `product_recipes`
+  ADD CONSTRAINT `product_recipes_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `product_recipes_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

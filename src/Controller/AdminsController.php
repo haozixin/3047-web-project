@@ -22,6 +22,12 @@ class AdminsController extends AppController
 
         $this->set(compact('admins'));
     }
+    public function homepage()
+    {
+        $admins = $this->paginate($this->Admins);
+
+        $this->set(compact('admins'));
+    }
 
     /**
      * View method
