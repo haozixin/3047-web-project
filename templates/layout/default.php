@@ -125,6 +125,33 @@
             Addons
         </div>
 
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
+                                       aria-expanded="true" aria-controls="collapseUtilities">
+                                        <i class="fas fa-fw fa-beer"></i>
+                                        <span>Newsletter</span>
+                                    </a>
+                                    <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
+                                         data-parent="#accordionSidebar">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <h6 class="collapse-header">Functions:</h6>
+                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>">Yo plz give a sub</a>
+                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'index']) ?>">Yo plz show the sub</a>
+                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'delete']) ?>">Unsubbing you bro</a>
+                                        </div>
+                                    </div>
+                                </li>
+                        <!-- Divider -->
+                                <hr class="sidebar-divider">
+
+                        <!-- Heading -->
+                        <div class="sidebar-heading">
+                            Account
+                        </div>
+
+
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
