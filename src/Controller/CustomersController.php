@@ -107,7 +107,7 @@ class CustomersController extends AppController
     {
 
     }
-   public function beforeFilter(\Cake\Event\EventInterface $event)
+/*   public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
@@ -115,9 +115,10 @@ class CustomersController extends AppController
         $this->Authentication->addUnauthenticatedActions(['login']);
         // Add to the beforeFilter method of UsersController
         $this->Authentication->addUnauthenticatedActions(['login', 'add']);
-    }
+    }*/
 
-    public function login()
+    public function login(){}
+    /*public function login()
     {
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
@@ -135,7 +136,7 @@ class CustomersController extends AppController
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid email or password'));
         }
-    }
+    }*/
     // in src/Controller/UsersController.php
     public function logout()
     {
