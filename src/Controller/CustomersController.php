@@ -107,12 +107,12 @@ class CustomersController extends AppController
     {
 
     }
-/*   public function beforeFilter(\Cake\Event\EventInterface $event)
+   public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        //$this->Authentication->addUnauthenticatedActions(['login']);
+        $this->Authentication->addUnauthenticatedActions(['login']);
         // Add to the beforeFilter method of UsersController
         $this->Authentication->addUnauthenticatedActions(['login', 'add']);
     }
@@ -145,5 +145,5 @@ class CustomersController extends AppController
             $this->Authentication->logout();
             return $this->redirect(['controller' => 'Customers', 'action' => 'login']);
         }
-    }*/
+    }
 }
