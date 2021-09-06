@@ -137,7 +137,6 @@
                                             <h6 class="collapse-header">Functions:</h6>
                                             <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>">Yo plz give a sub</a>
                                             <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'index']) ?>">Yo plz show the sub</a>
-                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'delete']) ?>">Unsubbing you bro</a>
                                         </div>
                                     </div>
                                 </li>
