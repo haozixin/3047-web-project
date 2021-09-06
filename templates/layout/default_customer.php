@@ -1,54 +1,3 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link      https://cakephp.org CakePHP(tm) Project
- * @since     0.10.0
- * @license   https://opensource.org/licenses/mit-license.php MIT License
- * @var \App\View\AppView $this
- */
-use Cake\Cache\Cache;
-use Cake\Core\Configure;
-use Cake\Core\Plugin;
-use Cake\Datasource\ConnectionManager;
-use Cake\Error\Debugger;
-use Cake\Http\Exception\NotFoundException;
-
-$this->disableAutoLayout();
-
-$checkConnection = function (string $name) {
-    $error = null;
-    $connected = false;
-    try {
-        $connection = ConnectionManager::get($name);
-        $connected = $connection->connect();
-    } catch (Exception $connectionError) {
-        $error = $connectionError->getMessage();
-        if (method_exists($connectionError, 'getAttributes')) {
-            $attributes = $connectionError->getAttributes();
-            if (isset($attributes['message'])) {
-                $error .= '<br />' . $attributes['message'];
-            }
-        }
-    }
-
-    return compact('connected', 'error');
-};
-
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace templates/Pages/home.php with your own version or re-enable debug mode.'
-    );
-endif;
-
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,7 +94,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Functions:</h6>
-                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>">List Product</a>
+                           <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Products</a>
 
 
                         </div>
@@ -172,7 +121,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <a class="collapse-item" href="login.html">Login</a>
                     <a class="collapse-item" href="register.html">Register</a>
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <a class="collapse-item" href="FAQ.html">FAQ</a>
+                    <a class="collapse-item" href="FAQ">FAQ</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="404.html">404 Page</a>
@@ -200,7 +149,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column" style="background-color:SaddleBrown;">
+    <div id="content-wrapper" class="d-flex flex-column">
 
         <!-- Main Content -->
         <div id="content" style="color:DarkOrange;">
@@ -208,8 +157,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
             <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
+                        <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
+                        <button  style="background-color:green"<i class="fas fa-keyboard"></i> Customer Side </button>
+
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -246,57 +196,25 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <div class="container-fluid">
                 <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
-                 <header class="text-white text-center" style="background-color:SaddleBrown;">
-                            <div class="container d-flex align-items-center flex-column">
-                                <!-- Masthead Avatar Image-->
-                                <img  src="/../img/Paul's Honey Logo.jpeg"  />
-                                <!-- Masthead Heading-->
-                                <h1 >Welcome to Pauls Honey!</h1>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom divider-light">
-                                    <div class="divider-custom-line"></div>
 
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!--  Subheading-->
-                                <p class="masthead-subheading font-weight-light mb-0">The Best you can get in the world!</p>
-                            </div>
-                             </div>
-
-
-                                                            <a href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>" class="btn-icon-split" style="background-color:Gold;" >
-                                                                <span class="icon text-white-50">
-                                                                    <i class="fas fa-bread-slice"></i>
-                                                                </span>
-                                                                <span class="text" style="color:black">Browse Recipes</span>
-                                                            </a>
-
-                                                            <a href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>" class=" btn-icon-split" style="background-color:Gold;">
-                                                                  <span class="icon text-white-50">
-                                                                      <i class="fas fa-beer"></i>
-                                                                  </span>
-                                                                  <span class="text" style="color:black">Browse Products</span>
-                                                                             </a>
-                                                                 <div class="my-2"></div>
 
 
             </div>
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span style="color:AliceBLue;">Pauls Healthy Honey 2021 </span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
             <!-- /.container-fluid -->
 
 
         </div>
         <!-- End of Main Content -->
 
-
+        <!-- Footer -->
+        <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span style="color:AliceBLue;">Pauls Healthy Honey 2021 </span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
@@ -352,3 +270,4 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 
 </html>
+

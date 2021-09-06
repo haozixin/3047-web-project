@@ -107,4 +107,12 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+        public function display()
+        {
+
+            $products = $this->paginate($this->Products);
+
+            $this->set(compact('products'));
+        }
 }

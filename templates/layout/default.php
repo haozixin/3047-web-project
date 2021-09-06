@@ -9,8 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <?= $this->Html->meta('icon') ?>
-
-
     <title><?= $this->Html->meta('icon') ?></title>
 
     <!-- Custom fonts for this template-->
@@ -52,7 +50,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="<?= $this->Url->build('/admins/homepage') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Home Page</span></a>
+                <span> Home Page</span></a>
         </li>
 
         <!-- Divider -->
@@ -115,6 +113,7 @@
                             <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>">List Product</a>
 
 
+
                         </div>
                     </div>
                 </li>
@@ -139,6 +138,7 @@
                     <a class="collapse-item" href="login.html">Login</a>
                     <a class="collapse-item" href="register.html">Register</a>
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                    <a class="collapse-item" href="FAQ">FAQ</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="404.html">404 Page</a>
@@ -147,19 +147,7 @@
             </div>
         </li>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
 
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -181,8 +169,10 @@
         <div id="content">
 
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
             <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
+            <button  style="background-color:green"<i class="fas fa-desktop"></i> Admin Side </button>
+            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
