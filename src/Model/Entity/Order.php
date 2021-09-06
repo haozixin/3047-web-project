@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate $deal_date
  * @property string $deal_comment
  * @property string $shipping_address
- * @property int $customer_id
+ * @property int|null $customer_id
  *
  * @property \App\Model\Entity\Customer $customer
  * @property \App\Model\Entity\Product[] $products
