@@ -43,7 +43,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * want to use in your application.
  */
 class Application extends BaseApplication
-    implements AuthenticationServiceProviderInterface
+//     implements AuthenticationServiceProviderInterface
 
 {
     /**
@@ -102,7 +102,7 @@ class Application extends BaseApplication
             ->add(new RoutingMiddleware($this))
             // add Authentication after RoutingMiddleware
             //for sign in
-            ->add(new AuthenticationMiddleware($this))
+//             ->add(new AuthenticationMiddleware($this))
 
             // Parse various types of encoded request bodies so that they are
             // available as array through $request->getData()
