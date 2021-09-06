@@ -101,8 +101,12 @@ class CustomersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
 
+    }
+    public function faq()
+    {
+
+    }
 /*   public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
