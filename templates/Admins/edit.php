@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Admin $admin
  */
 ?>
-<div class="row">
+<div class="h3 mb-2 text-gray-800">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
@@ -20,7 +20,7 @@
         <div class="admins form content">
             <?= $this->Form->create($admin) ?>
             <fieldset>
-                <legend><?= __('Edit Admin') ?></legend>
+                <legend><?= __('Edit The Admin') ?></legend>
                 <?php
                     echo $this->Form->control('given_name');
                     echo $this->Form->control('family_name');
