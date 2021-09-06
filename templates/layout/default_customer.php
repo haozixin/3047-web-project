@@ -95,6 +95,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Functions:</h6>
                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Products</a>
+                           <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsLetterSubscription','action'=>'display']) ?>">Newsletter Subscription</a>
 
 
                         </div>
@@ -125,7 +126,7 @@
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
+
                 </div>
             </div>
         </li>
