@@ -181,8 +181,7 @@ ALTER TABLE `product_recipes`
 ALTER TABLE `recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-ALTER TABLE `recipes`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `newsletter_subscriptions` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;
 
 
 ALTER TABLE `admin_agents`
