@@ -3,7 +3,6 @@
 <!-- in /templates/customers/login.php -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <?= $this->Html->charset() ?>
