@@ -88,8 +88,7 @@
                     <h6 class="collapse-header">Functions:</h6>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'add']) ?>">Add Recipes</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>">List Recipes</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>">Display Recipes</a>
-                </div>
+
             </div>
         </li>
 
@@ -135,7 +134,7 @@
                                          data-parent="#accordionSidebar">
                                         <div class="bg-white py-2 collapse-inner rounded">
                                             <h6 class="collapse-header">Functions:</h6>
-                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>">Subscribe Us</a>
+
                                             <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'index']) ?>">List Subscribed Customers</a>
                                         </div>
                                     </div>
@@ -145,7 +144,7 @@
 
                         <!-- Heading -->
                         <div class="sidebar-heading">
-                            Account
+                            Add-on
                         </div>
 
 
@@ -154,18 +153,14 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Login</span>
+                <span>Others</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
 
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'login']) ?>">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Switch to Customer</a>
 
                 </div>
             </div>

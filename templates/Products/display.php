@@ -21,7 +21,7 @@ $this->layout='default_customer';
                 <th><?= h('agent_price') ?></th>
                 <th><?= h('product_type') ?></th>
 
-                <th class="actions"><?= __('Actions') ?></th>
+
             </tr>
             </thead>
             <tbody>

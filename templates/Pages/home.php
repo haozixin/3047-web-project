@@ -145,7 +145,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Functions:</h6>
-                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>">List Product</a>
+                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Product</a>
 
 
                         </div>
@@ -156,7 +156,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Account
+            Add-on
         </div>
 
          <!-- Nav Item - Utilities Collapse Menu -->
@@ -181,7 +181,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    Account
+                    Add-on
                 </div>
 
 
@@ -190,18 +190,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Login</span>
+                <span>Others</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'add']) ?>">Switch to Admin</a>
                 </div>
             </div>
         </li>
@@ -234,7 +230,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
             <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
             <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
+            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>" style="background-color:green"<i class="fas fa-keyboard"></i> Customer Side </button>
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -296,13 +292,15 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                                                 <span class="text" style="color:black">Browse Recipes</span>
                                                             </a>
 
-                                                            <a href="<?= $this->Url->build(['controller'=>'Products','action'=>'index']) ?>" class=" btn-icon-split" style="background-color:Gold;">
+                                                            <a href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>" class=" btn-icon-split" style="background-color:Gold;">
                                                                   <span class="icon text-white-50">
                                                                       <i class="fas fa-beer"></i>
                                                                   </span>
                                                                   <span class="text" style="color:black">Browse Products</span>
                                                                              </a>
                                                                  <div class="my-2"></div>
+
+
 
 
             </div>
