@@ -3,41 +3,48 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Recipe[]|\Cake\Collection\CollectionInterface $recipes
  */
+echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
+
  $this->layout='default_customer';
 ?>
+<div class="products index content">
 
-<div class="recipes index content">
-    <h3><?= __('Recipes') ?></h3>
-    <div class="table-responsive">
-        <table>
+
+    <div class="table-responsive" >
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('title') ?></th>
-                    <th><?= $this->Paginator->sort('video_link') ?></th>
-                    <th><?= $this->Paginator->sort('photo') ?></th>
-                </tr>
+            <tr>
+                <th><?= h('id') ?></th>
+                <th><?= h('title') ?></th>
+                <th><?= h('video_link') ?></th>
+                <th><?= h('photo') ?></th>
+
+
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($recipes as $recipe): ?>
+            <?php foreach ($recipes as $recipes): ?>
                 <tr>
-                    <td><?= $this->Number->format($recipe->id) ?></td>
-                    <td><?= h($recipe->title) ?></td>
-                    <td><?= h($recipe->video_link) ?></td>
-                    <td><?= h($recipe->photo) ?></td>
+                    <td><?= $this->Number->format($recipes->id) ?></td>
+                    <td><?= h($recipes->title) ?></td>
+                    <td><?= h($recipes->video_link) ?></td>
+                    <td><?= h($recipes->photo) ?></td>
+
+
+
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
+
 </div>
+

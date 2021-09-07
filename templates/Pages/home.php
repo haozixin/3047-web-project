@@ -270,7 +270,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                  <header class="text-white text-center" style="background-color:SaddleBrown;">
                             <div class="container d-flex align-items-center flex-column">
                                 <!-- Masthead Avatar Image-->
-                                <img  src="/../img/Paul's Honey Logo.jpeg"  />
+                                <img  src="![]../../webroot/img/Paul's Honey Logo.jpeg"  />
                                 <!-- Masthead Heading-->
                                 <h1 >Welcome to Pauls Honey!</h1>
                                 <!-- Icon Divider-->
