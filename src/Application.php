@@ -151,32 +151,5 @@ class Application extends BaseApplication
         // Load more plugins here
     }
 
-    /*public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
-    {
-        $authenticationService = new AuthenticationService([
-            'unauthenticatedRedirect' => Router::url('/customers/login'),
-            'queryParam' => 'redirect',
-        ]);
 
-        // Load identifiers, ensure we check email and password fields
-        $authenticationService->loadIdentifier('Authentication.Password', [
-            'fields' => [
-                'email' => 'email',
-                'password' => 'password',
-            ]
-        ]);
-
-        // Load the authenticators, you want session first
-        $authenticationService->loadAuthenticator('Authentication.Session');
-        // Configure form data check to pick email and password
-        $authenticationService->loadAuthenticator('Authentication.Form', [
-            'fields' => [
-                'email' => 'email',
-                'password' => 'password',
-            ],
-            'loginUrl' => Router::url('/customers/login'),
-        ]);
-
-        return $authenticationService;
-    }*/
 }
