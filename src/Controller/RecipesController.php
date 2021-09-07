@@ -49,18 +49,30 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
 
-            $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+             //debug($this->request->getData('photo'));
+              //exit;
+
+            $recipeData = $this->request->getData();
+
+            // $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
 
 
-//      if(!$recipe -> getErrors){
-//             $photo = $this->request->getData('photo');
-//
-//             $name= $photo->getClientFilename();
-//             $targetPath= WWW_ROOT.'img'.DS.$name;
-//
-//              if($name)
-//               $photo->moveTo($targetPath);
-//                 $recipe -> photo= $name;}
+
+
+     if(!$recipe -> getErrors){
+            $photo = $this->request->getData('photo');
+
+            $name= $photo->getClientFilename();
+            $targetPath= WWW_ROOT.'img'.DS.$name;
+
+            // moving file to server
+             if($name){
+              $photo->moveTo($targetPath);
+                $recipeData['photo'] =  $name;}
+                }
+
+
+            $recipe = $this->Recipes->patchEntity($recipe, $recipeData);
 
 
             if ($this->Recipes->save($recipe)) {

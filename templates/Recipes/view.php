@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Photo') ?></th>
-                    <td><?= h($recipe->photo) ?></td>
+                    <td><?=$this->Html->image($recipe->photo, ['alt' => 'Recipe']); ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
