@@ -108,6 +108,7 @@ class UsersController extends AppController
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
         $this->Authentication->addUnauthenticatedActions(['login']);
+
     }
 
     public function login()
@@ -116,12 +117,13 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
 
 
+
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
             // redirect to /articles after login success
             $redirect = $this->request->getQuery('redirect', [
                 'controller' => 'Admins',
-                'action' => 'index',
+                'action' => 'homepage',
             ]);
 
 

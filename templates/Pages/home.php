@@ -190,13 +190,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Login</span>
+                <span>Login as admins</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
+                    <a class="collapse-item" href="login.html">Login as admins</a>
+                    <a class="collapse-item" href="register.html">Login as customers</a>
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
@@ -233,8 +233,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
             <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
+            <button  href="<?= $this->Url->build(['controller'=>'Admins','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
+            <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -274,7 +274,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                  <header class="text-white text-center" style="background-color:SaddleBrown;">
                             <div class="container d-flex align-items-center flex-column">
                                 <!-- Masthead Avatar Image-->
-                                <img  src="/../img/Paul's Honey Logo.jpeg"  />
+                                <img  src="![]../../webroot/img/Paul's Honey Logo.jpeg"  />
                                 <!-- Masthead Heading-->
                                 <h1 >Welcome to Pauls Honey!</h1>
                                 <!-- Icon Divider-->
