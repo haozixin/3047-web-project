@@ -31,7 +31,7 @@
                 <tr>
                     <td><?= $this->Number->format($recipe->id) ?></td>
                     <td><?= h($recipe->title) ?></td>
-                    <td><?= $this->Html->link("go to tutorial",$recipe->video_link) ?></td>
+                    <td><?= h($recipe->video_link) ?></td>
                      <td><?= $this->Html->image($recipe->photo,  array('height' => '110'));  ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>

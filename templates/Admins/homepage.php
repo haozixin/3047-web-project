@@ -161,7 +161,7 @@ $this->disableAutoLayout();
 
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>">Switch to Customer</a>
+
 
                 </div>
             </div>
@@ -205,7 +205,7 @@ $this->disableAutoLayout();
                                                                    <span class="text" style="color: black"> Switch to Admin</span>
                                                                </a>
                                                                <div class="my-2"></div>
-                <a href="<?= $this->Url->build(['controller'=>'Products','action'=>'Display']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                <a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
                                                                    <span class="icon text-white-50">
                                                                        <i class="fas fa-keyboard"></i>
                                                                    </span>

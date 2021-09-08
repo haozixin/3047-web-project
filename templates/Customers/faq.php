@@ -20,8 +20,8 @@ $this->layout=='default_customer';
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?= __('FAQs') ?></h1>
-        <a href="<?= $this->Url->build(['action' => 'add'])?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Start shopping!</a>
+        <a href="<?= $this->Url->build(['controller'=>'Products' ,'action' => 'display'])?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-shipping-fast"></i> Start shopping!</a>
     </div>
 
         </div>

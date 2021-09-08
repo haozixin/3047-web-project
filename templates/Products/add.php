@@ -27,17 +27,12 @@ $this ->Form->setTemplates($formTemplate);
               <?php
                 echo $this->Form->control('name');
                 echo $this->Form->control('description');
-                echo $this->Form->control('customer_unit_price($)');
-                echo $this->Form->control('agent_unit_price($)');
+                echo $this->Form->control('customer_price');
+                echo $this->Form->control('agent_price');
                 echo $this->Form->control('product_type');
                 echo $this->Form->control('date_of_manufacture');
                 echo $this->Form->control('expired_date');
-                echo $this->Form->control('order_id', ['options' => $orders, 'empty' => true]);
                 ?>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
 
                 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
                           <?= $this->Form->end() ?>

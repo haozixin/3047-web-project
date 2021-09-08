@@ -20,7 +20,7 @@
         <div class="newsletterSubscriptions form content">
             <?= $this->Form->create($newsletterSubscription) ?>
             <fieldset>
-                <legend><?= __('Add Newsletter Subscription') ?></legend>
+
                 <?php
                     echo $this->Form->control('customer_name');
                     echo $this->Form->control('customer_email');

@@ -53,11 +53,15 @@ class NewsletterSubscriptionsController extends AppController
                 $this->Flash->success(__('The newsletter subscription has been saved.'));
 
                 return $this->redirect(['action' => '/display']);
+
             }
-            $this->Flash->error(__('The newsletter subscription could not be saved. Please, try again.'));
-        }
-        $this->set(compact('newsletterSubscription'));
-    }
+
+     }
+             $this->Flash->success(__('The newsletter subscription email must be valid. Please try again.(abc@example.com)'));
+          $this->set(compact('newsletterSubscription')); }
+
+
+
 
     /**
      * Edit method
