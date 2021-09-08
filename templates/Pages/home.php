@@ -92,9 +92,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
-
                 <img    src="/../img/bee_fly.gif" width="50"  />
-
             <div class="sidebar-brand-text mx-3">Pauls Healthy Honey <sup>co</sup></div>
         </a>
 
@@ -194,10 +192,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-
+                <h6 class="collapse-header">Functions:</h6>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
-                    <div class="collapse-divider"></div>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'add']) ?>">Switch to Admin</a>
+
                 </div>
             </div>
         </li>
@@ -227,10 +224,30 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <div id="content" style="color:DarkOrange;">
 
             <!-- Topbar -->
+
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
-            <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Customers','action'=>'index']) ?>"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>" style="background-color:green"<i class="fas fa-keyboard"></i> Customer Side </button>
+               <a href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-envelope-square"></i>
+                                                    </span>
+                                                    <span class="text" style="color: black">Subscribe Us!</span>
+                                                </a>
+                                                <div class="my-2"></div>
+               <a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                                   <span class="icon text-white-50">
+                                                                       <i class="fas fa-desktop"></i>
+                                                                   </span>
+                                                                   <span class="text" style="color: black"> Switch to Admin</span>
+                                                               </a>
+                                                               <div class="my-2"></div>
+                <a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                                   <span class="icon text-white-50">
+                                                                       <i class="fas fa-keyboard"></i>
+                                                                   </span>
+                                                                   <span class="text" style="color: black">Switch to Customer</span>
+                                                               </a>
+                                                               <div class="my-2"></div>
+
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>

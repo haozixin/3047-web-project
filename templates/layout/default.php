@@ -35,9 +35,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/admins/homepage') ?>">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-blender fa-rotate-80"></i>
-            </div>
+            <img    src="/../img/bee_fly.gif" width="50"  />
             <div class="sidebar-brand-text mx-3">Pauls Healthy Honey <sup>co</sup></div>
         </a>
 
@@ -47,7 +45,7 @@
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
             <a class="nav-link" href="<?= $this->Url->build('/') ?>">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-home"></i>
                 <span> Home Page</span></a>
         </li>
 
@@ -63,7 +61,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-users fa-cog"></i>
+                <i class="fas fa-file"></i>
                 <span>Customers</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -160,7 +158,7 @@
 
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Switch to Customer</a>
+
 
                 </div>
             </div>
@@ -187,43 +185,62 @@
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
-            <button <i class="fas fa-newsletter"></i> Subscribe Newsletter </button>
-            <button  style="background-color:green"<i class="fas fa-desktop"></i> Admin Side </button>
-            <button  href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'index']) ?>"<i class="fas fa-keyboard"></i> Customer Side </button>
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
+             <!-- Topbar -->
+
+                        <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
+                           <a href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-envelope-square"></i>
+                                                                </span>
+                                                                <span class="text" style="color: black">Subscribe Us!</span>
+                                                            </a>
+                                                            <div class="my-2"></div>
+                           <a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                                               <span class="icon text-white-50">
+                                                                                   <i class="fas fa-desktop"></i>
+                                                                               </span>
+                                                                               <span class="text" style="color: black"> Switch to Admin</span>
+                                                                           </a>
+                                                                           <div class="my-2"></div>
+                            <a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                                                                               <span class="icon text-white-50">
+                                                                                   <i class="fas fa-keyboard"></i>
+                                                                               </span>
+                                                                               <span class="text" style="color: black">Switch to Customer</span>
+                                                                           </a>
+                                                                           <div class="my-2"></div>
+
+                            <!-- Sidebar Toggle (Topbar) -->
+                            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <i class="fa fa-bars"></i>
+                            </button>
 
 
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
+                            <!-- Topbar Navbar -->
+                            <ul class="navbar-nav ml-auto">
 
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <!-- Nav Item - User Information -->
+                                <li class="nav-item dropdown no-arrow">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
 
-                            <?=$this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle'])?>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                        <?=$this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle'])?>
+                                    </a>
+                                    <!-- Dropdown - User Information -->
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Logout
+                                        </a>
+                                    </div>
+                                </li>
 
-                </ul>
+                            </ul>
 
-            </nav>
-            <!-- End of Topbar -->
-
+                        </nav>
+                        <!-- End of Topbar -->
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <?= $this->Flash->render() ?>

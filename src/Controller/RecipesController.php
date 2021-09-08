@@ -49,8 +49,8 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
 
-             //debug($this->request->getData('photo'));
-              //exit;
+//              debug($this->request->getData());
+//               exit;
 
             $recipeData = $this->request->getData();
 
@@ -58,8 +58,7 @@ class RecipesController extends AppController
 
 
 
-
-     if(!$recipe -> getErrors){
+     if(!$recipe -> getErrors) {
             $photo = $this->request->getData('photo');
 
             $name= $photo->getClientFilename();
@@ -68,7 +67,7 @@ class RecipesController extends AppController
             // moving file to server
              if($name){
               $photo->moveTo($targetPath);
-                $recipeData['photo'] =  $name;}
+                $recipeData['photo'] = $name;}
                 }
 
 
@@ -132,6 +131,7 @@ class RecipesController extends AppController
 
    public function display()
     {
+
         $recipes = $this->paginate($this->Recipes);
 
         $this->set(compact('recipes'));
