@@ -30,12 +30,12 @@ use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 
 // In src/Application.php add the following imports
-use Authentication\AuthenticationService;
-use Authentication\AuthenticationServiceInterface;
-use Authentication\AuthenticationServiceProviderInterface;
-use Authentication\Middleware\AuthenticationMiddleware;
-use Cake\Routing\Router;
-use Psr\Http\Message\ServerRequestInterface;
+// use Authentication\AuthenticationService;
+// use Authentication\AuthenticationServiceInterface;
+// use Authentication\AuthenticationServiceProviderInterface;
+// use Authentication\Middleware\AuthenticationMiddleware;
+// use Cake\Routing\Router;
+// use Psr\Http\Message\ServerRequestInterface;
 /**
  * Application setup class.
  *
@@ -43,7 +43,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * want to use in your application.
  */
 class Application extends BaseApplication
-    implements AuthenticationServiceProviderInterface
+
 
 {
     /**
@@ -115,40 +115,40 @@ class Application extends BaseApplication
             ->add(new RoutingMiddleware($this))
             // add Authentication after RoutingMiddleware
             //for sign in
-            ->add(new AuthenticationMiddleware($this))
+//             ->add(new AuthenticationMiddleware($this))
             ;
 
 
         return $middlewareQueue;
     }
-    public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
-    {
-        $authenticationService = new AuthenticationService([
-            'unauthenticatedRedirect' => Router::url('/users/login'),
-            'queryParam' => 'redirect',
-        ]);
-
-        // Load identifiers, ensure we check email and password fields
-        $authenticationService->loadIdentifier('Authentication.Password', [
-            'fields' => [
-                'username' => 'email',
-                'password' => 'password',
-            ]
-        ]);
-
-        // Load the authenticators, you want session first
-        $authenticationService->loadAuthenticator('Authentication.Session');
-        // Configure form data check to pick email and password
-        $authenticationService->loadAuthenticator('Authentication.Form', [
-            'fields' => [
-                'username' => 'email',
-                'password' => 'password',
-            ],
-            'loginUrl' => Router::url('/users/login'),
-        ]);
-
-        return $authenticationService;
-    }
+//     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
+//     {
+//         $authenticationService = new AuthenticationService([
+//             'unauthenticatedRedirect' => Router::url('/users/login'),
+//             'queryParam' => 'redirect',
+//         ]);
+//
+//         // Load identifiers, ensure we check email and password fields
+//         $authenticationService->loadIdentifier('Authentication.Password', [
+//             'fields' => [
+//                 'username' => 'email',
+//                 'password' => 'password',
+//             ]
+//         ]);
+//
+//         // Load the authenticators, you want session first
+//         $authenticationService->loadAuthenticator('Authentication.Session');
+//         // Configure form data check to pick email and password
+//         $authenticationService->loadAuthenticator('Authentication.Form', [
+//             'fields' => [
+//                 'username' => 'email',
+//                 'password' => 'password',
+//             ],
+//             'loginUrl' => Router::url('/users/login'),
+//         ]);
+//
+//         return $authenticationService;
+//     }
 
     /**
      * Register application container services.
@@ -179,7 +179,7 @@ class Application extends BaseApplication
         $this->addPlugin('Migrations');
 
         // Load more plugins here
-        $this->addPlugin('Authentication.Authentication');
+//         $this->addPlugin('Authentication.Authentication');
     }
 
 

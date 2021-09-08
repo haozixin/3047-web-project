@@ -52,7 +52,7 @@ class NewsletterSubscriptionsController extends AppController
             if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
                 $this->Flash->success(__('The newsletter subscription has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => '/display']);
             }
             $this->Flash->error(__('The newsletter subscription could not be saved. Please, try again.'));
         }
@@ -102,4 +102,8 @@ class NewsletterSubscriptionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function display()
+        {
+
+        }
 }
