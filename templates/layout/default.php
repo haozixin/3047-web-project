@@ -46,7 +46,7 @@
 
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/') ?>">
+            <a class="nav-link" href="<?= $this->Url->build('/admins/homepage') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span> Home Page</span></a>
         </li>
@@ -270,7 +270,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="<?= $this->Url->build(['controller'=>'Users','action'=>'login']) ?>">Logout</a>
             </div>
         </div>
     </div>
