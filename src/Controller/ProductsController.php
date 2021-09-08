@@ -57,8 +57,9 @@ class ProductsController extends AppController
             $customer_price = $product->customer_price;
             $agent_price = $product->agent_price;
             $status=false;
-            if($customer_price<=0 or $agent_price<=0) {
-                $this->Flash->success(__('You must input a valid unit price'));
+
+            if(($customer_price<=0||$customer_price>1000) or ($agent_price<=0||$agent_price>1000)) {
+                $this->Flash->success(__('You must input a valid unit price, the range should be 0-1000'));
                 if ($expired_date<$manufacture) {
                     $this->Flash->success(__('And the expired date cannot be early than the date of manufacture'));
                 }
@@ -72,8 +73,8 @@ class ProductsController extends AppController
                 }
             }
 
-
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+            $this->Flash->success('The product could not be saved. Please, try again.');
+            //$this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
 
         $orders = $this->Products->Orders->find('list', ['limit' => 200]);
