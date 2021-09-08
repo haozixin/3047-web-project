@@ -92,9 +92,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-blender fa-rotate-80"></i>
-            </div>
+
+                <img    src="/../img/bee_fly.gif" width="50"  />
+
             <div class="sidebar-brand-text mx-3">Pauls Healthy Honey <sup>co</sup></div>
         </a>
 
@@ -104,7 +104,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
             <a class="nav-link" href="<?= $this->Url->build('/')?>">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="	fas fa-home"></i>
                 <span> Home Page</span></a>
         </li>
 
@@ -163,7 +163,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
                                aria-expanded="true" aria-controls="collapseUtilities">
-                                <i class="fas fa-fw fa-beer"></i>
+                                <i class="fas fa-clipboard"></i>
                                 <span>Newsletter</span>
                             </a>
                             <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
@@ -270,7 +270,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                  <header class="text-white text-center" style="background-color:SaddleBrown;">
                             <div class="container d-flex align-items-center flex-column">
                                 <!-- Masthead Avatar Image-->
-                                <img  src="/../img/Paul's Honey Logo.jpeg"  />
+                                <img  src="/../img/honey_pour.gif"  />
                                 <!-- Masthead Heading-->
                                 <h1 >Welcome to Pauls Honey!</h1>
                                 <!-- Icon Divider-->
