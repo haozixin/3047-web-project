@@ -66,6 +66,8 @@ class NewsletterSubscriptionsTable extends Table
             ->requirePresence('customer_email', 'create')
             ->notEmptyString('customer_email');
 
+
+
         return $validator;
     }
 }
