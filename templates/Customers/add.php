@@ -28,12 +28,9 @@ $this->Form->setTemplates($formTemplate);
     echo $this->Form->control('street');
     echo $this->Form->control('user_name');
     echo $this->Form->control('password');
-    echo $this->Form->control('subscription_status');
+    echo $this->Form->control('subscription_status(type "yes" to subscribe)');
     ?>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
+
 
 <?= $this->Form->button(__('Submit'),['class'=>'btn-primary' ]) ?>
 <?= $this->Form->end() ?>

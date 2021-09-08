@@ -110,4 +110,29 @@ class NewsletterSubscriptionsController extends AppController
         {
 
         }
+        public function addCustomer(){$newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+                                              $this->loadModel('Customers');
+                                              $email=$this->getRequest()->getSession()->read('email');
+
+                                              $fname=$this->getRequest()->getSession()->read('family_name');
+                                              $gname=$this->getRequest()->getSession()->read('given_name');
+                                              $name=$gname . ' ' . $fname;
+
+
+//                                               $newsletterSubscription['customer_name']=$fname+$gname;
+                                              $newsletterSubscription['customer_email']=$email;
+                                              $newsletterSubscription['customer_name']=$name;
+
+
+
+
+        $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+        }
+
+
+
+
 }
+
+
