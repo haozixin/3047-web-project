@@ -45,36 +45,37 @@ class CustomersController extends AppController
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
     public function add()
-
     {
         $customer = $this->Customers->newEmptyEntity();
         if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
-//                             $sub= $this->request->getData('subscription_status(type_');
-//                             $email=$this->request->getData('email');
-//                             $fname= $this->request->getData('family_name');
-//                             $gname= $this->request->getData('given_name');
-//
-//                              $key=$this->request->getData('email');
-//                             $session = $this->getRequest()->getSession();
-//                               $session->write(['email'=> $email,'family_name' => $fname,
-//                                                               'given_name' => $gname]);
-//                               $session->read('email');
-//                               $session->read('family_name');
-//                               $session->read('given_name');
+            $sub= $this->request->getData('subscription_status');
+//            debug($customer);
+//            debug($sub);
+            $email=$this->request->getData('email');
+            $fname= $this->request->getData('family_name');
+            $gname= $this->request->getData('given_name');
+
+            $key=$this->request->getData('email');
+            $session = $this->getRequest()->getSession();
+            $session->write(['email'=> $email,'family_name' => $fname,
+                                           'given_name' => $gname]);
+            $session->read('email');
+            $session->read('family_name');
+            $session->read('given_name');
+
             if ($this->Customers->save($customer)) {
+
                 $this->Flash->success(__('The customer has been saved.'));
-//                 if($sub == 'yes'){ $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'addCustomer']); }
+                if($sub == 'yes'){ $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']); }
+
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The customer could not be saved. Please, try again.'));
-
         }
         $this->set(compact('customer'));
-
     }
-
 
     /**
      * Edit method
