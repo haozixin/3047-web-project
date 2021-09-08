@@ -60,7 +60,21 @@ class NewsletterSubscriptionsController extends AppController
              $this->Flash->success(__('The newsletter subscription email must be valid. Please try again.(abc@example.com)'));
           $this->set(compact('newsletterSubscription')); }
 
+    public function addCustomer(){$newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+        $this->loadModel('Customers');
+        $email=$this->getRequest()->getSession()->read('email');
 
+        $fname=$this->getRequest()->getSession()->read('family_name');
+        $gname=$this->getRequest()->getSession()->read('given_name');
+        $name=$gname . ' ' . $fname;
+
+        $newsletterSubscription['customer_email']=$email;
+        $newsletterSubscription['customer_name']=$name;
+
+
+        $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+    }
 
 
     /**
@@ -82,8 +96,9 @@ class NewsletterSubscriptionsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The newsletter subscription could not be saved. Please, try again.'));
+
         }
+        $this->Flash->success(__('The newsletter subscription could not be saved. Please, try again.'));
         $this->set(compact('newsletterSubscription'));
     }
 
