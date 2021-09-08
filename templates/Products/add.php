@@ -17,7 +17,7 @@ $formTemplate=[
 
 $this ->Form->setTemplates($formTemplate);
 ?>
-<h1 class="h3 mb-2 text-grey-800">Add Products</h1>
+
 
     <div class="column-responsive column-80">
         <div class="products form content">
@@ -27,8 +27,8 @@ $this ->Form->setTemplates($formTemplate);
               <?php
                 echo $this->Form->control('name');
                 echo $this->Form->control('description');
-                echo $this->Form->control('customer_price');
-                echo $this->Form->control('agent_price');
+                echo $this->Form->control('customer_unit_price($)');
+                echo $this->Form->control('agent_unit_price($)');
                 echo $this->Form->control('product_type');
                 echo $this->Form->control('date_of_manufacture');
                 echo $this->Form->control('expired_date');
