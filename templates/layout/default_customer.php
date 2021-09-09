@@ -42,7 +42,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
             <img    src="/../img/bee_fly.gif" width="50"  />
-            <div class="sidebar-brand-text mx-3">Pauls Healthy Honey <sup>co</sup></div>
+            <div class="sidebar-brand-text mx-3">Heartys Healthy Honey <sup>co</sup></div>
         </a>
 
         <!-- Divider -->
@@ -60,7 +60,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            About Pauls Honey
+            About Heartys Honey
         </div>
 
         <!-- Nav Item - Utilities Collapse Menu -->
@@ -245,7 +245,7 @@
         <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span style="color:AliceBLue;">Pauls Healthy Honey 2021 </span>
+                    <span style="color:AliceBLue;">Heartys Healthy Honey 2021 </span>
                 </div>
             </div>
         </footer>
