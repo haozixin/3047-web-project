@@ -54,11 +54,12 @@ class RecipesController extends AppController
 
             $recipeData = $this->request->getData();
 
+
             // $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
 
 
 
-     if(!$recipe -> getErrors) {
+     if(!$recipe -> getErrors  ){
             $photo = $this->request->getData('photo');
 
             $name= $photo->getClientFilename();
@@ -78,6 +79,7 @@ class RecipesController extends AppController
                 $this->Flash->success(__('The recipe has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
+
             }
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }

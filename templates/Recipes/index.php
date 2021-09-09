@@ -21,6 +21,7 @@
                 <tr>
                     <th><?= h('id') ?></th>
                     <th><?= h('title') ?></th>
+                     <th><?= h('description') ?></th>
                     <th><?= ('video_link'); ?></th>
                      <th><?= h('photo') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -31,6 +32,7 @@
                 <tr>
                     <td><?= $this->Number->format($recipe->id) ?></td>
                     <td><?= h($recipe->title) ?></td>
+                    <td><?= h($recipe->description) ?></td>
                     <td><?= h($recipe->video_link) ?></td>
                      <td><?= $this->Html->image($recipe->photo,  array('height' => '110'));  ?></td>
                     <td class="actions">

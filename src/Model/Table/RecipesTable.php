@@ -78,7 +78,7 @@ class RecipesTable extends Table
 
 
         $validator
-                    ->allowEmptyFile('photo')
+                    ->requirePresence('photo', 'create')
                     ->add( 'image', [
                     'mimeType' => [
                         'rule' => [ 'mimeType', [ 'image/jpg', 'image/png', 'image/jpeg' ] ],
@@ -87,7 +87,7 @@ class RecipesTable extends Table
                     'fileSize' => [
                         'rule' => [ 'fileSize', '<=', '1MB' ],
                         'message' => 'Image file size must be less than 1MB.',
-                    ],
+                    ]
                 ] );
 
 
