@@ -91,7 +91,11 @@ class CustomersTable extends Table
             ->requirePresence('country', 'create')
             ->notEmptyString('country');
         $validator
-            ->email('email')
+            ->add("email", [
+                            "valid_email" => [
+                                "rule" => ["email"],
+                                "message" => "Email Address is not valid Please try again.(e.g.abc@example.com)",
+                            ]])
             ->requirePresence('email', 'create')
             ->notEmptyString('email');
 
@@ -109,7 +113,7 @@ class CustomersTable extends Table
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 64)
+            ->maxLength('password', 640)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 

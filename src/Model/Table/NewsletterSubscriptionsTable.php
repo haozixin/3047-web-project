@@ -61,12 +61,11 @@ class NewsletterSubscriptionsTable extends Table
             ->notEmptyString('customer_name');
 
         $validator
-//             ->setStopOnFailure()
-            ->scalar('customer_email')
-            ->maxLength('customer_email', 200)
             ->requirePresence('customer_email', 'create')
             ->notEmptyString('customer_email')
-            ->email('customer_email');
+            ->add('customer_email', 'email', [
+                 'rule' => 'email',
+                 'message' => 'The email is not in a correct form (e.g.abc@example.com' ]);
 
             return $validator;
     }
