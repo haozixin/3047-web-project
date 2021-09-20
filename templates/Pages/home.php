@@ -50,345 +50,1087 @@ endif;
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+<meta charset="utf-8">
+<title>Healty Honey | Homepage </title>
+<?= $this->Html->meta('icon') ?>
+<title><?= $this->Html->meta('icon') ?></title>
 
-    <?= $this->Html->charset() ?>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <?= $this->Html->meta('icon') ?>
+<!-- Stylesheets -->
 
-
-    <title><?= $this->Html->meta('icon') ?></title>
-
-    <!-- Custom fonts for this template-->
-    <?= $this->Html->css('/vendor/fontawesome-free/css/all.min.css') ?>
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <?= $this->Html->css('sb-admin-2.min.css') ?>
+<?= $this->Html->css('bootstrap.css') ?>
+<?= $this->Html->css('style.css') ?>
+<?= $this->Html->css('responsive.css') ?>
+<link href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<?= $this->Html->css('img/favicon.png') ?>
 
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
 
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<?= $this->Html->css('sb-admin-2.min.css') ?>
+<?= $this->fetch('meta') ?>
+<?= $this->fetch('css') ?>
+<?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
+<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
-<body id="page-top">
+<body class="hidden-bar-wrapper">
 
+<div class="page-wrapper">
 
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+ 	<!-- Main Header-->
+    <header class="main-header header-style-one">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+		<!-- Header Upper -->
+        <div class="header-upper">
+        	<div class="auto-container clearfix">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
-                <img    src="/../img/bee_fly.gif" width="50"  />
-            <div class="sidebar-brand-text mx-3">Heartys Healthy Honey <sup>co</sup></div>
-        </a>
+				<div class="pull-left logo-box">
+					<div class="logo"><a href="index.html"><img src="img/logo.png" alt="" title=""></a></div>
+				</div>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+				<div class="nav-outer clearfix">
+					<!--Mobile Navigation Toggler-->
+					<div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+					<!-- Main Menu -->
+					<nav class="main-menu navbar-expand-md">
+						<div class="navbar-header">
+							<!-- Toggle Button -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
 
-        <!-- Nav Item - Home Page -->
-        <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/')?>">
-                <i class="	fas fa-home"></i>
-                <span> Home Page</span></a>
-        </li>
+						<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+							<ul class="navigation clearfix">
+								<li class="current dropdown"><a href="#">Home</a>
+									<ul>
+										<li><a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>">Admins HomePage</a></li>
+										<li class="dropdown"><a href="">Agent HomePage</a>
+										    <ul>
+												<li><a href="">go somewhere</a></li>
+												<li><a href="">go somewhere</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">About</a>
+									<ul>
+										<li><a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'about']) ?>">About Us</a></li>
+										<li><a href="">Team</a></li>
+										<li><a href="">Our Stores</a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">Products</a>
+									<ul>
+										<li><a href="">display products</a></li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">Gallery</a>
+									<ul>
+										<li><a href="gallery.html">Gallery</a></li>
+										<li><a href="gallery-2.html">Gallery 02</a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">Blog</a>
+									<ul>
+										<li><a href="blog-classic.html">Blog Classic</a></li>
+										<li><a href="news-detail.html">Blog Single</a></li>
+										<li><a href="news-detail-2.html">Blog Single 02</a></li>
+										<li><a href="not-found.html">Not Found</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact us</a></li>
+							</ul>
+						</div>
+					</nav>
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            About Heartys Honey
+					<!-- Main Menu End-->
+					<div class="outer-box clearfix">
+
+						<!-- Search Btn -->
+						<div class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span></div>
+
+						<!-- Nav Btn -->
+						<div class="nav-btn navSidebar-button"><span class="icon flaticon-menu-2"></span></div>
+
+					</div>
+				</div>
+
+            </div>
         </div>
+        <!--End Header Upper-->
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-file"></i>
-                <span>Recipes</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>">Display Recipes</a>
+		<!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="index.html" title=""><img src="img/logo-small.png" alt="" title=""></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav><!-- Main Menu End-->
+
+					<!-- Main Menu End-->
+					<div class="outer-box clearfix">
+
+						<!-- Search Btn -->
+						<div class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span></div>
+
+						<!-- Nav Btn -->
+						<div class="nav-btn navSidebar-button"><span class="icon flaticon-menu-2"></span></div>
+
+					</div>
+
                 </div>
             </div>
-        </li>
+        </div><!-- End Sticky Menu -->
 
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseproducts"
-                       aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-beer"></i>
-                        <span>Products</span>
-                    </a>
-                    <div id="collapseproducts" class="collapse" aria-labelledby="headingproducts"
-                         data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Functions:</h6>
-                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Product</a>
-
-
-                        </div>
-                    </div>
-                </li>
-        <!-- Divider -->
-                <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Add-on
-        </div>
-
-         <!-- Nav Item - Utilities Collapse Menu -->
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
-                               aria-expanded="true" aria-controls="collapseUtilities">
-                                <i class="fas fa-clipboard"></i>
-                                <span>Newsletter</span>
-                            </a>
-                            <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
-                                 data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                    <h6 class="collapse-header">Functions:</h6>
-                                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>"> Subscribe Us</a>
-
-
-                                </div>
-                            </div>
-                        </li>
-                <!-- Divider -->
-                        <hr class="sidebar-divider">
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Add-on
-                </div>
-
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Others</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
-
-                </div>
-            </div>
-        </li>
-
-
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-
-
-    </ul>
-    <!-- End of Sidebar -->
-
-
-
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column" style="background-color:SaddleBrown;">
-
-        <!-- Main Content -->
-        <div id="content" style="color:DarkOrange;">
-
-            <!-- Topbar -->
-
-            <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
-               <a href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-envelope-square"></i>
-                                                    </span>
-                                                    <span class="text" style="color: black">Subscribe Us!</span>
-                                                </a>
-                                                <div class="my-2"></div>
-               <a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
-                                                                   <span class="icon text-white-50">
-                                                                       <i class="fas fa-desktop"></i>
-                                                                   </span>
-                                                                   <span class="text" style="color: black"> Switch to Admin</span>
-                                                               </a>
-                                                               <div class="my-2"></div>
-                <a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
-                                                                   <span class="icon text-white-50">
-                                                                       <i class="fas fa-keyboard"></i>
-                                                                   </span>
-                                                                   <span class="text" style="color: black">Switch to Customer</span>
-                                                               </a>
-                                                               <div class="my-2"></div>
-
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-
-                            <?=$this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle'])?>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
-
-                </ul>
-
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="img/logo-2.png" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
             </nav>
-            <!-- End of Topbar -->
+        </div><!-- End Mobile Menu -->
 
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <?= $this->Flash->render() ?>
-                <?= $this->fetch('content') ?>
-                 <header class="text-white text-center" style="background-color:SaddleBrown;">
-                            <div class="container d-flex align-items-center flex-column">
-                                <!-- Masthead Avatar Image-->
-                                <img  src="/../img/honey_pour.gif"  />
-                                <!-- Masthead Heading-->
-                                <h1 >Welcome to Heartys Honey!</h1>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom divider-light">
-                                    <div class="divider-custom-line"></div>
+    </header>
+    <!-- End Main Header -->
 
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!--  Subheading-->
-                                <p class="masthead-subheading font-weight-light mb-0">The Best you can get in the world!</p>
-                            </div>
-                             </div>
+	<!-- Sidebar Cart Item -->
+	<div class="xs-sidebar-group info-group">
+		<div class="xs-overlay xs-bg-black"></div>
+		<div class="xs-sidebar-widget">
+			<div class="sidebar-widget-container">
+				<div class="widget-heading">
+					<a href="#" class="close-side-widget">
+						X
+					</a>
+				</div>
+				<div class="sidebar-textwidget">
 
+					<!-- Sidebar Info Content -->
+					<div class="sidebar-info-contents">
+						<div class="content-inner">
+							<div class="logo">
+								<a href="index.html"><img src="img/logo.png" alt="" /></a>
+							</div>
+							<div class="content-box">
+								<h2>About Us</h2>
+								<p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+								<a href="contact.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
+							</div>
+							<div class="contact-info">
+								<h2>Contact Info</h2>
+								<ul class="list-style-one">
+									<li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+									<li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+									<li><span class="icon fa fa-envelope"></span>foodily@gmail.com</li>
+									<li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+								</ul>
+							</div>
+							<!-- Social Box -->
+							<ul class="social-box">
+								<li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+								<li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+								<li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+								<li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+								<li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+							</ul>
+						</div>
+					</div>
 
-                                                            <a href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>" class="btn-icon-split" style="background-color:Gold;" >
-                                                                <span class="icon text-white-50">
-                                                                    <i class="fas fa-bread-slice"></i>
-                                                                </span>
-                                                                <span class="text" style="color:black">Browse Recipes</span>
-                                                            </a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END sidebar widget item -->
 
-                                                            <a href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>" class=" btn-icon-split" style="background-color:Gold;">
-                                                                  <span class="icon text-white-50">
-                                                                      <i class="fas fa-beer"></i>
-                                                                  </span>
-                                                                  <span class="text" style="color:black">Browse Products</span>
-                                                                             </a>
-                                                                 <div class="my-2"></div>
+	<!-- Banner Section -->
+    <section class="banner-section">
+		<div class="pattern-layer" style="background-image: url(img/main-slider/pattern-1.png)"></div>
+		<div class="main-slider-carousel owl-carousel owl-theme">
 
+			<!-- Slide -->
+            <div class="slide">
+				<div class="icon-layer-one" style="background-image: url(img/main-slider/icon-1.png)"></div>
+				<div class="icon-layer-two" style="background-image: url(img/main-slider/icon-2.png)"></div>
+				<div class="auto-container">
+					<div class="row clearfix">
 
+						<!-- Content Column -->
+						<div class="content-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+								<div class="btns-box">
+									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
+								</div>
+								<div class="icons-box">
+									<img src="img/main-slider/icons.png" alt="" />
+								</div>
+							</div>
+						</div>
 
+						<!-- Image Column -->
+						<div class="image-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<div class="icon-layer-three" style="background-image: url(img/main-slider/icon-3.png)"></div>
+								<div class="image">
+									<img src="img/main-slider/content-image-1.png" alt="" />
+								</div>
+							</div>
+						</div>
 
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide -->
+            <div class="slide">
+				<div class="icon-layer-one" style="background-image: url(img/main-slider/icon-1.png)"></div>
+				<div class="icon-layer-two" style="background-image: url(img/main-slider/icon-6.png)"></div>
+				<div class="auto-container">
+					<div class="row clearfix">
+
+						<!-- Content Column -->
+						<div class="content-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+								<div class="btns-box">
+									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
+								</div>
+								<div class="icons-box">
+									<img src="img/main-slider/icons.png" alt="" />
+								</div>
+							</div>
+						</div>
+
+						<!-- Image Column -->
+						<div class="image-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<div class="icon-layer-three" style="background-image: url(img/main-slider/icon-3.png)"></div>
+								<div class="image">
+									<img src="img/main-slider/content-image-2.png" alt="" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide -->
+            <div class="slide style-two">
+				<div class="icon-layer-one" style="background-image: url(img/main-slider/icon-1.png)"></div>
+				<div class="icon-layer-two" style="background-image: url(img/main-slider/icon-7.png)"></div>
+				<div class="auto-container">
+					<div class="row clearfix">
+
+						<!-- Content Column -->
+						<div class="content-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+								<div class="btns-box">
+									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
+								</div>
+								<div class="icons-box">
+									<img src="img/main-slider/icons.png" alt="" />
+								</div>
+							</div>
+						</div>
+
+						<!-- Image Column -->
+						<div class="image-column col-lg-6 col-md-12 col-sm-12">
+							<div class="inner-column">
+								<div class="icon-layer-three" style="background-image: url(img/main-slider/icon-3.png)"></div>
+								<div class="image">
+									<img src="img/main-slider/content-image-3.png" alt="" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- End Banner Section -->
+
+	<!-- Juice Section -->
+    <section class="juice-section">
+		<div class="section-text">yummy</div>
+		<div class="pattern-layer" style="background-image: url(img/background/1.png)"></div>
+		<div class="pattern-layer-two" style="background-image: url(img/resource/juice-glass.png)"></div>
+		<div class="auto-container">
+			<div class="row clearfix">
+
+				<!-- Image Column -->
+				<div class="image-column col-lg-7 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<div class="image">
+							<img src="img/resource/juice.png" alt="" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Content Column -->
+				<div class="content-column col-lg-5 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<!-- Sec Title -->
+						<div class="sec-title">
+							<div class="title">Drink for Health</div>
+							<h2>Fresh Fruit <span class="theme_color">Juices</span></h2>
+							<div class="separate"></div>
+							<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae intellegam. Ansed dictas accumsan. Nam sint atqui voluptatibus an, pro ne malis semper perpetua. Nam sint atqui voluptatibus an, pro ne malis semper perpetua.</div>
+						</div>
+						<a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Buy Now</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Juice Section -->
+
+	<!-- Beverage Section -->
+    <section class="beverage-section">
+		<div class="icon-layer" style="background-image: url(img/resource/beverage.png)"></div>
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="title">Best for You</div>
+				<h2>Our Beverage</h2>
+				<div class="separate"></div>
+			</div>
+			<div class="row clearfix">
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-1.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Milkshake</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-2.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Frappe</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-3.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Boba Drinks</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-4.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Mojito</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-5.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Slushy</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-6.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">Hot Chocolate</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-7.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">smoothie</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Beverage Column -->
+				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="milkshake.html"><img src="img/resource/beverage-8.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h6><a href="milkshake.html">coffee</a></h6>
+							<div class="products">3 products</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Button Box -->
+			<div class="button-box text-center">
+				<a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>View All Products</a>
+			</div>
+
+		</div>
+	</section>
+	<!-- End Beverage Section -->
+
+	<!-- Deal Section -->
+    <section class="deal-section" style="background-image: url(img/background/2.jpg)">
+		<div class="top-pattern-layer" style="background-image: url(img/background/pattern-1.png)"></div>
+		<div class="bottom-pattern-layer" style="background-image: url(img/background/pattern-2.png)"></div>
+		<div class="auto-container">
+			<div class="content-box" style="background-image: url(img/resource/deal.png)">
+				<div class="box-inner">
+					<!-- Sec Title -->
+					<div class="sec-title light centered">
+						<div class="title">30% Off For juice</div>
+						<h2>Big Deals of the Week</h2>
+						<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae <br> intellegam. Ansed dictas accumsan. </div>
+					</div>
+					<!-- Email Form -->
+					<div class="email-form">
+						<div class="email-title">To Get New Of Our Deals</div>
+						<form method="post" action="contact.html">
+							<div class="form-group">
+								<input type="email" name="email" value="" placeholder="type your email" required>
+								<button type="submit" class="submit-btn"><span class="icon flaticon-send"></span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Deal Section -->
+
+	<!-- Recipe Section -->
+    <section class="recipe-section">
+		<div class="section-text">yummy</div>
+		<div class="icon-layer-one" style="background-image: url(img/icons/icon-1.png)"></div>
+		<div class="icon-layer-two" style="background-image: url(img/icons/icon-2.png)"></div>
+		<div class="icon-layer-three" style="background-image: url(img/icons/icon-3.png)"></div>
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="title">Best for You</div>
+				<h2>Detox Smoothie Recipe</h2>
+				<div class="separate"></div>
+			</div>
+			<div class="inner-container">
+				<div class="circle-layer" style="background-image: url(img/icons/circles.png)"></div>
+				<div class="row clearfix">
+
+					<!-- Left Column -->
+					<div class="left-column col-lg-5 col-md-6 col-sm-12">
+						<div class="inner-column">
+
+							<!-- Recipe Block -->
+							<div class="recipe-block">
+								<div class="inner-box">
+									<div class="icon"><img src="img/resource/recipe-1.png" alt="" /></div>
+									<h6><a href="menu.html">Cucumber</a></h6>
+									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
+								</div>
+							</div>
+
+							<!-- Recipe Block -->
+							<div class="recipe-block">
+								<div class="inner-box">
+									<div class="icon"><img src="img/resource/recipe-2.png" alt="" /></div>
+									<h6><a href="menu.html">Apple</a></h6>
+									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Image Column -->
+					<div class="image-column col-lg-2 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<div class="image">
+								<img src="img/resource/recipe.png" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column -->
+					<div class="right-column col-lg-5 col-md-6 col-sm-12">
+						<div class="inner-column">
+
+							<!-- Recipe Block / Style Two -->
+							<div class="recipe-block style-two">
+								<div class="inner-box">
+									<div class="icon"><img src="img/resource/recipe-3.png" alt="" /></div>
+									<h6><a href="menu.html">Lemon</a></h6>
+									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
+								</div>
+							</div>
+
+							<!-- Recipe Block / Style Two -->
+							<div class="recipe-block style-two">
+								<div class="inner-box">
+									<div class="icon"><img src="img/resource/recipe-4.png" alt="" /></div>
+									<h6><a href="menu.html">Fresh Water</a></h6>
+									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Recipe Section -->
+
+	<!-- Fluid Section One -->
+    <section class="fluid-section-one">
+    	<div class="outer-container clearfix">
+
+            <!-- Content Column -->
+            <div class="content-column">
+				<div class="icon-box" style="background-image:url(img/icons/icon-4.png)"></div>
+            	<div class="inner-column">
+					<!-- Sec Title -->
+					<div class="sec-title">
+						<h2>Upcoming Our <br> Beverage</h2>
+						<div class="separate"></div>
+						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+					</div>
+					<!-- Button Box -->
+					<div class="button-box">
+						<a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>All Product</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Image Column -->
+            <div class="image-column" style="background-image:url(img/resource/image-1.jpg)">
+            	<figure class="image-box"><img src="img/resource/image-1.jpg" alt=""></figure>
             </div>
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span style="color:AliceBLue;">Heartys Healthy Honey 2021 </span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
-            <!-- /.container-fluid -->
 
+		</div>
+	</section>
 
-        </div>
-        <!-- End of Main Content -->
+	<!-- Testimonial Section -->
+    <section class="testimonial-section">
+		<div class="icon-layer-one" style="background-image: url(img/icons/icon-1.png)"></div>
+		<div class="icon-layer-two" style="background-image: url(img/icons/icon-2.png)"></div>
+		<div class="icon-layer-three" style="background-image: url(img/icons/icon-3.png)"></div>
+		<div class="pattern-layer" style="background-image: url(img/background/pattern-4.png)"></div>
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="title">Testimonial</div>
+				<h2>What People Say</h2>
+				<div class="separate"></div>
+			</div>
+			<div class="inner-container">
+				<div class="single-item-carousel owl-carousel owl-theme">
 
+					<!-- Testimonial Block -->
+					<div class="testimonial-block">
+						<div class="inner-box">
+							<div class="author-image">
+								<img src="img/resource/author-1.jpg" alt="" />
+							</div>
+							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
+						</div>
+					</div>
 
+					<!-- Testimonial Block -->
+					<div class="testimonial-block">
+						<div class="inner-box">
+							<div class="author-image">
+								<img src="img/resource/author-1.jpg" alt="" />
+							</div>
+							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
+						</div>
+					</div>
 
-    </div>
-    <!-- End of Content Wrapper -->
+					<!-- Testimonial Block -->
+					<div class="testimonial-block">
+						<div class="inner-box">
+							<div class="author-image">
+								<img src="img/resource/author-1.jpg" alt="" />
+							</div>
+							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Testimonial Section -->
+
+	<!-- News Section -->
+    <section class="news-section">
+		<div class="pattern-layer" style="background-image: url(img/background/pattern-5.png)"></div>
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="title">News & Recipe</div>
+				<h2>Our Fruitsome Blog</h2>
+				<div class="separate"></div>
+				<div class="text">Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, <br> vel scelerisque nisl consectetur et.</div>
+			</div>
+			<div class="row clearfix">
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img src="img/resource/news-1.jpg" alt="" />
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/resource/news-1.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<div class="category">smoothie</div>
+							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<ul class="post-info">
+								<li>May 21, 2021</li>
+								<li>2 Comments</li>
+								<li><a href="news-detail.html">Share</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img src="img/resource/news-2.jpg" alt="" />
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/resource/news-2.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<div class="category">smoothie</div>
+							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<ul class="post-info">
+								<li>May 21, 2021</li>
+								<li>2 Comments</li>
+								<li><a href="news-detail.html">Share</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img src="img/resource/news-3.jpg" alt="" />
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/resource/news-3.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<div class="category">smoothie</div>
+							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<ul class="post-info">
+								<li>May 21, 2021</li>
+								<li>2 Comments</li>
+								<li><a href="news-detail.html">Share</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End News Section -->
+
+	<!-- Gallery Section -->
+    <section class="gallery-section">
+		<div class="outer-container">
+			<div class="gallery-carousel owl-carousel owl-theme">
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/1.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/2.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/3.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/4.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/5.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/1.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/2.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/3.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/4.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<figure class="image-box">
+							<img src="img/gallery/5.jpg" alt="">
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+									</div>
+								</div>
+							</div>
+						</figure>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Gallery Section -->
+
+		<!-- Main Footer -->
+    <footer class="main-footer">
+		<div class="pattern-layer-one" style="background-image: url(img/resource/footer-pattern-1.png)"></div>
+		<div class="pattern-layer-two" style="background-image: url(img/resource/footer-pattern-2.png)"></div>
+		<div class="pattern-layer-three" style="background-image: url(img/background/pattern-6.png)"></div>
+		<div class="auto-container">
+        	<!-- Widgets Section -->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+
+                    <!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget contact-widget">
+									<h6>Contact Us</h6>
+									<div class="text">6Fifth Avenue 5501, Broadway, New York Morris Street London 1234</div>
+									<ul class="contact-list">
+										<li><span class="icon fa fa-send"></span>Your mail @ gmail.com</li>
+										<li><span class="icon fa fa-phone"></span><a href="">(123) 4567 89000</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<h6>Useful Links</h6>
+									<ul class="footer-list">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">About us</a></li>
+										<li><a href="#">Blogs</a></li>
+										<li><a href="#">Terms Of Service</a></li>
+										<li><a href="#">Privacy Policy</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget social-widget">
+									<h6>Follow Us Now</h6>
+									<ul class="social-list">
+										<li><a href="#"><span class="icon fa fa-facebook"></span>facebook</a></li>
+										<li><a href="#"><span class="icon fa fa-twitter"></span>twitter</a></li>
+										<li><a href="#"><span class="icon fa fa-instagram"></span>instagram</a></li>
+										<li><a href="#"><span class="icon fa fa-dribbble"></span>dribbble</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Footer Column -->
+							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+								<div class="footer-widget newsletter-widget">
+									<h6>Subscribe</h6>
+									<div class="newsletter-form">
+										<form method="post" action="contact.html">
+											<div class="form-group">
+												<input type="email" name="email" value="" placeholder="Your Email" required="">
+												<button type="submit" class="theme-btn submit-btn">Subscribe Now</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.</div>
+			</div>
+		</div>
+	</footer>
 
 </div>
-<!-- End of Page Wrapper -->
+<!--End pagewrapper-->
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
+<!-- Search Popup -->
+<div class="search-popup">
+	<button class="close-search style-two"><span class="flaticon-multiply"></span></button>
+	<button class="close-search"><span class="flaticon-up-arrow-1"></span></button>
+	<form method="post" action="blog.html">
+		<div class="form-group">
+			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</form>
 </div>
+<!-- End Header Search -->
 
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+<?= $this->Html->script('/js/jquery.js') ?>
+<?= $this->Html->script('/js/popper.min.js') ?>
+<?= $this->Html->script('/js/bootstrap.min.js') ?>
 
-
-<!-- Bootstrap core JavaScript-->
-<?= $this->Html->script('/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>
-
-
-<!-- Core plugin JavaScript-->
-<?= $this->Html->script('/vendor/jquery-easing/jquery.easing.min.js') ?>
-
-
-<!-- Custom scripts for all pages-->
-<?= $this->Html->script('sb-admin-2.min.js') ?>
-
-
-<?= $this->fetch('script') ?>
+<?= $this->Html->script('/js/jquery.fancybox.js') ?>
+<?= $this->Html->script('/js/appear.js') ?>
+<?= $this->Html->script('/js/parallax.min.js') ?>
+<?= $this->Html->script('/js/tilt.jquery.min.js') ?>
+<?= $this->Html->script('/js/jquery.paroller.min.js') ?>
+<?= $this->Html->script('/js/owl.js') ?>
+<?= $this->Html->script('/js/wow.js') ?>
+<?= $this->Html->script('/js/nav-tool.js') ?>
+<?= $this->Html->script('/js/jquery-ui.js') ?>
+<?= $this->Html->script('/js/script.js') ?>
 
 
 
 </body>
-
-
-
 </html>

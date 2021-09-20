@@ -71,10 +71,14 @@ class PagesController extends AppController
         }
     }
 
+    public function about(){
+        $this->pages='about';
+    }
     public function switchAdmin(){
-     $this->layout='default';}
-     public function switchCustomer(){
-          $this->layout='default_customer';
+     $this->layout='default';
+    }
+    public function switchCustomer(){
+      $this->layout='default_customer';
     }
 //     public function beforeFilter(\Cake\Event\EventInterface $event)
 //     {
