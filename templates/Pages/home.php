@@ -109,7 +109,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 								<span class="icon-bar"></span>
 							</button>
 						</div>
-
 						<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
 							<ul class="navigation clearfix">
 								<li class="current dropdown"><a href="#">Home</a>
@@ -127,27 +126,25 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 									<ul>
 										<li><a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'about']) ?>">About Us</a></li>
 										<li><a href="">Team</a></li>
-										<li><a href="">Our Stores</a></li>
+										<li><a href="">Our Honey Stores</a></li>
 									</ul>
 								</li>
 								<li class="dropdown"><a href="#">Products</a>
 									<ul>
-										<li><a href="">display products</a></li>
+										<li><a href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">display products</a></li>
 
 									</ul>
 								</li>
-								<li class="dropdown"><a href="#">Gallery</a>
+								<li class="dropdown"><a href="#">Recipes</a>
 									<ul>
-										<li><a href="">Gallery</a></li>
-										<li><a href="">Gallery 02</a></li>
+										<li><a href="">Menu</a></li>
+										<li><a href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>">Let's see Recipes</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="#">Blog</a>
+								<li class="dropdown"><a href="#">Q&A</a>
 									<ul>
-										<li><a href="">Blog Classic</a></li>
-										<li><a href="">Blog Single</a></li>
-										<li><a href="">Blog Single 02</a></li>
-										<li><a href="">Not Found</a></li>
+										<li><a href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a></li>
+
 									</ul>
 								</li>
 								<li><a href="">Contact us</a></li>
