@@ -6,13 +6,17 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
-
-$this->layout=='customer_default'
+echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
+$this-> layout="customer_default";
 
 ?>
+
 <!DOCTYPE html>
 <html xml:lang="en">
 <head>
+
 </head>
 <body>
 <!-- Responsive navbar-->
@@ -24,8 +28,8 @@ $this->layout=='customer_default'
                 class="fas fa-shipping-fast"></i> Start shopping!</a>
     </div>
 
-        </div>
-    </div>
+</div>
+</div>
 </nav>
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
@@ -61,7 +65,7 @@ $this->layout=='customer_default'
                 </div>
 
             </div>
-          </div>
+        </div>
         <div class="col-md-4 mb-5">
             <div class="card h-30">
                 <div class="card-body">
@@ -71,13 +75,13 @@ $this->layout=='customer_default'
             </div>
         </div>
         <div class="row gx-4 gx-lg-5">
-        <div class="col-md-4 mb-5">
-            <div class="card h-30">
-                <div class="card-body">
-                    <h2 class="card-title">What is MGO?</h2>
-                    <p class="card-text">MGO is an acronym for a natural compound found in Manuka honey called methylglyoxal, which is responsible for much of the unique medicinal activity of Manuka honey. MGO comes from another component called dihydroxyacetone (DHA), which occurs organically in the nectar of flowers of some Leptospermum plants. Various species of this plant produce different levels of DHA that give rise to the varying antibacterial potencies of this special honey. </p>
+            <div class="col-md-4 mb-5">
+                <div class="card h-30">
+                    <div class="card-body">
+                        <h2 class="card-title">What is MGO?</h2>
+                        <p class="card-text">MGO is an acronym for a natural compound found in Manuka honey called methylglyoxal, which is responsible for much of the unique medicinal activity of Manuka honey. MGO comes from another component called dihydroxyacetone (DHA), which occurs organically in the nectar of flowers of some Leptospermum plants. Various species of this plant produce different levels of DHA that give rise to the varying antibacterial potencies of this special honey. </p>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card h-30">
@@ -97,9 +101,8 @@ $this->layout=='customer_default'
 
 
 
-</div>
+            </div>
 
-<script src="/webroot/js/scripts.js"></script>
+            <script src="/webroot/js/scripts.js"></script>
 </body>
 </html>
-

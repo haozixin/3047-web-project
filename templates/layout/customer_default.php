@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <?= $this->Html->meta('icon') ?>
-    <title>Healty Honey | Homepage </title>
+    <title>Healty Honey </title>
     <?= $this->Html->meta('icon') ?>
     <title><?= $this->Html->meta('icon') ?></title>
 
