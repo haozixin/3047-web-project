@@ -20,6 +20,7 @@ $this->layout='default_customer';
                 <th><?= h('customer_price') ?></th>
                 <th><?= h('agent_price') ?></th>
                 <th><?= h('product_type') ?></th>
+                <th><?= h('Function') ?></th>
 
 
             </tr>
@@ -34,6 +35,10 @@ $this->layout='default_customer';
                     <td><?= h($products->product_type) ?></td>
 
 
+                    <td class="actions">
+                        <?= $this->Html->link(__('Restock(Agent)'), ['action' => 'view', $products->id]) ?>
+
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

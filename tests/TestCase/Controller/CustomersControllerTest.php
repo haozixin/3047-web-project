@@ -80,4 +80,15 @@ class CustomersControllerTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test faq method
+     *
+     * @return void
+     * @uses \App\Controller\CustomersController::faq()
+     */
+    public function testFaq(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

@@ -25,9 +25,14 @@ class ProductsFixture extends TestFixture
         'product_type' => ['type' => 'string', 'length' => 64, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         'date_of_manufacture' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'expired_date' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'quantity' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'order_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        '_indexes' => [
+            'order_id' => ['type' => 'index', 'columns' => ['order_id'], 'length' => []],
+        ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'products_ibfk_1' => ['type' => 'foreign', 'columns' => ['order_id'], 'references' => ['orders', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -50,8 +55,9 @@ class ProductsFixture extends TestFixture
                 'customer_price' => 1,
                 'agent_price' => 1,
                 'product_type' => 'Lorem ipsum dolor sit amet',
-                'date_of_manufacture' => '2021-08-29',
-                'expired_date' => '2021-08-29',
+                'date_of_manufacture' => '2021-09-30',
+                'expired_date' => '2021-09-30',
+                'quantity' => 1,
                 'order_id' => 1,
             ],
         ];
