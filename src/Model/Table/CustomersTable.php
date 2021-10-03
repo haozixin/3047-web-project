@@ -66,7 +66,6 @@ class CustomersTable extends Table
             ->requirePresence('given_name', 'create')
             ->notEmptyString('given_name');
 
-
         $validator
             ->scalar('family_name')
             ->maxLength('family_name', 64)
@@ -74,30 +73,16 @@ class CustomersTable extends Table
             ->notEmptyString('family_name');
 
         $validator
-            ->scalar('state')
-            ->requirePresence('state', 'create')
-            ->notEmptyString('state');
-        $validator
-            ->scalar('city')
-            ->requirePresence('city', 'create')
-            ->notEmptyString('city');
-        $validator
-            ->scalar('street')
-            ->requirePresence('street', 'create')
-            ->notEmptyString('street');
-
-        $validator
             ->scalar('country')
+            ->maxLength('country', 256)
             ->requirePresence('country', 'create')
             ->notEmptyString('country');
+
         $validator
-            ->add("email", [
-                            "valid_email" => [
-                                "rule" => ["email"],
-                                "message" => "Email Address is not valid Please try again.(e.g.abc@example.com)",
-                            ]])
+            ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email');
+            ->notEmptyString('email')
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('subscription_status')
@@ -113,10 +98,42 @@ class CustomersTable extends Table
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 640)
+            ->maxLength('password', 64)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 
+        $validator
+            ->scalar('state')
+            ->maxLength('state', 64)
+            ->requirePresence('state', 'create')
+            ->notEmptyString('state');
+
+        $validator
+            ->scalar('city')
+            ->maxLength('city', 64)
+            ->requirePresence('city', 'create')
+            ->notEmptyString('city');
+
+        $validator
+            ->scalar('street')
+            ->maxLength('street', 64)
+            ->requirePresence('street', 'create')
+            ->notEmptyString('street');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
+
+        return $rules;
     }
 }

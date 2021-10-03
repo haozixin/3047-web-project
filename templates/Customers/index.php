@@ -31,6 +31,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <th><?= h('street') ?></th>
                 <th><?= h('user_name') ?></th>
                 <th><?= h('subscription_status') ?></th>
+                <th><?= h('customer type') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
@@ -47,6 +48,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= h($customer->street) ?></td>
                     <td><?= h($customer->user_name) ?></td>
                     <td><?= h($customer->subscription_status) ?></td>
+
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $customer->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $customer->id]) ?>
