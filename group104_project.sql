@@ -110,8 +110,15 @@ CREATE TABLE `recipes` (
   `id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
   `description` text NOT NULL,
-  `video_link` int(11) NOT NULL,
-  `photo` varchar(256) NOT NULL
+  `video_link` varchar(256) NOT NULL,
+  `photo` varchar(256)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `newsletter_subscriptions`;
+CREATE TABLE `newsletter_subscriptions` (
+  `id` int(7) NOT NULL,
+  `customer_name` varchar(50),
+  `customer_email` varchar(50),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -133,6 +140,9 @@ ALTER TABLE `customers`
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `customer_id` (`customer_id`);
+
+ALTER TABLE `newsletter_subscriptions`
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -170,6 +180,8 @@ ALTER TABLE `product_recipes`
 
 ALTER TABLE `recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+ALTER TABLE `newsletter_subscriptions` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;
 
 
 ALTER TABLE `admin_agents`

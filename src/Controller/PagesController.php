@@ -74,5 +74,14 @@ class PagesController extends AppController
     public function switchAdmin(){
      $this->layout='default';}
      public function switchCustomer(){
-          $this->layout='default_customer';}
+          $this->layout='default_customer';
+    }
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        $this->Authentication->addUnauthenticatedActions(['home']);
+
+    }
 }

@@ -108,6 +108,33 @@
             Account
         </div>
 
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
+                                       aria-expanded="true" aria-controls="collapseUtilities">
+                                        <i class="fas fa-fw fa-beer"></i>
+                                        <span>Newsletter</span>
+                                    </a>
+                                    <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
+                                         data-parent="#accordionSidebar">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <h6 class="collapse-header">Functions:</h6>
+                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>">Subscribe Us</a>
+
+
+                                        </div>
+                                    </div>
+                                </li>
+                        <!-- Divider -->
+                                <hr class="sidebar-divider">
+
+                        <!-- Heading -->
+                        <div class="sidebar-heading">
+                            Account
+                        </div>
+
+
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -118,14 +145,14 @@
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Users','action'=>'login']) ?>">Login as admins</a>
                     <a class="collapse-item" href="register.html">Register</a>
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
+
                 </div>
             </div>
         </li>
@@ -241,7 +268,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="<?= $this->Url->build(['controller'=>'Users','action'=>'logout']) ?>">Logout</a>
             </div>
         </div>
     </div>

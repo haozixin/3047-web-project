@@ -19,14 +19,14 @@ $this ->Form->setTemplates($formTemplate);
 
     <div class="column-responsive column-80">
         <div class="recipes form content">
-            <?= $this->Form->create($recipe,['type' => 'file']) ?>
+            <?= $this->Form->create($recipe) ?>
             <fieldset>
             <legend><?= __('Add Recipe') ?></legend>
               <?php
                                   echo $this->Form->control('title');
                                   echo $this->Form->control('description');
                                   echo $this->Form->control('video_link');
-                                  echo $this->Form->control('photo',['type' => 'file']);
+//                                   echo $this->Form->control('photo',['type' => 'file']);
 
                               ?>
                <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
