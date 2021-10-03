@@ -50,7 +50,7 @@
 
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/')?>">
+            <a class="nav-link" href= <?= $this->Url->build(['controller'=>'Inventory','action'=>'homepage']) ?>
                 <i class="fas fa-home"></i>
                 <span> Home Page</span></a>
         </li>
@@ -63,74 +63,9 @@
             About Heartys Honey
         </div>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-file"></i>
-                <span>Recipes</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Recipes','action'=>'display']) ?>">Display Recipes</a>
-                </div>
-            </div>
-        </li>
 
 
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseproducts"
-                       aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-beer"></i>
-                        <span>Products</span>
-                    </a>
-                    <div id="collapseproducts" class="collapse" aria-labelledby="headingproducts"
-                         data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Functions:</h6>
-                           <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">Display Products</a>
-
-
-                        </div>
-                    </div>
-                </li>
-        <!-- Divider -->
-                <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Add-on
-        </div>
-
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-                                <li class="nav-item">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
-                                       aria-expanded="true" aria-controls="collapseUtilities">
-                                        <i class="fas fa-fw fa-beer"></i>
-                                        <span>Newsletter</span>
-                                    </a>
-                                    <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
-                                         data-parent="#accordionSidebar">
-                                        <div class="bg-white py-2 collapse-inner rounded">
-                                            <h6 class="collapse-header">Functions:</h6>
-                                            <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>">Subscribe Us</a>
-
-
-                                        </div>
-                                    </div>
-                                </li>
-                        <!-- Divider -->
-                                <hr class="sidebar-divider">
-
-                        <!-- Heading -->
-                        <div class="sidebar-heading">
-                            Add-on
-                        </div>
 
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -138,12 +73,11 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Others</span>
+                <span>Restock</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Customers','action'=>'faq']) ?>">Q&A</a>
+                 <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Inventory','action'=>'supplier']) ?>">Restock to Hearty's honey</a>
                     <div class="collapse-divider"></div>
 
 
@@ -178,13 +112,7 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
-                           <a href="<?= $this->Url->build(['controller'=>'NewsletterSubscriptions','action'=>'add']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
-                                                                <span class="icon text-white-50">
-                                                                    <i class="fas fa-envelope-square"></i>
-                                                                </span>
-                                                                <span class="text" style="color: black">Subscribe Us!</span>
-                                                            </a>
-                                                            <div class="my-2"></div>
+
                            <a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
                                                                                <span class="icon text-white-50">
                                                                                    <i class="fas fa-desktop"></i>
@@ -201,7 +129,6 @@
                                                                            <div class="my-2"></div>
 
 
-
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
@@ -209,7 +136,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bob(Supplier)</span>
 
                             <?=$this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle'])?>
                         </a>

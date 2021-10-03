@@ -28,6 +28,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <th><?= h('product_type') ?></th>
                 <th><?= h('date_of_manufacture') ?></th>
                 <th><?= h('expired_date') ?></th>
+                <th><?= h('quantity') ?></th>
 
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -42,6 +43,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= h($products->product_type) ?></td>
                     <td><?= h($products->date_of_manufacture) ?></td>
                     <td><?= h($products->expired_date) ?></td>
+                     <td><?= h($products->quantity) ?></td>
 
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $products->id]) ?>

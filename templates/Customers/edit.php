@@ -32,6 +32,7 @@
                     echo $this->Form->control('user_name');
                     echo $this->Form->control('password');
                     echo $this->Form->control('subscription_status');
+
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

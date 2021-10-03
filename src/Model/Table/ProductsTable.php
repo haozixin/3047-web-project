@@ -101,6 +101,10 @@ class ProductsTable extends Table
             ->requirePresence('expired_date', 'create')
             ->notEmptyDate('expired_date');
 
+        $validator
+            ->integer('quantity')
+            ->allowEmptyString('quantity');
+
         return $validator;
     }
 
