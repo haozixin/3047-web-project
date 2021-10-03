@@ -13,14 +13,14 @@
 
                 ];
  $this ->Form->setTemplates($formTemplate);
-
+ $this->layout='default_customer';
 ?>
 <h1 class="h3 mb-2 text-grey-800">Add Subscription</h1>
     <div class="column-responsive column-80">
         <div class="newsletterSubscriptions form content">
             <?= $this->Form->create($newsletterSubscription) ?>
             <fieldset>
-                <legend><?= __('Add Newsletter Subscription') ?></legend>
+
                 <?php
                     echo $this->Form->control('customer_name');
                     echo $this->Form->control('customer_email');

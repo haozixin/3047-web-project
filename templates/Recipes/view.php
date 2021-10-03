@@ -23,11 +23,8 @@
                 </tr>
                 <tr>
                     <th><?= __('Video Link') ?></th>
+
                     <td><?= h($recipe->video_link) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Photo') ?></th>
-                    <td><?= h($recipe->photo) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -40,8 +37,11 @@
                     <?= $this->Text->autoParagraph(h($recipe->description)); ?>
                 </blockquote>
             </div>
-            <div class="related">
-                <h4><?= __('Related Product Recipes') ?></h4>
+
+            <tr>
+                 <th><?= __('Photo') ?></th>
+                 <td><?=$this->Html->image($recipe->photo,  array('height' => '500')); ?></td>
+            </tr>
                 <?php if (!empty($recipe->product_recipes)) : ?>
                 <div class="table-responsive">
                     <table>

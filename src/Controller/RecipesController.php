@@ -49,24 +49,37 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
 
-            $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+//              debug($this->request->getData());
+//               exit;
+
+            $recipeData = $this->request->getData();
 
 
-//      if(!$recipe -> getErrors){
-//             $photo = $this->request->getData('photo');
-//
-//             $name= $photo->getClientFilename();
-//             $targetPath= WWW_ROOT.'img'.DS.$name;
-//
-//              if($name)
-//               $photo->moveTo($targetPath);
-//                 $recipe -> photo= $name;}
+            // $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+
+
+
+     if(!$recipe -> getErrors  ){
+            $photo = $this->request->getData('photo');
+
+            $name= $photo->getClientFilename();
+            $targetPath= WWW_ROOT.'img'.DS.$name;
+
+            // moving file to server
+             if($name){
+              $photo->moveTo($targetPath);
+                $recipeData['photo'] = $name;}
+                }
+
+
+            $recipe = $this->Recipes->patchEntity($recipe, $recipeData);
 
 
             if ($this->Recipes->save($recipe)) {
                 $this->Flash->success(__('The recipe has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
+
             }
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
@@ -120,6 +133,7 @@ class RecipesController extends AppController
 
    public function display()
     {
+
         $recipes = $this->paginate($this->Recipes);
 
         $this->set(compact('recipes'));

@@ -17,7 +17,7 @@ $formTemplate=[
 
 $this ->Form->setTemplates($formTemplate);
 ?>
-<h1 class="h3 mb-2 text-grey-800">Add Products</h1>
+
 
     <div class="column-responsive column-80">
         <div class="products form content">
@@ -32,12 +32,7 @@ $this ->Form->setTemplates($formTemplate);
                 echo $this->Form->control('product_type');
                 echo $this->Form->control('date_of_manufacture');
                 echo $this->Form->control('expired_date');
-                echo $this->Form->control('order_id', ['options' => $orders, 'empty' => true]);
                 ?>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
 
                 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
                           <?= $this->Form->end() ?>

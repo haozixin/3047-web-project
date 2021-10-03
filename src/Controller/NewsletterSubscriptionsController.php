@@ -52,12 +52,30 @@ class NewsletterSubscriptionsController extends AppController
             if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
                 $this->Flash->success(__('The newsletter subscription has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => '/display']);
+
             }
-            $this->Flash->error(__('The newsletter subscription could not be saved. Please, try again.'));
-        }
-        $this->set(compact('newsletterSubscription'));
+
+     }
+             $this->Flash->success(__('Remember to input a valid Email otherwise we cannot send you our best Offers!( e.g. abc@example.com)'));
+          $this->set(compact('newsletterSubscription')); }
+
+    public function addCustomer(){$newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+        $this->loadModel('Customers');
+        $email=$this->getRequest()->getSession()->read('email');
+
+        $fname=$this->getRequest()->getSession()->read('family_name');
+        $gname=$this->getRequest()->getSession()->read('given_name');
+        $name=$gname . ' ' . $fname;
+
+        $newsletterSubscription['customer_email']=$email;
+        $newsletterSubscription['customer_name']=$name;
+
+
+        $this->NewsletterSubscriptions->save($newsletterSubscription);
+
     }
+
 
     /**
      * Edit method
@@ -78,8 +96,9 @@ class NewsletterSubscriptionsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The newsletter subscription could not be saved. Please, try again.'));
+
         }
+        $this->Flash->success(__('The newsletter subscription could not be saved. Please, try again.'));
         $this->set(compact('newsletterSubscription'));
     }
 
@@ -102,4 +121,33 @@ class NewsletterSubscriptionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function display()
+        {
+
+        }
+        public function add_customer(){$newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+                                              $this->loadModel('Customers');
+                                              $email=$this->getRequest()->getSession()->read('email');
+
+                                              $fname=$this->getRequest()->getSession()->read('family_name');
+                                              $gname=$this->getRequest()->getSession()->read('given_name');
+                                              $name=$gname . ' ' . $fname;
+
+
+//                                               $newsletterSubscription['customer_name']=$fname+$gname;
+                                              $newsletterSubscription['customer_email']=$email;
+                                              $newsletterSubscription['customer_name']=$name;
+
+
+
+
+        $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+        }
+
+
+
+
 }
+
+

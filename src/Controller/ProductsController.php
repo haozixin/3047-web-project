@@ -50,15 +50,39 @@ class ProductsController extends AppController
     public function add()
     {
         $product = $this->Products->newEmptyEntity();
+
         if ($this->request->is('post')) {
             $product = $this->Products->patchEntity($product, $this->request->getData());
-            if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
+            $expired_date = $product->expired_date;
+            $manufacture = $product ->date_of_manufacture;
+            $customer_price = $this->request->getData('customer_price');
+            $agent_price = $this->request->getData('agent_price');
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+
+
+
+            if(($customer_price<=0||$customer_price>1000) or ($agent_price<=0||$agent_price>1000)) {
+                $this->Flash->success(__('You must input a valid unit price, the range should be 0-1000'));
+
+
+            }else {
+            if ($expired_date<$manufacture) {
+                $this->Flash->success(__('And the expired date cannot be early than the date of manufacture'));
+                                       }
+                else{
+
+                 //check if it is saved
+                 if ($this->Products->save($product)) {
+                 $this->Flash->success(__('The product has been saved.'));
+
+                 return $this->redirect(['action' => 'index']);
+                 }}}
+
+
+            $this->Flash->success('The product could not be saved. Please, try again.');
+            //$this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
+
         $orders = $this->Products->Orders->find('list', ['limit' => 200]);
         $this->set(compact('product', 'orders'));
     }
