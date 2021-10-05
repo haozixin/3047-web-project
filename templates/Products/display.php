@@ -36,7 +36,7 @@ $this->layout='customer_default';
 
 
                     <td class="actions">
-                        <?= $this->Html->link(__('Restock(Agent)'), ['action' => 'view', $products->id]) ?>
+                        <?= $this->Html->link(__('Restock(Agent)'), ['action' => 'restock', $products->id]) ?>
 
                     </td>
                 </tr>

@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Order $order
  * @var string[]|\Cake\Collection\CollectionInterface $customers
+ * @var string[]|\Cake\Collection\CollectionInterface $products
  */
 ?>
 <div class="row">
@@ -23,12 +24,14 @@
             <fieldset>
                 <legend><?= __('Edit Order') ?></legend>
                 <?php
-                    echo $this->Form->control('amount');
+                    echo $this->Form->control('product_id', ['options' => $products]);
                     echo $this->Form->control('quantity');
                     echo $this->Form->control('deal_date');
                     echo $this->Form->control('deal_comment');
                     echo $this->Form->control('shipping_address');
-                    echo $this->Form->control('customer_id', ['options' => $customers]);
+                    echo $this->Form->control('customer_id');
+                    echo $this->Form->control('email_sent');
+                    echo $this->Form->control('customer_email', ['options' => $customers, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -23,6 +23,8 @@
                     <th><?= h('customer_id') ?></th>
                     <th><?= h('email sent?') ?></th>
                     <th><?= h('customer_email') ?></th>
+                    <th><?= h('Paid?') ?></th>
+
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -37,10 +39,11 @@
                     <td><?= h($order->customer_id) ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                     <td><?= $order->email_sent ? __('Yes') : __('No'); ?></td>
                      <td><?= h($order->customer_email) ?></td>
+                     <td><?= h($order->Paid) ?></td>
                     <td class="actions">
 
-                        <?= $this->Html->link(__('Approve'), ['action' => 'mark', $order->id]) ?>
-                        <?= $this->Form->postLink(__('Reject'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to reject # {0}?', $order->id)]) ?>
+
+                        <?= $this->Form->postLink(__('Mark as Paid'), ['action' => 'marking', $order->id], ['confirm' => __('Are you sure you want to mark  {0} as Paid?', $order->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -53,3 +56,4 @@
         });
     </script>
 </div>
+

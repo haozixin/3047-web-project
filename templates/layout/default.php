@@ -148,14 +148,15 @@
                              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseinventory"
                                 aria-expanded="true" aria-controls="collapseUtilities">
                                  <i class="	fas fa-box"></i>
-                                 <span>Inventory</span>
+                                 <span>Orders</span>
                              </a>
                              <div id="collapseinventory" class="collapse" aria-labelledby="headinginventory"
                                   data-parent="#accordionSidebar">
                                  <div class="bg-white py-2 collapse-inner rounded">
                                      <h6 class="collapse-header">Functions:</h6>
 
-                                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'inventory','action'=>'index']) ?>">List Inventory</a>
+                                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'orders','action'=>'index']) ?>">Pending orders</a>
+                                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'orders','action'=>'confirm']) ?>">Confirming orders</a>
 
 
 

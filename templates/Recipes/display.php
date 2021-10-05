@@ -31,7 +31,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= $this->Number->format($recipes->id) ?></td>
                     <td><?= h($recipes->title) ?></td>
                     <td><?= h($recipes->description) ?></td>
-                    <td><?= h($recipes->video_link) ?></td>
+                    <td><?= $this ->Html->link(h($recipes->video_link),$this->redirect->h($recipes->video_link)) ?></td>
                     <td><?= $this->Html->image($recipes->photo,  array('height' => '110')); ?></td>
 
 

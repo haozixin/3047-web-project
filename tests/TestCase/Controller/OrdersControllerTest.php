@@ -23,8 +23,8 @@ class OrdersControllerTest extends TestCase
      */
     protected $fixtures = [
         'app.Orders',
-        'app.Customers',
         'app.Products',
+        'app.Customers',
     ];
 
     /**
@@ -34,6 +34,17 @@ class OrdersControllerTest extends TestCase
      * @uses \App\Controller\OrdersController::index()
      */
     public function testIndex(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test confirm method
+     *
+     * @return void
+     * @uses \App\Controller\OrdersController::confirm()
+     */
+    public function testConfirm(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
@@ -78,6 +89,28 @@ class OrdersControllerTest extends TestCase
      * @uses \App\Controller\OrdersController::delete()
      */
     public function testDelete(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test mark method
+     *
+     * @return void
+     * @uses \App\Controller\OrdersController::mark()
+     */
+    public function testMark(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test marking method
+     *
+     * @return void
+     * @uses \App\Controller\OrdersController::marking()
+     */
+    public function testMarking(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
