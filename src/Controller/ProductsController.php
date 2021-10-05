@@ -51,11 +51,14 @@ class ProductsController extends AppController
                 $productID= $product->id;
                 $product_name= $product->name;
                 $product_quantity= $product->quantity;
+                $product_price= $product->customer_price;
+
                 $session = $this->getRequest()->getSession();
-                $session->write(['product_id'=> $productID,'name'=> $product_name,'quantity' => $product_quantity]);
+                $session->write(['product_id'=> $productID,'name'=> $product_name,'quantity' => $product_quantity,'total'=>$product_price ]);
                 $session->read('product_id');
                 $session->read('name');
                 $session->read('quantity');
+                $session->read('total');
                 $this->redirect(['controller' => 'Orders', 'action' => 'add']);
             }
 

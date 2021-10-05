@@ -71,9 +71,13 @@ class OrdersController extends AppController
                 $email = $currentCustomer->email;
                 $order = $this->Orders->patchEntity($order, $this->request->getData());
                 $order_quantity=$order->quantity;
+                $order_total= $this->getRequest()->getSession()->read('total');
                 $order->customer_email=$email;
                 $order->paid="No";
                 $order->product_id=$id;
+                $order_price= (int)$order_total *(int)$order_quantity;
+                $order->total_price=$order_price;
+
 
 
 
@@ -179,6 +183,7 @@ class OrdersController extends AppController
             'email'=> $order-> customer_email,
             'deal_date'=> $order-> deal_date,
             'quantity' => $order-> quantity,
+            'price' => $order-> total_price,
              'email_id'=> $order-> id]);
 
 
@@ -193,7 +198,48 @@ class OrdersController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        public function marking($id=null) {
+
+public function marking($id = null)
+        {
+            $this->loadModel('Orders');
+             $order = $this->Orders->get($id, [
+                        'contain' => [],
+                    ]);
+             if($order->email_sent=="No")
+
+            {$mailer = new Mailer('default');
+            $mailer
+            ->setEmailFormat('html')
+            ->setTo($order->customer_email)
+            ->setFrom(Configure::read('OrderEmail.from'))
+            ->setReplyTo($order->customer_email)
+            ->setSubject(" Shipment on the way ")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('confirmmail');
+
+            $mailer->setViewVars([
+            'content' => $order-> body,
+
+            'email'=> $order-> customer_email,
+            'deal_date'=> $order-> deal_date,
+            'quantity' => $order-> quantity,
+            'price' => $order-> total_price,
+             'email_id'=> $order-> id]);
+
+
+            $email_result= $mailer->deliver();
+            if($email_result)
+                {$order->Paid="Yes";
+                $this->Orders->save($order);
+                $this->Flash->success(__('The order is sent to agent.'));}}
+
+                else{$this->Flash->error(__('Email sent before!'));}
+
+            return $this->redirect(['action' => 'index']);
+        }
+
+        public function marking1($id=null) {
      $order = $this->Orders->get($id, [
          'contain' => [],
      ]);
