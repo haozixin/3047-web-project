@@ -46,11 +46,9 @@ class AdminAgentsTable extends Table
 
         $this->belongsTo('Agents', [
             'foreignKey' => 'agent_id',
-            'joinType' => 'INNER',
         ]);
         $this->belongsTo('Admins', [
             'foreignKey' => 'admin_id',
-            'joinType' => 'INNER',
         ]);
     }
 

@@ -51,7 +51,7 @@ return [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
         'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
-        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'UTC'),
+        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'Australia/Melbourne'),
         'uploadedFilesAsObjects' => true,
         'base' => false,
         'dir' => 'src',
@@ -226,7 +226,7 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => MailTransport::class,
+            'className' => 'Mail',
             /*
              * The keys host, port, timeout, username, password, client and tls
              * are used in SMTP transports

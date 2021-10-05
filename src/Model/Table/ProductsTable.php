@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Products Model
  *
- * @property \App\Model\Table\OrdersTable&\Cake\ORM\Association\BelongsTo $Orders
+ * @property \App\Model\Table\OrdersTable&\Cake\ORM\Association\HasMany $Orders
  * @property \App\Model\Table\ProductRecipesTable&\Cake\ORM\Association\HasMany $ProductRecipes
  *
  * @method \App\Model\Entity\Product newEmptyEntity()
@@ -44,8 +44,8 @@ class ProductsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Orders', [
-            'foreignKey' => 'order_id',
+        $this->hasMany('Orders', [
+            'foreignKey' => 'product_id',
         ]);
         $this->hasMany('ProductRecipes', [
             'foreignKey' => 'product_id',
@@ -106,19 +106,5 @@ class ProductsTable extends Table
             ->allowEmptyString('quantity');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->existsIn(['order_id'], 'Orders'), ['errorField' => 'order_id']);
-
-        return $rules;
     }
 }
