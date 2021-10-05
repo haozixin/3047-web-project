@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title><?= $this->Html->meta('icon') ?></title>
-    <title>Customer - Login</title>
+    <title>Admins - Login</title>
 
     <!-- Custom fonts for this template-->
     <?= $this->Html->css('/vendor/fontawesome-free/css/all.min.css') ?>
@@ -25,8 +25,9 @@
 </head>
 
 <body class="bg-gradient-primary">
-<?= $this->Flash->render() ?>
+
 <h3>Login</h3>
+<?= $this->Flash->render() ?>
 <?= $this->Form->create() ?>
 <div class="container">
 
@@ -50,15 +51,17 @@
                                     <fieldset>
                                         <div class="form-group">
 
-                                            <!--<input type="email" class="form-control form-control-user"
-                                                   id="exampleInputEmail" aria-describedby="emailHelp"
-                                                   placeholder="Enter Email Address...">-->
+                                            <!--                                            <input type="email" class="form-control form-control-user"-->
+                                            <!--                                                   id="exampleInputEmail" aria-describedby="emailHelp"-->
+                                            <!--                                                   placeholder="Enter Email Address..." >-->
+
                                             <?= $this->Form->control('email', ['required' => true]) ?>
+
+                                            <!--                                        <div class="form-group">-->
+                                            <!--                                            <input type="password" class="form-control form-control-user"-->
+                                            <!--                                                   id="exampleInputPassword" placeholder="Password">-->
+                                            <?= $this->Form->control('password', ['required' => true]) ?>
                                         </div>
-                                        <!--<div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                   id="exampleInputPassword" placeholder="Password">-->
-                                        <?= $this->Form->control('password', ['required' => true]) ?>
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox small">
@@ -67,19 +70,18 @@
                                             Me</label>
                                     </div>
                                 </div>
-                                <a href="<?= $this->Form->submit(__('Login')); ?>
-
-                                        </a>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                <i class="fab fa-google fa-fw"></i> Login with Google
+                                <a href="<?= $this->Form->submit(__('Login'))?>"</a>
+                                <hr>
+                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Login with Google
                                 </a>
                                 <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                     <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                 </a>
                                 </fieldset>
                                 <div class="text-center">
-                                    <a class="small" href="<?= $this->Html->link("Sign up", ['action' => 'add']) ?>"Create an Account!</a>
+                                    <a class="small" href="<?= $this->Html->link("Sign up", ['controller' => 'Users','action' => 'add']) ?>"
+                                       Create an Account!</a>
                                 </div>
 
                             </div>
@@ -107,7 +109,6 @@
 <!-- Custom scripts for all pages-->
 <?= $this->Html->script('/sb-admin-2.min.js') ?>
 </body>
-
 
 
 </html>

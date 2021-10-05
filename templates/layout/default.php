@@ -222,7 +222,7 @@
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
 
                 <div class="my-2"></div>
-                <a href="<?= $this->Url->build(['controller' => 'Pages', 'action' => '/']) ?>" class=" btn-icon-split"
+                <a href="<?= $this->Url->build('/') ?>" class=" btn-icon-split"
                    style="background-color:DarkOrange">
                                                    <span class="icon text-white-50">
                                                        <i class="fas fa-keyboard"></i>
@@ -252,10 +252,13 @@
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
 
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
+<!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
+<!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400">-->
+<!--                            </a>-->
+                                </i><?= $this->Html->link("Logout",['Controller'=>'Admins','action'=>'logout']) ?>
+
+
+
                         </div>
                     </li>
 

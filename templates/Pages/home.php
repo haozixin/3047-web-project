@@ -43,7 +43,7 @@ $checkConnection = function (string $name) {
 
 if (!Configure::read('debug')) :
     throw new NotFoundException(
-        'Please replace templates/Pages/home.php with your own version or re-enable debug mode.'
+        'Please replace templates/Pages/homepage.php with your own version or re-enable debug mode.'
     );
 endif;
 
@@ -64,7 +64,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <?= $this->Html->css('style.css') ?>
 <?= $this->Html->css('responsive.css') ?>
 <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-<?= $this->Html->css('img/favicon.png') ?>
+<?= $this->Html->css('../img/favicon.png') ?>
 
 
 
@@ -93,7 +93,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         	<div class="auto-container clearfix">
 
 				<div class="pull-left logo-box">
-					<div class="logo"><a href=""><img src="img/logo.png" alt="" title=""></a></div>
+					<div class="logo"><a href=""><img src="../img/logo.png" alt="" title=""></a></div>
 				</div>
 
 				<div class="nav-outer clearfix">
@@ -113,7 +113,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<ul class="navigation clearfix">
 								<li class="current dropdown"><a href="#">Home</a>
 									<ul>
-										<li><a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>">Login as Admins</a></li>
+										<li><a href="<?= $this->Url->build('/admins/homepage') ?>">Admins HomePage</a></li>
 										<li class="dropdown"><a href="">Agent HomePage</a>
 										    <ul>
 												<li><a href="<?= $this->Url->build(['controller'=>'Agents','action'=>'homepage']) ?>">HomePage</a></li>
@@ -173,7 +173,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="index.html" title=""><img src="img/logo-small.png" alt="" title=""></a>
+                    <a href="index.html" title=""><img src="../img/logo-small.png" alt="" title=""></a>
                 </div>
                 <!--Right Col-->
                 <div class="pull-right">
@@ -203,7 +203,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="img/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="../img/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
             </nav>
         </div><!-- End Mobile Menu -->
@@ -227,7 +227,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="sidebar-info-contents">
 						<div class="content-inner">
 							<div class="logo">
-								<a href="index.html"><img src="img/logo.png" alt="" /></a>
+								<a href="index.html"><img src="../img/logo.png" alt="" /></a>
 							</div>
 							<div class="content-box">
 								<h2>About Us</h2>
@@ -281,7 +281,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
 								</div>
 								<div class="icons-box">
-									<img src="img/main-slider/icons.png" alt="" />
+									<img src="../img/main-slider/icons.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -291,7 +291,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<div class="inner-column">
 								<div class="icon-layer-three" style="background-image: url(../../webroot/img/main-slider/icon-3.png)"></div>
 								<div class="image">
-									<img src="img/main-slider/content-image-1.png" alt="" />
+									<img src="../img/main-slider/content-image-1.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -316,7 +316,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
 								</div>
 								<div class="icons-box">
-									<img src="img/main-slider/icons.png" alt="" />
+									<img src="../img/main-slider/icons.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -326,7 +326,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<div class="inner-column">
 								<div class="icon-layer-three" style="background-image: url(../../webroot/img/main-slider/icon-3.png)"></div>
 								<div class="image">
-									<img src="img/main-slider/content-image-2.png" alt="" />
+									<img src="../img/main-slider/content-image-2.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -351,7 +351,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
 								</div>
 								<div class="icons-box">
-									<img src="img/main-slider/icons.png" alt="" />
+									<img src="../img/main-slider/icons.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -361,7 +361,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<div class="inner-column">
 								<div class="icon-layer-three" style="background-image: url(../../webroot/img/main-slider/icon-3.png)"></div>
 								<div class="image">
-									<img src="img/main-slider/content-image-3.png" alt="" />
+									<img src="../img/main-slider/content-image-3.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -387,7 +387,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="image-column col-lg-7 col-md-12 col-sm-12">
 					<div class="inner-column">
 						<div class="image">
-							<img src="img/resource/juice.png" alt="" />
+							<img src="../img/resource/juice.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -427,7 +427,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-1.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-1.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Milkshake</a></h6>
@@ -440,7 +440,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-2.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-2.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Frappe</a></h6>
@@ -453,7 +453,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-3.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-3.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Boba Drinks</a></h6>
@@ -466,7 +466,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-4.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-4.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Mojito</a></h6>
@@ -479,7 +479,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-5.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-5.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Slushy</a></h6>
@@ -492,7 +492,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-6.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-6.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">Hot Chocolate</a></h6>
@@ -505,7 +505,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-7.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-7.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">smoothie</a></h6>
@@ -518,7 +518,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="milkshake.html"><img src="img/resource/beverage-8.jpg" alt="" /></a>
+							<a href="milkshake.html"><img src="../img/resource/beverage-8.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h6><a href="milkshake.html">coffee</a></h6>
@@ -591,7 +591,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<!-- Recipe Block -->
 							<div class="recipe-block">
 								<div class="inner-box">
-									<div class="icon"><img src="img/resource/recipe-1.png" alt="" /></div>
+									<div class="icon"><img src="../img/resource/recipe-1.png" alt="" /></div>
 									<h6><a href="menu.html">Cucumber</a></h6>
 									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
 								</div>
@@ -600,7 +600,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<!-- Recipe Block -->
 							<div class="recipe-block">
 								<div class="inner-box">
-									<div class="icon"><img src="img/resource/recipe-2.png" alt="" /></div>
+									<div class="icon"><img src="../img/resource/recipe-2.png" alt="" /></div>
 									<h6><a href="menu.html">Apple</a></h6>
 									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
 								</div>
@@ -613,7 +613,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="image-column col-lg-2 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<div class="image">
-								<img src="img/resource/recipe.png" alt="" />
+								<img src="../img/resource/recipe.png" alt="" />
 							</div>
 						</div>
 					</div>
@@ -625,7 +625,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<!-- Recipe Block / Style Two -->
 							<div class="recipe-block style-two">
 								<div class="inner-box">
-									<div class="icon"><img src="img/resource/recipe-3.png" alt="" /></div>
+									<div class="icon"><img src="../img/resource/recipe-3.png" alt="" /></div>
 									<h6><a href="menu.html">Lemon</a></h6>
 									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
 								</div>
@@ -634,7 +634,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<!-- Recipe Block / Style Two -->
 							<div class="recipe-block style-two">
 								<div class="inner-box">
-									<div class="icon"><img src="img/resource/recipe-4.png" alt="" /></div>
+									<div class="icon"><img src="../img/resource/recipe-4.png" alt="" /></div>
 									<h6><a href="menu.html">Fresh Water</a></h6>
 									<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae</div>
 								</div>
@@ -671,7 +671,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 			<!-- Image Column -->
             <div class="image-column" style="background-image:url(../../webroot/img/resource/image-1.jpg)">
-            	<figure class="image-box"><img src="img/resource/image-1.jpg" alt=""></figure>
+            	<figure class="image-box"><img src="../img/resource/image-1.jpg" alt=""></figure>
             </div>
 
 		</div>
@@ -697,7 +697,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="testimonial-block">
 						<div class="inner-box">
 							<div class="author-image">
-								<img src="img/resource/author-1.jpg" alt="" />
+								<img src="../img/resource/author-1.jpg" alt="" />
 							</div>
 							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
 							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
@@ -708,7 +708,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="testimonial-block">
 						<div class="inner-box">
 							<div class="author-image">
-								<img src="img/resource/author-1.jpg" alt="" />
+								<img src="../img/resource/author-1.jpg" alt="" />
 							</div>
 							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
 							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
@@ -719,7 +719,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="testimonial-block">
 						<div class="inner-box">
 							<div class="author-image">
-								<img src="img/resource/author-1.jpg" alt="" />
+								<img src="../img/resource/author-1.jpg" alt="" />
 							</div>
 							<div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
 							<div class="designation">Meredith Grant <span>- Host Mother</span></div>
@@ -749,12 +749,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="img/resource/news-1.jpg" alt="" />
+							<img src="../img/resource/news-1.jpg" alt="" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/resource/news-1.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+										<a href="../img/resource/news-1.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
 									</div>
 								</div>
 							</div>
@@ -775,12 +775,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="img/resource/news-2.jpg" alt="" />
+							<img src="../img/resource/news-2.jpg" alt="" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/resource/news-2.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+										<a href="../img/resource/news-2.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
 									</div>
 								</div>
 							</div>
@@ -801,12 +801,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="img/resource/news-3.jpg" alt="" />
+							<img src="../img/resource/news-3.jpg" alt="" />
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/resource/news-3.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+										<a href="../img/resource/news-3.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
 									</div>
 								</div>
 							</div>
@@ -837,12 +837,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/1.jpg" alt="">
+							<img src="../img/gallery/1.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -854,12 +854,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/2.jpg" alt="">
+							<img src="../img/gallery/2.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -871,12 +871,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/3.jpg" alt="">
+							<img src="../img/gallery/3.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -888,12 +888,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/4.jpg" alt="">
+							<img src="../img/gallery/4.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -905,12 +905,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/5.jpg" alt="">
+							<img src="../img/gallery/5.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -922,12 +922,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/1.jpg" alt="">
+							<img src="../img/gallery/1.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -939,12 +939,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/2.jpg" alt="">
+							<img src="../img/gallery/2.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -956,12 +956,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/3.jpg" alt="">
+							<img src="../img/gallery/3.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -973,12 +973,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/4.jpg" alt="">
+							<img src="../img/gallery/4.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>
@@ -990,12 +990,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="gallery-block">
 					<div class="inner-box">
 						<figure class="image-box">
-							<img src="img/gallery/5.jpg" alt="">
+							<img src="../img/gallery/5.jpg" alt="">
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
 									<div class="content">
-										<a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+										<a href="../img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
 									</div>
 								</div>
 							</div>

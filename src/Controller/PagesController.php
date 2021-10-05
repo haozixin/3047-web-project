@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
@@ -74,18 +75,22 @@ class PagesController extends AppController
     public function about(){
         $this->pages='about';
     }
+
     public function switchAdmin(){
      $this->layout='default';
     }
     public function switchCustomer(){
       $this->layout='default_customer';
     }
-//     public function beforeFilter(\Cake\Event\EventInterface $event)
-//     {
-//         parent::beforeFilter($event);
-//         // Configure the login action to not require authentication, preventing
-//         // the infinite redirect loop issue
-//         $this->Authentication->addUnauthenticatedActions(['home']);
-//
-//     }
+
+
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect(['controller' => 'Customers', 'action' => 'home']);
+        }
+    }
 }
