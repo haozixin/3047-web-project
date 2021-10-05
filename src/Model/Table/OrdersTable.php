@@ -97,7 +97,13 @@ class OrdersTable extends Table
 
         $validator
             ->scalar('Paid')
-            ->maxLength('Paid', 256);
+            ->maxLength('Paid', 256)
+            ->notEmptyString('Paid');
+
+        $validator
+            ->decimal('total_price')
+            ->requirePresence('total_price', 'create')
+            ->notEmptyString('total_price');
 
         return $validator;
     }

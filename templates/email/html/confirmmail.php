@@ -377,18 +377,16 @@ endforeach;
                     <tr>
                       <td>
                         <p><img src="/../img/logo-small.png"></img></p>
-                        <p>Thank you for your Order!</p>
+                        <p> Your Order is on the way!</p>
                         <p>Email : <?=$this->Html->link(h($email),'mailto:'.h($email))?></p>
                         <p><b>Date: </b> <?=h($deal_date)?></p>
                         <p><b>Ordered Quantity(In bottles) : </b> <?=h($quantity)?></p>
                         <p><b>Order price(AUD) : </b> <?=h($price)?></p>
                         <p><?=$body?></p>
 
-                        <p>We are sending an Email to inform you that your order has been approved.</p>
-                        <p>Please pay the current order to the following banking account and reply the email back.</p>
-                        <p>BSB : 999999</p>
-                        <p>Bank Name : CommonwealthBank</p>
-                        <p>Bank account Name : Hearty healthy honey</p>
+                        <p>We are sending an Email to inform you that your shipment is on the way.</p>
+                        <p>Thanks for ordering our products!</p>
+
 
                               </td>
                             </tr>

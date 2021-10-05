@@ -26,7 +26,8 @@ class OrdersFixture extends TestFixture
         'customer_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'email_sent' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => '0', 'comment' => '', 'precision' => null],
         'customer_email' => ['type' => 'string', 'length' => 256, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_0900_ai_ci', 'comment' => '', 'precision' => null],
-        'Paid' => ['type' => 'string', 'length' => 256, 'null' => false, 'default' => '\'No\'', 'collate' => 'utf8mb4_0900_ai_ci', 'comment' => '', 'precision' => null],
+        'Paid' => ['type' => 'string', 'length' => 256, 'null' => false, 'default' => 'No', 'collate' => 'utf8mb4_0900_ai_ci', 'comment' => '', 'precision' => null],
+        'total_price' => ['type' => 'decimal', 'length' => 10, 'precision' => 0, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
         '_indexes' => [
             'customer_id' => ['type' => 'index', 'columns' => ['customer_id'], 'length' => []],
         ],
@@ -59,6 +60,7 @@ class OrdersFixture extends TestFixture
                 'email_sent' => 1,
                 'customer_email' => 'Lorem ipsum dolor sit amet',
                 'Paid' => 'Lorem ipsum dolor sit amet',
+                'total_price' => 1.5,
             ],
         ];
         parent::init();

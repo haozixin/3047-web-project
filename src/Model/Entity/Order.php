@@ -18,6 +18,7 @@ use Cake\ORM\Entity;
  * @property bool $email_sent
  * @property string|null $customer_email
  * @property string $Paid
+ * @property string $total_price
  *
  * @property \App\Model\Entity\Product $product
  * @property \App\Model\Entity\Customer $customer
@@ -43,6 +44,7 @@ class Order extends Entity
         'email_sent' => true,
         'customer_email' => true,
         'Paid' => true,
+        'total_price' => true,
         'product' => true,
         'customer' => true,
     ];
