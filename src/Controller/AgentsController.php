@@ -39,6 +39,12 @@ class AgentsController extends AppController
         $this->set(compact('agent'));
     }
 
+    public function homepage()
+    {
+        $admins = $this->paginate($this->Agents);
+
+        $this->set(compact('admins'));
+    }
     /**
      * Add method
      *
