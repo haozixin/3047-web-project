@@ -20,7 +20,7 @@ class OrdersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Products', 'Customers'],
+            'contain' => ['Products', 'Agents'],
         ];
         $orders = $this->paginate($this->Orders);
 
@@ -30,7 +30,7 @@ class OrdersController extends AppController
         public function confirm()
         {
             $this->paginate = [
-                'contain' => ['Products', 'Customers'],
+                'contain' => ['Products', 'Agents'],
             ];
             $orders = $this->paginate($this->Orders);
 
@@ -47,7 +47,7 @@ class OrdersController extends AppController
     public function view($id = null)
     {
         $order = $this->Orders->get($id, [
-            'contain' => ['Products', 'Customers'],
+            'contain' => ['Products', 'Agents'],
         ]);
 
         $this->set(compact('order'));
@@ -65,18 +65,20 @@ class OrdersController extends AppController
              $order = $this->Orders->newEmptyEntity();
 
              if ($this->request->is('post')) {
-                 $this->loadModel('Customers');
-                $customerId = $this->request->getData('customer_id');
-                $currentCustomer = $this->Customers->get($customerId);
-                $email = $currentCustomer->email;
+                 $this->loadModel('Agents');
+                $agentId = $this->request->getData('agent_id');
+                $currentAgent = $this->Agents->get($agentId);
+                $email = $currentAgent->email;
                 $order = $this->Orders->patchEntity($order, $this->request->getData());
+
                 $order_quantity=$order->quantity;
                 $order_total= $this->getRequest()->getSession()->read('total');
-                $order->customer_email=$email;
+                $order->agent_email=$email;
                 $order->paid="No";
                 $order->product_id=$id;
                 $order_price= (int)$order_total *(int)$order_quantity;
                 $order->total_price=$order_price;
+
 
 
 
@@ -93,14 +95,14 @@ class OrdersController extends AppController
 
                      return $this->redirect(['controller' => 'Products', 'action' => 'update']);}}
                       $this->Flash->error(__('The quantity exceeds the limit!')); }
-             $customersForOrder = $this->Orders->Customers->find('list', ['limit' => 200,
+             $agentsForOrder = $this->Orders->Agents->find('list', ['limit' => 200,
                         'keyField'=>'id',
                         'valueField'=> 'given_name'
                      ]);
-             $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
+             $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
 
 
-             $this->set(compact('order','customers', 'customersForOrder'));
+             $this->set(compact('order','agents', 'agentsForOrder'));
                  }
 
 
@@ -127,8 +129,8 @@ class OrdersController extends AppController
             $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
         $products = $this->Orders->Products->find('list', ['limit' => 200]);
-        $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
-        $this->set(compact('order', 'products', 'customers'));
+        $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
+        $this->set(compact('order', 'products', 'agents'));
     }
 
     /**
@@ -169,9 +171,9 @@ class OrdersController extends AppController
             {$mailer = new Mailer('default');
             $mailer
             ->setEmailFormat('html')
-            ->setTo($order->customer_email)
+            ->setTo($order->agent_email)
             ->setFrom(Configure::read('OrderEmail.from'))
-            ->setReplyTo($order->customer_email)
+            ->setReplyTo($order->agent_email)
             ->setSubject(" Order request approved")
             ->viewBuilder()
             ->disableAutoLayout()
@@ -180,7 +182,7 @@ class OrdersController extends AppController
             $mailer->setViewVars([
             'content' => $order-> body,
 
-            'email'=> $order-> customer_email,
+            'email'=> $order-> agent_email,
             'deal_date'=> $order-> deal_date,
             'quantity' => $order-> quantity,
             'price' => $order-> total_price,
@@ -205,14 +207,14 @@ public function marking($id = null)
              $order = $this->Orders->get($id, [
                         'contain' => [],
                     ]);
-             if($order->email_sent=="No")
+             if($order->email_sent=="Yes" && $order->Paid=="No")
 
             {$mailer = new Mailer('default');
             $mailer
             ->setEmailFormat('html')
-            ->setTo($order->customer_email)
+            ->setTo($order->agent_email)
             ->setFrom(Configure::read('OrderEmail.from'))
-            ->setReplyTo($order->customer_email)
+            ->setReplyTo($order->agent_email)
             ->setSubject(" Shipment on the way ")
             ->viewBuilder()
             ->disableAutoLayout()
@@ -221,7 +223,7 @@ public function marking($id = null)
             $mailer->setViewVars([
             'content' => $order-> body,
 
-            'email'=> $order-> customer_email,
+            'email'=> $order-> agent_email,
             'deal_date'=> $order-> deal_date,
             'quantity' => $order-> quantity,
             'price' => $order-> total_price,
@@ -234,25 +236,25 @@ public function marking($id = null)
                 $this->Orders->save($order);
                 $this->Flash->success(__('The order is sent to agent.'));}}
 
-                else{$this->Flash->error(__('Email sent before!'));}
+                else{$this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));}
 
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect(['action' => 'confirm']);
         }
 
-        public function marking1($id=null) {
-     $order = $this->Orders->get($id, [
-         'contain' => [],
-     ]);
-         $order->Paid='Yes';
-         if ($this->Orders->save($order)) {
-             $this->Flash->success(__('The order has been marked as paid.'));
-
-             return $this->redirect(['action' => 'confirm']);
-         }
-         $this->Flash->error(__('The order could not be mark as Paid. Please, try again.'));
-
-     $products = $this->Orders->Products->find('list', ['limit' => 200]);
-     $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
-     $this->set(compact('order', 'products', 'customers'));
- }
+//         public function marking1($id=null) {
+//      $order = $this->Orders->get($id, [
+//          'contain' => [],
+//      ]);
+//          $order->Paid='Yes';
+//          if ($this->Orders->save($order)) {
+//              $this->Flash->success(__('The order has been marked as paid.'));
+//
+//              return $this->redirect(['action' => 'confirm']);
+//          }
+//          $this->Flash->error(__('The order could not be mark as Paid. Please, try again.'));
+//
+//      $products = $this->Orders->Products->find('list', ['limit' => 200]);
+//      $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
+//      $this->set(compact('order', 'products', 'agents'));
+//  }
 }

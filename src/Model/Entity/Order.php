@@ -14,9 +14,9 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate $deal_date
  * @property string $deal_comment
  * @property string $shipping_address
- * @property int|null $customer_id
+ * @property int|null $agent_id
  * @property bool $email_sent
- * @property string|null $customer_email
+ * @property string|null $agent_email
  * @property string $Paid
  * @property string $total_price
  *
@@ -40,9 +40,9 @@ class Order extends Entity
         'deal_date' => true,
         'deal_comment' => true,
         'shipping_address' => true,
-        'customer_id' => true,
+        'agent_id' => true,
         'email_sent' => true,
-        'customer_email' => true,
+        'agent_email' => true,
         'Paid' => true,
         'total_price' => true,
         'product' => true,

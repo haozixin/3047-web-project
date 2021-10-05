@@ -2,7 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Order $order
- * @var string[]|\Cake\Collection\CollectionInterface $customers
+ * @var string[]|\Cake\Collection\CollectionInterface $agents
  * @var string[]|\Cake\Collection\CollectionInterface $products
  */
 ?>
@@ -29,9 +29,9 @@
                     echo $this->Form->control('deal_date');
                     echo $this->Form->control('deal_comment');
                     echo $this->Form->control('shipping_address');
-                    echo $this->Form->control('customer_id');
+                    echo $this->Form->control('agent_id');
                     echo $this->Form->control('email_sent');
-                    echo $this->Form->control('customer_email', ['options' => $customers, 'empty' => true]);
+                    echo $this->Form->control('agent_email', ['options' => $agents, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

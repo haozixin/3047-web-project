@@ -114,4 +114,15 @@ class OrdersControllerTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test marking1 method
+     *
+     * @return void
+     * @uses \App\Controller\OrdersController::marking1()
+     */
+    public function testMarking1(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

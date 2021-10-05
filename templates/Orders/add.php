@@ -3,7 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Order $order
  * @var \Cake\Collection\CollectionInterface|string[] $products
- * @var \Cake\Collection\CollectionInterface|string[] $customers
+ * @var \Cake\Collection\CollectionInterface|string[] $agents
  */
 ?>
 <div class="row">
@@ -24,7 +24,7 @@
                     echo $this->Form->control('deal_date');
                     echo $this->Form->control('deal_comment');
                     echo $this->Form->control('shipping_address');
-                    echo $this->Form->control('customer_id', ['options' => $customersForOrder, 'empty' => true]);
+                    echo $this->Form->control('agent_id', ['options' => $agentsForOrder, 'empty' => true]);
 
                 ?>
             </fieldset>

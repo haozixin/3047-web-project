@@ -27,8 +27,8 @@
                     <td><?= h($order->shipping_address) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Customer') ?></th>
-                    <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
+                    <th><?= __('Agent') ?></th>
+                    <td><?= $order->has('agent') ? $this->Html->link($order->agent->id, ['controller' => 'Agents', 'action' => 'view', $order->agent->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -39,8 +39,8 @@
                     <td><?= $this->Number->format($order->quantity) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Customer Id') ?></th>
-                    <td><?= $this->Number->format($order->customer_id) ?></td>
+                    <th><?= __('Agent Id') ?></th>
+                    <td><?= $this->Number->format($order->agent_id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Deal Date') ?></th>
