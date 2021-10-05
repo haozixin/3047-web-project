@@ -38,21 +38,21 @@ $this-> layout="customer_default";
 
         <div class="col-lg-5">
             <h1 class="font-weight-light">100% Pure Australian Organic Healthy Honey</h1>
-            <p>Frequently Asked Questions about Manuka Honey
+            <p>Frequently Asked Questions about Hearty's Healthy  Honey
                 Plus, some information about our Products and Processes</p>
         </div>
     </div>
     <!-- Call to Action-->
     <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0">Find out why Manuka Honey is so amazing...</p></div>
+        <div class="card-body"><p class="text-white m-0">Find out why Hearty's Healthy Honey is so amazing...</p></div>
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
         <div class="col-md-4 mb-5">
             <div class="card h-30">
                 <div class="card-body">
-                    <h2 class="card-title">What is the difference between Australian and New Zealand Manuka Honey?</h2>
-                    <p class="card-text">New Zealand Manuka honey is usually much thicker than Australian Manuka honey, and our tests have shown us that the majority of NZ products often add glycerine and use heat treatment to blend their honey, whereas Paul’s Healthy Honey has zero additives and doesn’t use any heat treatment at all. </p>
+                    <h2 class="card-title">What is the difference between Australian and New Zealand  Honey?</h2>
+                    <p class="card-text">New Zealand  honey is usually much thicker than Australian  honey, and our tests have shown us that the majority of NZ products often add glycerine and use heat treatment to blend their honey, whereas Paul’s Healthy Honey has zero additives and doesn’t use any heat treatment at all. </p>
                 </div>
 
             </div>
@@ -60,7 +60,7 @@ $this-> layout="customer_default";
         <div class="col-md-4 mb-5">
             <div class="card h-30">
                 <div class="card-body">
-                    <h2 class="card-title">What does the 40+, 160+, and 260+ rating mean in regards to Manuka Honey?</h2>
+                    <h2 class="card-title">What does the 40+, 160+, and 260+ rating mean in regards to  Honey?</h2>
                     <p class="card-text">The higher the numbers, the higher the medicinal strength of the honey. All of our honey is stringently strength-tested in a laboratory and comes back with a medicinal rating.</p>
                 </div>
 
@@ -69,8 +69,8 @@ $this-> layout="customer_default";
         <div class="col-md-4 mb-5">
             <div class="card h-30">
                 <div class="card-body">
-                    <h2 class="card-title">Where is Paul’s Healthy Honey made?</h2>
-                    <p class="card-text">The majority of Paul’s Healthy Honey is produced at our hives in country Victoria, but we also source high-quality ingredients from all over Australia, selecting the finest honey from only the best hives and apiaries. We work with 38 other award-winning Australian Beekeepers.</p>
+                    <h2 class="card-title">Where is Hearty's Healthy Honey made?</h2>
+                    <p class="card-text">The majority of Hearty's Healthy  Honey is produced at our hives in country Victoria, but we also source high-quality ingredients from all over Australia, selecting the finest honey from only the best hives and apiaries. We work with 38 other award-winning Australian Beekeepers.</p>
                 </div>
             </div>
         </div>

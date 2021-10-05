@@ -66,46 +66,56 @@ class AgentsTable extends Table
             ->requirePresence('given_name', 'create')
             ->notEmptyString('given_name');
 
+
         $validator
             ->scalar('family_name')
             ->maxLength('family_name', 64)
-            ->allowEmptyString('family_name');
-
-        $validator
-            ->scalar('country')
-            ->requirePresence('country', 'create')
-            ->notEmptyString('country');
+            ->requirePresence('family_name', 'create')
+            ->notEmptyString('family_name');
 
         $validator
             ->scalar('state')
             ->requirePresence('state', 'create')
             ->notEmptyString('state');
-
         $validator
             ->scalar('city')
             ->requirePresence('city', 'create')
             ->notEmptyString('city');
-
         $validator
             ->scalar('street')
             ->requirePresence('street', 'create')
             ->notEmptyString('street');
 
         $validator
-            ->email('email')
+            ->scalar('country')
+            ->requirePresence('country', 'create')
+            ->notEmptyString('country');
+        $validator
+            ->add("email", [
+                "valid_email" => [
+                    "rule" => ["email"],
+                    "message" => "Email Address is not valid Please try again.(e.g.abc@example.com)",
+                ]])
             ->requirePresence('email', 'create')
             ->notEmptyString('email');
 
         $validator
-            ->scalar('address')
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
-
-        $validator
             ->scalar('subscription_status')
-            ->maxLength('subscription_status', 30)
+            ->maxLength('subscription_status', 64)
             ->requirePresence('subscription_status', 'create')
             ->notEmptyString('subscription_status');
+
+        $validator
+            ->scalar('user_name')
+            ->maxLength('user_name', 64)
+            ->requirePresence('user_name', 'create')
+            ->notEmptyString('user_name');
+
+        $validator
+            ->scalar('password')
+            ->maxLength('password', 640)
+            ->requirePresence('password', 'create')
+            ->notEmptyString('password');
 
         return $validator;
     }
