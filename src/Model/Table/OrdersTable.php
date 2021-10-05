@@ -11,8 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Orders Model
  *
+ * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  * @property \App\Model\Table\CustomersTable&\Cake\ORM\Association\BelongsTo $Customers
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\HasMany $Products
  *
  * @method \App\Model\Entity\Order newEmptyEntity()
  * @method \App\Model\Entity\Order newEntity(array $data, array $options = [])
@@ -44,12 +44,12 @@ class OrdersTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Customers', [
-            'foreignKey' => 'customer_id',
+        $this->belongsTo('Products', [
+            'foreignKey' => 'product_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('Products', [
-            'foreignKey' => 'order_id',
+        $this->belongsTo('Customers', [
+            'foreignKey' => 'customer_id',
         ]);
     }
 
@@ -64,11 +64,6 @@ class OrdersTable extends Table
         $validator
             ->integer('id')
             ->allowEmptyString('id', null, 'create');
-
-        $validator
-            ->integer('amount')
-            ->requirePresence('amount', 'create')
-            ->notEmptyString('amount');
 
         $validator
             ->integer('quantity')
@@ -87,8 +82,28 @@ class OrdersTable extends Table
 
         $validator
             ->scalar('shipping_address')
+            ->maxLength('shipping_address', 256)
             ->requirePresence('shipping_address', 'create')
             ->notEmptyString('shipping_address');
+
+        $validator
+            ->boolean('email_sent')
+            ->notEmptyString('email_sent');
+
+        $validator
+            ->scalar('customer_email')
+            ->maxLength('customer_email', 256)
+            ->allowEmptyString('customer_email');
+
+        $validator
+            ->scalar('Paid')
+            ->maxLength('Paid', 256)
+            ->notEmptyString('Paid');
+
+        $validator
+            ->decimal('total_price')
+            ->requirePresence('total_price', 'create')
+            ->notEmptyString('total_price');
 
         return $validator;
     }
@@ -102,6 +117,7 @@ class OrdersTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
+        $rules->add($rules->existsIn(['product_id'], 'Products'), ['errorField' => 'product_id']);
         $rules->add($rules->existsIn(['customer_id'], 'Customers'), ['errorField' => 'customer_id']);
 
         return $rules;

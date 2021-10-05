@@ -50,6 +50,28 @@ class ProductsControllerTest extends TestCase
     }
 
     /**
+     * Test restock method
+     *
+     * @return void
+     * @uses \App\Controller\ProductsController::restock()
+     */
+    public function testRestock(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test submitrequest method
+     *
+     * @return void
+     * @uses \App\Controller\ProductsController::submitrequest()
+     */
+    public function testSubmitrequest(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
      * Test add method
      *
      * @return void
@@ -78,6 +100,17 @@ class ProductsControllerTest extends TestCase
      * @uses \App\Controller\ProductsController::delete()
      */
     public function testDelete(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test display method
+     *
+     * @return void
+     * @uses \App\Controller\ProductsController::display()
+     */
+    public function testDisplay(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

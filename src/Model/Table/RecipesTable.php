@@ -68,30 +68,20 @@ class RecipesTable extends Table
 
         $validator
             ->scalar('description')
-            ->allowEmptyString('description,null','create');
+            ->requirePresence('description', 'create')
+            ->notEmptyString('description');
 
         $validator
             ->scalar('video_link')
+            ->maxLength('video_link', 256)
             ->requirePresence('video_link', 'create')
             ->notEmptyString('video_link');
 
-
-
         $validator
-                    ->requirePresence('photo', 'create')
-                    ->add( 'image', [
-                    'mimeType' => [
-                        'rule' => [ 'mimeType', [ 'image/jpg', 'image/png', 'image/jpeg' ] ],
-                        'message' => 'Please upload only jpg and png.',
-                    ],
-                    'fileSize' => [
-                        'rule' => [ 'fileSize', '<=', '1MB' ],
-                        'message' => 'Image file size must be less than 1MB.',
-                    ]
-                ] );
-
-
-
+            ->scalar('photo')
+            ->maxLength('photo', 256)
+            ->requirePresence('photo', 'create')
+            ->notEmptyString('photo');
 
         return $validator;
     }

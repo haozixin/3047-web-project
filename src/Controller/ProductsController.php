@@ -42,6 +42,54 @@ class ProductsController extends AppController
         $this->set(compact('product'));
     }
 
+
+       public function restock($id = null)
+         {
+                $product = $this->Products->get($id, [
+                    'contain' => [],
+                ]);
+                $productID= $product->id;
+                $product_name= $product->name;
+                $product_quantity= $product->quantity;
+                $product_price= $product->customer_price;
+
+                $session = $this->getRequest()->getSession();
+                $session->write(['product_id'=> $productID,'name'=> $product_name,'quantity' => $product_quantity,'total'=>$product_price ]);
+                $session->read('product_id');
+                $session->read('name');
+                $session->read('quantity');
+                $session->read('total');
+                $this->redirect(['controller' => 'Orders', 'action' => 'add']);
+            }
+
+       public function update($id = null)
+        {$id=$quantity=$this->getRequest()->getSession()->read('product_id');
+                       $product = $this->Products->get($id, [
+                           'contain' => [],
+                       ]); $currentQty = (int)$product['quantity'];
+                           $toSubtract = $this->getRequest()->getSession()->read('subtract');
+                           $newQuantity = $currentQty - $toSubtract;
+                           $product->quantity = $newQuantity;
+
+                           if($newQuantity>=0) {
+                            if ($this->Products->save($product)) {
+                               $this->Flash->success(__('The product has been saved.'));
+
+                               $this->redirect (['controller' => 'Orders', 'action' => '/']);
+                           } }
+                            $this->set(compact('product'));
+                   }
+
+//         public function submitrequest($id = null)
+//                 {
+//                      $this->paginate = [
+//                          'contain' => ['Orders'],
+//                      ];
+//                      $products = $this->paginate($this->Products);
+//
+//                      $this->set(compact('products'));
+//                  }
+
     /**
      * Add method
      *
@@ -51,14 +99,14 @@ class ProductsController extends AppController
     {
         $product = $this->Products->newEmptyEntity();
 
+
         if ($this->request->is('post')) {
             $product = $this->Products->patchEntity($product, $this->request->getData());
+
             $expired_date = $product->expired_date;
             $manufacture = $product ->date_of_manufacture;
             $customer_price = $this->request->getData('customer_price');
             $agent_price = $this->request->getData('agent_price');
-
-
 
 
             if(($customer_price<=0||$customer_price>1000) or ($agent_price<=0||$agent_price>1000)) {
@@ -84,7 +132,7 @@ class ProductsController extends AppController
         }
 
         $orders = $this->Products->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'orders'));
+        $this->set(compact('product'));
     }
 
     /**
@@ -109,7 +157,7 @@ class ProductsController extends AppController
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $orders = $this->Products->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'orders'));
+        $this->set(compact('product'));
     }
 
     /**

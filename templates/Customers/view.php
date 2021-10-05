@@ -69,7 +69,6 @@
                     <table>
                         <tr>
                             <th><?= __('Id') ?></th>
-                            <th><?= __('Amount') ?></th>
                             <th><?= __('Quantity') ?></th>
                             <th><?= __('Deal Date') ?></th>
                             <th><?= __('Deal Comment') ?></th>
@@ -80,7 +79,6 @@
                         <?php foreach ($customer->orders as $orders) : ?>
                         <tr>
                             <td><?= h($orders->id) ?></td>
-                            <td><?= h($orders->amount) ?></td>
                             <td><?= h($orders->quantity) ?></td>
                             <td><?= h($orders->deal_date) ?></td>
                             <td><?= h($orders->deal_comment) ?></td>

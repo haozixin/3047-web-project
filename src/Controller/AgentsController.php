@@ -50,7 +50,7 @@ class AgentsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+ /*   public function add()
     {
         $agent = $this->Agents->newEmptyEntity();
         if ($this->request->is('post')) {
@@ -64,6 +64,40 @@ class AgentsController extends AppController
         }
         $this->set(compact('agent'));
     }
+*/
+    public function add()
+    {
+        $agent = $this->Agents->newEmptyEntity();
+        if ($this->request->is('post')) {
+            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
+            $sub= $this->request->getData('subscription_status');
+            //            debug($customer);
+            //            debug($sub);
+            $email=$this->request->getData('email');
+            $fname= $this->request->getData('family_name');
+            $gname= $this->request->getData('given_name');
+
+
+            $key=$this->request->getData('email');
+            $session = $this->getRequest()->getSession();
+            $session->write(['email'=> $email,'family_name' => $fname,
+                'given_name' => $gname]);
+            $session->read('email');
+            $session->read('family_name');
+            $session->read('given_name');
+
+
+            if ($this->Agents->save($agent)) {
+                $this->Flash->success(__('The agent has been saved.'));
+                if($sub == 'yes'){ $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']); }
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
+        }
+        $this->set(compact('agent'));
+    }
+
 
     /**
      * Edit method

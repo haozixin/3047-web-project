@@ -32,6 +32,7 @@ $this ->Form->setTemplates($formTemplate);
                 echo $this->Form->control('product_type');
                 echo $this->Form->control('date_of_manufacture');
                 echo $this->Form->control('expired_date');
+                echo $this->Form->control('quantity');
                 ?>
 
                 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>

@@ -9,15 +9,19 @@ use Cake\ORM\Entity;
  * Order Entity
  *
  * @property int $id
- * @property int $amount
+ * @property int $product_id
  * @property int $quantity
  * @property \Cake\I18n\FrozenDate $deal_date
  * @property string $deal_comment
  * @property string $shipping_address
  * @property int|null $customer_id
+ * @property bool $email_sent
+ * @property string|null $customer_email
+ * @property string $Paid
+ * @property string $total_price
  *
+ * @property \App\Model\Entity\Product $product
  * @property \App\Model\Entity\Customer $customer
- * @property \App\Model\Entity\Product[] $products
  */
 class Order extends Entity
 {
@@ -31,13 +35,17 @@ class Order extends Entity
      * @var array
      */
     protected $_accessible = [
-        'amount' => true,
+        'product_id' => true,
         'quantity' => true,
         'deal_date' => true,
         'deal_comment' => true,
         'shipping_address' => true,
         'customer_id' => true,
+        'email_sent' => true,
+        'customer_email' => true,
+        'Paid' => true,
+        'total_price' => true,
+        'product' => true,
         'customer' => true,
-        'products' => true,
     ];
 }
