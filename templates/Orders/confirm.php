@@ -20,9 +20,9 @@
                     <th><?= h('quantity') ?></th>
                     <th><?= h('deal_date') ?></th>
                     <th><?= h('shipping_address') ?></th>
-                    <th><?= h('customer_id') ?></th>
+                    <th><?= h('agent_id') ?></th>
                     <th><?= h('email sent?') ?></th>
-                    <th><?= h('customer_email') ?></th>
+                    <th><?= h('agent_email') ?></th>
                     <th><?= h('Paid?') ?></th>
 
                     <th class="actions"><?= __('Actions') ?></th>
@@ -36,9 +36,9 @@
                     <td><?= h($order->quantity) ?></td>
                     <td><?= h($order->deal_date) ?></td>
                     <td><?= h($order->shipping_address) ?></td>
-                    <td><?= h($order->customer_id) ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
+                    <td><?= h($order->agent_id) ? $this->Html->link($order->agent->id, ['controller' => 'Agents', 'action' => 'view', $order->agent->id]) : '' ?></td>
                     <td><?= $order->email_sent ? __('Yes') : __('No'); ?></td>
-                     <td><?= h($order->customer_email) ?></td>
+                     <td><?= h($order->agent_email) ?></td>
                      <td><?= h($order->Paid) ?></td>
                     <td class="actions">
 

@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  * Orders Model
  *
  * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
- * @property \App\Model\Table\CustomersTable&\Cake\ORM\Association\BelongsTo $Customers
  *
  * @method \App\Model\Entity\Order newEmptyEntity()
  * @method \App\Model\Entity\Order newEntity(array $data, array $options = [])
@@ -48,8 +47,8 @@ class OrdersTable extends Table
             'foreignKey' => 'product_id',
             'joinType' => 'INNER',
         ]);
-        $this->belongsTo('Customers', [
-            'foreignKey' => 'customer_id',
+        $this->belongsTo('Agents', [
+            'foreignKey' => 'agent_id',
         ]);
     }
 
@@ -91,9 +90,9 @@ class OrdersTable extends Table
             ->notEmptyString('email_sent');
 
         $validator
-            ->scalar('customer_email')
-            ->maxLength('customer_email', 256)
-            ->allowEmptyString('customer_email');
+            ->scalar('agent_email')
+            ->maxLength('agent_email', 256)
+            ->allowEmptyString('agent_email');
 
         $validator
             ->scalar('Paid')
@@ -118,7 +117,7 @@ class OrdersTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['product_id'], 'Products'), ['errorField' => 'product_id']);
-        $rules->add($rules->existsIn(['customer_id'], 'Customers'), ['errorField' => 'customer_id']);
+        $rules->add($rules->existsIn(['agent_id'], 'Agents'), ['errorField' => 'agent_id']);
 
         return $rules;
     }
