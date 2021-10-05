@@ -250,9 +250,8 @@ $this->disableAutoLayout();
     <!-- Banner Section -->
     <section class="banner-section-three">
         <div class="main-slider-carousel owl-carousel owl-theme">
-
             <!-- Slide -->
-            <div class="slide" style="background-image: url(../webroot/img/main-slider/1.jpg)">
+            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/background/1.png')">
                 <div class="auto-container">
                     <!-- Content Column -->
                     <div class="content-box">
@@ -270,7 +269,7 @@ $this->disableAutoLayout();
             </div>
 
             <!-- Slide -->
-            <div class="slide" style="background-image: url(../webroot/img/main-slider/2.jpg)">
+            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/2.jpg')">
                 <div class="auto-container">
                     <!-- Content Column -->
                     <div class="content-box">
@@ -288,7 +287,7 @@ $this->disableAutoLayout();
             </div>
 
             <!-- Slide -->
-            <div class="slide" style="background-image: url(../webroot/img/main-slider/3.jpg)">
+            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/3.jpg')">
                 <div class="auto-container">
                     <!-- Content Column -->
                     <div class="content-box">
@@ -465,7 +464,7 @@ $this->disableAutoLayout();
             </div>
 
             <!-- Image Column -->
-            <div class="image-column" style="background-image:url(../webroot/img/resource/image-2.jpg)">
+            <div class="image-column" style="background-image:url('http://localhost/team104-app_fit3047/webroot/img/resource/image-2.jpg')">
                 <figure class="image-box"><img src="../webroot/img/resource/image-2.jpg" alt=""></figure>
             </div>
 
@@ -890,7 +889,7 @@ $this->disableAutoLayout();
 
     <!-- Video Section -->
     <section class="video-section">
-        <div class="image-layer" style="background-image: url(../webroot/img/background/5.jpg)"></div>
+        <div class="image-layer" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/background/5.jpg')"></div>
         <div class="auto-container">
             <div class="inner-container">
                 <!-- Video Box -->
