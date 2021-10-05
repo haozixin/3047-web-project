@@ -5,21 +5,27 @@
  * @var \Cake\Collection\CollectionInterface|string[] $products
  * @var \Cake\Collection\CollectionInterface|string[] $agents
  */
+ $formTemplate=[
+                'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+                'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+                'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+                'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+                'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+                'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+                ];
+ $this ->Form->setTemplates($formTemplate);
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Orders'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
+
+
     <div class="column-responsive column-80">
         <div class="orders form content">
             <?= $this->Form->create($order) ?>
             <fieldset>
                 <legend><?= __('Add Order') ?></legend>
+                <legend><?= __('Product Name:') ?> <?=$this->getRequest()->getSession()->read('name');?> </legend>
                 <?php
-                    echo $this->getRequest()->getSession()->read('name');
+
                     echo $this->Form->control('quantity');
                     echo $this->Form->control('deal_date');
                     echo $this->Form->control('deal_comment');
@@ -31,5 +37,5 @@
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
-    </div>
+
 </div>

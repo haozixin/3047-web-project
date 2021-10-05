@@ -17,7 +17,7 @@
     <div class="column-responsive column-80">
         <div class="orders view content">
             <h3><?= h($order->id) ?></h3>
-            <table>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <tr>
                     <th><?= __('Product') ?></th>
                     <td><?= $order->has('product') ? $this->Html->link($order->product->name, ['controller' => 'Products', 'action' => 'view', $order->product->id]) : '' ?></td>

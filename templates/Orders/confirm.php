@@ -10,7 +10,7 @@
 ?>
 <div class="products index content">
     <!-- Page Heading -->
-
+<h1 class="h3 mb-2 text-grey-800">Confirm and Ship Orders</h1>
     <div class="table-responsive">
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
