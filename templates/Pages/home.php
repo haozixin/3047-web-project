@@ -562,7 +562,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 						<form method="post" action="contact.html">
 							<div class="form-group">
 								<input type="email" name="email" value="" placeholder="type your email" required>
-								<button type="submit" class="submit-btn"><span class="icon flaticon-send"></span></button>
+								<button type="submit" class="submit-btn" onclick="swal('Hey, The function is coming in future')"><span class="icon flaticon-send"></span></button>
 							</div>
 						</form>
 					</div>
@@ -1081,7 +1081,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 										<form method="post" action="contact.html">
 											<div class="form-group">
 												<input type="email" name="email" value="" placeholder="Your Email" required="">
-												<button type="submit" class="theme-btn submit-btn" >Subscribe Now</button>
+												<button type="submit" class="theme-btn submit-btn" onclick="swal('hey, the function is coming soon')" >Subscribe Now</button>
 
 											</div>
 										</form>
