@@ -46,6 +46,7 @@ class RecipesController extends AppController
      */
     public function add()
     {
+        $this->Authorization->skipAuthorization();
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
 

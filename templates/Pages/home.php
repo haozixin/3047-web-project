@@ -124,7 +124,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 								</li>
 								<li class="dropdown"><a href="#">About</a>
 									<ul>
-										<li><a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'about']) ?>">About Us</a></li>
+										<li><a href="">About Us</a></li>
 										<li><a href="">Team</a></li>
 										<li><a href="">Our Honey Stores</a></li>
 									</ul>
@@ -196,7 +196,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 </div>
             </div>
         </div><!-- End Sticky Menu -->
-        Cucumber
+
 		<!-- Mobile Menu  -->
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
@@ -227,12 +227,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 					<div class="sidebar-info-contents">
 						<div class="content-inner">
 							<div class="logo">
-								<a href="index.html"><img src="webroot/img/logo.png" alt="" /></a>
+								<a href=""><img src="webroot/img/logo.png" alt="" /></a>
 							</div>
 							<div class="content-box">
 								<h2>About Us</h2>
 								<p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-								<a href="contact.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
+								<a href="" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
 							</div>
 							<div class="contact-info">
 								<h2>Contact Info</h2>

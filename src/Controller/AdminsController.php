@@ -24,6 +24,8 @@ class AdminsController extends AppController
     }
     public function homepage()
     {
+        $this->Authorization->skipAuthorization();
+
         $admins = $this->paginate($this->Admins);
 
         $this->set(compact('admins'));
@@ -111,6 +113,9 @@ class AdminsController extends AppController
 
     public function logout()
     {
+        // In the add, login, and logout methods
+        $this->Authorization->skipAuthorization();
+
         $result = $this->Authentication->getResult();
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {

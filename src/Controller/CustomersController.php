@@ -123,7 +123,7 @@ class CustomersController extends AppController
     }
     public function faq()
     {
-
+        $this->Authorization->skipAuthorization();
     }
 
 

@@ -36,6 +36,13 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  use Authentication\Middleware\AuthenticationMiddleware;
  use Cake\Routing\Router;
  use Psr\Http\Message\ServerRequestInterface;
+
+ // for Authorization
+use Authorization\AuthorizationService;
+use Authorization\AuthorizationServiceInterface;
+use Authorization\AuthorizationServiceProviderInterface;
+use Authorization\Middleware\AuthorizationMiddleware;
+use Authorization\Policy\OrmResolver;
 /**
  * Application setup class.
  *
@@ -43,7 +50,8 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  * want to use in your application.
  */
 class Application extends BaseApplication
-    implements AuthenticationServiceProviderInterface
+    implements AuthenticationServiceProviderInterface,
+    AuthorizationServiceProviderInterface
 
 {
     /**
@@ -74,6 +82,7 @@ class Application extends BaseApplication
         }
 
         // Load more plugins here
+        $this->addPlugin('Authorization');
     }
 
     /**
@@ -116,6 +125,7 @@ class Application extends BaseApplication
             // add Authentication after RoutingMiddleware
             //for sign in
             ->add(new AuthenticationMiddleware($this))
+            ->add(new AuthorizationMiddleware($this))
             ;
 
 
@@ -123,10 +133,12 @@ class Application extends BaseApplication
     }
      public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
      {
+         //debug($request);
          $authenticationService = new AuthenticationService([
              'unauthenticatedRedirect' => Router::url('/users/login'),
              'queryParam' => 'redirect',
          ]);
+
 
          // Load identifiers, ensure we check email and password fields
          $authenticationService->loadIdentifier('Authentication.Password', [
@@ -146,7 +158,7 @@ class Application extends BaseApplication
              ],
              'loginUrl' => Router::url('/users/login'),
          ]);
-
+         //debug($authenticationService);
          return $authenticationService;
      }
 
@@ -180,6 +192,13 @@ class Application extends BaseApplication
 
         // Load more plugins here
 //         $this->addPlugin('Authentication.Authentication');
+    }
+
+    public function getAuthorizationService(ServerRequestInterface $request): AuthorizationServiceInterface
+    {
+        $resolver = new OrmResolver();
+
+        return new AuthorizationService($resolver);
     }
 
 

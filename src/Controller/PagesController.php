@@ -46,6 +46,7 @@ class PagesController extends AppController
      */
     public function display(string ...$path): ?Response
     {
+        $this->Authorization->skipAuthorization();
         if (!$path) {
             return $this->redirect('/');
         }
@@ -73,14 +74,9 @@ class PagesController extends AppController
     }
 
     public function about(){
-        $this->pages='about';
-    }
+        $this->Authorization->skipAuthorization();
 
-    public function switchAdmin(){
-     $this->layout='default';
-    }
-    public function switchCustomer(){
-      $this->layout='default_customer';
+        $this->pages='about';
     }
 
 
