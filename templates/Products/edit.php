@@ -34,11 +34,12 @@ $this ->Form->setTemplates($formTemplate);
                     echo $this->Form->control('expired_date');
                     echo $this->Form->control('quantity');
                 ?>
-
+                <a><p></p></a>
                 <?= $this->Form->button(__('Submit')) ?>
                 <?= $this->Form->end() ?>
+                <a><p></p></a>
+                <a><p></p></a>
             </fieldset>
-
         </div>
     </div>
-</div>
+
