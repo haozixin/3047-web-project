@@ -121,31 +121,41 @@ class NewsletterSubscriptionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
     public function display()
-        {
+    {
 
-        }
-        public function add_customer(){$newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
-                                              $this->loadModel('Customers');
-                                              $email=$this->getRequest()->getSession()->read('email');
+    }
 
-                                              $fname=$this->getRequest()->getSession()->read('family_name');
-                                              $gname=$this->getRequest()->getSession()->read('given_name');
-                                              $name=$gname . ' ' . $fname;
+    public function add_customer()
+    {
+        $newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+        $this->loadModel('Customers');
+        $email = $this->getRequest()->getSession()->read('email');
+
+        $fname = $this->getRequest()->getSession()->read('family_name');
+        $gname = $this->getRequest()->getSession()->read('given_name');
+        $name = $gname . ' ' . $fname;
 
 
 //                                               $newsletterSubscription['customer_name']=$fname+$gname;
-                                              $newsletterSubscription['customer_email']=$email;
-                                              $newsletterSubscription['customer_name']=$name;
-
-
+        $newsletterSubscription['customer_email'] = $email;
+        $newsletterSubscription['customer_name'] = $name;
 
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
 
+    }
+
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect('/');
         }
-
-
+    }
 
 
 }

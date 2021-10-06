@@ -78,7 +78,7 @@ class OrdersController extends AppController
                 $order->product_id=$id;
                 $order_price= (int)$order_total *(int)$order_quantity;
                 $order->total_price=$order_price;
-            
+
                 if ($this->Orders->save($order)) {
                      $this->Flash->success(__('The order has been saved.'));
                      $session = $this->getRequest()->getSession();
@@ -257,4 +257,14 @@ public function marking($id = null)
 //      $agents = $this->Orders->Agents->find('list', ['limit' => 200]);
 //      $this->set(compact('order', 'products', 'agents'));
 //  }
+
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect('/');
+        }
+    }
 }

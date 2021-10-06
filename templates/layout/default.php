@@ -39,7 +39,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center"
            href="<?= $this->Url->build('/admins/homepage') ?>">
-            <img src="/../img/bee_fly.gif" width="50"/>
+            <img src="../webroot/img/bee_fly.gif" width="50"/>
             <div class="sidebar-brand-text mx-3">Heartys Healthy Honey <sup>co</sup></div>
         </a>
 
