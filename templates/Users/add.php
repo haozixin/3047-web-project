@@ -3,6 +3,18 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
  */
+
+$formTemplate = [
+    'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+    'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+    'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+    'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+];
+
+$this->Form->setTemplates($formTemplate);
+
 ?>
 <div class="row">
     <aside class="column">
