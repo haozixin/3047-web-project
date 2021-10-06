@@ -48,12 +48,12 @@
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
 
                 <div class="my-2"></div>
-                <a href="<?= $this->Url->build(['controller' => 'Pages', 'action' => 'display']) ?>" class=" btn-icon-split"
+                <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>" class=" btn-icon-split"
                    style="background-color:DarkOrange">
                                                    <span class="icon text-white-50">
                                                        <i class="fas fa-keyboard"></i>
                                                    </span>
-                    <span class="text" style="color: black">Go back Customer homepage</span>
+                    <span class="text" style="color: black">Go back Agent' homepage</span>
                 </a>
                 <div class="my-2"></div>
 
@@ -157,5 +157,4 @@
 </body>
 
 </html>
-
 
