@@ -74,7 +74,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <?= $this->Html->css('sb-admin-2.min.css') ?>
 <?= $this->fetch('meta') ?>
 <?= $this->fetch('css') ?>
+<?= $this->Html->script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') ?>
 <?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
+
+
 
 </head>
 
@@ -1100,12 +1103,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 <!-- Search Popup -->
 <div class="search-popup">
-	<button class="close-search style-two"><span class="flaticon-multiply"></span></button>
-	<button class="close-search"><span class="flaticon-up-arrow-1"></span></button>
-	<form method="post" action="blog.html">
+	<button class="close-search style-two">Close<span class="flaticon-multiply"></span></button>
+
+	<form >
 		<div class="form-group">
 			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-			<button type="submit"><i class="fa fa-search"></i></button>
+			<button type="" onclick="swal('Hi, search function doesn\'t work for now')"><i class="fa fa-search"></i></button>
+
 		</div>
 	</form>
 </div>
@@ -1127,7 +1131,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <?= $this->Html->script('/js/nav-tool.js') ?>
 <?= $this->Html->script('/js/jquery-ui.js') ?>
 <?= $this->Html->script('/js/script.js') ?>
-
+<?= $this->Html->script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') ?>
 
 
 </body>
