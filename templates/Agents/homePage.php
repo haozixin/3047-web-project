@@ -222,7 +222,7 @@ $this->disableAutoLayout();
                             </div>
                             <div class="content-box">
                                 <h2>About Us</h2>
-                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design. </p>
                                 <a href="contact.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
                             </div>
                             <div class="contact-info">

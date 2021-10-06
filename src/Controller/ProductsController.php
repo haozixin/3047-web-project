@@ -73,7 +73,8 @@ class ProductsController extends AppController
 
                            if($newQuantity>=0) {
                             if ($this->Products->save($product)) {
-                               $this->Flash->success(__('The product has been saved.'));
+                               $this->Flash->success(__('The Order has been saved.'));
+
 
 //                                $this->redirect (['controller' => 'Orders', 'action' => '/']);
                            } }
