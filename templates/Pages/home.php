@@ -74,7 +74,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <?= $this->Html->css('sb-admin-2.min.css') ?>
 <?= $this->fetch('meta') ?>
 <?= $this->fetch('css') ?>
+<?= $this->Html->script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') ?>
 <?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
+
+
 
 </head>
 
@@ -547,12 +550,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="box-inner">
 					<!-- Sec Title -->
 					<div class="sec-title light centered">
-						<div class="title">30% Off For juice</div>
+						<div class="title">30% Off For Honey</div>
 						<h2>Big Deals of the Week</h2>
+                        <br/>
 						<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae <br> intellegam. Ansed dictas accumsan. </div>
 					</div>
 					<!-- Email Form -->
 					<div class="email-form">
+                        <br/>
 						<div class="email-title">To Get New Of Our Deals</div>
 						<form method="post" action="contact.html">
 							<div class="form-group">
@@ -1100,12 +1105,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 <!-- Search Popup -->
 <div class="search-popup">
-	<button class="close-search style-two"><span class="flaticon-multiply"></span></button>
-	<button class="close-search"><span class="flaticon-up-arrow-1"></span></button>
-	<form method="post" action="blog.html">
+	<button class="close-search style-two">Close<span class="flaticon-multiply"></span></button>
+
+	<form >
 		<div class="form-group">
 			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-			<button type="submit"><i class="fa fa-search"></i></button>
+			<button type="" onclick="swal('Hi, search function doesn\'t work for now')"><i class="fa fa-search"></i></button>
+
 		</div>
 	</form>
 </div>
@@ -1127,7 +1133,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <?= $this->Html->script('/js/nav-tool.js') ?>
 <?= $this->Html->script('/js/jquery-ui.js') ?>
 <?= $this->Html->script('/js/script.js') ?>
-
+<?= $this->Html->script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') ?>
 
 
 </body>

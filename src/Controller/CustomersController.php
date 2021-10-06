@@ -126,6 +126,15 @@ class CustomersController extends AppController
         $this->Authorization->skipAuthorization();
     }
 
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect('/');
+        }
+    }
 
 
 }

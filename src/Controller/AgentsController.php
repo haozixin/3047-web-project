@@ -18,7 +18,6 @@ class AgentsController extends AppController
      */
     public function index()
     {
-        $this->Authorization->skipAuthorization();
         $agents = $this->paginate($this->Agents);
 
         $this->set(compact('agents'));
@@ -33,7 +32,6 @@ class AgentsController extends AppController
      */
     public function view($id = null)
     {
-        $this->Authorization->skipAuthorization();
         $agent = $this->Agents->get($id, [
             'contain' => ['AdminAgents'],
         ]);
@@ -43,7 +41,6 @@ class AgentsController extends AppController
 
     public function homepage()
     {
-        $this->Authorization->skipAuthorization();
         $admins = $this->paginate($this->Agents);
 
         $this->set(compact('admins'));
@@ -70,7 +67,6 @@ class AgentsController extends AppController
 */
     public function add()
     {
-        $this->Authorization->skipAuthorization();
         $agent = $this->Agents->newEmptyEntity();
         if ($this->request->is('post')) {
             $agent = $this->Agents->patchEntity($agent, $this->request->getData());
@@ -112,7 +108,6 @@ class AgentsController extends AppController
      */
     public function edit($id = null)
     {
-        $this->Authorization->skipAuthorization();
         $agent = $this->Agents->get($id, [
             'contain' => [],
         ]);
@@ -175,9 +170,6 @@ class AgentsController extends AppController
 
     public function logout()
     {
-        // In the add, login, and logout methods
-        $this->Authorization->skipAuthorization();
-
         $result = $this->Authentication->getResult();
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
