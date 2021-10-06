@@ -55,7 +55,7 @@ $this->disableAutoLayout();
 
                     <!-- Search Box -->
                     <div class="search-box">
-                        <form method="post" action="contact.html">
+<!--                        <form method="post" action="contact.html">-->
                             <div class="form-group">
                                 <input type="search" name="search-field" value="" placeholder="Search" required>
                                 <button type="submit"><span class="icon flaticon-search"></span></button>
@@ -222,7 +222,7 @@ $this->disableAutoLayout();
                             </div>
                             <div class="content-box">
                                 <h2>About Us</h2>
-                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design. </p>
                                 <a href="contact.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
                             </div>
                             <div class="contact-info">
@@ -273,7 +273,7 @@ $this->disableAutoLayout();
             </div>
 
             <!-- Slide -->
-            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/2.jpg')">
+            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/b2.jpg')">
                 <div class="auto-container">
                     <!-- Content Column -->
                     <div class="content-box">
@@ -291,7 +291,7 @@ $this->disableAutoLayout();
             </div>
 
             <!-- Slide -->
-            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/3.jpg')">
+            <div class="slide" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/main-slider/b3.jpg')">
                 <div class="auto-container">
                     <!-- Content Column -->
                     <div class="content-box">
@@ -363,12 +363,12 @@ $this->disableAutoLayout();
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="../webroot/img/resource/recipe-5.jpg" alt="" />
+                            <img src="../webroot/img/resource/brecipe-5.jpg" alt="" />
                             <!-- Overlay Box -->
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="../webroot/img/resource/recipe-5.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                        <a href="../webroot/img/resource/brecipe-5.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                     </div>
                                 </div>
                             </div>
@@ -389,12 +389,12 @@ $this->disableAutoLayout();
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="../webroot/img/resource/recipe-6.jpg" alt="" />
+                            <img src="../webroot/img/resource/brecipe-6.jpg" alt="" />
                             <!-- Overlay Box -->
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="../webroot/img/resource/recipe-6.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                        <a href="../webroot/img/resource/brecipe-6.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                     </div>
                                 </div>
                             </div>
@@ -415,12 +415,12 @@ $this->disableAutoLayout();
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="../webroot/img/resource/recipe-7.jpg" alt="" />
+                            <img src="../webroot/img/resource/brecipe-7.jpg" alt="" />
                             <!-- Overlay Box -->
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="../webroot/img/resource/recipe-7.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                        <a href="../webroot/img/resource/brecipe-7.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                     </div>
                                 </div>
                             </div>
@@ -469,7 +469,7 @@ $this->disableAutoLayout();
 
             <!-- Image Column -->
             <div class="image-column" style="background-image:url('http://localhost/team104-app_fit3047/webroot/img/resource/image-2.jpg')">
-                <figure class="image-box"><img src="../webroot/img/resource/image-2.jpg" alt=""></figure>
+                <figure class="image-box"><img src="../webroot/img/resource/bimage-2.jpg" alt=""></figure>
             </div>
 
         </div>
@@ -485,7 +485,7 @@ $this->disableAutoLayout();
                     <!-- Sec Title Two -->
                     <div class="sec-title-two">
                         <div class="title">All post</div>
-                        <h4>Featured recipes</h4>
+                        <h4>Featured Products</h4>
                         <div class="separator"></div>
                     </div>
 
@@ -493,12 +493,12 @@ $this->disableAutoLayout();
                     <div class="recipe-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="../webroot/img/resource/recipe-8.jpg" alt="" />
+                                <img src="../webroot/img/resource/brecipe-7.jpg" alt="" />
                                 <!-- Overlay Box -->
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
                                         <div class="content">
-                                            <a href="../webroot/img/resource/recipe-8.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                            <a href="../webroot/img/resource/brecipe-7.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -530,12 +530,12 @@ $this->disableAutoLayout();
                     <div class="recipe-block-four">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="../webroot/img/resource/recipe-9.jpg" alt="" />
+                                <img src="../webroot/img/resource/brecipe-9.jpg" alt="" />
                                 <!-- Overlay Box -->
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
                                         <div class="content">
-                                            <a href="../webroot/img/resource/recipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                            <a href="../webroot/img/resource/brecipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -556,12 +556,12 @@ $this->disableAutoLayout();
                     <div class="recipe-block-four">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="../webroot/img/resource/recipe-10.jpg" alt="" />
+                                <img src="../webroot/img/resource/brecipe-10.jpg" alt="" />
                                 <!-- Overlay Box -->
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
                                         <div class="content">
-                                            <a href="../webroot/img/resource/recipe-10.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                            <a href="../webroot/img/resource/brecipe-10.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -582,12 +582,12 @@ $this->disableAutoLayout();
                     <div class="recipe-block-four">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="../webroot/img/resource/recipe-11.jpg" alt="" />
+                                <img src="../webroot/img/resource/brecipe-11.jpg" alt="" />
                                 <!-- Overlay Box -->
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
                                         <div class="content">
-                                            <a href="../webroot/img/resource/recipe-11.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
+                                            <a href="../webroot/img/resource/brecipe-11.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -814,9 +814,9 @@ $this->disableAutoLayout();
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
+                                        <li><a href="#">Share</a></li>
                                     </ul>
-                                    <h6><a href="news-detail.html">Manuka Honey 160+’ <br> great tasting honey</a></h6>
+                                    <h6><a href="#">Manuka Honey 160+’ <br> great tasting honey</a></h6>
                                     <div class="text">
                                         Our 160+ is a great tasting honey and a wonderful way to take medicine especially for children. The 160+ is great for soothing sore throats, and assists helping cold and flu symptoms and upset
                                         stomach.
