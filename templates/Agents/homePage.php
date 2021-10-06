@@ -810,7 +810,7 @@ $this->disableAutoLayout();
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category">smoothie</div>
+                                    <div class="category">Most popular</div>
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
@@ -901,11 +901,11 @@ $this->disableAutoLayout();
                     <figure class="video-image">
                         <img src="../webroot/img/resource/video-image.jpg" alt="">
                     </figure>
-                    <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
+                    <a href="https://www.youtube.com/watch?v=ws8R44DzrS8" class="lightbox-image overlay-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
                 </div>
                 <div class="lower-content">
                     <h6>Make the first deal!</h6>
-                    <div class="text">This video will show you as an agent how do you retail with the product manufacturer  <br> to buy honey。</div>
+                    <div class="text">This video shows you how eating honey is good for your body    <br> why honey is so popular!</div>
                 </div>
             </div>
         </div>
