@@ -550,12 +550,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 				<div class="box-inner">
 					<!-- Sec Title -->
 					<div class="sec-title light centered">
-						<div class="title">30% Off For juice</div>
+						<div class="title">30% Off For Honey</div>
 						<h2>Big Deals of the Week</h2>
+                        <br/>
 						<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae <br> intellegam. Ansed dictas accumsan. </div>
 					</div>
 					<!-- Email Form -->
 					<div class="email-form">
+                        <br/>
 						<div class="email-title">To Get New Of Our Deals</div>
 						<form method="post" action="contact.html">
 							<div class="form-group">
