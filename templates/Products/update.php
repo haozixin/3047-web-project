@@ -10,13 +10,20 @@ $this-> layout="customer_default";
 ?>
 <div class="container d-flex align-items-center flex-column">
     <!-- Masthead Avatar Image-->
-    <img  src="/../img/honey_pour.gif"  />
+
     <!-- Masthead Heading-->
     <h1 >Thanks for the subscription!!</h1>
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
-
+<h2> click the button below to return to Home Page </h2>
+<a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>" class=" btn-icon-split"
+                   style="background-color:DarkOrange">
+                                                   <span class="icon text-white-50">
+                                                       <i class="fas fa-keyboard"></i>
+                                                   </span>
+                    <span class="text" style="color: black">Return to Home Page</span>
+                </a>
         <div class="divider-custom-line"></div>
     </div>
     <!--  Subheading-->

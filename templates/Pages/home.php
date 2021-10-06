@@ -278,7 +278,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 						<!-- Content Column -->
 						<div class="content-column col-lg-6 col-md-12 col-sm-12">
 							<div class="inner-column">
-								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span></h1>
 								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
 								<div class="btns-box">
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
@@ -313,7 +313,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 						<!-- Content Column -->
 						<div class="content-column col-lg-6 col-md-12 col-sm-12">
 							<div class="inner-column">
-								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span></h1>
 								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
 								<div class="btns-box">
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
@@ -348,7 +348,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 						<!-- Content Column -->
 						<div class="content-column col-lg-6 col-md-12 col-sm-12">
 							<div class="inner-column">
-								<h1><span class="first-letter">Heathly</span><span class="second-letter">Smoothie</span></h1>
+								<h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span></h1>
 								<div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
 								<div class="btns-box">
 									<a href="menu.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</a>
@@ -401,7 +401,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 						<!-- Sec Title -->
 						<div class="sec-title">
 							<div class="title">Drink for Health</div>
-							<h2>Fresh Fruit <span class="theme_color">Juices</span></h2>
+							<h2>Fresh Honey-mixed <span class="theme_color">Juices</span></h2>
 							<div class="separate"></div>
 							<div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae intellegam. Ansed dictas accumsan. Nam sint atqui voluptatibus an, pro ne malis semper perpetua. Nam sint atqui voluptatibus an, pro ne malis semper perpetua.</div>
 						</div>
@@ -421,7 +421,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 			<!-- Sec Title -->
 			<div class="sec-title centered">
 				<div class="title">Best for You</div>
-				<h2>Our Beverage</h2>
+				<h2>Honey Delicious</h2>
 				<div class="separate"></div>
 			</div>
 			<div class="row clearfix">
@@ -511,7 +511,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							<a href="milkshake.html"><img src="webroot/img/resource/beverage-7.jpg" alt="" /></a>
 						</div>
 						<div class="lower-content">
-							<h6><a href="milkshake.html">smoothie</a></h6>
+							<h6><a href="milkshake.html">Honey</a></h6>
 							<div class="products">3 products</div>
 						</div>
 					</div>
@@ -534,7 +534,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 			<!-- Button Box -->
 			<div class="button-box text-center">
-				<a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>View All Products</a>
+				<a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>View All Products</a>
 			</div>
 
 		</div>
@@ -582,7 +582,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 			<!-- Sec Title -->
 			<div class="sec-title centered">
 				<div class="title">Best for You</div>
-				<h2>Detox Smoothie Recipe</h2>
+				<h2>Detox Honey Recipe</h2>
 				<div class="separate"></div>
 			</div>
 			<div class="inner-container">
@@ -663,13 +663,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             	<div class="inner-column">
 					<!-- Sec Title -->
 					<div class="sec-title">
-						<h2>Upcoming Our <br> Beverage</h2>
+						<h2>Upcoming Our <br> Honey mix Beverage</h2>
 						<div class="separate"></div>
 						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 					</div>
 					<!-- Button Box -->
 					<div class="button-box">
-						<a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>All Product</a>
+						<a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>All Product</a>
 					</div>
 				</div>
 			</div>
@@ -765,12 +765,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							</div>
 						</div>
 						<div class="lower-content">
-							<div class="category">smoothie</div>
-							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<div class="category">Papaya honey</div>
+							<h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
 							<ul class="post-info">
 								<li>May 21, 2021</li>
 								<li>2 Comments</li>
-								<li><a href="news-detail.html">Share</a></li>
+								<li><a href="">Share</a></li>
 							</ul>
 						</div>
 					</div>
@@ -791,12 +791,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							</div>
 						</div>
 						<div class="lower-content">
-							<div class="category">smoothie</div>
-							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<div class="category">Citrus Honey</div>
+							<h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
 							<ul class="post-info">
 								<li>May 21, 2021</li>
 								<li>2 Comments</li>
-								<li><a href="news-detail.html">Share</a></li>
+								<li><a href="">Share</a></li>
 							</ul>
 						</div>
 					</div>
@@ -817,12 +817,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 							</div>
 						</div>
 						<div class="lower-content">
-							<div class="category">smoothie</div>
-							<h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+							<div class="category">Banana Honey Smoothie</div>
+							<h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
 							<ul class="post-info">
 								<li>May 21, 2021</li>
 								<li>2 Comments</li>
-								<li><a href="news-detail.html">Share</a></li>
+								<li><a href="">Share</a></li>
 							</ul>
 						</div>
 					</div>

@@ -9,6 +9,7 @@ namespace App\Controller;
  * @property \App\Model\Table\UsersTable $Users
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
+
 class UsersController extends AppController
 {
     /**
@@ -122,6 +123,7 @@ class UsersController extends AppController
          // In the add, login, and logout methods
          $this->Authorization->skipAuthorization();
 
+
          $this->request->allowMethod(['get', 'post']);
          $result = $this->Authentication->getResult();
 
@@ -140,7 +142,7 @@ class UsersController extends AppController
          }
          // display error if user submitted and authentication failed
          if ($this->request->is('post') && !$result->isValid()) {
-             $this->Flash->error(__('Invalid username or password'));
+             $this->Flash->success(__('Invalid username or password'));
          }
      }
     // in src/Controller/UsersController.php

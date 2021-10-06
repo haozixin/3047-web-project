@@ -80,7 +80,7 @@ class OrdersController extends AppController
                 $order->total_price=$order_price;
 
                 if ($this->Orders->save($order)) {
-                     $this->Flash->success(__('The order has been saved.'));
+
                      $session = $this->getRequest()->getSession();
                                  $session->write(['subtract'=> $order_quantity]);
                                  $session->read('subtract');
