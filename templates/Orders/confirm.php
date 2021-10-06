@@ -41,9 +41,8 @@
                      <td><?= h($order->agent_email) ?></td>
                      <td><?= h($order->Paid) ?></td>
                     <td class="actions">
-
-
                         <?= $this->Form->postLink(__('Mark as Paid'), ['action' => 'marking', $order->id], ['confirm' => __('Are you sure you want to mark  {0} as Paid?', $order->id)]) ?>
+                        <?= $this->Form->postLink(__('Cancel Order'), ['controller'=>'Products','action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to cancel order:{0} ?', $order->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
