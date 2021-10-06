@@ -6,11 +6,7 @@
 
 ?>
 <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit The Product'), ['action' => 'edit', $product->id], ['class' => 'side-nav-item']) ?>
 
-        </div>
 </aside>
     <div class="column-responsive column-80">
         <div class="products view content">
@@ -50,13 +46,13 @@
                 </tr>
             </table>
             <div class="text">
-                <strong><?= __('Description') ?></strong>
+                <strong><?= __('Description:') ?></strong>
                 <blockquote>
                     <?= $this->Text->autoParagraph(h($product->description)); ?>
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Product Recipes') ?></h4>
+                <h4><?= __('Related Product Recipes:') ?></h4>
                 <?php if (!empty($product->product_recipes)) : ?>
                 <div class="table-responsive">
                     <table>
@@ -88,4 +84,4 @@
             </div>
         </div>
     </div>
-</div>
+
