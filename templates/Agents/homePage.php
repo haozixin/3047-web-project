@@ -90,51 +90,55 @@ $this->disableAutoLayout();
                             <ul class="navigation clearfix">
                                 <li class="current dropdown"><a href="#">Home</a>
                                     <ul>
-                                        <li><a href="index.html">Homepage One</a></li>
-                                        <li><a href="index-2.html">Homepage Two</a></li>
-                                        <li><a href="index-3.html">Homepage Three</a></li>
+                                       <li><a href="#">Homepage</a></li>
+<!--                                        <li><a href="index-2.html">Homepage Two</a></li>-->
+<!--                                        <li><a href="index-3.html">Homepage Three</a></li>-->
 
                                         <li class="dropdown"><a href="#">Header Styles</a>
                                             <ul>
                                                 <li><a href="index.html">Header Style One</a></li>
-                                                <li><a href="index-2.html">Header Style Two</a></li>
-                                                <li><a href="index-3.html">Header Style Three</a></li>
-                                                <li><a href="index-3.html">Header Style Four</a></li>
+<!--                                                <li><a href="index-2.html">Header Style Two</a></li>-->
+<!--                                                <li><a href="index-3.html">Header Style Three</a></li>-->
+<!--                                                <li><a href="index-3.html">Header Style Four</a></li>-->
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">About</a>
                                     <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="team.html">Team</a></li>
-                                        <li><a href="restaurant.html">Restaurant</a></li>
+                                        <li><a href="#">About Us</a></li>
+<!--                                        <li><a href="team.html">Team</a></li>-->
+<!--                                        <li><a href="restaurant.html">Restaurant</a></li>-->
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Menu</a>
-                                    <ul>
-                                        <li><a href="menu.html">Menu</a></li>
-                                        <li><a href="milkshake.html">Milk Shake</a></li>
-                                        <li><a href="frappe.html">Frappe</a></li>
-                                        <li><a href="boba-tea.html">Boba Tea</a></li>
-                                        <li><a href="slushy.html">Slushy</a></li>
-                                    </ul>
+                                <li class="dropdown"><a href="#">Product</a>
+<!--                                    <ul>-->
+                                        <ul>
+                                            <li><a href="<?= $this->Url->build(['controller'=>'Products','action'=>'display']) ?>">display products</a></li>
+
+                                        </ul>
+<!--                                        <li><a href="menu.html">Menu</a></li>-->
+<!--                                        <li><a href="milkshake.html">Milk Shake</a></li>-->
+<!--                                        <li><a href="frappe.html">Frappe</a></li>-->
+<!--                                        <li><a href="boba-tea.html">Boba Tea</a></li>-->
+<!--                                        <li><a href="slushy.html">Slushy</a></li>-->
+<!--                                    </ul>-->
                                 </li>
                                 <li class="dropdown"><a href="#">Gallery</a>
                                     <ul>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="gallery-2.html">Gallery 02</a></li>
+                                        <li><a href="#">Gallery</a></li>
+<!--                                        <li><a href="gallery-2.html">Gallery 02</a></li>-->
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Blog</a>
                                     <ul>
-                                        <li><a href="blog-classic.html">Blog Classic</a></li>
-                                        <li><a href="news-detail.html">Blog Single</a></li>
-                                        <li><a href="news-detail-2.html">Blog Single 02</a></li>
-                                        <li><a href="not-found.html">Not Found</a></li>
+                                        <li><a href="#">Blog Classic</a></li>
+<!--                                        <li><a href="news-detail.html">Blog Single</a></li>-->
+<!--                                        <li><a href="news-detail-2.html">Blog Single 02</a></li>-->
+<!--                                        <li><a href="not-found.html">Not Found</a></li>-->
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="#">Contact us</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -256,12 +260,12 @@ $this->disableAutoLayout();
                     <!-- Content Column -->
                     <div class="content-box">
                         <div class="box-inner">
-                            <div class="category">smoothie</div>
-                            <h3><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h3>
+                            <div class="category">active demand </div>
+                            <h3><a href="#">Double satisfaction of taste and nutrition!!</a></h3>
                             <ul class="post-info">
-                                <li>May 21, 2021</li>
+                                <li>OCT 7, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -274,12 +278,12 @@ $this->disableAutoLayout();
                     <!-- Content Column -->
                     <div class="content-box">
                         <div class="box-inner">
-                            <div class="category">smoothie</div>
-                            <h3><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h3>
+                            <div class="category">active demand </div>
+                            <h3><a href="#">Honey for adults and children alike!!</a></h3>
                             <ul class="post-info">
-                                <li>May 21, 2021</li>
+                                <li>OCT 7, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -292,12 +296,12 @@ $this->disableAutoLayout();
                     <!-- Content Column -->
                     <div class="content-box">
                         <div class="box-inner">
-                            <div class="category">smoothie</div>
-                            <h3><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h3>
+                            <div class="category">active demand</div>
+                            <h3><a href="#">Healthy life, yummy life</a></h3>
                             <ul class="post-info">
-                                <li>May 21, 2021</li>
+                                <li>OCT 7, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -328,7 +332,7 @@ $this->disableAutoLayout();
                         <div class="inner-column">
                             <!-- Newsletter Form Two -->
                             <div class="newsletter-form-two">
-                                <form method="post" action="contact.html">
+<!--                                <form method="post" action="contact.html#">-->
                                     <div class="form-group">
                                         <input type="email" name="email" value="" placeholder="Enter Your E-mail ..." required>
                                         <button type="submit" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Buy Now</button>
@@ -349,8 +353,8 @@ $this->disableAutoLayout();
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <div class="title">News & Recipe</div>
-                <h2>Popular Recipes</h2>
+                <div class="title">News & quick seller</div>
+                <h2>popular products</h2>
                 <div class="separate"></div>
             </div>
             <div class="row clearfix">
@@ -370,12 +374,12 @@ $this->disableAutoLayout();
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">active demand</div>
+                            <h6><a href="#">Manuka Honey 40+</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -396,12 +400,12 @@ $this->disableAutoLayout();
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">active demand</div>
+                            <h6><a href="#">Manuka Honey 160+</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -422,12 +426,12 @@ $this->disableAutoLayout();
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">active demand</div>
+                            <h6><a href="#">Organic Original Honey</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
+                                <li><a href="#">Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -440,7 +444,7 @@ $this->disableAutoLayout();
 
     <!-- Fluid Section Two -->
     <section class="fluid-section-two">
-        <div class="section-text">Recipe book</div>
+        <div class="section-text">Honey's book</div>
         <div class="outer-container clearfix">
 
             <!-- Content Column -->
@@ -448,8 +452,8 @@ $this->disableAutoLayout();
                 <div class="inner-column">
                     <!-- Title Box -->
                     <div class="title-box">
-                        <h2>Free recipe book!</h2>
-                        <div class="text">Get your copy of spicy kitchen feauturing 10 of our most loved, <br> highly-rated recipes!</div>
+                        <h2>Honey classification books!</h2>
+                        <div class="text">Read these books about honey! <br> Know what your customers want!</div>
                     </div>
                     <ul class="book-list">
                         <li><img src="../webroot/img/resource/book-list-1.png" alt="" /></li>
@@ -458,7 +462,7 @@ $this->disableAutoLayout();
                     </ul>
                     <!-- Button Box -->
                     <div class="button-box">
-                        <a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Get In Now</a>
+                        <a href="#" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Reading Now</a>
                     </div>
                 </div>
             </div>
@@ -500,14 +504,14 @@ $this->disableAutoLayout();
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <div class="category">smoothie</div>
+                                <div class="category">active demand</div>
                                 <ul class="post-info">
                                     <li>May 21, 2021</li>
                                     <li>2 Comments</li>
-                                    <li><a href="news-detail.html">Share</a></li>
+                                    <li><a href="#">Share</a></li>
                                 </ul>
-                                <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
+                                <h6><a href="#">Organic Original Honey</a></h6>
+                                <div class="text"> Most of the hives where we source our honeys are usually located at least 10 kilometres away from places where people spray their trees. Our honeys come from the fields, the forests and the mountains.</div>
                             </div>
                         </div>
                     </div>
@@ -518,7 +522,7 @@ $this->disableAutoLayout();
                     <!-- Sec Title Two -->
                     <div class="sec-title-two">
                         <div class="title">All post</div>
-                        <h4>Recent Recipes</h4>
+                        <h4>Recent Products</h4>
                         <div class="separator"></div>
                     </div>
 
@@ -537,13 +541,13 @@ $this->disableAutoLayout();
                                 </div>
                             </div>
                             <div class="content">
-                                <div class="category">smoothie</div>
+                                <div class="category">related product</div>
                                 <ul class="post-info">
                                     <li>May 21, 2021</li>
                                     <li>2 Comments</li>
-                                    <li><a href="news-detail.html">Share</a></li>
+                                    <li><a href="#">Share</a></li>
                                 </ul>
-                                <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                <h6><a href="#">Cinnamon Infused</a></h6>
                             </div>
                         </div>
                     </div>
@@ -563,13 +567,13 @@ $this->disableAutoLayout();
                                 </div>
                             </div>
                             <div class="content">
-                                <div class="category">smoothie</div>
+                                <div class="category">related product</div>
                                 <ul class="post-info">
                                     <li>May 21, 2021</li>
                                     <li>2 Comments</li>
-                                    <li><a href="news-detail.html">Share</a></li>
+                                    <li><a href="#">Share</a></li>
                                 </ul>
-                                <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                <h6><a href="#">Rainforest</a></h6>
                             </div>
                         </div>
                     </div>
@@ -589,13 +593,13 @@ $this->disableAutoLayout();
                                 </div>
                             </div>
                             <div class="content">
-                                <div class="category">smoothie</div>
+                                <div class="category">related product</div>
                                 <ul class="post-info">
                                     <li>May 21, 2021</li>
                                     <li>2 Comments</li>
-                                    <li><a href="news-detail.html">Share</a></li>
+                                    <li><a href="#">Share</a></li>
                                 </ul>
-                                <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                <h6><a href="#">Lemon Infused</a></h6>
                             </div>
                         </div>
                     </div>
@@ -611,8 +615,8 @@ $this->disableAutoLayout();
         <div class="auto-container">
             <!-- Sec Title Two -->
             <div class="sec-title-two">
-                <div class="title">All post</div>
-                <h4>@ yourinstagram</h4>
+                <div class="title">Related products</div>
+                <h4>@ instagram</h4>
                 <div class="separator"></div>
             </div>
             <div class="instagram-carousel owl-carousel owl-theme">
@@ -748,12 +752,12 @@ $this->disableAutoLayout();
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                    <div class="category">related product</div>
+                                    <h6><a href="#">Manuka Honey 40+</a></h6>
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
+                                        <li><a href="#">Share</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -774,12 +778,12 @@ $this->disableAutoLayout();
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                    <div class="category">related product</div>
+                                    <h6><a href="#">Manuka Honey 260+</a></h6>
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
+                                        <li><a href="#">Share</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -812,10 +816,10 @@ $this->disableAutoLayout();
                                         <li>2 Comments</li>
                                         <li><a href="news-detail.html">Share</a></li>
                                     </ul>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ <br> cheese bruschetta</a></h6>
+                                    <h6><a href="news-detail.html">Manuka Honey 160+’ <br> great tasting honey</a></h6>
                                     <div class="text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in<br><br>
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
+                                        Our 160+ is a great tasting honey and a wonderful way to take medicine especially for children. The 160+ is great for soothing sore throats, and assists helping cold and flu symptoms and upset
+                                        stomach.
                                     </div>
                                 </div>
                             </div>
@@ -842,12 +846,12 @@ $this->disableAutoLayout();
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                    <div class="category">related products</div>
+                                    <h6><a href="#">Eucalyptus</a></h6>
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
+                                        <li><a href="#">Share</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -868,12 +872,12 @@ $this->disableAutoLayout();
                                     </div>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
+                                    <div class="category">related products</div>
+                                    <h6><a href="#">Baby's Honey</a></h6>
                                     <ul class="post-info">
                                         <li>May 21, 2021</li>
                                         <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
+                                        <li><a href="#">Share</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -900,8 +904,8 @@ $this->disableAutoLayout();
                     <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
                 </div>
                 <div class="lower-content">
-                    <h6>New Recipes video</h6>
-                    <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae <br> intellegam.</div>
+                    <h6>Make the first deal!</h6>
+                    <div class="text">This video will show you as an agent how do you retail with the product manufacturer  <br> to buy honey。</div>
                 </div>
             </div>
         </div>
@@ -909,426 +913,426 @@ $this->disableAutoLayout();
     <!-- End Video Section -->
 
     <!-- About News Section -->
-    <section class="about-news-section">
-        <div class="auto-container">
-            <div class="row clearfix">
+<!--    <section class="about-news-section">-->
+<!--        <div class="auto-container">-->
+<!--            <div class="row clearfix">-->
 
-                <!-- News Column -->
-                <div class="news-column col-lg-8 col-md-12 col-sm-12">
-                    <div class="inner-column">
+<!--                 News Column-->
+<!--                <div class="news-column col-lg-8 col-md-12 col-sm-12">-->
+<!--                    <div class="inner-column">-->
 
-                        <!-- News Block Two -->
-                        <div class="news-block-two">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="../webroot/img/resource/news-9.jpg" alt="" />
-                                    <!-- Overlay Box -->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="../webroot/img/resource/recipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                                    <ul class="post-info">
-                                        <li>May 21, 2021</li>
-                                        <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
-                                    </ul>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                         News Block Two-->
+<!--                        <div class="news-block-two">-->
+<!--                            <div class="inner-box">-->
+<!--                                <div class="image">-->
+<!--                                    <img src="../webroot/img/resource/news-9.jpg" alt="" />-->
+<!--                                     Overlay Box-->
+<!--                                    <div class="overlay-box">-->
+<!--                                        <div class="overlay-inner">-->
+<!--                                            <div class="content">-->
+<!--                                                <a href="../webroot/img/resource/recipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="content">-->
+<!--                                    <div class="category">smoothie</div>-->
+<!--                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                                    <ul class="post-info">-->
+<!--                                        <li>May 21, 2021</li>-->
+<!--                                        <li>2 Comments</li>-->
+<!--                                        <li><a href="news-detail.html">Share</a></li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                        <!-- News Block Two -->
-                        <div class="news-block-two">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="../webroot/img/resource/news-9.jpg" alt="" />
-                                    <!-- Overlay Box -->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="../webroot/img/resource/recipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="category">smoothie</div>
-                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                                    <ul class="post-info">
-                                        <li>May 21, 2021</li>
-                                        <li>2 Comments</li>
-                                        <li><a href="news-detail.html">Share</a></li>
-                                    </ul>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                         News Block Two-->
+<!--                        <div class="news-block-two">-->
+<!--                            <div class="inner-box">-->
+<!--                                <div class="image">-->
+<!--                                    <img src="../webroot/img/resource/news-9.jpg" alt="" />-->
+<!--                                     Overlay Box-->
+<!--                                    <div class="overlay-box">-->
+<!--                                        <div class="overlay-inner">-->
+<!--                                            <div class="content">-->
+<!--                                                <a href="../webroot/img/resource/recipe-9.jpg" data-fancybox="news" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="content">-->
+<!--                                    <div class="category">smoothie</div>-->
+<!--                                    <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                                    <ul class="post-info">-->
+<!--                                        <li>May 21, 2021</li>-->
+<!--                                        <li>2 Comments</li>-->
+<!--                                        <li><a href="news-detail.html">Share</a></li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+<!--                </div>-->
 
-                    </div>
-                </div>
+<!--                 About Column-->
+<!--                <div class="about-column col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-column">-->
+<!--                        <h6>About us</h6>-->
+<!--                        <div class="author-image">-->
+<!--                            <img src="../webroot/img/resource/author-2.jpg" alt="" />-->
+<!--                        </div>-->
+<!--                        <div class="author-name">Hi Marria</div>-->
+<!--                        <div class="text">ut sem non aliquet. Nullam tincidunt vestibulum condimentum. </div>-->
+<!--                         Social Box-->
+<!--                        <ul class="social-box">-->
+<!--                            <li class="share">Share</li>-->
+<!--                            <li><a href="#" class="fa fa-facebook-f"></a></li>-->
+<!--                            <li><a href="#" class="fa fa-dribbble"></a></li>-->
+<!--                            <li><a href="#" class="fa fa-pinterest-p"></a></li>-->
+<!--                            <li><a href="#" class="fa fa-google"></a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--     End About News Section-->
 
-                <!-- About Column -->
-                <div class="about-column col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-column">
-                        <h6>About us</h6>
-                        <div class="author-image">
-                            <img src="../webroot/img/resource/author-2.jpg" alt="" />
-                        </div>
-                        <div class="author-name">Hi Marria</div>
-                        <div class="text">ut sem non aliquet. Nullam tincidunt vestibulum condimentum. </div>
-                        <!-- Social Box -->
-                        <ul class="social-box">
-                            <li class="share">Share</li>
-                            <li><a href="#" class="fa fa-facebook-f"></a></li>
-                            <li><a href="#" class="fa fa-dribbble"></a></li>
-                            <li><a href="#" class="fa fa-pinterest-p"></a></li>
-                            <li><a href="#" class="fa fa-google"></a></li>
-                        </ul>
-                    </div>
-                </div>
+<!--     Popular Recipe Section-->
+<!--    <section class="popular-recipe-section">-->
+<!--        <div class="auto-container">-->
+<!--             Sec Title Two-->
+<!--            <div class="sec-title-two">-->
+<!--                <div class="title">All post</div>-->
+<!--                <h4>The most popular recipes </h4>-->
+<!--                <div class="separator"></div>-->
+<!--            </div>-->
+<!--            <div class="posts-carousel owl-carousel owl-theme">-->
 
-            </div>
-        </div>
-    </section>
-    <!-- End About News Section -->
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-12.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-13.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-    <!-- Popular Recipe Section -->
-    <section class="popular-recipe-section">
-        <div class="auto-container">
-            <!-- Sec Title Two -->
-            <div class="sec-title-two">
-                <div class="title">All post</div>
-                <h4>The most popular recipes </h4>
-                <div class="separator"></div>
-            </div>
-            <div class="posts-carousel owl-carousel owl-theme">
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-14.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-12.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-15.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-13.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-16.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-14.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-17.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-15.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-12.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-16.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-13.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-14.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-17.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-15.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-16.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-12.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Five-->
+<!--                <div class="recipe-block-five">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-17.jpg" alt="" /></a>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--     End Popular Recipe Section-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-13.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--     News Section Three-->
+<!--    <section class="news-section-three">-->
+<!--        <div class="auto-container">-->
+<!--            <div class="row clearfix">-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-14.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Three-->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-10.jpg" alt="" />-->
+<!--                             Overlay Box-->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-10.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-15.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Three-->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-11.jpg" alt="" />-->
+<!--                             Overlay Box-->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-11.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-16.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Three-->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-12.jpg" alt="" />-->
+<!--                             Overlay Box-->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-12.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                 Recipe Block Three -->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-13.jpg" alt="" />-->
+<!--                             Overlay Box -->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-13.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Recipe Block Five -->
-                <div class="recipe-block-five">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="slushy.html"><img src="../webroot/img/resource/recipe-17.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h6><a href="slushy.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                        </div>
-                    </div>
-                </div>
+<!--                 Recipe Block Three -->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-14.jpg" alt="" />-->
+<!--                             Overlay Box -->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-14.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-            </div>
-        </div>
-    </section>
-    <!-- End Popular Recipe Section -->
-
-    <!-- News Section Three -->
-    <section class="news-section-three">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-10.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-10.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-11.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-11.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-12.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-12.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-13.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-13.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-14.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-14.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipe Block Three -->
-                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="../webroot/img/resource/news-15.jpg" alt="" />
-                            <!-- Overlay Box -->
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <div class="content">
-                                        <a href="../webroot/img/resource/news-15.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="category">smoothie</div>
-                            <ul class="post-info">
-                                <li>May 21, 2021</li>
-                                <li>2 Comments</li>
-                                <li><a href="news-detail.html">Share</a></li>
-                            </ul>
-                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+<!--                 Recipe Block Three -->
+<!--                <div class="recipe-block-three col-lg-4 col-md-6 col-sm-12">-->
+<!--                    <div class="inner-box">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../webroot/img/resource/news-15.jpg" alt="" />-->
+<!--                             Overlay Box -->
+<!--                            <div class="overlay-box">-->
+<!--                                <div class="overlay-inner">-->
+<!--                                    <div class="content">-->
+<!--                                        <a href="../webroot/img/resource/news-15.jpg" data-fancybox="news-section" data-caption="" class="icon flaticon-gallery"></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="lower-content">-->
+<!--                            <div class="category">smoothie</div>-->
+<!--                            <ul class="post-info">-->
+<!--                                <li>May 21, 2021</li>-->
+<!--                                <li>2 Comments</li>-->
+<!--                                <li><a href="news-detail.html">Share</a></li>-->
+<!--                            </ul>-->
+<!--                            <h6><a href="news-detail.html">Broad bean and goats’ cheese bruschetta</a></h6>-->
+<!--                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <!-- End News Section Three -->
 
     <!-- Footer Style Three -->
