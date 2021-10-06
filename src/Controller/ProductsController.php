@@ -75,20 +75,28 @@ class ProductsController extends AppController
                             if ($this->Products->save($product)) {
                                $this->Flash->success(__('The product has been saved.'));
 
-                               $this->redirect (['controller' => 'Orders', 'action' => '/']);
+//                                $this->redirect (['controller' => 'Orders', 'action' => '/']);
                            } }
                             $this->set(compact('product'));
                    }
 
-//         public function submitrequest($id = null)
-//                 {
-//                      $this->paginate = [
-//                          'contain' => ['Orders'],
-//                      ];
-//                      $products = $this->paginate($this->Products);
-//
-//                      $this->set(compact('products'));
-//                  }
+public function cancel($id = null)
+        {$id=$quantity=$this->getRequest()->getSession()->read('product_id');
+                       $product = $this->Products->get($id, [
+                           'contain' => [],
+                       ]); $currentQty = (int)$product['quantity'];
+                           $toSubtract = $this->getRequest()->getSession()->read('subtract');
+                           $newQuantity = $currentQty + $toSubtract;
+                           $product->quantity = $newQuantity;
+
+                           if($newQuantity>=0) {
+                            if ($this->Products->save($product)) {
+                               $this->Flash->success(__('The product has been saved.'));
+
+                               $this->redirect (['controller' => 'Orders', 'action' => '/']);
+                           } }
+                            $this->set(compact('product'));
+                   }
 
     /**
      * Add method

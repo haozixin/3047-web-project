@@ -78,14 +78,6 @@ class OrdersController extends AppController
                 $order->product_id=$id;
                 $order_price= (int)$order_total *(int)$order_quantity;
                 $order->total_price=$order_price;
-
-
-
-
-
-
-
-                if($quantity-$order_quantity >=0){
                 if ($this->Orders->save($order)) {
                      $this->Flash->success(__('The order has been saved.'));
                      $session = $this->getRequest()->getSession();
@@ -93,8 +85,8 @@ class OrdersController extends AppController
                                  $session->read('subtract');
 
 
-                     return $this->redirect(['controller' => 'Products', 'action' => 'update']);}}
-                      $this->Flash->error(__('The quantity exceeds the limit!')); }
+                     return $this->redirect(['controller' => 'Products', 'action' => 'update']);}
+                      $this->Flash->error(__('The order cant be saved')); }
              $agentsForOrder = $this->Orders->Agents->find('list', ['limit' => 200,
                         'keyField'=>'id',
                         'valueField'=> 'given_name'
@@ -146,6 +138,7 @@ class OrdersController extends AppController
         $order = $this->Orders->get($id);
         if ($this->Orders->delete($order)) {
             $this->Flash->success(__('The order has been deleted.'));
+            $this->redirect(['controller' => 'Products', 'action' => 'cancel']);
         } else {
             $this->Flash->error(__('The order could not be deleted. Please, try again.'));
         }
@@ -166,7 +159,11 @@ class OrdersController extends AppController
              $order = $this->Orders->get($id, [
                         'contain' => [],
                     ]);
-             if($order->email_sent==0)
+               $quantity=$this->getRequest()->getSession()->read('quantity');
+               $order_quantity=$order->quantity;
+
+              if ($quantity-$order_quantity >=0)
+             {if($order->email_sent==0)
 
             {$mailer = new Mailer('default');
             $mailer
@@ -195,7 +192,8 @@ class OrdersController extends AppController
                 $this->Orders->save($order);
                 $this->Flash->success(__('The order is sent to agent.'));}}
 
-                else{$this->Flash->error(__('Email sent before!'));}
+                else{$this->Flash->error(__('Email sent before!'));}}
+                else{$this->Flash->error(__('Inventory quantity not enough for this order!'));}
 
             return $this->redirect(['action' => 'index']);
         }
