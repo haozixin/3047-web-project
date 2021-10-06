@@ -196,4 +196,13 @@ public function cancel($id = null)
         $this->set(compact('products'));
     }
 
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect('/');
+        }
+    }
 }
