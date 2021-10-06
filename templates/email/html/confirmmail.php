@@ -382,6 +382,7 @@ endforeach;
                         <p><b>Date: </b> <?=h($deal_date)?></p>
                         <p><b>Ordered Quantity(In bottles) : </b> <?=h($quantity)?></p>
                         <p><b>Order price(AUD) : </b> <?=h($price)?></p>
+                        <p><b>Shipment Address : </b> <?=h($address)?></p>
                         <p><?=$body?></p>
 
                         <p>We are sending an Email to inform you that your shipment is on the way.</p>
