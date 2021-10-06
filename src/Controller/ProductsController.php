@@ -43,61 +43,76 @@ class ProductsController extends AppController
     }
 
 
-       public function restock($id = null)
-         {
-                $product = $this->Products->get($id, [
-                    'contain' => [],
-                ]);
-                $productID= $product->id;
-                $product_name= $product->name;
-                $product_quantity= $product->quantity;
-                $product_price= $product->customer_price;
+    public function restock($id = null)
+    {
+        $product = $this->Products->get($id, [
+            'contain' => [],
+        ]);
 
-                $session = $this->getRequest()->getSession();
-                $session->write(['product_id'=> $productID,'name'=> $product_name,'quantity' => $product_quantity,'total'=>$product_price ]);
-                $session->read('product_id');
-                $session->read('name');
-                $session->read('quantity');
-                $session->read('total');
-                $this->redirect(['controller' => 'Orders', 'action' => 'add']);
-            }
+        $productID = $product->id;
+        $product_name = $product->name;
+        $product_quantity = $product->quantity;
+        $product__type = $product->product_type;
+        $product_price = $product->customer_price;
+        $product_desc = $product->description;
+        $product_photo = '/img' . DS . $product->photo;
 
-       public function update($id = null)
-        {$id=$quantity=$this->getRequest()->getSession()->read('product_id');
-                       $product = $this->Products->get($id, [
-                           'contain' => [],
-                       ]); $currentQty = (int)$product['quantity'];
-                           $toSubtract = $this->getRequest()->getSession()->read('subtract');
-                           $newQuantity = $currentQty - $toSubtract;
-                           $product->quantity = $newQuantity;
 
-                           if($newQuantity>=0) {
-                            if ($this->Products->save($product)) {
-                               $this->Flash->success(__('The Order has been saved.'));
+        $session = $this->getRequest()->getSession();
+        $session->write(['product_id' => $productID, 'name' => $product_name, 'quantity' => $product_quantity,
+            'total' => $product_price, 'photo' => $product_photo, 'desc' => $product_desc, 'type' => $product__type,]);
+        $session->read('product_id');
+        $session->read('name');
+        $session->read('quantity');
+        $session->read('total');
+        $session->read('photo');
+        $session->read('desc');
+        $session->read('type');
+        $this->redirect(['controller' => 'Orders', 'action' => 'add']);
+    }
+
+    public function update($id = null)
+    {
+        $id = $quantity = $this->getRequest()->getSession()->read('product_id');
+        $product = $this->Products->get($id, [
+            'contain' => [],
+        ]);
+        $currentQty = (int)$product['quantity'];
+        $toSubtract = $this->getRequest()->getSession()->read('subtract');
+        $newQuantity = $currentQty - $toSubtract;
+        $product->quantity = $newQuantity;
+
+        if ($newQuantity >= 0) {
+            if ($this->Products->save($product)) {
+                $this->Flash->success(__('The Order has been saved.'));
 
 
 //                                $this->redirect (['controller' => 'Orders', 'action' => '/']);
-                           } }
-                            $this->set(compact('product'));
-                   }
+            }
+        }
+        $this->set(compact('product'));
+    }
 
-public function cancel($id = null)
-        {$id=$quantity=$this->getRequest()->getSession()->read('product_id');
-                       $product = $this->Products->get($id, [
-                           'contain' => [],
-                       ]); $currentQty = (int)$product['quantity'];
-                           $toSubtract = $this->getRequest()->getSession()->read('subtract');
-                           $newQuantity = $currentQty + $toSubtract;
-                           $product->quantity = $newQuantity;
+    public function cancel($id = null)
+    {
+        $id = $quantity = $this->getRequest()->getSession()->read('product_id');
+        $product = $this->Products->get($id, [
+            'contain' => [],
+        ]);
+        $currentQty = (int)$product['quantity'];
+        $toSubtract = $this->getRequest()->getSession()->read('subtract');
+        $newQuantity = $currentQty + $toSubtract;
+        $product->quantity = $newQuantity;
 
-                           if($newQuantity>=0) {
-                            if ($this->Products->save($product)) {
-                               $this->Flash->success(__('The product has been saved.'));
+        if ($newQuantity >= 0) {
+            if ($this->Products->save($product)) {
+                $this->Flash->success(__('The product has been saved.'));
 
-                               $this->redirect (['controller' => 'Orders', 'action' => '/']);
-                           } }
-                            $this->set(compact('product'));
-                   }
+                $this->redirect(['controller' => 'Orders', 'action' => '/']);
+            }
+        }
+        $this->set(compact('product'));
+    }
 
     /**
      * Add method
@@ -107,33 +122,51 @@ public function cancel($id = null)
     public function add()
     {
         $product = $this->Products->newEmptyEntity();
-
-
         if ($this->request->is('post')) {
-            $product = $this->Products->patchEntity($product, $this->request->getData());
+
+            $productData = $this->request->getData();
+
+
+            if (!$product->getErrors) {
+                if ($this->request->getData('photo') != null) {
+                    $photo = $this->request->getData('photo');
+
+                    $name = $photo->getClientFilename();
+                    $targetPath = WWW_ROOT . 'img' . DS . $name;
+
+                    // moving file to server
+                    if ($name) {
+                        $photo->moveTo($targetPath);
+                        $productData['photo'] = $name;
+                    }
+                }
+                $product = $this->Products->patchEntity($product, $productData);
+            }
+
 
             $expired_date = $product->expired_date;
-            $manufacture = $product ->date_of_manufacture;
+            $manufacture = $product->date_of_manufacture;
             $customer_price = $this->request->getData('customer_price');
             $agent_price = $this->request->getData('agent_price');
 
 
-            if(($customer_price<=0||$customer_price>1000) or ($agent_price<=0||$agent_price>1000)) {
+            if (($customer_price <= 0 || $customer_price > 1000) or ($agent_price <= 0 || $agent_price > 1000)) {
                 $this->Flash->success(__('You must input a valid unit price, the range should be 0-1000'));
 
 
-            }else {
-            if ($expired_date<$manufacture) {
-                $this->Flash->success(__('And the expired date cannot be early than the date of manufacture'));
-                                       }
-                else{
+            } else {
+                if ($expired_date < $manufacture) {
+                    $this->Flash->success(__('And the expired date cannot be early than the date of manufacture'));
+                } else {
 
-                 //check if it is saved
-                 if ($this->Products->save($product)) {
-                 $this->Flash->success(__('The product has been saved.'));
+                    //check if it is saved
+                    if ($this->Products->save($product)) {
+                        $this->Flash->success(__('The product has been saved.'));
 
-                 return $this->redirect(['action' => 'index']);
-                 }}}
+                        return $this->redirect(['action' => 'index']);
+                    }
+                }
+            }
 
 
             $this->Flash->success('The product could not be saved. Please, try again.');
@@ -190,6 +223,22 @@ public function cancel($id = null)
     }
 
     public function display()
+    {
+
+        $products = $this->paginate($this->Products);
+
+        $this->set(compact('products'));
+    }
+
+    public function displayagent()
+    {
+
+        $products = $this->paginate($this->Products);
+
+        $this->set(compact('products'));
+    }
+
+    public function displaycustomer()
     {
 
         $products = $this->paginate($this->Products);

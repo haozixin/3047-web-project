@@ -49,27 +49,20 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
 
-//              debug($this->request->getData());
-//               exit;
-
             $recipeData = $this->request->getData();
 
+            if (!$recipe->getErrors) {
+                $photo = $this->request->getData('photo');
 
-            // $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+                $name = $photo->getClientFilename();
+                $targetPath = WWW_ROOT . 'img' . DS . $name;
 
-
-
-     if(!$recipe -> getErrors  ){
-            $photo = $this->request->getData('photo');
-
-            $name= $photo->getClientFilename();
-            $targetPath= WWW_ROOT.'img'.DS.$name;
-
-            // moving file to server
-             if($name){
-              $photo->moveTo($targetPath);
-                $recipeData['photo'] = $name;}
+                // moving file to server
+                if ($name) {
+                    $photo->moveTo($targetPath);
+                    $recipeData['photo'] = $name;
                 }
+            }
 
 
             $recipe = $this->Recipes->patchEntity($recipe, $recipeData);
@@ -131,7 +124,23 @@ class RecipesController extends AppController
     }
 
 
-   public function display()
+    public function display()
+    {
+
+        $recipes = $this->paginate($this->Recipes);
+
+        $this->set(compact('recipes'));
+    }
+
+    public function displayagent()
+    {
+
+        $recipes = $this->paginate($this->Recipes);
+
+        $this->set(compact('recipes'));
+    }
+
+    public function displaycustomer()
     {
 
         $recipes = $this->paginate($this->Recipes);

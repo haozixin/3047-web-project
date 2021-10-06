@@ -10,19 +10,19 @@
     <div class="table-responsive">
         <table>
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('price') ?></th>
-                    <th><?= $this->Paginator->sort('comments') ?></th>
-                    <th><?= $this->Paginator->sort('cooperation_start_date') ?></th>
-                    <th><?= $this->Paginator->sort('cooperation_end_date') ?></th>
-                    <th><?= $this->Paginator->sort('agent_id') ?></th>
-                    <th><?= $this->Paginator->sort('admin_id') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
+            <tr>
+                <th><?= $this->Paginator->sort('id') ?></th>
+                <th><?= $this->Paginator->sort('price') ?></th>
+                <th><?= $this->Paginator->sort('comments') ?></th>
+                <th><?= $this->Paginator->sort('cooperation_start_date') ?></th>
+                <th><?= $this->Paginator->sort('cooperation_end_date') ?></th>
+                <th><?= $this->Paginator->sort('agent_id') ?></th>
+                <th><?= $this->Paginator->sort('admin_id') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($adminAgents as $adminAgent): ?>
+            <?php foreach ($adminAgents as $adminAgent): ?>
                 <tr>
                     <td><?= $this->Number->format($adminAgent->id) ?></td>
                     <td><?= $this->Number->format($adminAgent->price) ?></td>
@@ -37,7 +37,7 @@
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $adminAgent->id], ['confirm' => __('Are you sure you want to delete # {0}?', $adminAgent->id)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

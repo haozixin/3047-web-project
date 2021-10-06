@@ -22,14 +22,14 @@
             <fieldset>
                 <legend><?= __('Edit The Agent') ?></legend>
                 <?php
-                    echo $this->Form->control('given_name');
-                    echo $this->Form->control('family_name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('country');
-                    echo $this->Form->control('state');
-                    echo $this->Form->control('city');
-                    echo $this->Form->control('street');
-                    echo $this->Form->control('subscription_status');
+                echo $this->Form->control('given_name');
+                echo $this->Form->control('family_name');
+                echo $this->Form->control('email');
+                echo $this->Form->control('country');
+                echo $this->Form->control('state');
+                echo $this->Form->control('city');
+                echo $this->Form->control('street');
+                echo $this->Form->control('subscription_status');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

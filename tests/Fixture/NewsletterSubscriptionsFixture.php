@@ -29,6 +29,7 @@ class NewsletterSubscriptionsFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

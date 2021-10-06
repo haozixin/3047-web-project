@@ -38,6 +38,7 @@ class CustomersFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

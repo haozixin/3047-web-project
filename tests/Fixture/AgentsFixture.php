@@ -32,6 +32,7 @@ class AgentsFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

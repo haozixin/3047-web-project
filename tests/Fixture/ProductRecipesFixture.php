@@ -31,6 +31,7 @@ class ProductRecipesFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

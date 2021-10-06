@@ -30,6 +30,7 @@ class UsersFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

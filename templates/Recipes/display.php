@@ -3,16 +3,16 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Recipe[]|\Cake\Collection\CollectionInterface $recipes
  */
-echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
-echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
-echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
+echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css', ['block' => true]);
+echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js', ['block' => true]);
+echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['block' => true]);
 
- $this->layout='customer_default';
+$this->layout = 'customer_default';
 ?>
-<div class="products index content">
+<div class="recipes index content">
 
 
-    <div class="table-responsive" >
+    <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
@@ -31,9 +31,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= $this->Number->format($recipes->id) ?></td>
                     <td><?= h($recipes->title) ?></td>
                     <td><?= h($recipes->description) ?></td>
-                    <td><?= $this ->Html->link(h($recipes->video_link),$this->redirect->h($recipes->video_link)) ?></td>
-                    <td><?= $this->Html->image($recipes->photo,  array('height' => '110')); ?></td>
-
+                    <td><?= $this->Html->link(h($recipes->video_link), $this->redirect->h($recipes->video_link)) ?></td>
+                    <td><?= $this->Html->image($recipes->photo, array('width' => '200px')); ?></td>
 
 
                 </tr>
@@ -43,7 +42,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
     </div>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#dataTable').DataTable();
         });
     </script>

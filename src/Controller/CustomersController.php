@@ -49,17 +49,17 @@ class CustomersController extends AppController
         $customer = $this->Customers->newEmptyEntity();
         if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
-            $sub= $this->request->getData('subscription_status');
+            $sub = $this->request->getData('subscription_status');
 //            debug($customer);
 //            debug($sub);
-            $email=$this->request->getData('email');
-            $fname= $this->request->getData('family_name');
-            $gname= $this->request->getData('given_name');
+            $email = $this->request->getData('email');
+            $fname = $this->request->getData('family_name');
+            $gname = $this->request->getData('given_name');
 
-            $key=$this->request->getData('email');
+            $key = $this->request->getData('email');
             $session = $this->getRequest()->getSession();
-            $session->write(['email'=> $email,'family_name' => $fname,
-                                           'given_name' => $gname]);
+            $session->write(['email' => $email, 'family_name' => $fname,
+                'given_name' => $gname]);
             $session->read('email');
             $session->read('family_name');
             $session->read('given_name');
@@ -67,7 +67,9 @@ class CustomersController extends AppController
             if ($this->Customers->save($customer)) {
 
                 $this->Flash->success(__('The customer has been saved.'));
-                if($sub == 'yes'){ $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']); }
+                if ($sub == 'yes') {
+                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+                }
 
 
                 return $this->redirect(['action' => 'index']);
@@ -121,6 +123,7 @@ class CustomersController extends AppController
         return $this->redirect(['action' => 'index']);
 
     }
+
     public function faq()
     {
 

@@ -10,17 +10,17 @@
     <div class="table-responsive">
         <table>
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('recipe_title') ?></th>
-                    <th><?= $this->Paginator->sort('last_modify_time') ?></th>
-                    <th><?= $this->Paginator->sort('recipe_id') ?></th>
-                    <th><?= $this->Paginator->sort('product_id') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
+            <tr>
+                <th><?= $this->Paginator->sort('id') ?></th>
+                <th><?= $this->Paginator->sort('recipe_title') ?></th>
+                <th><?= $this->Paginator->sort('last_modify_time') ?></th>
+                <th><?= $this->Paginator->sort('recipe_id') ?></th>
+                <th><?= $this->Paginator->sort('product_id') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($productRecipes as $productRecipe): ?>
+            <?php foreach ($productRecipes as $productRecipe): ?>
                 <tr>
                     <td><?= $this->Number->format($productRecipe->id) ?></td>
                     <td><?= h($productRecipe->recipe_title) ?></td>
@@ -33,7 +33,7 @@
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $productRecipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productRecipe->id)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
