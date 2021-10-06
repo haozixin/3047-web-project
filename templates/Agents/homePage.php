@@ -741,12 +741,12 @@ $this->disableAutoLayout();
                         <div class="recipe-block-three style-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="../webroot/img/resource/news-4.jpg" alt="" />
+                                    <img src="../webroot/img/resource/bnews-4.jpg" alt="" />
                                     <!-- Overlay Box -->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="../webroot/img/resource/news-4.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
+                                                <a href="../webroot/img/resource/bnews-4.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -767,12 +767,12 @@ $this->disableAutoLayout();
                         <div class="recipe-block-three style-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="../webroot/img/resource/news-5.jpg" alt="" />
+                                    <img src="../webroot/img/resource/bnews-5.jpg" alt="" />
                                     <!-- Overlay Box -->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="../webroot/img/resource/news-5.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
+                                                <a href="../webroot/img/resource/bnews-5.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -799,12 +799,12 @@ $this->disableAutoLayout();
                         <div class="recipe-block-three">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="../webroot/img/resource/news-8.jpg" alt="" />
+                                    <img src="../webroot/img/resource/bnews-8.jpg" alt="" />
                                     <!-- Overlay Box -->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="../webroot/img/resource/news-8.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
+                                                <a href="../webroot/img/resource/160.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -835,12 +835,12 @@ $this->disableAutoLayout();
                         <div class="recipe-block-three style-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="../webroot/img/resource/news-6.jpg" alt="" />
+                                    <img src="../webroot/img/resource/bnews-6.jpg" alt="" />
                                     <!-- Overlay Box -->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="../webroot/img/resource/news-6.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
+                                                <a href="../webroot/img/resource/bnews-6.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -861,12 +861,12 @@ $this->disableAutoLayout();
                         <div class="recipe-block-three style-two">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="../webroot/img/resource/news-7.jpg" alt="" />
+                                    <img src="../webroot/img/resource/bnews-7.jpg" alt="" />
                                     <!-- Overlay Box -->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="../webroot/img/resource/news-7.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
+                                                <a href="../webroot/img/resource/bnews-7.jpg" data-fancybox="news-../webroot/img" data-caption="" class="icon flaticon-gallery"></a>
                                             </div>
                                         </div>
                                     </div>
