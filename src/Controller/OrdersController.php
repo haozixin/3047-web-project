@@ -78,7 +78,7 @@ class OrdersController extends AppController
                 $order->product_id=$id;
                 $order_price= (int)$order_total *(int)$order_quantity;
                 $order->total_price=$order_price;
-            
+
                 if ($this->Orders->save($order)) {
                      $this->Flash->success(__('The order has been saved.'));
                      $session = $this->getRequest()->getSession();
