@@ -96,7 +96,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         	<div class="auto-container clearfix">
 
 				<div class="pull-left logo-box">
-					<div class="logo"><a href=""><img src="/../webroot/img/logo.png" alt="" title=""></a></div>
+					<div class="logo"><a href=""><img src="webroot/img/logo.png" alt="" title=""></a></div>
 				</div>
 
 				<div class="nav-outer clearfix">
