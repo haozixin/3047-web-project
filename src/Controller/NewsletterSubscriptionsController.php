@@ -96,20 +96,6 @@ class NewsletterSubscriptionsController extends AppController
 
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
-
-        $mailer = new Mailer('default');
-        $mailer
-            ->setEmailFormat('html')
-            ->setTo($newsletterSubscriptions->customer_email)
-            ->setFrom(Configure::read('CustmerEmail.from'))
-            ->setReplyTo($newsletterSubscriptions->customer_email)
-            ->setSubject("You are Subscribed to the Newsletter, YAY!!!")
-            ->viewBuilder()
-            ->disableAutoLayout()
-            ->setTemplate('customeremail');
-
-        return $this->redirect(['action' => 'index']);
-        
     }
 
 
@@ -191,6 +177,26 @@ class NewsletterSubscriptionsController extends AppController
             $this->Authentication->logout();
             return $this->redirect('/');
         }
+    }
+
+    public function mark($id = null)
+    {
+                
+        $mailer = new Mailer('default');
+        $mailer
+            ->setEmailFormat('html')
+            ->setTo($newsletterSubscriptions->customer_email)
+            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+            ->setReplyTo($newsletterSubscriptions->customer_email)
+            ->setSubject("Newsletter Subscription Confirmation")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('newsletterSubscriptionemail');
+
+
+
+        $email_result = $mailer->deliver();        
+        return $this->redirect(['action' => 'index']);
     }
 
 

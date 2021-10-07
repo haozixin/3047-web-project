@@ -34,6 +34,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $newsletterSubscription->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $newsletterSubscription->id]) ?>
+                        <?= $this->Html->link(__('Approve'), ['action' => 'mark', $newsletterSubscriptions->id]) ?>
+
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $newsletterSubscription->id], ['confirm' => __('Are you sure you want to delete # {0}?', $newsletterSubscription->id)]) ?>
                     </td>
                 </tr>
