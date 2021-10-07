@@ -91,32 +91,44 @@
 
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Q&A</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'faq']) ?>">Q&A</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
                                 <li class="dropdown"><a href="#">Find US</a>
                                     <ul>
                                         <li><a href="#" onClick="a()">Contact Us</a></li>
 
                                     </ul>
                                 </li>
+                                <li class="dropdown"><a> Logout</a>
+                                    <ul>
+                                        <li>
+                                            <?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
                                 <script>
                                     function a() {
                                         confirm("Coming Soon!");
                                     }
                                 </script>
-                        </div>
-                    </nav>
+                                <!-- Dropdown - User Information -->
 
+                        </div>
+
+                    </nav>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                         aria-labelledby="userDropdown">
+
+                        <!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
+                        <!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                        <!--                            </a>-->
+                        <ul>
+                            <li><?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?></li>
+                            <li><?= $this->Html->link("Password Management", ['Controller' => 'User', 'action' => 'index']) ?></li>
+                        </ul>
+                    </div>
                     <!-- Main Menu End-->
                     <div class="outer-box clearfix">
-
-
                     </div>
                 </div>
 
