@@ -1,10 +1,9 @@
 <?php
-use Cake\Cache\Cache;
+
 use Cake\Core\Configure;
-use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
-use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
+
 $this->disableAutoLayout();
 $checkConnection = function (string $name) {
     $error = null;
@@ -47,8 +46,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('responsive.css') ?>
 
-    <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
 
 
     <!-- Responsive -->
@@ -86,7 +86,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <nav class="main-menu navbar-expand-md">
                         <div class="navbar-header">
                             <!-- Toggle Button -->
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -198,7 +200,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
             <nav class="menu-box">
                 <div class="nav-logo"><a href="index.html"><img src="img/logo-2.png" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
             </nav>
         </div><!-- End Mobile Menu -->
 
@@ -221,20 +224,25 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="index.html"><img src="img/logo.png" alt="" /></a>
+                                <a href="index.html"><img src="img/logo.png" alt=""/></a>
                             </div>
                             <div class="content-box">
                                 <h2>About Us</h2>
-                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-                                <a href="contact.html" class="theme-btn btn-style-one clearfix"><span class="icon"></span>Consultation</a>
+                                <p class="text">The argument in favor of using filler text goes something like this: If
+                                    you use real content in the Consulting Process, anytime you reach a review point
+                                    you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="contact.html" class="theme-btn btn-style-one clearfix"><span
+                                        class="icon"></span>Consultation</a>
                             </div>
                             <div class="contact-info">
                                 <h2>Contact Info</h2>
                                 <ul class="list-style-one">
-                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA
+                                    </li>
                                     <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
                                     <li><span class="icon fa fa-envelope"></span>foodily@gmail.com</li>
-                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed
+                                    </li>
                                 </ul>
                             </div>
                             <!-- Social Box -->
@@ -276,10 +284,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="image-column col-lg-7 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image">
-                            <img src="img/resource/history-3.jpg" alt="" />
+                            <img src="img/resource/history-3.jpg" alt=""/>
                         </div>
                         <div class="image-two">
-                            <img src="img/resource/history-4.png" alt="" />
+                            <img src="img/resource/history-4.png" alt=""/>
                         </div>
                     </div>
                 </div>
@@ -289,9 +297,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="inner-column">
                         <!-- Sec Title -->
                         <div class="sec-title">
-                            <div class="title">Our Vision and History </div>
+                            <div class="title">Our Vision and History</div>
                             <h2>Founded in 1970 by <span class="theme_color">Chairman Jay Martin</span></h2>
-                            <div class="text">The Juice Plus+ Company has grown from a small, direct-sales company into a highly successful, privately held health and wellness company operatinLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                            <div class="text">The Juice Plus+ Company has grown from a small, direct-sales company into
+                                a highly successful, privately held health and wellness company operatinLorem ipsum
+                                dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua.
+                            </div>
                         </div>
                         <ul class="list-style-two">
                             <li>Cras at mi luctus, tincidunt urna eu, posuere enim</li>
@@ -315,7 +327,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/19.jpg" alt="" />
+                            <img src="img/gallery/19.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -328,7 +340,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/20.jpg" alt="" />
+                            <img src="img/gallery/20.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -341,7 +353,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/21.jpg" alt="" />
+                            <img src="img/gallery/21.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -354,7 +366,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/22.jpg" alt="" />
+                            <img src="img/gallery/22.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -367,7 +379,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/23.jpg" alt="" />
+                            <img src="img/gallery/23.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -380,7 +392,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="gallery-block-two masonry-item col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <img src="img/gallery/24.jpg" alt="" />
+                            <img src="img/gallery/24.jpg" alt=""/>
                             <div class="overlay-box">
                                 <h6><a href="gallery.html">Cornish cod fillet</a></h6>
                                 <div class="title">Us percipit urbanitas referrentur ea.</div>
@@ -408,7 +420,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="staff-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="#"><img src="img/resource/staff-1.jpg" alt="" /></a>
+                            <a href="#"><img src="img/resource/staff-1.jpg" alt=""/></a>
                             <div class="overlay-box">
                                 <div class="content">
                                     <h6><a href="#">Jusica Malina</a></h6>
@@ -428,7 +440,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="staff-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="#"><img src="img/resource/staff-2.jpg" alt="" /></a>
+                            <a href="#"><img src="img/resource/staff-2.jpg" alt=""/></a>
                             <div class="overlay-box">
                                 <div class="content">
                                     <h6><a href="#">Jusica Malina</a></h6>
@@ -448,7 +460,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="staff-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="#"><img src="img/resource/staff-3.jpg" alt="" /></a>
+                            <a href="#"><img src="img/resource/staff-3.jpg" alt=""/></a>
                             <div class="overlay-box">
                                 <div class="content">
                                     <h6><a href="#">Jusica Malina</a></h6>
@@ -489,9 +501,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="testimonial-block">
                         <div class="inner-box">
                             <div class="author-image">
-                                <img src="img/resource/author-1.jpg" alt="" />
+                                <img src="img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation <br> ullamco.”
+                            </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
                     </div>
@@ -500,9 +515,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="testimonial-block">
                         <div class="inner-box">
                             <div class="author-image">
-                                <img src="img/resource/author-1.jpg" alt="" />
+                                <img src="img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation <br> ullamco.”
+                            </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
                     </div>
@@ -511,9 +529,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="testimonial-block">
                         <div class="inner-box">
                             <div class="author-image">
-                                <img src="img/resource/author-1.jpg" alt="" />
+                                <img src="img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br> ullamco.”</div>
+                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation <br> ullamco.”
+                            </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
                     </div>
@@ -538,7 +559,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -555,7 +577,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -572,7 +595,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -589,7 +613,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -606,7 +631,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -623,7 +649,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/1.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -640,7 +667,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/2.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -657,7 +685,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/3.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -674,7 +703,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/4.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -691,7 +721,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="overlay-box">
                                 <div class="overlay-inner">
                                     <div class="content">
-                                        <a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption="" class="icon flaticon-plus"></a>
+                                        <a href="img/gallery/5.jpg" data-fancybox="gallery" data-caption=""
+                                           class="icon flaticon-plus"></a>
                                     </div>
                                 </div>
                             </div>
@@ -706,9 +737,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <div class="pattern-layer-one" style="background-image: url(../../webroot/img/resource/footer-pattern-1.png)"></div>
-        <div class="pattern-layer-two" style="background-image: url(../../webroot/img/resource/footer-pattern-2.png)"></div>
-        <div class="pattern-layer-three" style="background-image: url(../../webroot/img/background/pattern-6.png)"></div>
+        <div class="pattern-layer-one"
+             style="background-image: url(../../webroot/img/resource/footer-pattern-1.png)"></div>
+        <div class="pattern-layer-two"
+             style="background-image: url(../../webroot/img/resource/footer-pattern-2.png)"></div>
+        <div class="pattern-layer-three"
+             style="background-image: url(../../webroot/img/background/pattern-6.png)"></div>
         <div class="auto-container">
             <!-- Widgets Section -->
             <div class="widgets-section">
@@ -722,7 +756,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget contact-widget">
                                     <h6>Contact Us</h6>
-                                    <div class="text">6Fifth Avenue 5501, Broadway, New York Morris Street London 1234</div>
+                                    <div class="text">6Fifth Avenue 5501, Broadway, New York Morris Street London 1234
+                                    </div>
                                     <ul class="contact-list">
                                         <li><span class="icon fa fa-send"></span>Your mail @ gmail.com</li>
                                         <li><span class="icon fa fa-phone"></span><a href="">(123) 4567 89000</a></li>
@@ -771,8 +806,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     <div class="newsletter-form">
                                         <form method="post" action="contact.html">
                                             <div class="form-group">
-                                                <input type="email" name="email" value="" placeholder="Your Email" required="">
-                                                <button type="submit" class="theme-btn submit-btn">Subscribe Now</button>
+                                                <input type="email" name="email" value="" placeholder="Your Email"
+                                                       required="">
+                                                <button type="submit" class="theme-btn submit-btn">Subscribe Now
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -785,7 +822,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.</div>
+                <div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.
+                </div>
             </div>
         </div>
     </footer>

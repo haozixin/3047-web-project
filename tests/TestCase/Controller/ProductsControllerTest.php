@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\ProductsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
@@ -61,12 +60,23 @@ class ProductsControllerTest extends TestCase
     }
 
     /**
-     * Test submitrequest method
+     * Test update method
      *
      * @return void
-     * @uses \App\Controller\ProductsController::submitrequest()
+     * @uses \App\Controller\ProductsController::update()
      */
-    public function testSubmitrequest(): void
+    public function testUpdate(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test cancel method
+     *
+     * @return void
+     * @uses \App\Controller\ProductsController::cancel()
+     */
+    public function testCancel(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
@@ -111,6 +121,17 @@ class ProductsControllerTest extends TestCase
      * @uses \App\Controller\ProductsController::display()
      */
     public function testDisplay(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test logout method
+     *
+     * @return void
+     * @uses \App\Controller\ProductsController::logout()
+     */
+    public function testLogout(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

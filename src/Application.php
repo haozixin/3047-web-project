@@ -14,8 +14,13 @@ declare(strict_types=1);
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
+use Authentication\AuthenticationService;
+use Authentication\AuthenticationServiceInterface;
+use Authentication\AuthenticationServiceProviderInterface;
+use Authentication\Middleware\AuthenticationMiddleware;
 use Cake\Core\Configure;
 use Cake\Core\ContainerInterface;
 use Cake\Core\Exception\MissingPluginException;
@@ -28,14 +33,11 @@ use Cake\Http\MiddlewareQueue;
 use Cake\ORM\Locator\TableLocator;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Cake\Routing\Router;
+use Psr\Http\Message\ServerRequestInterface;
 
 // In src/Application.php add the following imports
- use Authentication\AuthenticationService;
- use Authentication\AuthenticationServiceInterface;
- use Authentication\AuthenticationServiceProviderInterface;
- use Authentication\Middleware\AuthenticationMiddleware;
- use Cake\Routing\Router;
- use Psr\Http\Message\ServerRequestInterface;
+
 /**
  * Application setup class.
  *
@@ -77,6 +79,27 @@ class Application extends BaseApplication
     }
 
     /**
+     * Bootstrapping for CLI application.
+     *
+     * That is when running commands.
+     *
+     * @return void
+     */
+    protected function bootstrapCli(): void
+    {
+        try {
+            $this->addPlugin('Bake');
+        } catch (MissingPluginException $e) {
+            // Do not halt if the plugin is missing
+        }
+
+        $this->addPlugin('Migrations');
+
+        // Load more plugins here
+//         $this->addPlugin('Authentication.Authentication');
+    }
+
+    /**
      * Setup the middleware queue your application will use.
      *
      * @param \Cake\Http\MiddlewareQueue $middlewareQueue The middleware queue to setup.
@@ -115,40 +138,40 @@ class Application extends BaseApplication
             ->add(new RoutingMiddleware($this))
             // add Authentication after RoutingMiddleware
             //for sign in
-            ->add(new AuthenticationMiddleware($this))
-            ;
+            ->add(new AuthenticationMiddleware($this));
 
 
         return $middlewareQueue;
     }
-     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
-     {
-         $authenticationService = new AuthenticationService([
-             'unauthenticatedRedirect' => Router::url('/users/login'),
-             'queryParam' => 'redirect',
-         ]);
 
-         // Load identifiers, ensure we check email and password fields
-         $authenticationService->loadIdentifier('Authentication.Password', [
-             'fields' => [
-                 'username' => 'email',
-                 'password' => 'password',
-             ]
-         ]);
+    public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
+    {
+        $authenticationService = new AuthenticationService([
+            'unauthenticatedRedirect' => Router::url('/users/login'),
+            'queryParam' => 'redirect',
+        ]);
 
-         // Load the authenticators, you want session first
-         $authenticationService->loadAuthenticator('Authentication.Session');
-         // Configure form data check to pick email and password
-         $authenticationService->loadAuthenticator('Authentication.Form', [
-             'fields' => [
-                 'username' => 'email',
-                 'password' => 'password',
-             ],
-             'loginUrl' => Router::url('/users/login'),
-         ]);
+        // Load identifiers, ensure we check email and password fields
+        $authenticationService->loadIdentifier('Authentication.Password', [
+            'fields' => [
+                'username' => 'email',
+                'password' => 'password',
+            ]
+        ]);
 
-         return $authenticationService;
-     }
+        // Load the authenticators, you want session first
+        $authenticationService->loadAuthenticator('Authentication.Session');
+        // Configure form data check to pick email and password
+        $authenticationService->loadAuthenticator('Authentication.Form', [
+            'fields' => [
+                'username' => 'email',
+                'password' => 'password',
+            ],
+            'loginUrl' => Router::url('/users/login'),
+        ]);
+
+        return $authenticationService;
+    }
 
     /**
      * Register application container services.
@@ -159,27 +182,6 @@ class Application extends BaseApplication
      */
     public function services(ContainerInterface $container): void
     {
-    }
-
-    /**
-     * Bootstrapping for CLI application.
-     *
-     * That is when running commands.
-     *
-     * @return void
-     */
-    protected function bootstrapCli(): void
-    {
-        try {
-            $this->addPlugin('Bake');
-        } catch (MissingPluginException $e) {
-            // Do not halt if the plugin is missing
-        }
-
-        $this->addPlugin('Migrations');
-
-        // Load more plugins here
-//         $this->addPlugin('Authentication.Authentication');
     }
 
 

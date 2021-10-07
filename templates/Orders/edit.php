@@ -24,14 +24,14 @@
             <fieldset>
                 <legend><?= __('Edit Order') ?></legend>
                 <?php
-                    echo $this->Form->control('product_id', ['options' => $products]);
-                    echo $this->Form->control('quantity');
-                    echo $this->Form->control('deal_date');
-                    echo $this->Form->control('deal_comment');
-                    echo $this->Form->control('shipping_address');
-                    echo $this->Form->control('agent_id');
-                    echo $this->Form->control('email_sent');
-                    echo $this->Form->control('agent_email', ['options' => $agents, 'empty' => true]);
+                echo $this->Form->control('product_id', ['options' => $products]);
+                echo $this->Form->control('quantity');
+                echo $this->Form->control('deal_date');
+                echo $this->Form->control('deal_comment');
+                echo $this->Form->control('shipping_address');
+                echo $this->Form->control('agent_id');
+                echo $this->Form->control('email_sent');
+                echo $this->Form->control('agent_email', ['options' => $agents, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

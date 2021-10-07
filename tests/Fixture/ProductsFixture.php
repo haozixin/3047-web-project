@@ -26,6 +26,7 @@ class ProductsFixture extends TestFixture
         'date_of_manufacture' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'expired_date' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'quantity' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'photo' => ['type' => 'string', 'length' => 256, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -35,6 +36,7 @@ class ProductsFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *
@@ -50,9 +52,10 @@ class ProductsFixture extends TestFixture
                 'customer_price' => 1,
                 'agent_price' => 1,
                 'product_type' => 'Lorem ipsum dolor sit amet',
-                'date_of_manufacture' => '2021-10-05',
-                'expired_date' => '2021-10-05',
+                'date_of_manufacture' => '2021-10-07',
+                'expired_date' => '2021-10-07',
                 'quantity' => 1,
+                'photo' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

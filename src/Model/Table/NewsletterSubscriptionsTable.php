@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -64,9 +62,9 @@ class NewsletterSubscriptionsTable extends Table
             ->requirePresence('customer_email', 'create')
             ->notEmptyString('customer_email')
             ->add('customer_email', 'email', [
-                 'rule' => 'email',
-                 'message' => 'The email is not in a correct form (e.g.abc@example.com' ]);
+                'rule' => 'email',
+                'message' => 'The email is not in a correct form (e.g.abc@example.com']);
 
-            return $validator;
+        return $validator;
     }
 }

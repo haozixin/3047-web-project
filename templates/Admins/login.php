@@ -1,5 +1,3 @@
-
-
 <!-- in /templates/customers/login.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +65,8 @@
                                                 Me</label>
                                         </div>
                                     </div>
-                                    <a href="<?= $this->Form->submit(__('Login')); ?>" class="btn btn-primary btn-user btn-block">
+                                    <a href="<?= $this->Form->submit(__('Login')); ?>"
+                                       class="btn btn-primary btn-user btn-block">
                                         Login
                                     </a>
                                     <hr>
@@ -83,7 +82,8 @@
 
                                 <?= $this->Form->end() ?>
                                 <div class="text-center">
-                                    <a class="small" href="<?= $this->Html->link("Sign up", ['action' => 'add']) ?>">Create an Account!</a>
+                                    <a class="small" href="<?= $this->Html->link("Sign up", ['action' => 'add']) ?>">Create
+                                        an Account!</a>
                                 </div>
                             </div>
                         </div>
@@ -109,16 +109,16 @@
 </html>
 <!--
 <div class="users form">
-    <?/*= $this->Flash->render() */?>
+    <? /*= $this->Flash->render() */ ?>
     <h3>Login</h3>
-    <?/*= $this->Form->create() */?>
+    <? /*= $this->Form->create() */ ?>
     <fieldset>
-        <legend><?/*= __('Please enter your email and password') */?></legend>
-        <?/*= $this->Form->control('email', ['required' => true]) */?>
-        <?/*= $this->Form->control('password', ['required' => true]) */?>
+        <legend><? /*= __('Please enter your email and password') */ ?></legend>
+        <? /*= $this->Form->control('email', ['required' => true]) */ ?>
+        <? /*= $this->Form->control('password', ['required' => true]) */ ?>
     </fieldset>
-    <?/*= $this->Form->submit(__('Login')); */?>
-    <?/*= $this->Form->end() */?>
+    <? /*= $this->Form->submit(__('Login')); */ ?>
+    <? /*= $this->Form->end() */ ?>
 
-    <?/*= $this->Html->link("Sign up", ['action' => 'add']) */?>
+    <? /*= $this->Html->link("Sign up", ['action' => 'add']) */ ?>
 </div>-->

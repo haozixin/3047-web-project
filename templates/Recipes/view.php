@@ -39,10 +39,10 @@
             </div>
 
             <tr>
-                 <th><?= __('Photo') ?></th>
-                 <td><?=$this->Html->image($recipe->photo,  array('height' => '500')); ?></td>
+                <th><?= __('Photo') ?></th>
+                <td><?= $this->Html->image($recipe->photo, array('width' => '400px')); ?></td>
             </tr>
-                <?php if (!empty($recipe->product_recipes)) : ?>
+            <?php if (!empty($recipe->product_recipes)) : ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -54,24 +54,24 @@
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($recipe->product_recipes as $productRecipes) : ?>
-                        <tr>
-                            <td><?= h($productRecipes->id) ?></td>
-                            <td><?= h($productRecipes->recipe_title) ?></td>
-                            <td><?= h($productRecipes->last_modify_time) ?></td>
-                            <td><?= h($productRecipes->recipe_id) ?></td>
-                            <td><?= h($productRecipes->product_id) ?></td>
-                            <td><?= $this -> Html->image($recipe->image) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'ProductRecipes', 'action' => 'view', $productRecipes->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'ProductRecipes', 'action' => 'edit', $productRecipes->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'ProductRecipes', 'action' => 'delete', $productRecipes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productRecipes->id)]) ?>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?= h($productRecipes->id) ?></td>
+                                <td><?= h($productRecipes->recipe_title) ?></td>
+                                <td><?= h($productRecipes->last_modify_time) ?></td>
+                                <td><?= h($productRecipes->recipe_id) ?></td>
+                                <td><?= h($productRecipes->product_id) ?></td>
+                                <td><?= $this->Html->image($recipe->image) ?></td>
+                                <td class="actions">
+                                    <?= $this->Html->link(__('View'), ['controller' => 'ProductRecipes', 'action' => 'view', $productRecipes->id]) ?>
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'ProductRecipes', 'action' => 'edit', $productRecipes->id]) ?>
+                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'ProductRecipes', 'action' => 'delete', $productRecipes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productRecipes->id)]) ?>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </table>
                 </div>
-                <?php endif; ?>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
+</div>
 </div>

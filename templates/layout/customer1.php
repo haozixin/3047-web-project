@@ -32,7 +32,6 @@
 <body id="page-top">
 
 
-
 <!-- Page Wrapper -->
 <div id="wrapper">
 
@@ -41,7 +40,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $this->Url->build('/') ?>">
-            <img    src="/../img/bee_fly.gif" width="50"  />
+            <img src="/../img/bee_fly.gif" width="50"/>
             <div class="sidebar-brand-text mx-3">Heartys Healthy Honey <sup>co</sup></div>
         </a>
 
@@ -50,8 +49,8 @@
 
         <!-- Nav Item - Home Page -->
         <li class="nav-item active">
-            <a class="nav-link" href= <?= $this->Url->build(['controller'=>'Inventory','action'=>'homepage']) ?>
-                <i class="fas fa-home"></i>
+            <a class="nav-link" href= <?= $this->Url->build(['controller' => 'Inventory', 'action' => 'homepage']) ?>
+            <i class="fas fa-home"></i>
                 <span> Home Page</span></a>
         </li>
 
@@ -64,10 +63,6 @@
         </div>
 
 
-
-
-
-
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -77,15 +72,15 @@
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Inventory','action'=>'supplier']) ?>">Restock to Hearty's honey</a>
+                    <a class="collapse-item"
+                       href="<?= $this->Url->build(['controller' => 'Inventory', 'action' => 'supplier']) ?>">Restock to
+                        Hearty's honey</a>
                     <div class="collapse-divider"></div>
-
 
 
                 </div>
             </div>
         </li>
-
 
 
         <!-- Divider -->
@@ -97,11 +92,8 @@
         </div>
 
 
-
     </ul>
     <!-- End of Sidebar -->
-
-
 
 
     <!-- Content Wrapper -->
@@ -113,20 +105,22 @@
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
 
-                           <a href="<?= $this->Url->build(['controller'=>'Admins','action'=>'homepage']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                <a href="<?= $this->Url->build(['controller' => 'Admins', 'action' => 'homepage']) ?>"
+                   class=" btn-icon-split" style="background-color:DarkOrange">
                                                                                <span class="icon text-white-50">
                                                                                    <i class="fas fa-desktop"></i>
                                                                                </span>
-                                                                               <span class="text" style="color: black"> Switch to Admin</span>
-                                                                           </a>
-                                                                           <div class="my-2"></div>
-                            <a href="<?= $this->Url->build(['controller'=>'Pages','action'=>'/']) ?>" class=" btn-icon-split" style="background-color:DarkOrange">
+                    <span class="text" style="color: black"> Switch to Admin</span>
+                </a>
+                <div class="my-2"></div>
+                <a href="<?= $this->Url->build(['controller' => 'Pages', 'action' => '/']) ?>" class=" btn-icon-split"
+                   style="background-color:DarkOrange">
                                                                                <span class="icon text-white-50">
                                                                                    <i class="fas fa-keyboard"></i>
                                                                                </span>
-                                                                               <span class="text" style="color: black">Switch to Customer</span>
-                                                                           </a>
-                                                                           <div class="my-2"></div>
+                    <span class="text" style="color: black">Switch to Customer</span>
+                </a>
+                <div class="my-2"></div>
 
 
                 <!-- Topbar Navbar -->
@@ -138,10 +132,11 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bob(Supplier)</span>
 
-                            <?=$this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle'])?>
+                            <?= $this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle']) ?>
                         </a>
                         <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
 
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -161,7 +156,6 @@
                 <?= $this->fetch('content') ?>
 
 
-
             </div>
             <!-- /.container-fluid -->
 
@@ -170,7 +164,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-gradient-warning  text-white text-center" >
+        <footer class="sticky-footer bg-gradient-warning  text-white text-center">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span style="color:AliceBLue;">Heartys Healthy Honey 2021 </span>
@@ -211,7 +205,6 @@
 </div>
 
 
-
 <!-- Bootstrap core JavaScript-->
 <?= $this->Html->script('/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>
 
@@ -227,9 +220,7 @@
 <?= $this->fetch('script') ?>
 
 
-
 </body>
-
 
 
 </html>

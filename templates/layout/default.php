@@ -39,8 +39,8 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center"
            href="<?= $this->Url->build('/admins/homepage') ?>">
-            <img src="../webroot/img/bee_fly.gif" width="50"/>
-            <div class="sidebar-brand-text mx-3">Heartys Healthy Honey <sup>co</sup></div>
+
+            <div class="sidebar-brand-text mx-3">Hearty's Healthy Honey <sup>co</sup></div>
         </a>
 
         <!-- Divider -->
@@ -142,29 +142,31 @@
         </li>
 
 
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseinventory"
+               aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="	fas fa-box"></i>
+                <span>Orders</span>
+            </a>
+            <div id="collapseinventory" class="collapse" aria-labelledby="headinginventory"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Functions:</h6>
 
-                 <!-- Nav Item - Utilities Collapse Menu -->
-                         <li class="nav-item">
-                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseinventory"
-                                aria-expanded="true" aria-controls="collapseUtilities">
-                                 <i class="	fas fa-box"></i>
-                                 <span>Orders</span>
-                             </a>
-                             <div id="collapseinventory" class="collapse" aria-labelledby="headinginventory"
-                                  data-parent="#accordionSidebar">
-                                 <div class="bg-white py-2 collapse-inner rounded">
-                                     <h6 class="collapse-header">Functions:</h6>
-
-                                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'orders','action'=>'index']) ?>">Pending orders</a>
-                                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'orders','action'=>'confirm']) ?>">Confirming orders</a>
+                    <a class="collapse-item"
+                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Pending
+                        orders</a>
+                    <a class="collapse-item"
+                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Confirming
+                        orders</a>
 
 
-
-                                 </div>
-                             </div>
-                         </li>
-                 <!-- Divider -->
-                         <hr class="sidebar-divider">
+                </div>
+            </div>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -210,7 +212,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
 
                     <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'faq']) ?>">Q&A</a>
+                       href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'faq']) ?>">customers
+                        Q&A</a>
                     <div class="collapse-divider"></div>
 
 
@@ -264,7 +267,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Your Account</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin Account</span>
 
                             <?= $this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle']) ?>
                         </a>
@@ -272,12 +275,12 @@
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
 
-<!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
-<!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
-<!--                            </a>-->
+                            <!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
+                            <!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                            <!--                            </a>-->
                             <ul>
-                                <li><?= $this->Html->link("Logout",['Controller'=>'Admins','action'=>'logout']) ?></li>
-                                <li><?= $this->Html->link("Password Management",['Controller'=>'User','action'=>'index']) ?></li>
+                                <li><?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?></li>
+                                <li><?= $this->Html->link("Password Management", ['Controller' => 'User', 'action' => 'index']) ?></li>
                             </ul>
                         </div>
 

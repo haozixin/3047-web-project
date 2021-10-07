@@ -45,42 +45,33 @@ class AgentsController extends AppController
 
         $this->set(compact('admins'));
     }
+
     /**
-     * Add method
+     * faq
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
- /*   public function add()
+    public function faq()
     {
-        $agent = $this->Agents->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
-            if ($this->Agents->save($agent)) {
-                $this->Flash->success(__('The agent has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
-        }
-        $this->set(compact('agent'));
     }
-*/
+
     public function add()
     {
         $agent = $this->Agents->newEmptyEntity();
         if ($this->request->is('post')) {
             $agent = $this->Agents->patchEntity($agent, $this->request->getData());
-            $sub= $this->request->getData('subscription_status');
+            $sub = $this->request->getData('subscription_status');
             //            debug($customer);
             //            debug($sub);
-            $email=$this->request->getData('email');
-            $fname= $this->request->getData('family_name');
-            $gname= $this->request->getData('given_name');
+            $email = $this->request->getData('email');
+            $fname = $this->request->getData('family_name');
+            $gname = $this->request->getData('given_name');
 
 
-            $key=$this->request->getData('email');
+            $key = $this->request->getData('email');
             $session = $this->getRequest()->getSession();
-            $session->write(['email'=> $email,'family_name' => $fname,
+            $session->write(['email' => $email, 'family_name' => $fname,
                 'given_name' => $gname]);
             $session->read('email');
             $session->read('family_name');
@@ -89,7 +80,9 @@ class AgentsController extends AppController
 
             if ($this->Agents->save($agent)) {
                 $this->Flash->success(__('The agent has been saved.'));
-                if($sub == 'yes'){ $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']); }
+                if ($sub == 'yes') {
+                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+                }
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -148,7 +141,6 @@ class AgentsController extends AppController
 
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
-
 
 
         // regardless of POST or GET, redirect if user is logged in

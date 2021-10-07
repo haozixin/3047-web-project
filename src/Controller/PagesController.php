@@ -14,6 +14,7 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 
@@ -72,15 +73,19 @@ class PagesController extends AppController
         }
     }
 
-    public function about(){
-        $this->pages='about';
+    public function about()
+    {
+        $this->pages = 'about';
     }
 
-    public function switchAdmin(){
-     $this->layout='default';
+    public function switchAdmin()
+    {
+        $this->layout = 'default';
     }
-    public function switchCustomer(){
-      $this->layout='default_customer';
+
+    public function switchCustomer()
+    {
+        $this->layout = 'default_customer';
     }
 
 

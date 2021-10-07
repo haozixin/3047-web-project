@@ -4,14 +4,14 @@
  * @var \App\Model\Entity\Customer $customer
  */
 
-echo $this->Html->css('//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',['block'=>true]);
-echo $this->Html->script('//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',['block'=>true]);
+echo $this->Html->css('//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', ['block' => true]);
+echo $this->Html->script('//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', ['block' => true]);
 
 $formTemplate = [
     'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
     'label' => '<label{{attrs}} class="form-label">{{text}}</label>',
     'input' => '<input type="{{type}}" name="{{name}}"{{attrs}} class="form-control"/>',
-    'textarea'=> '<textarea name="{{name}}" class="form-control" {{attrs}}>{{value}}</textarea>',
+    'textarea' => '<textarea name="{{name}}" class="form-control" {{attrs}}>{{value}}</textarea>',
     'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>',
     'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}" class="form-check-input" {{attrs}}>',
 ];
@@ -282,7 +282,7 @@ $countries = array(
             echo $this->Form->control('given_name');
             echo $this->Form->control('family_name');
             echo $this->Form->control('email');
-            echo $this->Form->control('country',['options'=>$countries]);
+            echo $this->Form->control('country', ['options' => $countries]);
             echo $this->Form->control('state');
             echo $this->Form->control('city');
             echo $this->Form->control('street');
@@ -293,7 +293,7 @@ $countries = array(
             ?>
 
         </fieldset>
-        <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+        <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
         <?= $this->Form->end() ?>
 
 
@@ -301,7 +301,7 @@ $countries = array(
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#country').select2();
     });
 </script>

@@ -40,6 +40,7 @@ class OrdersFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

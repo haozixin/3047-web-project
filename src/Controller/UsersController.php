@@ -9,7 +9,6 @@ namespace App\Controller;
  * @property \App\Model\Table\UsersTable $Users
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-
 class UsersController extends AppController
 {
     /**
@@ -103,6 +102,7 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
@@ -112,31 +112,30 @@ class UsersController extends AppController
 
     }
 
-     public function login()
-     {
+    public function login()
+    {
 
 
-         $this->request->allowMethod(['get', 'post']);
-         $result = $this->Authentication->getResult();
+        $this->request->allowMethod(['get', 'post']);
+        $result = $this->Authentication->getResult();
 
 
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            // redirect to /articles after login success
+            $redirect = $this->request->getQuery('redirect', [
+                'controller' => 'Pages',
+                'action' => 'home',
+            ]);
 
-         // regardless of POST or GET, redirect if user is logged in
-         if ($result->isValid()) {
-             // redirect to /articles after login success
-             $redirect = $this->request->getQuery('redirect', [
-                 'controller' => 'Pages',
-                 'action' => 'home',
-             ]);
 
-
-             return $this->redirect($redirect);
-         }
-         // display error if user submitted and authentication failed
-         if ($this->request->is('post') && !$result->isValid()) {
-             $this->Flash->success(__('Invalid username or password'));
-         }
-     }
+            return $this->redirect($redirect);
+        }
+        // display error if user submitted and authentication failed
+        if ($this->request->is('post') && !$result->isValid()) {
+            $this->Flash->success(__('Invalid username or password'));
+        }
+    }
     // in src/Controller/UsersController.php
 
 }
