@@ -17,6 +17,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate $date_of_manufacture
  * @property \Cake\I18n\FrozenDate $expired_date
  * @property int|null $quantity
+ * @property string $photo
  *
  * @property \App\Model\Entity\Order[] $orders
  * @property \App\Model\Entity\ProductRecipe[] $product_recipes
@@ -41,6 +42,7 @@ class Product extends Entity
         'date_of_manufacture' => true,
         'expired_date' => true,
         'quantity' => true,
+        'photo' => true,
         'orders' => true,
         'product_recipes' => true,
     ];

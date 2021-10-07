@@ -22,8 +22,8 @@
             <fieldset>
                 <legend><?= __('Edit Newsletter Subscription') ?></legend>
                 <?php
-                    echo $this->Form->control('customer_name');
-                    echo $this->Form->control('customer_email');
+                echo $this->Form->control('customer_name');
+                echo $this->Form->control('customer_email');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -24,10 +24,10 @@
             <fieldset>
                 <legend><?= __('Edit Product Recipe') ?></legend>
                 <?php
-                    echo $this->Form->control('recipe_title');
-                    echo $this->Form->control('last_modify_time');
-                    echo $this->Form->control('recipe_id', ['options' => $recipes]);
-                    echo $this->Form->control('product_id', ['options' => $products]);
+                echo $this->Form->control('recipe_title');
+                echo $this->Form->control('last_modify_time');
+                echo $this->Form->control('recipe_id', ['options' => $recipes]);
+                echo $this->Form->control('product_id', ['options' => $products]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

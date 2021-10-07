@@ -70,7 +70,7 @@
                                             Me</label>
                                     </div>
                                 </div>
-                                <a href="<?= $this->Form->submit(__('Login'))?>"Refresh"
+                                <a href="<?= $this->Form->submit(__('Login')) ?>" Refresh"
 
                                 </a>
                                 <hr>
@@ -82,9 +82,9 @@
                                 </a>
                                 </fieldset>
                                 <div class="text-center">
-                                    <?= $this->Html->link("Sign up", ['controller' => 'Users','action' => 'add']) ?>
-                                <a class="small" href=""
-                                   Create an Account!</a>
+                                    <?= $this->Html->link("Sign up", ['controller' => 'Users', 'action' => 'add']) ?>
+                                    <a class="small" href=""
+                                       Create an Account!</a>
                                 </div>
 
                             </div>

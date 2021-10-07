@@ -24,12 +24,12 @@
             <fieldset>
                 <legend><?= __('Edit Admin Agent') ?></legend>
                 <?php
-                    echo $this->Form->control('price');
-                    echo $this->Form->control('comments');
-                    echo $this->Form->control('cooperation_start_date');
-                    echo $this->Form->control('cooperation_end_date');
-                    echo $this->Form->control('agent_id', ['options' => $agents, 'empty' => true]);
-                    echo $this->Form->control('admin_id', ['options' => $admins, 'empty' => true]);
+                echo $this->Form->control('price');
+                echo $this->Form->control('comments');
+                echo $this->Form->control('cooperation_start_date');
+                echo $this->Form->control('cooperation_end_date');
+                echo $this->Form->control('agent_id', ['options' => $agents, 'empty' => true]);
+                echo $this->Form->control('admin_id', ['options' => $admins, 'empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -32,6 +32,7 @@ class AdminsFixture extends TestFixture
         ],
     ];
     // phpcs:enable
+
     /**
      * Init method
      *

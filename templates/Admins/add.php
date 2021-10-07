@@ -3,7 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Admin $admin
  */
-$formTemplate=[
+$formTemplate = [
     'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
     'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
     'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
@@ -13,7 +13,7 @@ $formTemplate=[
 
 ];
 
-$this ->Form->setTemplates($formTemplate);
+$this->Form->setTemplates($formTemplate);
 
 ?>
 <h1 class="h3 mb-2 text-grey-800">Add Administrator</h1>
@@ -36,7 +36,7 @@ $this ->Form->setTemplates($formTemplate);
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
 
-            <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+            <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
             <?= $this->Form->end() ?>
 
         </fieldset>

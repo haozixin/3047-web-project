@@ -22,11 +22,11 @@
             <fieldset>
                 <legend><?= __('Edit The Admin') ?></legend>
                 <?php
-                    echo $this->Form->control('given_name');
-                    echo $this->Form->control('family_name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('user_name');
+                echo $this->Form->control('given_name');
+                echo $this->Form->control('family_name');
+                echo $this->Form->control('email');
+                echo $this->Form->control('password');
+                echo $this->Form->control('user_name');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
