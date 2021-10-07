@@ -69,6 +69,25 @@ class NewsletterSubscriptionsController extends AppController
         if ($this->request->is('post')) {
             $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscription, $this->request->getData());
             if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
+                {
+                
+                    $mailer = new Mailer('default');
+                    $mailer
+                        ->setEmailFormat('html')
+                        ->setTo($newsletterSubscription->customer_email)
+                        ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                        ->setReplyTo($newsletterSubscription->customer_email)
+                        ->setSubject("Newsletter Subscription Confirmation")
+                        ->viewBuilder()
+                        ->disableAutoLayout()
+                        ->setTemplate('newslettersubscription');
+            
+            
+            
+                    $email_result = $mailer->deliver();        
+                    return $this->redirect(['action' => '/display']);
+
+                }
                 $this->Flash->success(__('The newsletter subscription has been saved.'));
 
                 return $this->redirect(['action' => '/display']);
