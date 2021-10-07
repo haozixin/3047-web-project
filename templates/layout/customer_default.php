@@ -59,7 +59,7 @@
                                         <li class="dropdown"><a href=""> HomePage</a>
                                             <ul>
                                                 <li>
-                                                    <a href="<?= $this->Url->build(['controller' => 'pages', 'action' => 'home']) ?>">HomePage</a>
+                                                    <a href="<?= $this->Url->build('/') ?>">HomePage</a>
                                                 </li>
                                                 <li><a href="" onClick="a()">go somewhere</a></li>
                                             </ul>
@@ -131,6 +131,12 @@
         <div class="auto-container clearfix">
             <?= $this->fetch('content') ?>
         </div>
+    </section>
+
+    <section>
+        </br>
+        </br>
+        </br>
     </section>
 
     <!-- Main Footer -->
