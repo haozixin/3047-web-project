@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Core\Configure;
+use Cake\Mailer\Mailer;
+
 /**
  * NewsletterSubscriptions Controller
  *
@@ -77,6 +80,19 @@ class NewsletterSubscriptionsController extends AppController
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
 
+        $mailer = new Mailer('default');
+        $mailer
+            ->setEmailFormat('html')
+            ->setTo($newsletterSubscriptions->customer_email)
+            ->setFrom(Configure::read('CustmerEmail.from'))
+            ->setReplyTo($newsletterSubscriptions->customer_email)
+            ->setSubject("You are Subscribed to the Newsletter, YAY!!!")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('customeremail');
+
+        return $this->redirect(['action' => 'index']);
+        
     }
 
 
