@@ -19,7 +19,7 @@ $this->layout = 'customer_default';
                 <th><?= h('name') ?></th>
                 <th><?= h('price in AUD') ?></th>
                 <th><?= h('product_type') ?></th>
-                <th><?= h('Function') ?></th>
+
 
 
             </tr>
@@ -33,7 +33,7 @@ $this->layout = 'customer_default';
                     <td>$<?= h($products->agent_price) ?> AUD</td>
                     <td><?= h($products->product_type) ?></td>
 
-                    <td class="btn btn-light btn-icon-split"><?= $this->Html->link(__('Buy Product'), ['action' => 'restock', $products->id]) ?></td>
+
 
                 </tr>
             <?php endforeach; ?>

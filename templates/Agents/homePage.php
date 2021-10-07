@@ -78,6 +78,28 @@ $this->layout = 'agent_default';
                             </div>
                     </section>
                     <!-- End Fluid Section Two -->
+                    <section class="video-section">
+                        <h2>Honey's Agents'!</h2>
+                        <div class="text">Please use this as ur best way to buy honey!!</div>
+<!--                        <div class="image-layer" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/background/5.jpg')"></div>-->
+                        <div class="auto-container">
+
+                                <!-- Video Box -->
+                                <div>
+                                    <button  >
+                                        <a href=" https://www.youtube.com/watch?v=ws8R44DzrS8 "class="lightbox-image overlay-box"> Advantage of Honey </a>
+                                    </button>
+
+<!--                                    <a href="https://www.youtube.com/watch?v=ws8R44DzrS8" class="lightbox-image overlay-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>-->
+                                </div>
+
+                                <div class="lower-content">
+                                    <h6>Make the first deal!</h6>
+                                    <div class="text">This video shows you how eating honey is good for your body    <br> why honey is so popular!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
 
 </html>

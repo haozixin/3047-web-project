@@ -13,7 +13,7 @@ $formTemplate = [
 
 ];
 $this->Form->setTemplates($formTemplate);
-$this->layout = 'default_customer';
+$this->layout = 'customer_default';
 ?>
 <h1 class="h3 mb-2 text-grey-800">Add Subscription</h1>
 <div class="column-responsive column-80">

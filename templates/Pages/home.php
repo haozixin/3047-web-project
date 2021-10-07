@@ -1161,8 +1161,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     <div class="newsletter-form">
                                         <form method="post" action="contact.html">
                                             <div class="form-group">
+                                                <input type="name" name=name value="" placeholder="Your name"
+                                                        required="">
                                                 <input type="email" name="email" value="" placeholder="Your Email"
-                                                       required="">
+                                                        required="">
                                                 <button type="submit" class="theme-btn submit-btn">Subscribe Now
                                                 </button>
 
