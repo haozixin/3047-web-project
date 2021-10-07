@@ -200,7 +200,7 @@ class NewsletterSubscriptionsController extends AppController
 
     public function mark($id = null)
     {
-                
+
         $mailer = new Mailer('default');
         $mailer
             ->setEmailFormat('html')
@@ -214,9 +214,28 @@ class NewsletterSubscriptionsController extends AppController
 
 
 
-        $email_result = $mailer->deliver();        
+        $email_result = $mailer->deliver();
         return $this->redirect(['action' => 'index']);
     }
+    public function mark($id = null)
+        {
+
+            $mailer = new Mailer('default');
+            $mailer
+                ->setEmailFormat('html')
+                ->setTo($newsletterSubscriptions->customer_email)
+                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                ->setReplyTo($newsletterSubscriptions->customer_email)
+                ->setSubject("Newsletter Subscription Confirmation")
+                ->viewBuilder()
+                ->disableAutoLayout()
+                ->setTemplate('newsletterSubscriptionemail');
+
+
+
+            $email_result = $mailer->deliver();
+            return $this->redirect(['action' => 'index']);
+        }
 
 
 }
