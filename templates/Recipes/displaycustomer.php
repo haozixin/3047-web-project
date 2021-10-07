@@ -26,9 +26,11 @@ $this->layout = 'customer_default';
             <?php foreach ($recipes as $recipe): ?>
                 <tr>
 
+
                     <td><?= h($recipe->title) ?></td>
                     <td><?= h($recipe->description) ?></td>
-                    <td><?= h($recipe->video_link) ?></td>
+                    <?php $link = 'http://' . $recipe->video_link?>
+                    <td><?= $this->Html->link( 'Click here for tutorial video!',$link  ) ?></td>
                     <td><?= $this->Html->image($recipe->photo, array('width' => '200px')); ?></td>
 
                 </tr>

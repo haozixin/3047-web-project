@@ -22,6 +22,7 @@
 
     <!-- Custom styles for this template-->
     <?= $this->Html->css('sb-admin-2.min.css') ?>
+    <?= $this->Html->css('cake.css') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
