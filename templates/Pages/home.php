@@ -304,8 +304,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
                                     incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                 </div>
-                                <div class="btns-box">
-                                    <a href="menu.html" class="theme-btn btn-style-one clearfix"><span
+                                <div class="btns-box" onclick="swal('The function is coming soon')">
+                                    <a class="theme-btn btn-style-one clearfix"><span
                                             class="icon"></span>Buy Now</a>
                                 </div>
                                 <div class="icons-box">
@@ -344,8 +344,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
                                     incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                 </div>
-                                <div class="btns-box">
-                                    <a href="menu.html" class="theme-btn btn-style-one clearfix"><span
+                                <div class="btns-box" onclick="swal('The function is coming soon')">
+                                    <a class="theme-btn btn-style-one clearfix"><span
                                             class="icon"></span>Buy Now</a>
                                 </div>
                                 <div class="icons-box">
@@ -384,8 +384,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
                                     incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                 </div>
-                                <div class="btns-box">
-                                    <a href="menu.html" class="theme-btn btn-style-one clearfix"><span
+                                <div class="btns-box" onclick="swal('The function is coming soon')">
+                                    <a class="theme-btn btn-style-one clearfix"><span
                                             class="icon"></span>Buy Now</a>
                                 </div>
                                 <div class="icons-box">
@@ -444,8 +444,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 sint atqui voluptatibus an, pro ne malis semper perpetua.
                             </div>
                         </div>
-                        <a href="menu.html" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Buy
+                        <div onclick="swal('The function is coming soon')">
+                        <a  class="theme-btn btn-style-two clearfix"><span class="icon"></span>Buy
                             Now</a>
+                        </div>
                     </div>
                 </div>
 
@@ -573,8 +575,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </div>
 
             <!-- Button Box -->
-            <div class="button-box text-center">
-                <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>View All Products</a>
+            <div class="button-box text-center" onclick="swal('The function is coming soon')">
+                <a  class="theme-btn btn-style-two clearfix"><span class="icon"></span>View All Products</a>
             </div>
 
         </div>
@@ -718,8 +720,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         </div>
                     </div>
                     <!-- Button Box -->
-                    <div class="button-box">
-                        <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>All Product</a>
+                    <div class="button-box" onclick="swal('The function is coming soon')">
+                        <a  class="theme-btn btn-style-two clearfix"><span class="icon"></span>All Product</a>
                     </div>
                 </div>
             </div>
