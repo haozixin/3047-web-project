@@ -229,6 +229,13 @@ class ProductsController extends AppController
 
         $this->set(compact('products'));
     }
+    public function displaytocustomer()
+    {
+
+        $products = $this->paginate($this->Products);
+
+        $this->set(compact('products'));
+    }
 
     public function displayagent()
     {
