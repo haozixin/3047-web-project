@@ -433,7 +433,7 @@ endforeach;
         <tr>
             <td class="content-block">
                 <span class="apple-link"> <?= date("Y") ?>Hearty's healthy honey. All Rights Reserved </span>
-                <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
+                
             </td>
         </tr>
         <tr>
