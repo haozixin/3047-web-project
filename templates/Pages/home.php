@@ -607,6 +607,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="form-group">
                                 <input type="email" name="email" value="" placeholder="type your email" required>
                                 <button type="submit" class="submit-btn"><span class="icon flaticon-send"></span>
+
                                 </button>
                             </div>
                         </form>
@@ -1159,14 +1160,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="footer-widget newsletter-widget">
                                     <h6>Subscribe</h6>
                                     <div class="newsletter-form">
-                                        <form method="post" action="contact.html">
+                                        <form method="post">
                                             <div class="form-group">
-                                                <input type="name" name=name value="" placeholder="Your name"
-                                                        required="">
-                                                <input type="email" name="email" value="" placeholder="Your Email"
-                                                        required="">
-                                                <button type="submit" class="theme-btn submit-btn">Subscribe Now
-                                                </button>
+
+                                                <a type="submit" class="theme-btn submit-btn" href="<?= $this->Url->build(['controller' => 'NewsletterSubscriptions', 'action' => 'addforcustomer']) ?>">Subscribe Now
+
+                                                </a>
 
                                             </div>
                                         </form>

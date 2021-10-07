@@ -60,6 +60,23 @@ class NewsletterSubscriptionsController extends AppController
         $this->Flash->success(__('Remember to input a valid Email otherwise we cannot send you our best Offers!( e.g. abc@example.com)'));
         $this->set(compact('newsletterSubscription'));
     }
+    public function addforcustomer()
+    {
+        $newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
+        if ($this->request->is('post')) {
+            $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscription, $this->request->getData());
+            if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
+                $this->Flash->success(__('The newsletter subscription has been saved.'));
+
+                return $this->redirect(['action' => '/display']);
+
+            }
+
+        }
+        $this->Flash->success(__('Remember to input a valid Email otherwise we cannot send you our best Offers!( e.g. abc@example.com)'));
+        $this->set(compact('newsletterSubscription'));
+    }
+
 
     public function addCustomer()
     {
