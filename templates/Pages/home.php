@@ -129,10 +129,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <li class="dropdown"><a href="#">About</a>
                                     <ul>
                                         <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Pages', 'action' => 'about']) ?>">About
-                                                Us</a></li>
-                                        <li><a href='#' onClick="a()""">Team</a></li>
-                                        <li><a href='#' onClick="a()""">Our Honey Stores</a></li>
+                                            <a href="#" onClick="a()">About Us</a></li>
+                                        <li><a href='#' onClick="a()">Team</a></li>
+                                        <li><a href='#' onClick="a()">Our Honey Stores</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Products</a>
@@ -144,7 +143,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 </li>
                                 <li class="dropdown"><a href="#">Recipes</a>
                                     <ul>
-                                        <li><a href='#' onClick="a()""">Menu</a></li>
+
                                         <li>
                                             <a href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'displaycustomer']) ?>">Let's
                                                 see Recipes</a></li>
@@ -1105,7 +1104,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     </div>
                                     <ul class="contact-list">
                                         <li><span class="icon fa fa-send"></span>Your mail @ gmail.com</li>
-                                        <li><span class="icon fa fa-phone"></span><a href="">(123) 4567 89000</a></li>
+                                        <li><span class="icon fa fa-phone"></span><a>(123) 4567 89000</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1115,7 +1114,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="footer-widget links-widget">
                                     <h6>Useful Links</h6>
                                     <ul class="footer-list">
-                                        <li>"<a href=#" onClick="a()">Home</a></li>
                                         <li><a href="#" onClick="a()">About us</a></li>
                                         <li><a href="#" onClick="a()">Blogs</a></li>
                                         <li><a href="#" onClick="a()">Terms Of Service</a></li>

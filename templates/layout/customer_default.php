@@ -53,18 +53,7 @@
 
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="#">Home</a>
-                                    <ul>
-
-                                        <li class="dropdown"><a href=""> HomePage</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="<?= $this->Url->build('/') ?>">HomePage</a>
-                                                </li>
-                                                <li><a href="" onClick="a()">go somewhere</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li><a href="<?= $this->Url->build('/') ?>">HomePage</a>
                                 </li>
                                 <li class="dropdown"><a href="#">About</a>
                                     <ul>
@@ -161,7 +150,7 @@
                                     </div>
                                     <ul class="contact-list">
                                         <li><span class="icon fa fa-send"></span>Your mail @ gmail.com</li>
-                                        <li><span class="icon fa fa-phone"></span><a href="">(123) 4567 89000</a></li>
+                                        <li><span class="icon fa fa-phone"></span><a>(123) 4567 89000</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -171,7 +160,6 @@
                                 <div class="footer-widget links-widget">
                                     <h6>Useful Links</h6>
                                     <ul class="footer-list">
-                                        <li><a href="#" onClick="a()">Home</a></li>
                                         <li><a href="#" onClick="a()">About us</a></li>
                                         <li><a href="#" onClick="a()" Blogs</a></li>
                                         <li><a href="#" onClick="a()">Terms Of Service</a></li>
@@ -211,7 +199,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.
+                <div class="copyright">&copy; 2021 foodily All Rights By Agile Amigo</a>.
                 </div>
             </div>
         </div>

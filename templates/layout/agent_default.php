@@ -187,7 +187,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.
+                <div class="copyright">&copy; 2021 foodily All Rights By Agile Amigo.
                 </div>
             </div>
         </div>
