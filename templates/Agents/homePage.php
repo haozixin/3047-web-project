@@ -53,8 +53,7 @@ $this->layout = 'agent_default';
                             <!-- Content Column -->
                             <div class="content-column">
                                 <div class="inner-column">
-                                    <!-- Title Box -->
-                                    <div class="title-box">
+                                    <!-- Title Box --><div class="title-box">
                                         <h2>Honey's Agents'!</h2>
                                         <div class="text">Please use this as ur best way to buy honey!!</div>
                                     </div>

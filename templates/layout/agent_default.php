@@ -66,15 +66,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">About</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Pages', 'action' => 'about']) ?>">About
-                                                Us</a></li>
-                                        <li><a href="#" onClick="a()">Team</a></li>
-                                        <li><a href="#" onClick="a()">Our Honey Stores</a></li>
-                                    </ul>
-                                </li>
+
                                 <li class="dropdown"><a href="#">Products</a>
                                     <ul>
                                         <li>
@@ -83,21 +75,8 @@
 
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Recipes</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'displayagent']) ?>">Let's
-                                                see Recipes</a></li>
 
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Find US</a>
-                                    <ul>
-                                        <li><a href="#" onClick="a()">Contact Us</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a> Logout</a>
+                               <li class="dropdown"><a> Logout</a>
                                     <ul>
                                         <li>
                                             <?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?>
