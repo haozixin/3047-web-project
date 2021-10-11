@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -72,8 +74,7 @@ class RecipesTable extends Table
         $validator
             ->scalar('video_link')
             ->maxLength('video_link', 256)
-            ->requirePresence('video_link', 'create')
-            ->notEmptyString('video_link');
+            ->allowEmptyString('video_link');
 
         $validator
             ->scalar('photo')

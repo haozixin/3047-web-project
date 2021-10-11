@@ -29,7 +29,11 @@ $this->layout = 'customer_default';
 
                     <td><?= h($recipe->title) ?></td>
                     <td><?= h($recipe->description) ?></td>
-                    <?php $link = 'http://' . $recipe->video_link?>
+                    <?php if($recipe->video_link!= null) {$link = 'http://' . $recipe->video_link;}
+                    else {$link=$this->Url->build(['controller' => 'Recipes', 'action' => 'displayagent']);
+
+                    }
+                    ?>
                     <td><?= $this->Html->link( 'Click here for tutorial video!',$link  ) ?></td>
                     <td><?= $this->Html->image($recipe->photo, array('width' => '200px')); ?></td>
 

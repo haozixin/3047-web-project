@@ -90,7 +90,7 @@ class OrdersController extends AppController
 
                 return $this->redirect(['controller' => 'Products', 'action' => 'update']);
             }
-            $this->Flash->error(__('There is an new order request'));
+           
         }
         $agentsForOrder = $this->Orders->Agents->find('list', ['limit' => 200,
             'keyField' => 'id',

@@ -27,12 +27,23 @@ $this->Form->setTemplates($formTemplate);
             <?php
             echo $this->Form->control('name');
             echo $this->Form->control('description');
-            echo $this->Form->control('customer_price');
-            echo $this->Form->control('agent_price');
+            echo $this->Form->control('customer_price', array('type' => 'number','min' => 10,'max'=> 1000));
+            echo $this->Form->control('agent_price', array('type' => 'number','min' => 10,'max'=> 1000));
             echo $this->Form->control('product_type');
-            echo $this->Form->control('date_of_manufacture');
-            echo $this->Form->control('expired_date');
-            echo $this->Form->control('quantity');
+            echo $this->Form->control('date_of_manufacture', [
+                                    'type' => 'date',
+                                    'required',
+                                    'default' => date('Y-m-d'), // Show default Todays date,
+                                    'min' => date('Y-m-d'), ]);
+
+
+            echo $this->Form->control('expired_date', [
+                                    'type' => 'date',
+                                    'required',
+                                    'default' => 'date_of_manufacture', // Show default Todays date,
+                                    'min' => 'date_of_manufacture', ]);
+
+            echo $this->Form->control('quantity', array('type' => 'number','min' => 10,'max'=> 1000));
             echo $this->Form->control('photo', ['type' => 'file']);
             ?>
 

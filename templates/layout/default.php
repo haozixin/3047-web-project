@@ -156,11 +156,9 @@
                     <h6 class="collapse-header">Functions:</h6>
 
                     <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Pending
-                        orders</a>
+                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Order Requests </a>
                     <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Confirming
-                        orders</a>
+                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Mark Paid Requests</a>
 
 
                 </div>

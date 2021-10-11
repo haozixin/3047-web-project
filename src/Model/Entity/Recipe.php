@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $title
  * @property string $description
- * @property string $video_link
+ * @property string|null $video_link
  * @property string $photo
  *
  * @property \App\Model\Entity\ProductRecipe[] $product_recipes
