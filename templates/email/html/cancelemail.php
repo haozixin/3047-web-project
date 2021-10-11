@@ -23,7 +23,6 @@ foreach ($content as $line) :
 endforeach;
 ?>
 
-
 <!doctype html>
 <html>
 <head>
@@ -382,7 +381,7 @@ endforeach;
     </style>
 </head>
 <body class="">
-<span class="preheader">This is the order confirmation Email from hearty healthy honey.</span>
+<span class="preheader">This is the confirmation of your subscription to the newsletter.</span>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
     <tr>
         <td>&nbsp;</td>
@@ -399,16 +398,11 @@ endforeach;
                                 <tr>
                                     <td>
                                         <p><img src="/../img/logo-small.png"></img></p>
-                                        <p> Your Order is on the way!</p>
-                                        <p>Email : <?= $this->Html->link(h($email), 'mailto:' . h($email)) ?></p>
-                                        <p><b>Date: </b> <?= h($deal_date) ?></p>
-                                        <p><b>Ordered Quantity(In bottles) : </b> <?= h($quantity) ?></p>
-                                        <p><b>Order price(AUD) : </b> <?= h($price) ?></p>
-                                        <p><b>Shipment Address : </b> <?= h($address) ?></p>
+                                        <p> You are removed from the  subscribed list to the Newsletter, YAY!!!</p>
                                         <p><?= $body ?></p>
 
-                                        <p>We are sending an Email to inform you that your shipment is on the way.</p>
-                                        <p>Thanks for ordering our products!</p>
+
+                                        <p>Feel free to leave any comments on what to improve for our services!</p>
 
 
                                     </td>
@@ -416,7 +410,7 @@ endforeach;
                                 </tbody>
                             </table>
 
-                            <p>See you next time!</p>
+                            <p>Have a Nice Day!!</p>
                         </td>
                     </tr>
                 </table>
