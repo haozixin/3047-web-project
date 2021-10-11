@@ -60,8 +60,18 @@ $this->layout = 'agent_default';
 
                                         <?php
 
-                                        echo $this->Form->control('quantity');
-                                        echo $this->Form->control('deal_date');
+                                        
+                                        echo $this->Form->input('quantity', array(
+                                          'type' => 'number',
+                                          'min' => 10
+                                        ));
+                                        echo $this->Form->input('deal_date', [
+                                            'type' => 'date',
+                                            'required',
+                                            'default' => date('Y-m-d'), // Show default Todays date,
+                                            'min' => date('Y-m-d'),
+
+                                        ]);
                                         echo $this->Form->control('deal_comment');
                                         echo $this->Form->control('shipping_address');
                                         echo $this->Form->control('agent_id', ['options' => $agents, 'empty' => true]);
