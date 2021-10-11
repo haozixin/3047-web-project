@@ -122,13 +122,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     <ul>
                                         <li><a href="<?= $this->Url->build('/admins/homepage') ?>">Admins HomePage</a>
                                         </li>
-                                        <li class="dropdown"><a href="#">Agent HomePage</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
-                                                </li>
-                                                <li><a href='#' onClick="a()""">go somewhere</a></li>
-                                            </ul>
+                                        <li><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">Agent HomePage</a>
                                         </li>
                                     </ul>
                                 </li>

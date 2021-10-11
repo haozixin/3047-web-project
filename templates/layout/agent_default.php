@@ -53,18 +53,7 @@
 
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="#">Home</a>
-                                    <ul>
-
-                                        <li class="dropdown"><a href="">Agent HomePage</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
-                                                </li>
-                                                <li><a href="" onClick="a()">go somewhere</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li ><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
                                 </li>
 
                                 <li class="dropdown"><a href="#">Products</a>
