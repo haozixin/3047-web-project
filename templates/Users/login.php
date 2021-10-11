@@ -1,6 +1,16 @@
 <?php
 
 $this->layout = 'login_default';
+$formTemplate = [
+    'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+    'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+    'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+    'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+];
+$this->Form->setTemplates($formTemplate);
 ?>
 
 <!-- in /templates/customers/login.php -->
@@ -43,7 +53,7 @@ $this->layout = 'login_default';
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block"><img src="../webroot/img/resource/book-list-1.png" alt=""/> </div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
@@ -77,15 +87,9 @@ $this->layout = 'login_default';
 
                                 </a>
                                 <hr>
-                                <a href="" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Login with Google
-                                </a>
-                                <a href="" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                </a>
                                 </fieldset>
                                 <div class="text-center">
-                                    <?= $this->Html->link("Sign up", ['controller' => 'Users', 'action' => 'add']) ?>
+                                    <?= $this->Html->link("Sign up for backend", ['controller' => 'Users', 'action' => 'add']) ?>
                                     <a class="small" href=""
                                        Create an Account!</a>
                                 </div>
