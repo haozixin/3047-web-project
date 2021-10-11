@@ -1,4 +1,7 @@
-<!-- in /templates/customers/login.php -->
+<?php
+
+$this->layout = 'login_default';
+?>
 
 <!-- in /templates/customers/login.php -->
 <!DOCTYPE html>
