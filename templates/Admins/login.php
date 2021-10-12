@@ -1,7 +1,21 @@
+<?php
+
+$this->layout = 'login_default';
+$formTemplate = [
+    'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+    'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+    'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+    'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+];
+$this->Form->setTemplates($formTemplate);
+?>
+
 <!-- in /templates/customers/login.php -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <?= $this->Html->charset() ?>
@@ -10,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title><?= $this->Html->meta('icon') ?></title>
-    <title>Customer - Login</title>
+    <title>Admins - Login</title>
 
     <!-- Custom fonts for this template-->
     <?= $this->Html->css('/vendor/fontawesome-free/css/all.min.css') ?>
@@ -25,6 +39,9 @@
 
 <body class="bg-gradient-primary">
 
+<h3>Login</h3>
+<?= $this->Flash->render() ?>
+<?= $this->Form->create() ?>
 <div class="container">
 
     <!-- Outer Row -->
@@ -36,7 +53,7 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block"><img src="../webroot/img/resource/login.gif" alt=""/> </div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
@@ -44,56 +61,53 @@
                                 </div>
                                 <!--<form class="user">-->
                                 <div class="user">
-                                    <?= $this->Flash->render() ?>
-                                    <?= $this->Form->create() ?>
-                                    <div class="form-group">
+                                    <fieldset>
+                                        <div class="form-group">
 
-                                        <input type="email" class="form-control form-control-user"
-                                               id="exampleInputEmail" aria-describedby="emailHelp"
-                                               placeholder="Enter Email Address..."
-                                            <?= $this->Form->control('email', ['required' => true]) ?>>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Password"
-                                            <?= $this->Form->control('password', ['required' => true]) ?>>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Remember
-                                                Me</label>
+                                            <!--                                            <input type="email" class="form-control form-control-user"-->
+                                            <!--                                                   id="exampleInputEmail" aria-describedby="emailHelp"-->
+                                            <!--                                                   placeholder="Enter Email Address..." >-->
+
+                                            <?= $this->Form->control('email', ['required' => true]) ?>
+
+                                            <!--                                        <div class="form-group">-->
+                                            <!--                                            <input type="password" class="form-control form-control-user"-->
+                                            <!--                                                   id="exampleInputPassword" placeholder="Password">-->
+                                            <?= $this->Form->control('password', ['required' => true]) ?>
                                         </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                                        <label class="custom-control-label" for="customCheck">Remember
+                                            Me</label>
                                     </div>
-                                    <a href="<?= $this->Form->submit(__('Login')); ?>"
-                                       class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </a>
-                                    <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                                        <i class="fab fa-google fa-fw"></i> Login with Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                    </a>
-
                                 </div>
+                                <a href="<?= $this->Form->submit(__('Login')) ?>"Refresh"
+
+                                </a>
                                 <hr>
-
-                                <?= $this->Form->end() ?>
+                                </fieldset>
                                 <div class="text-center">
-                                    <a class="small" href="<?= $this->Html->link("Sign up", ['action' => 'add']) ?>">Create
-                                        an Account!</a>
+                                    <button><?= $this->Html->link("Sign up for backend", ['controller' => 'Users', 'action' => 'add']) ?></button>
+                                    <a class="small" href=""
+                                       Create an Account!</a>
                                 </div>
+
                             </div>
+                            <hr>
+
+                            <?= $this->Form->end() ?>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 </div>
 
@@ -106,19 +120,6 @@
 <?= $this->Html->script('/sb-admin-2.min.js') ?>
 </body>
 
-</html>
-<!--
-<div class="users form">
-    <? /*= $this->Flash->render() */ ?>
-    <h3>Login</h3>
-    <? /*= $this->Form->create() */ ?>
-    <fieldset>
-        <legend><? /*= __('Please enter your email and password') */ ?></legend>
-        <? /*= $this->Form->control('email', ['required' => true]) */ ?>
-        <? /*= $this->Form->control('password', ['required' => true]) */ ?>
-    </fieldset>
-    <? /*= $this->Form->submit(__('Login')); */ ?>
-    <? /*= $this->Form->end() */ ?>
 
-    <? /*= $this->Html->link("Sign up", ['action' => 'add']) */ ?>
-</div>-->
+</html>
+

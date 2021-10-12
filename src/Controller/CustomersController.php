@@ -138,6 +138,12 @@ class CustomersController extends AppController
             return $this->redirect('/');
         }
     }
-
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // for all controllers in our application, make index and view
+        // actions public, skipping the authentication check
+        $this->Authentication->addUnauthenticatedActions(['faq']);
+    }
 
 }

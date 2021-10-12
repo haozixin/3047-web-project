@@ -109,6 +109,54 @@ class AdminsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // for all controllers in our application, make index and view
+        // actions public, skipping the authentication check
+        $this->Authentication->addUnauthenticatedActions(['login']);
+    }
+
+    public function login()
+    {
+
+
+        $this->request->allowMethod(['get', 'post']);
+        $result = $this->Authentication->getResult();
+
+
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            // redirect to /articles after login success
+//            debug($result->getData());
+//            exit;
+            $id = $result->getData()->id;
+            $username = $result->getData()->username;
+            $email = $result->getData()->email;
+            $data = [
+                'id' => $id,
+                'username' => $username,
+                'useremail' => $email
+            ];
+
+
+            $this->set($data);
+
+
+            $redirect = $this->request->getQuery('redirect', [
+                'controller' => 'Pages',
+                'action' => 'home',
+
+            ]);
+
+
+            return $this->redirect($redirect);
+        }
+        // display error if user submitted and authentication failed
+        if ($this->request->is('post') && !$result->isValid()) {
+            $this->Flash->success(__('Invalid username or password'));
+        }
+    }
 
     public function logout()
     {

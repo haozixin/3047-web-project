@@ -137,7 +137,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <li class="dropdown"><a href="#">Products</a>
                                     <ul>
                                         <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'displaycustomer']) ?>">display
+                                            <a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displaycustomer']) ?>">display
                                                 products</a></li>
                                     </ul>
                                 </li>

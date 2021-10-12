@@ -169,7 +169,7 @@ class ProductsController extends AppController
             }
 
 
-            
+
             //$this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
 
@@ -261,5 +261,13 @@ class ProductsController extends AppController
             $this->Authentication->logout();
             return $this->redirect('/');
         }
+    }
+
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // for all controllers in our application, make index and view
+        // actions public, skipping the authentication check
+        $this->Authentication->addUnauthenticatedActions(['displaycustomer']);
     }
 }
