@@ -124,6 +124,8 @@ class AdminsController extends AppController
         $password = $this -> request->getData('password');
         if($email != null || $password!=null){
             if ($email=="admin@hertyHoney.com" && $password=='passwordforadmin'){
+                $this->Authentication->addUnauthenticatedActions(['homepage','login','logout']);
+
                 return $this->redirect(['action' => 'homepage']);
             }else{
                 $this->Flash->success(__('Wrong password or email!'));

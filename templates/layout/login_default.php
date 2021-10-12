@@ -54,7 +54,7 @@
                                                    <span class="icon text-white-50">
                                                        <i class="fas fa-keyboard"></i>
                                                    </span>
-                    <span class="text" style="color: black">Switch to Customer</span>
+                    <span class="text" style="color: black">Go back to customer home</span>
                 </a>
                 <div class="my-2"></div>
 
