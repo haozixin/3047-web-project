@@ -29,12 +29,19 @@ $this->layout = 'customer_default';
 
                     <td><?= h($recipe->title) ?></td>
                     <td><?= h($recipe->description) ?></td>
-                    <?php if($recipe->video_link!= null) {$link = 'http://' . $recipe->video_link;}
-                    else {$link=$this->Url->build(['controller' => 'Recipes', 'action' => 'displayagent']);
 
+
+
+                    <?php if($recipe->video_link != null) {
+                        $link = 'http://' . $recipe->video_link;
+                        $description = 'Click here for tutorial video!';
+                        $command = $this->Html->link( 'Click here for tutorial video!',$link  );
+                    }
+                    else {
+                        $command ="Sorry, there is no link for it.";
                     }
                     ?>
-                    <td><?= $this->Html->link( 'Click here for tutorial video!',$link  ) ?></td>
+                    <td><?= $command ?></td>
                     <td><?= $this->Html->image($recipe->photo, array('width' => '200px')); ?></td>
 
                 </tr>
