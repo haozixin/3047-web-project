@@ -237,8 +237,8 @@
                             <!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
                             <!--                            </a>-->
                             <ul>
-                                <li><?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?></li>
-                                <li><?= $this->Html->link("Password Management", ['Controller' => 'User', 'action' => 'index']) ?></li>
+                                <li><?= $this->Html->link("Logout", ['controller' => 'Admins', 'action' => 'logout']) ?></li>
+                                <li><?= $this->Html->link("Login_Users", ['controller' => 'Users', 'action' => 'index']) ?></li>
                             </ul>
                         </div>
 
