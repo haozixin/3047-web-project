@@ -123,8 +123,8 @@ class UsersController extends AppController
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
             // redirect to /articles after login success
-            debug($result->getData());
-            exit;
+//            debug($result->getData());
+//            exit;
             $id=$result->getData()->id;
             $username=$result->getData()->username;
             $email=$result->getData()->email;

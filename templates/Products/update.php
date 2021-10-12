@@ -49,20 +49,7 @@ $this->disableAutoLayout();
                     <nav class="main-menu navbar-expand-md">
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href='#'>Back to HomePage</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">Exit</a>
-                                        </li>
-                                        <li class="dropdown"><a href="">Agent HomePage</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
-                                                </li>
-
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="current dropdown"><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">Back to HomePage</a>
                                 </li>
 
                             </ul>

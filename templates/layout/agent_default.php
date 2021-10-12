@@ -56,13 +56,8 @@
                                 <li ><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
                                 </li>
 
-                                <li class="dropdown"><a href="#">Products</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displayagent']) ?>">display
-                                                products</a></li>
+                                <li><a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displayagent']) ?>">Restore Products</a>
 
-                                    </ul>
                                 </li>
 
                                <li class="dropdown"><a> Logout</a>
