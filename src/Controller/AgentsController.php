@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\Mailer\Mailer;
 
 /**
  * Agents Controller
@@ -119,32 +120,31 @@ public function addfront()
             $fname = $this->request->getData('family_name');
             $gname = $this->request->getData('given_name');
             $user_name = $this->request->getData('user_name');
+            $status=$agent->subscription_status;
 
             $password = $this->request->getData('password');
             $key = $this->request->getData('email');
             $session = $this->getRequest()->getSession();
-            $session->write(['email' => $email,'user_name' => $user_name,'email' => $email, 'password' => $password,
+            $session->write(['email' => $email,'status'=>$status,'ser_name' => $user_name,'email' => $email, 'password' => $password,
                 'given_name' => $gname]);
             $session->read('email');
             $session->read('family_name');
             $session->read('given_name');
             $session->read('user_name');
             $session->read('password');
-
-
+            $session->read('status');
             if(true)
             {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
 
-
             if ($this->Agents->save($agent)) {
 
-                $this->Flash->success(__('The agent has been saved.'));
 
-                if ($sub == 'Yes') {
-                debug($sub);
-                exit;
-                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
-                }
+
+//                 if ($sub == 'Yes') {
+//                 debug($sub);
+//                 exit;
+//                     $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);
+//                 }
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -221,6 +221,43 @@ public function addfront()
         }
     }
 
+//     public function forgot()
+//         {
+//
+//
+//             $agent1=$this->request->getData();
+//
+//              foreach ($agents as $agents){
+//              if $agent1->email==h($agents->email){
+//              $email=
+//              } }
+//             debug($agent2);
+//             exit;
+//             if (true) {
+//                 $mailer = new Mailer('default');
+//                 $mailer
+//                     ->setEmailFormat('html')
+//                     ->setTo($order->agent_email)
+//                     ->setFrom(Configure::read('OrderEmail.from'))
+//                     ->setReplyTo($order->agent_email)
+//                     ->setSubject(" Shipment on the way ")
+//                     ->viewBuilder()
+//                     ->disableAutoLayout()
+//                     ->setTemplate('confirmmail');
+//
+//                 $mailer->setViewVars([
+//
+//                     'email' => $agent->email,]);
+//
+//
+//                 $email_result = $mailer->deliver();
+//             } else {
+//                 $this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));
+//             }
+//
+//             return $this->redirect(['action' => '/']);
+//         }
+
     public function logout()
     {
         $result = $this->Authentication->getResult();
@@ -235,7 +272,7 @@ public function addfront()
             parent::beforeFilter($event);
             // Configure the login action to not require authentication, preventing
             // the infinite redirect loop issue
-            $this->Authentication->addUnauthenticatedActions(['addfront']);
+            $this->Authentication->addUnauthenticatedActions(['addfront','forgot']);
 
 
         }

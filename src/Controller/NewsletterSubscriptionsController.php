@@ -115,6 +115,7 @@ class NewsletterSubscriptionsController extends AppController
 
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
+        $this->set(compact('newsletterSubscription'));
     }
 
 
@@ -165,6 +166,39 @@ class NewsletterSubscriptionsController extends AppController
 
     public function display()
     {
+    $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+            $this->loadModel('Customers');
+            $email = $this->getRequest()->getSession()->read('email');
+
+            $fname = $this->getRequest()->getSession()->read('family_name');
+            $gname = $this->getRequest()->getSession()->read('given_name');
+            $name = $gname . ' ' . $fname;
+
+
+    //                                               $newsletterSubscription['customer_name']=$fname+$gname;
+            $newsletterSubscriptions['customer_email'] = $email;
+            $newsletterSubscriptions['customer_name'] = $name;
+
+
+            $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscriptions, $this->request->getData());
+            $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+            $mailer = new Mailer('default');
+                        $mailer
+                            ->setEmailFormat('html')
+                            ->setTo($newsletterSubscriptions->customer_email)
+                            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                            ->setReplyTo($newsletterSubscriptions->customer_email)
+                            ->setSubject("Newsletter Subscription Confirmation")
+                            ->viewBuilder()
+                            ->disableAutoLayout()
+                            ->setTemplate('newslettersubscription');
+
+
+
+                        $email_result = $mailer->deliver();
+                        $this->set(compact('newsletterSubscription'));
+
 
     }
 
@@ -185,6 +219,22 @@ class NewsletterSubscriptionsController extends AppController
 
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+        $mailer = new Mailer('default');
+                    $mailer
+                        ->setEmailFormat('html')
+                        ->setTo($newsletterSubscriptions->customer_email)
+                        ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                        ->setReplyTo($newsletterSubscriptions->customer_email)
+                        ->setSubject("Newsletter Subscription Confirmation")
+                        ->viewBuilder()
+                        ->disableAutoLayout()
+                        ->setTemplate('newsletterSubscriptionemail');
+
+
+
+                    $email_result = $mailer->deliver();
+
 
     }
 
@@ -223,7 +273,7 @@ class NewsletterSubscriptionsController extends AppController
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
         // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions(['addcustomer','addCustomer']);
+        $this->Authentication->addUnauthenticatedActions(['addcustomer','addCustomer','display']);
     }
 
 }

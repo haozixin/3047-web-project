@@ -36,7 +36,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td><?= h($order->quantity) ?></td>
                     <td><?= h($order->deal_date) ?></td>
                     <td><?= h($order->shipping_address) ?></td>
-                    <td><?= h($order->agent_id) ? $this->Html->link($order->agent->id, ['controller' => 'Agents', 'action' => 'view', $order->agent->id]) : '' ?></td>
+                    <td><?= h($order->agent_id) ? $this->Html->link($order->agent_id, ['controller' => 'Agents', 'action' => 'view', $order->agent_id]) : '' ?></td>
                     <td><?= $order->email_sent ? __('Yes') : __('No'); ?></td>
                     <td><?= h($order->agent_email) ?></td>
                     <td><?= h($order->Paid) ?></td>

@@ -60,26 +60,32 @@ class UsersController extends AppController
     }
 
 
-        public function adduser ()
-        {
+        public function adduser (){
             $user = $this->Users->newEmptyEntity();
-            $this->loadModel('Agents');
 
             $email = $this->getRequest()->getSession()->read('email');
             $username = $this->getRequest()->getSession()->read('user_name');
             $password = $this->getRequest()->getSession()->read('password');
+            $sub = $this->getRequest()->getSession()->read('status');
 
 
             $user['email'] = $email;
             $user['username'] = $username;
             $user['password'] = $password;
 
-
-
-
             $this->Users->save($user);
-            $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
-        }
+            $this->set(compact('user'));
+
+
+
+            if ($sub == 'Yes') {
+             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);   }
+
+             else return $this->Flash->success(__('The user has been saved.'));
+
+
+             }
+
 
     /**
      * Edit method
