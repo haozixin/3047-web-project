@@ -140,7 +140,11 @@ class OrdersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $order = $this->Orders->get($id);
-        if ($this->Orders->delete($order)) {
+
+
+        if($order->Paid=='Yes'){
+        $this->Flash->error(__('The order is Paid. Please, try again.'));
+        }else if ($this->Orders->delete($order)) {
             $this->Flash->success(__('The order has been deleted.'));
             $this->redirect(['controller' => 'Products', 'action' => 'cancel']);
         } else {
@@ -164,6 +168,7 @@ class OrdersController extends AppController
             'contain' => [],
         ]);
         $quantity = $this->getRequest()->getSession()->read('quantity');
+         $name = $this->getRequest()->getSession()->read('name');
         $order_quantity = $order->quantity;
 
         if ($quantity - $order_quantity >= 0) {
@@ -181,7 +186,7 @@ class OrdersController extends AppController
 
                 $mailer->setViewVars([
                     'content' => $order->body,
-
+                    'name'=> $name,
                     'email' => $order->agent_email,
                     'deal_date' => $order->deal_date,
                     'quantity' => $order->quantity,

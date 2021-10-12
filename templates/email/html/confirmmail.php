@@ -401,6 +401,7 @@ endforeach;
                                         <p><img src="/../img/logo-small.png"></img></p>
                                         <p> Your Order is on the way!</p>
                                         <p>Email : <?= $this->Html->link(h($email), 'mailto:' . h($email)) ?></p>
+                                        <p><b>Product Name: </b> <?= h($name) ?></p>
                                         <p><b>Date: </b> <?= h($deal_date) ?></p>
                                         <p><b>Ordered Quantity(In bottles) : </b> <?= h($quantity) ?></p>
                                         <p><b>Order price(AUD) : </b> <?= h($price) ?></p>

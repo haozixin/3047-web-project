@@ -50,8 +50,11 @@ class CustomersController extends AppController
         if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
             $sub = $this->request->getData('subscription_status');
-//            debug($customer);
-//            debug($sub);
+            if($sub=='0'){
+            $customer->subscription_status='Yes';}
+            else{
+            $customer->subscription_status='No';};
+
             $email = $this->request->getData('email');
             $fname = $this->request->getData('family_name');
             $gname = $this->request->getData('given_name');
@@ -64,10 +67,11 @@ class CustomersController extends AppController
             $session->read('family_name');
             $session->read('given_name');
 
+
             if ($this->Customers->save($customer)) {
 
                 $this->Flash->success(__('The customer has been saved.'));
-                if ($sub == 'yes') {
+                if ($sub == '0') {
                     $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
                 }
 

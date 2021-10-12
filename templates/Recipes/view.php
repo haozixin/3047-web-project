@@ -16,7 +16,7 @@
     <div class="column-responsive column-80">
         <div class="recipes view content">
             <h3><?= h("Details") ?></h3>
-            <table>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <tr>
                     <th><?= __('Title') ?></th>
                     <td><?= h($recipe->title) ?></td>

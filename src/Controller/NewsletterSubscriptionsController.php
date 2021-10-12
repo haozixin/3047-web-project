@@ -108,7 +108,7 @@ class NewsletterSubscriptionsController extends AppController
 
         $fname = $this->getRequest()->getSession()->read('family_name');
         $gname = $this->getRequest()->getSession()->read('given_name');
-        $name = $gname . ' ' . $fname;
+        $name = $fname . ' ' . $gname;
 
         $newsletterSubscription['customer_email'] = $email;
         $newsletterSubscription['customer_name'] = $name;

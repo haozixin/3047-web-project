@@ -157,6 +157,8 @@
 
                     <a class="collapse-item"
                        href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Order Requests </a>
+                    <a class="collapse-item"
+                                           href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Edit Order Status </a>
 
                 </div>
             </div>
