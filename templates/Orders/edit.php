@@ -22,6 +22,7 @@ $this->Form->setTemplates($formTemplate);
 $YesNo=["Yes","No"];
 ?>
 <h1 class="h3 mb-2 text-grey-800">Edit Order Status</h1>
+</br>
 <div class="column-responsive column-80">
     <div class="orders form content">
         <?= $this->Form->create($order) ?>
@@ -34,6 +35,8 @@ $YesNo=["Yes","No"];
                 'min' => 10,
                 'max' => $this->getRequest()->getSession()->read('quantity'),
             ));
+
+
             echo $this->Form->control('deal_date', [
                 'type' => 'date',
                 'required',
@@ -45,8 +48,9 @@ $YesNo=["Yes","No"];
             echo $this->Form->control('deal_comment');
 
             echo $this->Form->control('shipping_address');
-
+            echo "<br>";
             echo $this->Form->control('agent_id');
+            echo "<br>";
             echo $this->Form->control('email_sent');
             echo $this->Form->control('Paid', ['options' => $YesNo, 'empty' => true] );
 
@@ -56,4 +60,4 @@ $YesNo=["Yes","No"];
         <?= $this->Form->end() ?>
     </div>
 </div>
-</div>
+
