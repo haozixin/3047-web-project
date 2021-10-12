@@ -12,6 +12,8 @@ $formTemplate = [
     'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
     'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
     'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+    'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
+    'error' => '<div class="error-message">{{content}}</div>',
     'error' => '<div class="error-message">{{content}}</div>',
 
 ];

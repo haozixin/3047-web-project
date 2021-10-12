@@ -12,9 +12,14 @@ $formTemplate = [
     'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
     'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
     'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+    'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
+    'error' => '<div class="error-message">{{content}}</div>',
+    'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
+    'error' => '<div class="error-message">{{content}}</div>',
 
 ];
 $this->Form->setTemplates($formTemplate);
+$YesNo=["Yes","No"];
 ?>
 <h1 class="h3 mb-2 text-grey-800">Edit Order Status</h1>
 <div class="column-responsive column-80">
@@ -38,10 +43,13 @@ $this->Form->setTemplates($formTemplate);
 
             ]);
             echo $this->Form->control('deal_comment');
+
             echo $this->Form->control('shipping_address');
+
             echo $this->Form->control('agent_id');
             echo $this->Form->control('email_sent');
-           
+            echo $this->Form->control('Paid', ['options' => $YesNo, 'empty' => true] );
+
             ?>
         </fieldset>
         <?= $this->Form->button(__('Submit')) ?>

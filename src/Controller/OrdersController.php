@@ -117,6 +117,11 @@ class OrdersController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $order = $this->Orders->patchEntity($order, $this->request->getData());
+            if($order->Paid==1){
+           $order->Paid="No" ;} else if($order->Paid==0){
+                                                 $order->Paid="Yes" ;};
+
+         
             if ($this->Orders->save($order)) {
                 $this->Flash->success(__('The order has been saved.'));
 
@@ -217,6 +222,7 @@ class OrdersController extends AppController
         $order = $this->Orders->get($id, [
             'contain' => [],
         ]);
+        $name = $this->getRequest()->getSession()->read('name');
         if ($order->email_sent == "Yes" && $order->Paid == "No") {
             $mailer = new Mailer('default');
             $mailer
@@ -237,6 +243,7 @@ class OrdersController extends AppController
                 'quantity' => $order->quantity,
                 'price' => $order->total_price,
                 'address' => $order->shipping_address,
+                'name'=> $name,
                 'email_id' => $order->id]);
 
 
