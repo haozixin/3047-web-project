@@ -17,6 +17,7 @@ $formTemplate = [
 $this->Form->setTemplates($formTemplate);
 ?>
 <h1 class="h3 mb-2 text-grey-800">Edit Order Status</h1>
+</br>
 <div class="column-responsive column-80">
     <div class="orders form content">
         <?= $this->Form->create($order) ?>
@@ -29,6 +30,8 @@ $this->Form->setTemplates($formTemplate);
                 'min' => 10,
                 'max' => $this->getRequest()->getSession()->read('quantity'),
             ));
+
+
             echo $this->Form->control('deal_date', [
                 'type' => 'date',
                 'required',
@@ -39,13 +42,15 @@ $this->Form->setTemplates($formTemplate);
             ]);
             echo $this->Form->control('deal_comment');
             echo $this->Form->control('shipping_address');
+            echo "<br>";
             echo $this->Form->control('agent_id');
+            echo "<br>";
             echo $this->Form->control('email_sent');
-           
+
             ?>
         </fieldset>
         <?= $this->Form->button(__('Submit')) ?>
         <?= $this->Form->end() ?>
     </div>
 </div>
-</div>
+

@@ -5,8 +5,12 @@
  */
 
 ?>
-<aside class="column">
-
+<aside class="row">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <a href="<?= $this->Url->build(['action' => 'index']) ?>"
+           class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-arrow-circle-left fa-sm text-white-50"></i>Go back</a>
+    </div>
 </aside>
 <div class="column-responsive column-80">
     <div class="products view content">
