@@ -120,7 +120,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <ul class="navigation clearfix">
                                 <li class="current dropdown"><a href="#">Home</a>
                                     <ul>
-                                        <li><a href="<?= $this->Url->build('/admins/homepage') ?>">Admins HomePage</a>
+                                        <li><a href="<?= $this->Url->build(['controller' => 'Admins', 'action' => 'login']) ?>">Admins HomePage</a>
                                         </li>
                                         <li><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">Agent HomePage</a>
                                         </li>
