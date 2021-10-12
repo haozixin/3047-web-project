@@ -54,7 +54,7 @@
                                                    <span class="icon text-white-50">
                                                        <i class="fas fa-keyboard"></i>
                                                    </span>
-                    <span class="text" style="color: black">Switch to Customer</span>
+                    <span class="text" style="color: black">Go back to customer home</span>
                 </a>
                 <div class="my-2"></div>
 
@@ -68,28 +68,7 @@
                 <ul class="navbar-nav ml-auto">
 
                     <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin Account</span>
 
-                            <?= $this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle']) ?>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="userDropdown">
-
-                            <!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
-                            <!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
-                            <!--                            </a>-->
-                            <ul>
-                                <li><?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?></li>
-                                <li><?= $this->Html->link("Password Management", ['Controller' => 'User', 'action' => 'index']) ?></li>
-                            </ul>
-                        </div>
-
-
-                    </li>
 
                 </ul>
 

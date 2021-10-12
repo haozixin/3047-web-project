@@ -72,7 +72,7 @@ class CustomersController extends AppController
 
                 $this->Flash->success(__('The customer has been saved.'));
                 if ($sub == '0') {
-                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);
                 }
 
 
