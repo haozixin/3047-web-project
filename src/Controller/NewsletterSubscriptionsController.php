@@ -88,7 +88,7 @@ class NewsletterSubscriptionsController extends AppController
                     return $this->redirect(['action' => '/display']);
 
                 }
-                
+
 
                 return $this->redirect(['action' => '/display']);
 
@@ -218,7 +218,13 @@ class NewsletterSubscriptionsController extends AppController
             $email_result = $mailer->deliver();
             return $this->redirect(['action' => 'index']);
         }
-
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // for all controllers in our application, make index and view
+        // actions public, skipping the authentication check
+        $this->Authentication->addUnauthenticatedActions(['addforcustomer']);
+    }
 
 }
 
