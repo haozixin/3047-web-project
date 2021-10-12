@@ -23,7 +23,7 @@ $this->layout = 'customer_default';
 
             <?php
             echo $this->Form->control('customer_name');
-            echo $this->Form->control('customer_email');
+            echo $this->Form->control('customer_email',['type'=>'email']);
             ?>
         </fieldset>
         <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>

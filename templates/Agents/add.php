@@ -11,7 +11,9 @@ $formTemplate = [
     'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>',
     'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}" class="form-check-input" {{attrs}}>',
 ];
+
 $this->Form->setTemplates($formTemplate);
+$Yesno = array('Yes','No');
 $countries = array(
     'AF' => 'Afghanistan',
     'AX' => 'Aland Islands',
@@ -276,14 +278,14 @@ $countries = array(
             <?php
             echo $this->Form->control('given_name');
             echo $this->Form->control('family_name');
-            echo $this->Form->control('email');
+            echo $this->Form->control('email',['type'=>'email']);
             echo $this->Form->control('country', ['options' => $countries]);
             echo $this->Form->control('state');
             echo $this->Form->control('city');
             echo $this->Form->control('street');
             echo $this->Form->control('user_name');
             echo $this->Form->control('password');
-            echo $this->Form->control('subscription_status');
+            echo $this->Form->control('subscription_status',['options' => $Yesno]);
             ?>
 
         </fieldset>

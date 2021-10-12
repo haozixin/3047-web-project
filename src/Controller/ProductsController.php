@@ -156,7 +156,7 @@ class ProductsController extends AppController
 
             } else {
                 if ($expired_date < $manufacture) {
-                    $this->Flash->success(__('And the expired date cannot be early than the date of manufacture'));
+                    $this->Flash->success(__('The expired date cannot be early than the date of manufacture'));
                 } else {
 
                     //check if it is saved
@@ -169,7 +169,7 @@ class ProductsController extends AppController
             }
 
 
-            $this->Flash->success('The product could not be saved. Please, try again.');
+            
             //$this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
 
