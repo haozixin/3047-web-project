@@ -125,18 +125,17 @@ class UsersController extends AppController
             // redirect to /articles after login success
 //            debug($result->getData());
 //            exit;
-            $id=$result->getData()->id;
-            $username=$result->getData()->username;
-            $email=$result->getData()->email;
-$data = [
-    'id' => $id,
-    'username' => $username,
-    'useremail' => $email
-];
+            $id = $result->getData()->id;
+            $username = $result->getData()->username;
+            $email = $result->getData()->email;
+            $data = [
+                'id' => $id,
+                'username' => $username,
+                'useremail' => $email
+            ];
 
 
-$this->set($data);
-
+            $this->set($data);
 
 
             $redirect = $this->request->getQuery('redirect', [

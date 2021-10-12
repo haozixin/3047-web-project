@@ -59,15 +59,11 @@
                                 <li><a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displayagent']) ?>">Restore Products</a>
 
                                 </li>
+                                <li><a href="<?= $this->Url->build(['Controller' => 'Admins', 'action' => 'logout']) ?>">Logout</a>
 
-                               <li class="dropdown"><a> Logout</a>
-                                    <ul>
-                                        <li>
-                                            <?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?>
-                                        </li>
-
-                                    </ul>
                                 </li>
+
+
 
                                 <script>
                                     function a() {
