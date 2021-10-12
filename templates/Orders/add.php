@@ -55,7 +55,9 @@ $this->layout = 'agent_default';
                             </p>
 
                             <h5>
-                                <i class="fas fa-feather-alt"></i> Note: <?= $this->getRequest()->getSession()->read('quantity'); ?> Unit(s) Available in Stock
+                                <i class="fas fa-feather-alt"></i>
+                                Note: <?= $this->getRequest()->getSession()->read('quantity'); ?> Unit(s) Available in
+                                Stock
                             </h5>
 
                             <div class="column-responsive column-80">
@@ -67,15 +69,16 @@ $this->layout = 'agent_default';
 
 
                                         echo $this->Form->control('quantity', array(
-                                          'type' => 'number',
-                                          'min' => 10,
-                                          'max' => $this->getRequest()->getSession()->read('quantity'),
+                                            'type' => 'number',
+                                            'min' => 10,
+                                            'max' => $this->getRequest()->getSession()->read('quantity'),
                                         ));
                                         echo $this->Form->control('deal_date', [
                                             'type' => 'date',
                                             'required',
                                             'default' => date('Y-m-d'), // Show default Todays date,
                                             'min' => date('Y-m-d'),
+                                            'max' => date('Y-m-d'),
 
                                         ]);
                                         echo $this->Form->control('deal_comment');

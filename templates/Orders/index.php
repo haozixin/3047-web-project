@@ -42,7 +42,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td><?= h($order->Paid) ?></td>
                     <td class="actions">
 
-                        <?= $this->Html->link(__('Approve'), ['action' => 'mark', $order->id]) ?>
+                        <?= $this->Form->postLink(__('Approve'), ['action' => 'mark', $order->id], ['confirm' => __('Are you sure you want to Approve Order ID {0} ?', $order->id)]) ?>
                         <?= $this->Form->postLink(__('Mark as Paid'), ['action' => 'marking', $order->id], ['confirm' => __('Are you sure you want to mark  {0} as Paid?', $order->id)]) ?>
                         <?= $this->Form->postLink(__('Reject'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to reject # {0}?', $order->id)]) ?>
                     </td>

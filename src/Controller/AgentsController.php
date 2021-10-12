@@ -62,8 +62,10 @@ class AgentsController extends AppController
         if ($this->request->is('post')) {
             $agent = $this->Agents->patchEntity($agent, $this->request->getData());
             $sub = $this->request->getData('subscription_status');
-            //            debug($customer);
-            //            debug($sub);
+            if($sub=='0'){
+                        $agent->subscription_status='Yes';}
+                        else{
+                        $agent->subscription_status='No';};
             $email = $this->request->getData('email');
             $fname = $this->request->getData('family_name');
             $gname = $this->request->getData('given_name');
@@ -80,7 +82,7 @@ class AgentsController extends AppController
 
             if ($this->Agents->save($agent)) {
                 $this->Flash->success(__('The agent has been saved.'));
-                if ($sub == 'yes') {
+                if ($sub == '0') {
                     $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
                 }
 

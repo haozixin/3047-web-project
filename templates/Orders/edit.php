@@ -5,37 +5,47 @@
  * @var string[]|\Cake\Collection\CollectionInterface $agents
  * @var string[]|\Cake\Collection\CollectionInterface $products
  */
+$formTemplate = [
+    'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+    'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+    'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+    'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+];
+$this->Form->setTemplates($formTemplate);
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $order->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Orders'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="orders form content">
-            <?= $this->Form->create($order) ?>
-            <fieldset>
-                <legend><?= __('Edit Order') ?></legend>
-                <?php
-                echo $this->Form->control('product_id', ['options' => $products]);
-                echo $this->Form->control('quantity');
-                echo $this->Form->control('deal_date');
-                echo $this->Form->control('deal_comment');
-                echo $this->Form->control('shipping_address');
-                echo $this->Form->control('agent_id');
-                echo $this->Form->control('email_sent');
-                echo $this->Form->control('agent_email', ['options' => $agents, 'empty' => true]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
+<h1 class="h3 mb-2 text-grey-800">Edit Order Status</h1>
+<div class="column-responsive column-80">
+    <div class="orders form content">
+        <?= $this->Form->create($order) ?>
+        <fieldset>
+
+            <?php
+            echo $this->Form->control('product_id', ['options' => $products]);
+            echo $this->Form->control('quantity', array(
+                'type' => 'number',
+                'min' => 10,
+                'max' => $this->getRequest()->getSession()->read('quantity'),
+            ));
+            echo $this->Form->control('deal_date', [
+                'type' => 'date',
+                'required',
+                'default' => date('Y-m-d'), // Show default Todays date,
+                'min' => date('Y-m-d'),
+                'max' => date('Y-m-d'),
+
+            ]);
+            echo $this->Form->control('deal_comment');
+            echo $this->Form->control('shipping_address');
+            echo $this->Form->control('agent_id');
+            echo $this->Form->control('email_sent');
+           
+            ?>
+        </fieldset>
+        <?= $this->Form->button(__('Submit')) ?>
+        <?= $this->Form->end() ?>
     </div>
+</div>
 </div>

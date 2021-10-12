@@ -402,6 +402,7 @@ endforeach;
                                         <p>Thank you for your Order!</p>
                                         <p>Email : <?= $this->Html->link(h($email), 'mailto:' . h($email)) ?></p>
                                         <p><b>Date: </b> <?= h($deal_date) ?></p>
+                                        <p><b>Product Name: </b> <?= h($name) ?></p>
                                         <p><b>Ordered Quantity(In bottles) : </b> <?= h($quantity) ?></p>
                                         <p><b>Order price(AUD) : </b> <?= h($price) ?></p>
                                         <p><?= $body ?></p>

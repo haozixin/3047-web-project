@@ -37,7 +37,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td><?= h($recipe->video_link) ?></td>
                     <td><?= $this->Html->image($recipe->photo, array('width' => '200px')); ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
+                        
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?>
                     </td>
