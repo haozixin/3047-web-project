@@ -55,7 +55,7 @@ $this->layout = 'agent_default';
                             </p>
 
                             <h5>
-                                <i class="fas fa-feather-alt"></i> <?= $this->getRequest()->getSession()->read('quantity'); ?> Unit(s) Available in Stock
+                                <i class="fas fa-feather-alt"></i> Note: <?= $this->getRequest()->getSession()->read('quantity'); ?> Unit(s) Available in Stock
                             </h5>
 
                             <div class="column-responsive column-80">

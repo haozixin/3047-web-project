@@ -7,6 +7,8 @@ echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css', ['bloc
 echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js', ['block' => true]);
 echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['block' => true]);
 $this->layout = 'agent_default';
+
+
 ?>
 <div class="products index content">
 
@@ -21,7 +23,6 @@ $this->layout = 'agent_default';
                 <th><?= h('product_type') ?></th>
                 <th><?= h('Function') ?></th>
 
-
             </tr>
             </thead>
             <tbody>
@@ -32,8 +33,17 @@ $this->layout = 'agent_default';
                     <td><?= h($products->name) ?></td>
                     <td>$<?= h($products->agent_price) ?> AUD</td>
                     <td><?= h($products->product_type) ?></td>
+                    <?php
+                    if ($products->quantity == 0){
+                        //$status = "Sell out";
+                        $command = "Sell out";
+                    }else{
 
-                    <td class="btn btn-light btn-icon-split"><?= $this->Html->link(__('Buy Product'), ['action' => 'restock', $products->id]) ?></td>
+                        $status = "Buy Product";
+                        $command = $this->Html->link(__($status), ['action' => "restock", $products->id]);
+                    }
+                    ?>
+                    <td class="btn btn-light btn-icon-split"><?= $command ?></td>
 
                 </tr>
             <?php endforeach; ?>
