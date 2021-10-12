@@ -20,17 +20,26 @@
             <?= $this->Form->create($agent) ?>
             <fieldset>
                 <legend><?= __('Edit The Agent') ?></legend>
+                <br>
                 <?php
                 echo $this->Form->control('given_name');
+                echo "<br>";
                 echo $this->Form->control('family_name');
+                echo "<br>";
                 echo $this->Form->control('email');
+                echo "<br>";
                 echo $this->Form->control('country');
+                echo "<br>";
                 echo $this->Form->control('state');
+                echo "<br>";
                 echo $this->Form->control('city');
+                echo "<br>";
                 echo $this->Form->control('street');
+                echo "<br>";
                 echo $this->Form->control('subscription_status');
                 ?>
             </fieldset>
+            <br>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
