@@ -89,7 +89,7 @@ $this->Form->setTemplates($formTemplate);
                                 <hr>
                                 </fieldset>
                                 <div class="text-center">
-                                    <button><?= $this->Html->link("Sign up for backend", ['controller' => 'Users', 'action' => 'add']) ?></button>
+                                    <button><?= $this->Html->link("Sign up for backend", ['controller' => 'Agents', 'action' => 'addfront']) ?></button>
                                     <a class="small" href=""
                                        Create an Account!</a>
                                 </div>

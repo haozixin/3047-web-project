@@ -38,6 +38,7 @@ class Agent extends Entity
         'email' => true,
         'address' => true,
         'subscription_status' => true,
-        'admin_agents' => true,
+        'user_name' => true,
+        'password' => true,
     ];
 }

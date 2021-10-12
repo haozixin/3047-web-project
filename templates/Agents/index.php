@@ -29,6 +29,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                 <th><?= h('city') ?></th>
                 <th><?= h('street') ?></th>
                 <th><?= h('email') ?></th>
+                <th><?= h('username') ?></th>
                 <th><?= h('password') ?></th>
                 <th><?= h('subscription_status') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -45,6 +46,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td><?= h($agents->city) ?></td>
                     <td><?= h($agents->street) ?></td>
                     <td><?= h($agents->email) ?></td>
+                    <td><?= h($agents->user_name) ?></td>
                     <td><?= h($agents->password) ?></td>
                     <td><?= h($agents->subscription_status) ?></td>
                     <td class="actions">
