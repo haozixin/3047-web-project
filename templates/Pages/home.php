@@ -134,28 +134,15 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                         <li><a href='#' onClick="a()">Our Honey Stores</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Products</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displaycustomer']) ?>">display
-                                                products</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Recipes</a>
-                                    <ul>
+                                <li ><a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displaycustomer']) ?>">display
+                                        products</a>
 
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'displaycustomer']) ?>">Let's
-                                                see Recipes</a></li>
-                                    </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Q&A</a>
-                                    <ul>
-                                        <li><a href=
-                                               "<?= $this->Url->build(['controller' => 'Customers', 'action' => 'faq']) ?>
-                                            ">Q&A</a></li>
+                                <li><a href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'displaycustomer']) ?>">Let's
+                                        see Recipes</a>
 
-                                    </ul>
+                                </li>
+                                <li ><a href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'faq']) ?>">Q&A</a>
                                 </li>
                                 <li><a href='#' onClick="a()""">Contact us</a></li>
                             </ul>

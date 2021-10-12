@@ -22,17 +22,7 @@
             class="fas fa-arrow-circle-left fa-sm text-white-50"></i>Go back</a>
 </div>
 <div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $newsletterSubscription->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $newsletterSubscription->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Newsletter Subscriptions'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
+
 
 
     <div class="column-responsive column-80">
