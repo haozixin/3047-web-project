@@ -223,7 +223,7 @@ class NewsletterSubscriptionsController extends AppController
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
         // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions(['addforcustomer']);
+        $this->Authentication->addUnauthenticatedActions(['addcustomer','addCustomer']);
     }
 
 }

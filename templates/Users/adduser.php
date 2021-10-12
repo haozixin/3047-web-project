@@ -23,4 +23,3 @@ $this->layout = "customer_default";
     <p class="masthead-subheading font-weight-light mb-0">Have a nice Day!</p>
 </div>
 </div>
-

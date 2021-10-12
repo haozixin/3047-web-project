@@ -61,6 +61,7 @@ class AgentsController extends AppController
         $agent = $this->Agents->newEmptyEntity();
         if ($this->request->is('post')) {
             $agent = $this->Agents->patchEntity($agent, $this->request->getData());
+
             $sub = $this->request->getData('subscription_status');
             if($sub=='0'){
                         $agent->subscription_status='Yes';}
@@ -69,20 +70,31 @@ class AgentsController extends AppController
             $email = $this->request->getData('email');
             $fname = $this->request->getData('family_name');
             $gname = $this->request->getData('given_name');
+            $user_name = $this->request->getData('user_name');
 
-
+            $password = $this->request->getData('password');
             $key = $this->request->getData('email');
             $session = $this->getRequest()->getSession();
-            $session->write(['email' => $email, 'family_name' => $fname,
+            $session->write(['email' => $email,'user_name' => $user_name,'email' => $email, 'password' => $password,
                 'given_name' => $gname]);
             $session->read('email');
             $session->read('family_name');
             $session->read('given_name');
+            $session->read('user_name');
+            $session->read('password');
+
+
+            if(true)
+            {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
 
 
             if ($this->Agents->save($agent)) {
+
                 $this->Flash->success(__('The agent has been saved.'));
-                if ($sub == '0') {
+
+                if ($sub == 'Yes') {
+                debug($sub);
+                exit;
                     $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
                 }
 
@@ -92,7 +104,54 @@ class AgentsController extends AppController
         }
         $this->set(compact('agent'));
     }
+public function addfront()
+    {
+        $agent = $this->Agents->newEmptyEntity();
+        if ($this->request->is('post')) {
+            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
 
+            $sub = $this->request->getData('subscription_status');
+            if($sub=='0'){
+                        $agent->subscription_status='Yes';}
+                        else{
+                        $agent->subscription_status='No';};
+            $email = $this->request->getData('email');
+            $fname = $this->request->getData('family_name');
+            $gname = $this->request->getData('given_name');
+            $user_name = $this->request->getData('user_name');
+
+            $password = $this->request->getData('password');
+            $key = $this->request->getData('email');
+            $session = $this->getRequest()->getSession();
+            $session->write(['email' => $email,'user_name' => $user_name,'email' => $email, 'password' => $password,
+                'given_name' => $gname]);
+            $session->read('email');
+            $session->read('family_name');
+            $session->read('given_name');
+            $session->read('user_name');
+            $session->read('password');
+
+
+            if(true)
+            {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
+
+
+            if ($this->Agents->save($agent)) {
+
+                $this->Flash->success(__('The agent has been saved.'));
+
+                if ($sub == 'Yes') {
+                debug($sub);
+                exit;
+                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+                }
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
+        }
+        $this->set(compact('agent'));
+    }
 
     /**
      * Edit method
@@ -171,4 +230,13 @@ class AgentsController extends AppController
             return $this->redirect('/');
         }
     }
+       public function beforeFilter(\Cake\Event\EventInterface $event)
+        {
+            parent::beforeFilter($event);
+            // Configure the login action to not require authentication, preventing
+            // the infinite redirect loop issue
+            $this->Authentication->addUnauthenticatedActions(['addfront']);
+
+
+        }
 }

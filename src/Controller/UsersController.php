@@ -59,6 +59,28 @@ class UsersController extends AppController
         $this->set(compact('user'));
     }
 
+
+        public function adduser ()
+        {
+            $user = $this->Users->newEmptyEntity();
+            $this->loadModel('Agents');
+
+            $email = $this->getRequest()->getSession()->read('email');
+            $username = $this->getRequest()->getSession()->read('user_name');
+            $password = $this->getRequest()->getSession()->read('password');
+
+
+            $user['email'] = $email;
+            $user['username'] = $username;
+            $user['password'] = $password;
+
+
+
+
+            $this->Users->save($user);
+            $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+        }
+
     /**
      * Edit method
      *
@@ -108,7 +130,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login']);
+        $this->Authentication->addUnauthenticatedActions(['login','adduser']);
 
     }
 
