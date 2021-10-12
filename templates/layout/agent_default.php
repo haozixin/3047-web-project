@@ -56,23 +56,14 @@
                                 <li ><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">HomePage</a>
                                 </li>
 
-                                <li class="dropdown"><a href="#">Products</a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displayagent']) ?>">display
-                                                products</a></li>
+                                <li><a href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'displayagent']) ?>">Restore Products</a>
 
-                                    </ul>
+                                </li>
+                                <li><a href="<?= $this->Url->build(['Controller' => 'Admins', 'action' => 'logout']) ?>">Logout</a>
+
                                 </li>
 
-                               <li class="dropdown"><a> Logout</a>
-                                    <ul>
-                                        <li>
-                                            <?= $this->Html->link("Logout", ['Controller' => 'Admins', 'action' => 'logout']) ?>
-                                        </li>
 
-                                    </ul>
-                                </li>
 
                                 <script>
                                     function a() {
