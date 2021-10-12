@@ -34,7 +34,7 @@ $this->layout = 'agent_default';
                     <td>$<?= h($products->agent_price) ?> AUD</td>
                     <td><?= h($products->product_type) ?></td>
                     <?php
-                    if ($products->quantity == 0){
+                    if ($products->quantity < 10){
                         //$status = "Sell out";
                         $command = "Sell out";
                     }else{
