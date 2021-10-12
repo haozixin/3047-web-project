@@ -69,6 +69,9 @@ class UsersController extends AppController
             $sub = $this->getRequest()->getSession()->read('status');
 
 
+
+
+
             $user['email'] = $email;
             $user['username'] = $username;
             $user['password'] = $password;
@@ -80,6 +83,34 @@ class UsersController extends AppController
 
             if ($sub == 'Yes') {
              return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);   }
+
+             else return $this->Flash->success(__('The user has been saved.'));
+
+
+             }
+ public function adduser1 (){
+            $user = $this->Users->newEmptyEntity();
+
+            $email = $this->getRequest()->getSession()->read('email');
+            $username = $this->getRequest()->getSession()->read('user_name');
+            $password = $this->getRequest()->getSession()->read('password');
+            $sub = $this->getRequest()->getSession()->read('status');
+
+
+
+
+
+            $user['email'] = $email;
+            $user['username'] = $username;
+            $user['password'] = $password;
+
+            $this->Users->save($user);
+            $this->set(compact('user'));
+
+
+
+            if ($sub == 'Yes') {
+             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display1']);   }
 
              else return $this->Flash->success(__('The user has been saved.'));
 
@@ -136,7 +167,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login','adduser','add','edit','index','view']);
+        $this->Authentication->addUnauthenticatedActions(['login','adduser','adduser1','add','edit','index','view']);
 
     }
 

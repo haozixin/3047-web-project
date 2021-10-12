@@ -10,6 +10,8 @@ $formTemplate = [
     'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
     'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
     'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+    'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
+    'error' => '<div class="error-message">{{content}}</div>',
 
 ];
 $this->Form->setTemplates($formTemplate);
@@ -32,6 +34,7 @@ $this->Form->setTemplates($formTemplate);
             echo $this->Form->control('photo');
             ?>
         </fieldset>
+        <br></br>
         <?= $this->Form->button(__('Submit')) ?>
         <?= $this->Form->end() ?>
 

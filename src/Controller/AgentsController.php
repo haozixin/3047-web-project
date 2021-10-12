@@ -58,53 +58,53 @@ class AgentsController extends AppController
     }
 
     public function add()
-    {
-        $agent = $this->Agents->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $agent = $this->Agents->patchEntity($agent, $this->request->getData());
+        {
+            $agent = $this->Agents->newEmptyEntity();
+            if ($this->request->is('post')) {
+                $agent = $this->Agents->patchEntity($agent, $this->request->getData());
 
-            $sub = $this->request->getData('subscription_status');
-            if($sub=='0'){
-                        $agent->subscription_status='Yes';}
-                        else{
-                        $agent->subscription_status='No';};
-            $email = $this->request->getData('email');
-            $fname = $this->request->getData('family_name');
-            $gname = $this->request->getData('given_name');
-            $user_name = $this->request->getData('user_name');
+                $sub = $this->request->getData('subscription_status');
+                if($sub=='0'){
+                            $agent->subscription_status='Yes';}
+                            else{
+                            $agent->subscription_status='No';};
+                $email = $this->request->getData('email');
+                $fname = $this->request->getData('family_name');
+                $gname = $this->request->getData('given_name');
+                $user_name = $this->request->getData('user_name');
+                $status=$agent->subscription_status;
 
-            $password = $this->request->getData('password');
-            $key = $this->request->getData('email');
-            $session = $this->getRequest()->getSession();
-            $session->write(['email' => $email,'user_name' => $user_name,'email' => $email, 'password' => $password,
-                'given_name' => $gname]);
-            $session->read('email');
-            $session->read('family_name');
-            $session->read('given_name');
-            $session->read('user_name');
-            $session->read('password');
-
-
-            if(true)
-            {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
+                $password = $this->request->getData('password');
+                $key = $this->request->getData('email');
+                $session = $this->getRequest()->getSession();
+                $session->write(['email' => $email,'status'=>$status,'user_name' => $user_name,'email' => $email, 'password' => $password,'family_name' => $fname,
+                    'given_name' => $gname]);
+                $session->read('email');
+                $session->read('family_name');
+                $session->read('given_name');
+                $session->read('user_name');
+                $session->read('password');
+                $session->read('status');
 
 
-            if ($this->Agents->save($agent)) {
 
-                $this->Flash->success(__('The agent has been saved.'));
+                if ($this->Agents->save($agent)) {
+                {$this-> redirect(['controller' => 'Users', 'action' => 'adduser1']);}
 
-                if ($sub == 'Yes') {
-                debug($sub);
-                exit;
-                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+
+
+    //                 if ($sub == 'Yes') {
+    //                 debug($sub);
+    //                 exit;
+    //                     $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);
+    //                 }
+
+                    return $this->redirect(['action' => 'index']);
                 }
-
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->error(__('The agent could not be saved. Please, try again.'));
             }
-            $this->Flash->error(__('The agent could not be saved. Please, try again.'));
+            $this->set(compact('agent'));
         }
-        $this->set(compact('agent'));
-    }
 public function addfront()
     {
         $agent = $this->Agents->newEmptyEntity();
@@ -125,7 +125,7 @@ public function addfront()
             $password = $this->request->getData('password');
             $key = $this->request->getData('email');
             $session = $this->getRequest()->getSession();
-            $session->write(['email' => $email,'status'=>$status,'ser_name' => $user_name,'email' => $email, 'password' => $password,
+            $session->write(['email' => $email,'status'=>$status,'user_name' => $user_name,'email' => $email, 'password' => $password,'family_name' => $fname,
                 'given_name' => $gname]);
             $session->read('email');
             $session->read('family_name');
@@ -133,10 +133,11 @@ public function addfront()
             $session->read('user_name');
             $session->read('password');
             $session->read('status');
-            if(true)
-            {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
+
+
 
             if ($this->Agents->save($agent)) {
+            {$this-> redirect(['controller' => 'Users', 'action' => 'adduser']);}
 
 
 
@@ -272,7 +273,7 @@ public function addfront()
             parent::beforeFilter($event);
             // Configure the login action to not require authentication, preventing
             // the infinite redirect loop issue
-            $this->Authentication->addUnauthenticatedActions(['addfront','forgot']);
+            $this->Authentication->addUnauthenticatedActions(['addfront','forgot','add']);
 
 
         }

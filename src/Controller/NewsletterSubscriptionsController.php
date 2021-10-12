@@ -115,6 +115,7 @@ class NewsletterSubscriptionsController extends AppController
 
 
         $this->NewsletterSubscriptions->save($newsletterSubscription);
+
         $this->set(compact('newsletterSubscription'));
     }
 
@@ -173,15 +174,13 @@ class NewsletterSubscriptionsController extends AppController
             $fname = $this->getRequest()->getSession()->read('family_name');
             $gname = $this->getRequest()->getSession()->read('given_name');
             $name = $gname . ' ' . $fname;
-
-
-    //                                               $newsletterSubscription['customer_name']=$fname+$gname;
             $newsletterSubscriptions['customer_email'] = $email;
             $newsletterSubscriptions['customer_name'] = $name;
 
 
-            $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscriptions, $this->request->getData());
-            $this->NewsletterSubscriptions->save($newsletterSubscription);
+
+            $this->NewsletterSubscriptions->save($newsletterSubscriptions);
+            $this->set(compact('newsletterSubscriptions'));
 
             $mailer = new Mailer('default');
                         $mailer
@@ -193,14 +192,45 @@ class NewsletterSubscriptionsController extends AppController
                             ->viewBuilder()
                             ->disableAutoLayout()
                             ->setTemplate('newslettersubscription');
+                            $email_result = $mailer->deliver();
 
-
-
-                        $email_result = $mailer->deliver();
-                        $this->set(compact('newsletterSubscription'));
 
 
     }
+
+    public function display1()
+        {
+        $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+                $this->loadModel('Customers');
+                $email = $this->getRequest()->getSession()->read('email');
+
+                $fname = $this->getRequest()->getSession()->read('family_name');
+                $gname = $this->getRequest()->getSession()->read('given_name');
+                $name = $gname . ' ' . $fname;
+                $newsletterSubscriptions['customer_email'] = $email;
+                $newsletterSubscriptions['customer_name'] = $name;
+
+
+
+                $this->NewsletterSubscriptions->save($newsletterSubscriptions);
+                $this->set(compact('newsletterSubscriptions'));
+
+                $mailer = new Mailer('default');
+                            $mailer
+                                ->setEmailFormat('html')
+                                ->setTo($newsletterSubscriptions->customer_email)
+                                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                                ->setReplyTo($newsletterSubscriptions->customer_email)
+                                ->setSubject("Newsletter Subscription Confirmation")
+                                ->viewBuilder()
+                                ->disableAutoLayout()
+                                ->setTemplate('newslettersubscription');
+                                $email_result = $mailer->deliver();
+
+
+
+        }
+
 
     public function add_customer()
     {
