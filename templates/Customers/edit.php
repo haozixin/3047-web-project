@@ -3,19 +3,18 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Customer $customer
  */
+ $formTemplate = [
+     'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
+     'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
+     'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
+     'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
+     'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
+     'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
+
+ ];
+ $this->Form->setTemplates($formTemplate);
 ?>
 <div class="h3 mb-2 text-gray-800">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $customer->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id), 'class' => 'side-nav-item']
-            ) ?>
-
-        </div>
-    </aside>
     <div class="column-responsive column-80">
         <div class="customers form content">
             <?= $this->Form->create($customer) ?>
