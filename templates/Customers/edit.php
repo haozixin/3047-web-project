@@ -14,6 +14,11 @@
  ];
  $this->Form->setTemplates($formTemplate);
 ?>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <a href="<?= $this->Url->build(['action' => 'index']) ?>"
+       class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-arrow-circle-left fa-sm text-white-50"></i>Go back</a>
+</div>
 <div class="h3 mb-2 text-gray-800">
     <div class="column-responsive column-80">
         <div class="customers form content">

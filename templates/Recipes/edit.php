@@ -14,6 +14,11 @@ $formTemplate = [
 ];
 $this->Form->setTemplates($formTemplate);
 ?>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <a href="<?= $this->Url->build(['action' => 'index']) ?>"
+       class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-arrow-circle-left fa-sm text-white-50"></i>Go back</a>
+</div>
 <h1 class="h3 mb-2 text-grey-800">Edit Recipes</h1>
 <div class="column-responsive column-80">
     <div class="recipes form content">
