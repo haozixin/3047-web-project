@@ -10,7 +10,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
 ?>
 <div class="products index content">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-grey-800">Pending Orders</h1>
+    <h1 class="h3 mb-2 text-grey-800"> Order Request(s) </h1>
+    <h3 class="h3 mb-2 text-grey-800"> Every requests will be showed here, please approve to confirm orders via Email </h3>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
@@ -23,6 +24,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                 <th><?= h('agent_id') ?></th>
                 <th><?= h('email sent?') ?></th>
                 <th><?= h('agent_email') ?></th>
+                <th><?= h('Paid?') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
@@ -37,9 +39,11 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                     <td><?= h($order->agent_id) ? $this->Html->link($order->agent_id, ['controller' => 'Agents', 'action' => 'view', $order->agent_id]) : '' ?></td>
                     <td><?= $order->email_sent ? __('Yes') : __('No'); ?></td>
                     <td><?= h($order->agent_email) ?></td>
+                    <td><?= h($order->Paid) ?></td>
                     <td class="actions">
 
                         <?= $this->Html->link(__('Approve'), ['action' => 'mark', $order->id]) ?>
+                        <?= $this->Form->postLink(__('Mark as Paid'), ['action' => 'marking', $order->id], ['confirm' => __('Are you sure you want to mark  {0} as Paid?', $order->id)]) ?>
                         <?= $this->Form->postLink(__('Reject'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to reject # {0}?', $order->id)]) ?>
                     </td>
                 </tr>

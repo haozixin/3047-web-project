@@ -90,7 +90,7 @@ class OrdersController extends AppController
 
                 return $this->redirect(['controller' => 'Products', 'action' => 'update']);
             }
-           
+
         }
         $agentsForOrder = $this->Orders->Agents->find('list', ['limit' => 200,
             'keyField' => 'id',
@@ -245,7 +245,7 @@ class OrdersController extends AppController
             $this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));
         }
 
-        return $this->redirect(['action' => 'confirm']);
+        return $this->redirect(['action' => '/']);
     }
 
 //         public function marking1($id=null) {

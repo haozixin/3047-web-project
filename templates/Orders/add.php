@@ -42,8 +42,8 @@ $this->layout = 'agent_default';
                         <fieldset>
 
                             <h3 class="h1 text-muted mb-4 text-center fw-normal"> <?= $this->getRequest()->getSession()->read('name'); ?></h3>
-                            <h2 class="text-center mb-3">$<?= $this->getRequest()->getSession()->read('total') ?> AUD
-                                per unit</h2>
+                            <h4 class="text-center mb-3">$<?= $this->getRequest()->getSession()->read('total') ?> AUD
+                                per unit</h4>
                             <h4>Product details</h4>
                             <p>
                                 <i class="fas fa-feather-alt"></i> <?= $this->getRequest()->getSession()->read('desc'); ?>
@@ -51,7 +51,12 @@ $this->layout = 'agent_default';
                             <h4>Product Type</h4>
                             <p>
                                 <i class="fas fa-feather-alt"></i> <?= $this->getRequest()->getSession()->read('type'); ?>
+
                             </p>
+
+                            <h5>
+                                <i class="fas fa-feather-alt"></i> <?= $this->getRequest()->getSession()->read('quantity'); ?> Unit(s) Available in Stock
+                            </h5>
 
                             <div class="column-responsive column-80">
                                 <div class="orders form content">
@@ -60,12 +65,13 @@ $this->layout = 'agent_default';
 
                                         <?php
 
-                                        
-                                        echo $this->Form->input('quantity', array(
+
+                                        echo $this->Form->control('quantity', array(
                                           'type' => 'number',
-                                          'min' => 10
+                                          'min' => 10,
+                                          'max' => $this->getRequest()->getSession()->read('quantity'),
                                         ));
-                                        echo $this->Form->input('deal_date', [
+                                        echo $this->Form->control('deal_date', [
                                             'type' => 'date',
                                             'required',
                                             'default' => date('Y-m-d'), // Show default Todays date,

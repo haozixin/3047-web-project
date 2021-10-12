@@ -66,7 +66,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-file"></i>
+                <i class="fas fa-address-card"></i>
                 <span>Customers</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -85,7 +85,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAgent"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-file"></i>
+                <i class="far fa-address-book"></i>
                 <span>Agents</span>
             </a>
             <div id="collapseAgent" class="collapse" aria-labelledby="headingAgent" data-parent="#accordionSidebar">
@@ -157,27 +157,16 @@
 
                     <a class="collapse-item"
                        href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Order Requests </a>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Mark Paid Requests</a>
-
 
                 </div>
             </div>
         </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
-
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-beer"></i>
+                <i class="fas fa-clipboard"></i>
                 <span>Newsletter</span>
             </a>
             <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
@@ -191,19 +180,8 @@
                 </div>
             </div>
         </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Add-on
-        </div>
 
 
-
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
