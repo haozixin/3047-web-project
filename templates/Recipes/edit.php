@@ -27,6 +27,7 @@ $this->Form->setTemplates($formTemplate);
             echo $this->Form->control('photo');
             ?>
         </fieldset>
+        <br></br>
         <?= $this->Form->button(__('Submit')) ?>
         <?= $this->Form->end() ?>
 
