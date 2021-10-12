@@ -1136,12 +1136,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <!-- Footer Column -->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget newsletter-widget">
-                                    <h6>Subscribe</h6>
+                                    <h6>Newsletter Subscription</h6>
                                     <div class="newsletter-form">
                                         <form method="post">
                                             <div class="form-group">
 
                                                 <a type="submit" class="theme-btn submit-btn" href="<?= $this->Url->build(['controller' => 'NewsletterSubscriptions', 'action' => 'addforcustomer']) ?>">Subscribe Now
+
+                                                </a>
+                                                <br>
+                                                <a type="submit" class="theme-btn submit-btn" href="<?= $this->Url->build(['controller' => 'NewsletterSubscriptions', 'action' => 'unsubscribecustomer']) ?>">Unsubscribe Now
 
                                                 </a>
 

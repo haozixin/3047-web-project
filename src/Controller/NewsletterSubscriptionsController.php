@@ -306,6 +306,19 @@ class NewsletterSubscriptionsController extends AppController
         $this->Authentication->addUnauthenticatedActions(['addcustomer','addCustomer','display']);
     }
 
+    public function unsubscribecustomer($id = null)
+    {
+        //$this->request->allowMethod(['post', 'delete']);
+        $newsletterSubscription = $this->NewsletterSubscriptions->get($id);
+        if ($this->NewsletterSubscriptions->delete($newsletterSubscription)) {
+            $this->Flash->success(__('Your subscription status is now Unsubscribed'));
+        } else {
+            $this->Flash->error(__('Your subscription status could not be changed. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
 }
 
 
