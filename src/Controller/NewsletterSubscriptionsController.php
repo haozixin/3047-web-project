@@ -395,6 +395,39 @@ class NewsletterSubscriptionsController extends AppController
 
     }
 
+    public function display2()
+    {
+
+            $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+            $this->loadModel('Customers');
+            $email = $this->getRequest()->getSession()->read('email');
+
+            $fname = $this->getRequest()->getSession()->read('family_name');
+            $gname = $this->getRequest()->getSession()->read('given_name');
+            $name = $gname . ' ' . $fname;
+            $newsletterSubscriptions['customer_email'] = $email;
+            $newsletterSubscriptions['customer_name'] = $name;
+
+
+            $this->NewsletterSubscriptions->save($newsletterSubscriptions);
+            $this->set(compact('newsletterSubscriptions'));
+
+            $mailer = new Mailer('default');
+            $mailer
+                ->setEmailFormat('html')
+                ->setTo($newsletterSubscriptions->customer_email)
+                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                ->setReplyTo($newsletterSubscriptions->customer_email)
+                ->setSubject("Newsletter Subscription Confirmation")
+                ->viewBuilder()
+                ->disableAutoLayout()
+                ->setTemplate('newslettersubscription');
+            $email_result = $mailer->deliver();
+
+
+
+    }
+
 
     public function addcustomer1()
     {
@@ -466,7 +499,7 @@ class NewsletterSubscriptionsController extends AppController
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
         // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions(['addforcustomer', 'addcustomer', 'addCustomer', 'display', 'unsubscribe', 'unsubscribe1']);
+        $this->Authentication->addUnauthenticatedActions(['addforcustomer', 'addcustomer', 'addCustomer', 'display','display2', 'unsubscribe', 'unsubscribe1']);
     }
 
 }
