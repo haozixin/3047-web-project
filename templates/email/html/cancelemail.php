@@ -398,11 +398,11 @@ endforeach;
                                 <tr>
                                     <td>
                                         <p><img src="/../img/logo-small.png"></img></p>
-                                        <p> You are removed from the  subscribed list to the Newsletter, YAY!!!</p>
+                                        <p> You cancelled subscribing Hearty's Healthy Honey Company</p>
                                         <p><?= $body ?></p>
 
 
-                                        <p>Feel free to leave any comments on what to improve for our services!</p>
+                                        <p>Feel free to Subscribe it anytime!</p>
 
 
                                     </td>
