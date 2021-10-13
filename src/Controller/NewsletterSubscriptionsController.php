@@ -193,7 +193,7 @@ class NewsletterSubscriptionsController extends AppController
             $agentEmail = $this->getRequest()->getSession()->read('email');
 
 
-            $newsletterSubscription = $news->find()->where(['customer_email' => $agentEmail])->first();
+            $newsletterSubscription = $news->find()->where(['customer_email' => $userEmailFromForm])->first();
 
 
             if ($selectedCustomer != null) {

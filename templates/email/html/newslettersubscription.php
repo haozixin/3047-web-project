@@ -427,7 +427,7 @@ endforeach;
         <tr>
             <td class="content-block">
                 <span class="apple-link"> <?= date("Y") ?>Hearty's healthy honey. All Rights Reserved </span>
-                <br> Don't like these emails? <a href="<?= $this->Url->build(['controller' => 'Newslettersubscriptions', 'action' => 'unsubscribe']) ?>">Unsubscribe</a>.
+                <br> Don't like these emails? <a href="http://review.u21s2104.monash-ie.me/team104-app_fit3047/newsletter-subscriptions/unsubscribe">Unsubscribe</a>.
             </td>
         </tr>
         <tr>
