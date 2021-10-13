@@ -90,7 +90,7 @@ $agentId = $this->getRequest()->getSession()->read('id');
                                         echo $this->Form->control('deal_comment');
                                         echo $this->Form->control('shipping_address');
 
-                                        echo $this->Form->control('agent_id', ['options' => $agents,'empty' => false]);
+                                        echo $this->Form->control('agent_id', ['options' => [$agentId],'empty' => false]);
 
                                         ?>
                                     </fieldset>
