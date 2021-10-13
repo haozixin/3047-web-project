@@ -19,6 +19,8 @@ $formTemplate = [
 ];
 $this->Form->setTemplates($formTemplate);
 $this->layout = 'agent_default';
+$agentId = $this->getRequest()->getSession()->read('id');
+
 ?>
 <div class="container py-4">
     <div class="row g-5">
@@ -68,6 +70,8 @@ $this->layout = 'agent_default';
                                     <fieldset>
 
                                         <?php
+//                                        include_once "\App\Controller\AgentsController.php";
+                                        //debug($agentid->getRequest()->getSession()->read('id'));
 
 
                                         echo $this->Form->control('quantity', array(
@@ -85,7 +89,8 @@ $this->layout = 'agent_default';
                                         ]);
                                         echo $this->Form->control('deal_comment');
                                         echo $this->Form->control('shipping_address');
-                                        echo $this->Form->control('agent_id', ['options' => $agents, 'empty' => true]);
+
+                                        echo $this->Form->control('agent_id', ['options' => $agents,'empty' => false]);
 
                                         ?>
                                     </fieldset>

@@ -147,67 +147,37 @@ class Application extends BaseApplication
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
 
-        $array = $request->getServerParams();
-
-        if($array["REDIRECT_URL"] == '/team104-app_fit3047/webroot/admins/homepage'){
-
-            $authenticationService = new AuthenticationService([
-                'unauthenticatedRedirect' => Router::url('/users/login'),
-                'queryParam' => 'redirect',
-            ]);
 
 
-            //
+
+        $authenticationService = new AuthenticationService([
+            'unauthenticatedRedirect' => Router::url('/users/login'),
+            'queryParam' => 'redirect',
+        ]);
+
+
+        //
 // => '/team104-app_fit3047/webroot/admins/homepage'
-            // Load identifiers, ensure we check email and password fields
-            $authenticationService->loadIdentifier('Authentication.Password', [
-                'fields' => [
-                    'username' => 'email',
-                    'password' => 'password',
-                ]
-            ]);
+        // Load identifiers, ensure we check email and password fields
+        $authenticationService->loadIdentifier('Authentication.Password', [
+            'fields' => [
+                'username' => 'email',
+                'password' => 'password',
+            ]
+        ]);
 
-            // Load the authenticators, you want session first
-            $authenticationService->loadAuthenticator('Authentication.Session');
-            // Configure form data check to pick email and password
-            $authenticationService->loadAuthenticator('Authentication.Form', [
-                'fields' => [
-                    'username' => 'email',
-                    'password' => 'password',
-                ],
-                'loginUrl' => Router::url('/users/login'),
-            ]);
+        // Load the authenticators, you want session first
+        $authenticationService->loadAuthenticator('Authentication.Session');
+        // Configure form data check to pick email and password
+        $authenticationService->loadAuthenticator('Authentication.Form', [
+            'fields' => [
+                'username' => 'email',
+                'password' => 'password',
+            ],
+            'loginUrl' => Router::url('/users/login'),
+        ]);
 //        debug($authenticationService->getLoginRedirect($request));
-        }
-        else{
-            $authenticationService = new AuthenticationService([
-                'unauthenticatedRedirect' => Router::url('/users/login'),
-                'queryParam' => 'redirect',
-            ]);
 
-
-            //
-// => '/team104-app_fit3047/webroot/admins/homepage'
-            // Load identifiers, ensure we check email and password fields
-            $authenticationService->loadIdentifier('Authentication.Password', [
-                'fields' => [
-                    'username' => 'email',
-                    'password' => 'password',
-                ]
-            ]);
-
-            // Load the authenticators, you want session first
-            $authenticationService->loadAuthenticator('Authentication.Session');
-            // Configure form data check to pick email and password
-            $authenticationService->loadAuthenticator('Authentication.Form', [
-                'fields' => [
-                    'username' => 'email',
-                    'password' => 'password',
-                ],
-                'loginUrl' => Router::url('/users/login'),
-            ]);
-//        debug($authenticationService->getLoginRedirect($request));
-        }
         return $authenticationService;
 
 

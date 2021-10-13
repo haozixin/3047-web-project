@@ -46,7 +46,9 @@ if (!Configure::read('debug')) :
 endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

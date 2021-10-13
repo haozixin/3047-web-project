@@ -12,6 +12,8 @@ use Cake\Mailer\Mailer;
  * @property \App\Model\Table\OrdersTable $Orders
  * @method \App\Model\Entity\Order[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
+
+
 class OrdersController extends AppController
 {
     /**
@@ -48,6 +50,7 @@ class OrdersController extends AppController
      */
     public function view($id = null)
     {
+
         $order = $this->Orders->get($id, [
             'contain' => ['Products', 'Agents'],
         ]);
@@ -62,6 +65,8 @@ class OrdersController extends AppController
      */
     public function add()
     {
+
+
         $id = $this->getRequest()->getSession()->read('product_id');
         $quantity = $this->getRequest()->getSession()->read('quantity');
         $order = $this->Orders->newEmptyEntity();
@@ -121,7 +126,7 @@ class OrdersController extends AppController
            $order->Paid="No" ;} else if($order->Paid==0){
                                                  $order->Paid="Yes" ;};
 
-         
+
             if ($this->Orders->save($order)) {
                 $this->Flash->success(__('The order has been saved.'));
 

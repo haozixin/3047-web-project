@@ -1,6 +1,9 @@
 <?php
 
 $this->layout = 'agent_default';
+
+$agentId = $this->getRequest()->getSession()->read('id')
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

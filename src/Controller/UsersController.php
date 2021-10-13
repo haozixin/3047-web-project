@@ -189,7 +189,14 @@ class UsersController extends AppController
                 $domain = strstr($email,'@');
                 //if user email is not from hearty honey company
                 if($domain != "@heartyHoney.com"){
-                    echo "The account is Agent account";
+
+
+                    $u = $this->request->getAttribute('authentication')->getIdentity()->id;
+                    $session = $this->getRequest()->getSession();
+                    $session->write(['id'=>$u]);
+                    $session->read('id');
+
+
                     return $this->redirect([
                         'controller' => 'Agents',
                         'action' => 'homepage',

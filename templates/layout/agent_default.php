@@ -1,3 +1,8 @@
+<?php
+$agentId = $this->getRequest()->getSession()->read('id');
+//echo $agentId;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
