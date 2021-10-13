@@ -10,7 +10,7 @@ $this->layout = "customer_default";
 ?>
 <div class="container d-flex align-items-center flex-column">
     <!-- Masthead Avatar Image-->
-    <img src="/../img/honey_pour.gif"/>
+    <img src="../webroot/img/honey_pour.gif"/>
     <!-- Masthead Heading-->
     <h1>Account Registered!!</h1>
     <!-- Icon Divider-->
@@ -22,4 +22,4 @@ $this->layout = "customer_default";
     <!--  Subheading-->
     <p class="masthead-subheading font-weight-light mb-0">Have a nice Day!</p>
 </div>
-</div>
+

@@ -10,7 +10,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
 ?>
 <div class="container d-flex align-items-center flex-column">
     <!-- Masthead Avatar Image-->
-    <img src="/../img/honey_pour.gif"/>
+    <img src="../webroot/img/honey_pour.gif"/>
     <!-- Masthead Heading-->
     <h1>Account Registered!!</h1>
     <!-- Icon Divider-->
@@ -22,4 +22,4 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
     <!--  Subheading-->
     <p class="masthead-subheading font-weight-light mb-0">Have a nice Day!</p>
 </div>
-</div>
+

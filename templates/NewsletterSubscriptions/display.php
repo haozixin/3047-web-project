@@ -10,7 +10,7 @@ $this->layout = "agent_default";
 ?>
 <div class="container d-flex align-items-center flex-column">
     <!-- Masthead Avatar Image-->
-    <img src="/../img/honey_pour.gif"/>
+    <img src="../webroot/img/honey_pour.gif"/>
     <!-- Masthead Heading-->
     <h1>Thanks for the subscription!!</h1>
     <!-- Icon Divider-->
