@@ -65,8 +65,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 <div class="page-wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader"></div>
+
 
     <!-- Main Header-->
     <header class="main-header header-style-four">
