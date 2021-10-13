@@ -34,6 +34,7 @@ $this->Form->setTemplates($formTemplate);
             echo $this->Form->control('product_type');
             echo $this->Form->control('date_of_manufacture', [
                                     'type' => 'date',
+                                    'id' =>'manDate',
                                     'required',
                                     'default' => date('Y-m-d'), // Show default Todays date,
                                     'min' => date('Y-m-d'), ]);
@@ -41,9 +42,10 @@ $this->Form->setTemplates($formTemplate);
 
             echo $this->Form->control('expired_date', [
                                     'type' => 'date',
+                                    'id' =>'expDate',
                                     'required',
                                     'default' => 'date_of_manufacture', // Show default Todays date,
-                                    'min' => date('Y-m-d'), ]);
+                                     ]);
 
             echo $this->Form->control('quantity', array('type' => 'number','min' => 10,'max'=> 1000));
             echo $this->Form->control('photo', ['type' => 'file']);
@@ -57,4 +59,15 @@ $this->Form->setTemplates($formTemplate);
 
     </div>
 </div>
+<script>
+    let manDate = document.getElementById('manDate');
+    let expDate = document.getElementById('expDate');
+    // const selectElement = document.querySelector('.ice-cream');
+
+     manDate.addEventListener('input', (event) => {
+        expDate.setAttribute('min',manDate.value);
+     });
+
+
+</script>
 

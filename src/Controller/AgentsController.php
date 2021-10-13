@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 use Cake\Mailer\Mailer;
+use Cake\Core\Configure;
+use Cake\ORM\Locator\LocatorAwareTrait;
 
 /**
  * Agents Controller
@@ -222,43 +224,56 @@ public function addfront()
         }
     }
 
-//     public function forgot()
-//         {
-//
-//
-//             $agent1=$this->request->getData();
-//
-//              foreach ($agents as $agents){
-//              if $agent1->email==h($agents->email){
-//              $email=
-//              } }
-//             debug($agent2);
-//             exit;
-//             if (true) {
-//                 $mailer = new Mailer('default');
-//                 $mailer
-//                     ->setEmailFormat('html')
-//                     ->setTo($order->agent_email)
-//                     ->setFrom(Configure::read('OrderEmail.from'))
-//                     ->setReplyTo($order->agent_email)
-//                     ->setSubject(" Shipment on the way ")
-//                     ->viewBuilder()
-//                     ->disableAutoLayout()
-//                     ->setTemplate('confirmmail');
-//
-//                 $mailer->setViewVars([
-//
-//                     'email' => $agent->email,]);
-//
-//
-//                 $email_result = $mailer->deliver();
-//             } else {
-//                 $this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));
-//             }
-//
-//             return $this->redirect(['action' => '/']);
-//         }
+    public function forgot()
+        {
+         if ($this->request->is('post')){
 
+        $agents = $this->getTableLocator()->get('Agents');
+        $this->loadModel('Agents');
+
+         // request data from the user form
+         $userEmailFromForm = $this->request->getData('email');
+//          debug($userEmailFromForm);
+//          exit;
+
+         $selectedUser = $agents->find()->where(['email' => $userEmailFromForm])->first();
+$email=$selectedUser->email;
+$username=$selectedUser->user_name;
+$password=$selectedUser->password;
+// debug($username);
+// exit;
+
+
+            if ($userEmailFromForm==$email) {
+
+
+                $mailer = new Mailer('default');
+                $mailer
+                    ->setEmailFormat('html')
+                    ->setTo($email)
+                    ->setFrom(Configure::read('OrderEmail.from'))
+                    ->setReplyTo(Configure::read( 'OrderEmail.from'))
+                    ->setSubject(" Forgot password Email ")
+                    ->viewBuilder()
+                    ->disableAutoLayout()
+                    ->setTemplate('forgotpassword');
+
+                $mailer->setViewVars([
+
+                    'email' => $email, 'username' => $username,'password' => $password]);
+
+
+                $email_result = $mailer->deliver();
+
+            } else {
+                $this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));
+            }
+
+            return $this->redirect(['action' => '/forgot1']);
+        }}
+
+public function forgot1()
+    {}
     public function logout()
     {
         $result = $this->Authentication->getResult();
@@ -273,7 +288,9 @@ public function addfront()
             parent::beforeFilter($event);
             // Configure the login action to not require authentication, preventing
             // the infinite redirect loop issue
-            $this->Authentication->addUnauthenticatedActions([]);
+            $this->Authentication->addUnauthenticatedActions(['addfront','forgot','forgot1','add']);
+
+
 //'addfront','forgot','add'
 
         }

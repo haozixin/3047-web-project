@@ -67,7 +67,9 @@ class NewsletterSubscriptionsController extends AppController
     {
         $newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
         if ($this->request->is('post')) {
+
             $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscription, $this->request->getData());
+
             if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
                 {
 
@@ -141,7 +143,7 @@ class NewsletterSubscriptionsController extends AppController
             }
 
         }
-        $this->Flash->success(__('The newsletter subscription could not be saved. Please, try again.'));
+
         $this->set(compact('newsletterSubscription'));
     }
 
@@ -166,7 +168,7 @@ class NewsletterSubscriptionsController extends AppController
     }
 
     public function display()
-    {
+{  if ($this->request->is('post')) {
     $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
             $this->loadModel('Customers');
             $email = $this->getRequest()->getSession()->read('email');
@@ -196,7 +198,7 @@ class NewsletterSubscriptionsController extends AppController
 
 
 
-    }
+    }}
 
     public function display1()
         {
