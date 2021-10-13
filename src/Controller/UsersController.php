@@ -92,6 +92,7 @@ class UsersController extends AppController
 
             $this->Users->save($user);
             $this->set(compact('user'));
+            
 
 
 

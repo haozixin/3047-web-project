@@ -241,20 +241,12 @@ class AgentsController extends AppController
 
             $agents = $this->getTableLocator()->get('Agents');
             $this->loadModel('Agents');
-
             // request data from the user form
             $userEmailFromForm = $this->request->getData('email');
-//          debug($userEmailFromForm);
-//          exit;
-
             $selectedUser = $agents->find()->where(['email' => $userEmailFromForm])->first();
             $email = $selectedUser->email;
             $username = $selectedUser->user_name;
             $password = $selectedUser->password;
-// debug($username);
-// exit;
-
-
             if ($userEmailFromForm == $email) {
 
 
