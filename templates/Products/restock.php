@@ -34,6 +34,10 @@ $this->Form->setTemplates($formTemplate);
                 <th><?= __('Agent Price') ?></th>
                 <td><?= $this->Number->format($product->agent_price) ?></td>
             </tr>
+            <tr>
+                <th><?= __('Quantity (In 1 Unit)') ?></th>
+                <td><?= $this->Number->format($product->quantity) ?></td>
+            </tr>
         </table>
         <div class="text">
             <strong><?= __('Description') ?></strong>

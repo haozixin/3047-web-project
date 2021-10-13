@@ -17,13 +17,13 @@ $formTemplate = [
 ];
 $this->Form->setTemplates($formTemplate);
 ?>
-<h1 class="h3 mb-2 text-grey-800">Add Recipes</h1>
+<h1 class="h3 mb-2 text-grey-800">Add Recipe</h1>
 
 <div class="column-responsive column-80">
     <div class="recipes form content">
         <?= $this->Form->create($recipe, ['type' => 'file']) ?>
         <fieldset>
-            <legend><?= __('Add Recipe') ?></legend>
+           
             <?php
             echo $this->Form->control('title');
             echo $this->Form->control('description');
