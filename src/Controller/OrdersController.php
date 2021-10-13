@@ -73,18 +73,27 @@ class OrdersController extends AppController
 
         if ($this->request->is('post')) {
             $this->loadModel('Agents');
-            $agentId = $this->request->getData('agent_id');
-            $currentAgent = $this->Agents->get($agentId);
+             $this->loadModel('Users');
+            $userId = $this->getRequest()->getSession()->read('id');
+
+            $currentUser = $this->Users->get($userId);
+            $agents = $this->getTableLocator()->get('Agents');
+            $currentAgent = $agents->find()->where(['email' => $currentUser->email])->first();
+             $email = $currentAgent->email;
+            $Aid = $currentAgent->id;
+
             $email = $currentAgent->email;
             $order = $this->Orders->patchEntity($order, $this->request->getData());
-
+            $order->agent_id=$Aid;
+            $order->agent_email=$email;
             $order_quantity = $order->quantity;
             $order_total = $this->getRequest()->getSession()->read('total');
-            $order->agent_email = $email;
+
             $order->paid = "No";
             $order->product_id = $id;
             $order_price = (int)$order_total * (int)$order_quantity;
             $order->total_price = $order_price;
+            
 
             if ($this->Orders->save($order)) {
 
