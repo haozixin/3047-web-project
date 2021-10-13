@@ -11,7 +11,7 @@ $formTemplate = [
     'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>',
     'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}" class="form-check-input" {{attrs}}>',
 ];
-$this->disableAutoLayout();
+$this->layout = "customer_default";
 $this->Form->setTemplates($formTemplate);
 
 
