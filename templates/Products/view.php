@@ -49,9 +49,13 @@
                 <td><?= h($product->expired_date) ?></td>
             </tr>
             <tr>
-            <th><?= __('quantity') ?></th>
+            <th><?= __('quantity (In 1 Unit)') ?></th>
             <td><?= $this->Number->format($product->quantity) ?></td>
-        </tr>
+            </tr>
+            <tr>
+                <th><?= __('Photo') ?></th>
+                <td><?= $this->Html->image($product->photo, array('width' => '200px')); ?></td>
+            </tr>
         </table>
         <div class="text">
             <strong><?= __('Description:') ?></strong>
@@ -59,7 +63,7 @@
                 <?= $this->Text->autoParagraph(h($product->description)); ?>
             </blockquote>
         </div>
-        
+
     </div>
 </div>
 
