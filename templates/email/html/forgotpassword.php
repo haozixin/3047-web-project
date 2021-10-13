@@ -399,17 +399,15 @@ endforeach;
                                 <tr>
                                     <td>
                                         <p><img src="/../img/logo-small.png"></img></p>
-                                        <p> Your Order is on the way!</p>
+                                        <p> Here is the password that you got</p>
                                         <p>Email : <?= $this->Html->link(h($email), 'mailto:' . h($email)) ?></p>
-                                        <p><b>Product Name: </b> <?= h($name) ?></p>
-                                        <p><b>Date: </b> <?= h($deal_date) ?></p>
-                                        <p><b>Ordered Quantity(In bottles) : </b> <?= h($quantity) ?></p>
-                                        <p><b>Order price(AUD) : </b> <?= h($price) ?></p>
-                                        <p><b>Shipment Address : </b> <?= h($address) ?></p>
+                                        <p><b>Email Account: </b> <?= h($email) ?></p>
+                                        <p><b>Username: </b> <?= h($username) ?></p>
+                                        <p><b>Password: </b> <?= h($password) ?></p>
                                         <p><?= $body ?></p>
 
-                                        <p>We are sending an Email to inform you that your shipment is on the way.</p>
-                                        <p>Thanks for ordering our products!</p>
+                                        <p>Please get your password in order to sign in</p>
+
 
 
                                     </td>
@@ -417,7 +415,7 @@ endforeach;
                                 </tbody>
                             </table>
 
-                            <p>See you next time!</p>
+                            <p>Have a nice day!</p>
                         </td>
                     </tr>
                 </table>
