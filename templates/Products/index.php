@@ -30,7 +30,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js', ['bl
                 <th><?= h('product_type') ?></th>
                 <th><?= h('date_of_manufacture') ?></th>
                 <th><?= h('expired_date') ?></th>
-                <th><?= h('quantity') ?></th>
+                <th><?= h('quantity (In 1 Unit)') ?></th>
                 <th><?= h('photo') ?></th>
 
 

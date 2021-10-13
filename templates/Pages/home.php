@@ -89,8 +89,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             confirm("Coming Soon!");
         }
     </script>
-    <!-- Preloader -->
-    <div class="preloader"></div>
+
 
     <!-- Main Header-->
     <header class="main-header header-style-one">
@@ -150,11 +149,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <!-- Main Menu End-->
                     <div class="outer-box clearfix">
 
-                        <!-- Search Btn -->
-                        <div class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span></div>
 
-                        <!-- Nav Btn -->
-                        <div class="nav-btn navSidebar-button"><span class="icon flaticon-menu-2"></span></div>
 
                     </div>
                 </div>

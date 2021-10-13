@@ -47,7 +47,7 @@ $this->Form->setTemplates($formTemplate);
                                     'default' => 'date_of_manufacture', // Show default Todays date,
                                      ]);
 
-            echo $this->Form->control('quantity', array('type' => 'number','min' => 10,'max'=> 1000));
+            echo $this->Form->control('quantity', array('type' => 'number','min' => 10,'max'=> 10000));
             echo $this->Form->control('photo', ['type' => 'file']);
             ?>
 

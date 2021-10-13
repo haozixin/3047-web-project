@@ -40,8 +40,7 @@ $agentId = $this->getRequest()->getSession()->read('id');
 
 <div class="page-wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader"></div>
+
 
     <!-- Main Header-->
     <header class="main-header header-style-one" style="background-color:BurlyWood">
