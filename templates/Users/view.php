@@ -13,7 +13,7 @@
 
     <div class="column-responsive column-80">
         <div class="users view content">
-            <h3><?= h($user->id) ?></h3>
+            
             <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <tr>
                     <th><?= __('Username') ?></th>

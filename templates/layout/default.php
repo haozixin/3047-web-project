@@ -207,10 +207,8 @@
                 <div class="my-2"></div>
                 <a href="<?= $this->Url->build('/') ?>" class=" btn-icon-split"
                    style="background-color:DarkOrange">
-                                                   <span class="icon text-white-50">
-                                                       <i class="fas fa-keyboard"></i>
-                                                   </span>
-                    <span class="text" style="color: black">Switch to Customer</span>
+                                                   
+
                 </a>
                 <div class="my-2"></div>
 

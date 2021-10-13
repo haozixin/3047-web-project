@@ -31,8 +31,7 @@ $this->disableAutoLayout();
 
 <div class="page-wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader"></div>
+
 
     <!-- Main Header-->
     <header class="main-header header-style-one">
