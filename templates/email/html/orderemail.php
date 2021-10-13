@@ -441,7 +441,7 @@ endforeach;
         </tr>
         <tr>
             <td class="content-block powered-by">
-                Powered by <a href="http://htmlemail.io">HTMLemail</a>.
+                Powered by <a href="http://htmlemail.io">Hearty's Healthy Honey .co</a>.
             </td>
         </tr>
     </table>

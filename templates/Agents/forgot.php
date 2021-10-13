@@ -19,7 +19,7 @@ $this->Form->setTemplates($formTemplate);
 
 <div class="column-responsive column-80">
     <div class="Administrator form content">
-
+        <?= $this->Form->create() ?>
         <fieldset>
             <legend><?= __('Forgot Password') ?></legend>
             <?php
@@ -27,6 +27,8 @@ $this->Form->setTemplates($formTemplate);
             ?>
         </fieldset>
         <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
+
+        <?= $this->Form->end() ?>
 
 
     </div>
