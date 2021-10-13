@@ -42,5 +42,6 @@ class AppView extends View
         $this->loadHelper('Html');
         $this->loadHelper('Form');
         $this->loadHelper('Flash');
+        $this->loadHelper('Authentication.Identity');
     }
 }

@@ -167,8 +167,8 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login','adduser','adduser1','add','edit','index','view']);
-
+        $this->Authentication->addUnauthenticatedActions(['login','add']);
+//,'adduser','adduser1','add','edit','index','view'
     }
 
     public function login()
@@ -177,10 +177,27 @@ class UsersController extends AppController
 
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
+        //debug($this->request);
+
+
 
 
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
+            if(true){
+                $email = $this->request->getAttribute('authentication')->getIdentity()->email;
+                $domain = strstr($email,'@');
+                //if user email is not from hearty honey company
+                if($domain != "@heartyHoney.com"){
+                    echo "The account is Agent account";
+                    return $this->redirect([
+                        'controller' => 'Agents',
+                        'action' => 'homepage',
+                    ]);
+                }
+            }
+
+
             // redirect to /articles after login success
 //            debug($result->getData());
 //            exit;

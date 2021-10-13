@@ -273,8 +273,8 @@ public function addfront()
             parent::beforeFilter($event);
             // Configure the login action to not require authentication, preventing
             // the infinite redirect loop issue
-            $this->Authentication->addUnauthenticatedActions(['addfront','forgot','add']);
-
+            $this->Authentication->addUnauthenticatedActions([]);
+//'addfront','forgot','add'
 
         }
 }

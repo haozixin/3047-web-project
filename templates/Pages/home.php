@@ -118,13 +118,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         </div>
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="#">Home</a>
-                                    <ul>
-                                        <li><a href="<?= $this->Url->build(['controller' => 'Admins', 'action' => 'login']) ?>">Admins HomePage</a>
-                                        </li>
-                                        <li><a href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'homepage']) ?>">Agent HomePage</a>
-                                        </li>
-                                    </ul>
+                                <li><a href="">Home</a>
+
                                 </li>
                                 <li class="dropdown"><a href="#">About</a>
                                     <ul>
@@ -144,7 +139,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 </li>
                                 <li ><a href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'faq']) ?>">Q&A</a>
                                 </li>
-                                <li><a href='#' onClick="a()""">Contact us</a></li>
+                                <li><a href="<?= $this->Url->build(['controller' => 'Admins', 'action' => 'homepage']) ?>">Log in</a></li>
+
                             </ul>
                         </div>
                     </nav>

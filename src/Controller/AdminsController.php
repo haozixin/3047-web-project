@@ -114,31 +114,83 @@ class AdminsController extends AppController
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
         // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions(['homepage','login','logout']);
+        $this->Authentication->addUnauthenticatedActions(['add']);
+        //'homepage','login','logout'
     }
-
     public function login()
     {
-        $this->request->getData();
-        $email = $this->request->getData('email');
-        $password = $this -> request->getData('password');
-        if($email != null || $password!=null){
-            if ($email=="admin@hertyHoney.com" && $password=='passwordforadmin'){
-                $this->Authentication->addUnauthenticatedActions(['homepage','login','logout']);
 
-                return $this->redirect(['action' => 'homepage']);
-            }else{
-                $this->Flash->success(__('Wrong password or email!'));
-            }
+
+        $this->request->allowMethod(['get', 'post']);
+        $result = $this->Authentication->getResult();
+//        debug($result);
+
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            // redirect to /articles after login success
+//            debug($result->getData());
+//            exit;
+            $id = $result->getData()->id;
+            $username = $result->getData()->username;
+            $email = $result->getData()->email;
+            $data = [
+                'id' => $id,
+                'username' => $username,
+                'useremail' => $email
+            ];
+
+
+            $this->set($data);
+
+
+            $redirect = $this->request->getQuery('redirect', [
+                'controller' => 'Pages',
+                'action' => 'home',
+
+            ]);
+
+
+            return $this->redirect($redirect);
         }
-
-
+        // display error if user submitted and authentication failed
+        if ($this->request->is('post') && !$result->isValid()) {
+            $this->Flash->success(__('Invalid username or password'));
+        }
     }
+    // in src/Controller/UsersController.php
+
+
+//    public function login()
+//    {
+//        $this->request->getData();
+//        $email = $this->request->getData('email');
+//        $password = $this -> request->getData('password');
+//        if($email != null || $password!=null){
+//            if ($email=="admin@hertyHoney.com" && $password=='passwordforadmin'){
+//                $this->Authentication->addUnauthenticatedActions(['homepage','login','logout']);
+//
+//                return $this->redirect(['action' => 'homepage']);
+//            }else{
+//                $this->Flash->success(__('Wrong password or email!'));
+//            }
+//        }
+//
+//
+//    }
+
+//    public function logout()
+//    {
+//            return $this->redirect(['controller'=> 'Pages','action' => 'display']);
+//    }
+
 
     public function logout()
     {
-            return $this->redirect(['controller'=> 'Pages','action' => 'display']);
+        $result = $this->Authentication->getResult();
+        // regardless of POST or GET, redirect if user is logged in
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect('/');
+        }
     }
-
-
 }

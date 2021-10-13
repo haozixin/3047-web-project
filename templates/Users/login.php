@@ -90,8 +90,18 @@ $this->Form->setTemplates($formTemplate);
                                 </a>
                                 <hr>
                                 </fieldset>
+                                <?php
+
+                                ?>
+
+
+                                <div class="text-center" style="float:left">
+                                    <button><?= $this->Html->link("Sign up an Agent", ['controller' => 'Agents', 'action' => 'addfront']) ?></button>
+                                    <a class="small" href=""
+                                       Create an Account!</a>
+                                </div>
                                 <div class="text-center">
-                                    <button><?= $this->Html->link("Sign up for backend", ['controller' => 'Agents', 'action' => 'addfront']) ?></button>
+                                    <button><?= $this->Html->link("Forget password", ['controller' => 'Agents', 'action' => 'forgot']) ?></button>
                                     <a class="small" href=""
                                        Create an Account!</a>
                                 </div>
