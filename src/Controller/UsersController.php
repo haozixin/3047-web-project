@@ -95,8 +95,9 @@ class UsersController extends AppController
 
 
 
+
             if ($sub == 'Yes') {
-             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display']);   }
+             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display2']);   }
 
              else return $this->Flash->success(__('The user has been saved.'));
 

@@ -70,9 +70,9 @@ class CustomersController extends AppController
 
             if ($this->Customers->save($customer)) {
 
-                $this->Flash->success(__('The customer has been saved.'));
-                if ($sub == '0') {
-                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'add_customer']);
+
+                if ($customer->subscription_status='Yes') {
+                    $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'addcustomer1']);
                 }
 
 

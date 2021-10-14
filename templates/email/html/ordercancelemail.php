@@ -23,6 +23,7 @@ foreach ($content as $line) :
 endforeach;
 ?>
 
+
 <!doctype html>
 <html>
 <head>
@@ -381,7 +382,7 @@ endforeach;
     </style>
 </head>
 <body class="">
-<span class="preheader">This is the confirmation of your subscription to the newsletter.</span>
+<span class="preheader">This is the order confirmation Email from hearty healthy honey.</span>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
     <tr>
         <td>&nbsp;</td>
@@ -398,19 +399,23 @@ endforeach;
                                 <tr>
                                     <td>
                                         <p><img src="/../img/logo-small.png"></img></p>
-                                        <p> You are subscribed to the Newsletter, YAY!!!</p>
+                                        <p>Sorry , your order has been Rejected</p>
+                                        <p>Email : <?= $this->Html->link(h($email), 'mailto:' . h($email)) ?></p>
+                                        <p><b>Date: </b> <?= h($deal_date) ?></p>
+                                        <p><b>Product Name: </b> <?= h($name) ?></p>
+                                        <p><b>Ordered Quantity(In bottles) : </b> <?= h($quantity) ?></p>
+                                        <p><b>Order price(AUD) : </b> <?= h($price) ?></p>
                                         <p><?= $body ?></p>
 
-                                        <p>We are sending an Email to inform you that your subscription is activated. Get ready to recieve information on new offers, deals and products.</p>
-                                        <p>Thanks for Subscribing to the Newsletter!</p>
-
+                                        <p>We are sending an Email to inform you that your order has been rejected.</p>
+                                        <p>Please place an order again if wanted.</p>
 
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
 
-                            <p>See you next time!</p>
+                            <p>Sorry for the inconvenience.</p>
                         </td>
                     </tr>
                 </table>
@@ -427,7 +432,7 @@ endforeach;
         <tr>
             <td class="content-block">
                 <span class="apple-link"> <?= date("Y") ?>Hearty's healthy honey. All Rights Reserved </span>
-                <br> Don't like these emails? <a href="http://review.u21s2104.monash-ie.me/team104-app_fit3047/newsletter-subscriptions/unsubscribe">Unsubscribe</a>.
+
             </td>
         </tr>
         <tr>

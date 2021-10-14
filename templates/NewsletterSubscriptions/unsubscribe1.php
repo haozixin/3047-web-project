@@ -12,7 +12,7 @@ $this->layout = "customer_default";
     <!-- Masthead Avatar Image-->
     <img src="../webroot/img/honey_pour.gif"/>
     <!-- Masthead Heading-->
-    <h1>Thanks for the subscription!!</h1>
+    <h1>You had cancelled the newsletterSubscription</h1>
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>

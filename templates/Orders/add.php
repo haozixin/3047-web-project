@@ -84,13 +84,13 @@ $agentId = $this->getRequest()->getSession()->read('id');
                                             'required',
                                             'default' => date('Y-m-d'), // Show default Todays date,
                                             'min' => date('Y-m-d'),
-                                            'max' => date('Y-m-d'),
+                                            
 
                                         ]);
                                         echo $this->Form->control('deal_comment');
                                         echo $this->Form->control('shipping_address');
 
-                                        echo $this->Form->control('agent_id', ['options' => [$agentId],'empty' => false]);
+
 
                                         ?>
                                     </fieldset>

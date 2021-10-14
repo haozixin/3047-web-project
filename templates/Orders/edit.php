@@ -56,7 +56,10 @@ $YesNo=["Yes","No"];
             echo "<br>";
             echo $this->Form->control('agent_id');
             echo "<br>";
+            echo "Email sent will be Yes if the Box is ticked";
             echo $this->Form->control('email_sent');
+            echo "<br>";
+
             echo $this->Form->control('Paid', ['options' => $YesNo, 'empty' => true] );
 
             ?>

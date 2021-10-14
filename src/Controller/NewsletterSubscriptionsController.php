@@ -63,12 +63,15 @@ class NewsletterSubscriptionsController extends AppController
         $this->Flash->success(__('Remember to input a valid Email otherwise we cannot send you our best Offers!( e.g. abc@example.com)'));
         $this->set(compact('newsletterSubscription'));
     }
+
+
     public function addforcustomer()
     {
         $newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
         if ($this->request->is('post')) {
 
             $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscription, $this->request->getData());
+
 
             if ($this->NewsletterSubscriptions->save($newsletterSubscription)) {
                 {
@@ -85,8 +88,8 @@ class NewsletterSubscriptionsController extends AppController
                         ->setTemplate('newslettersubscription');
 
 
-
                     $email_result = $mailer->deliver();
+
                     return $this->redirect(['action' => '/display']);
 
                 }
@@ -119,6 +122,162 @@ class NewsletterSubscriptionsController extends AppController
         $this->NewsletterSubscriptions->save($newsletterSubscription);
 
         $this->set(compact('newsletterSubscription'));
+    }
+
+
+    public function unsubscribe()
+    {
+
+        if ($this->request->is('post')) {
+
+//                 $newsletterSubscription = $this->NewsletterSubscriptions->patchEntity($newsletterSubscription, $this->request->getData());
+            $agents = $this->getTableLocator()->get('Agents');
+            $customers = $this->getTableLocator()->get('Customers');
+            $userEmailFromForm = $this->request->getData('email');
+//                       debug($userEmailFromForm);
+//                       exit;
+            $selectedAgent = $agents->find()->where(['email' => $userEmailFromForm])->first();
+            if ($selectedAgent != null) {
+                $Aemail = $selectedAgent->email;
+                $Aid = $selectedAgent->id;
+
+
+                if ($userEmailFromForm == $Aemail) {
+                    $session = $this->getRequest()->getSession();
+                    $session->write(['id' => $Aid, 'email' => $Aemail]);
+                    $session->read('id');
+
+                    $selectedAgent->subscription_status = 'No';
+
+                    $this->loadModel('Agents')->save($selectedAgent);
+
+
+                    $mailer = new Mailer('default');
+                    $mailer
+                        ->setEmailFormat('html')
+                        ->setTo($Aemail)
+                        ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                        ->setReplyTo(Configure::read('NewsletterSubscriptionEmail.from'))
+                        ->setSubject("Newsletter Subscription Cancellation")
+                        ->viewBuilder()
+                        ->disableAutoLayout()
+                        ->setTemplate('cancelemail');
+
+
+                    if ($email_result = $mailer->deliver()) {
+
+                        $news = $this->getTableLocator()->get('NewsletterSubscriptions');
+
+                        $this->request->allowMethod(['post', 'delete']);
+                        $agentEmail = $this->getRequest()->getSession()->read('email');
+
+
+                        $newsletterSubscription = $news->find()->where(['customer_email' => $agentEmail])->first();
+
+
+                        $this->loadModel('NewsletterSubscriptions')->delete($newsletterSubscription);
+                        return $this->redirect(['action' => 'unsubscribe1']);
+
+
+                    }
+
+
+                }
+            }
+            $selectedCustomer = $customers->find()->where(['email' => $userEmailFromForm])->first();
+
+
+            $news = $this->getTableLocator()->get('NewsletterSubscriptions');
+
+            $this->request->allowMethod(['post', 'delete']);
+            $agentEmail = $this->getRequest()->getSession()->read('email');
+
+
+            $newsletterSubscription = $news->find()->where(['customer_email' => $userEmailFromForm])->first();
+
+
+            if ($selectedCustomer != null) {
+                $Cemail = $selectedCustomer->email;
+                $Cid = $selectedCustomer->id;
+
+                if ($userEmailFromForm == $Cemail) {
+                    $session = $this->getRequest()->getSession();
+                    $session->write(['id' => $Cid, 'email' => $Cemail]);
+                    $session->read('id');
+                    $session->read('email');
+
+
+                    {
+                        $selectedCustomer->subscription_status = 'No';
+                        $this->loadModel('Customers')->save($selectedCustomer);
+
+
+                        $mailer = new Mailer('default');
+                        $mailer
+                            ->setEmailFormat('html')
+                            ->setTo($Cemail)
+                            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                            ->setReplyTo(Configure::read('NewsletterSubscriptionEmail.from'))
+                            ->setSubject("Newsletter Subscription Cancellation")
+                            ->viewBuilder()
+                            ->disableAutoLayout()
+                            ->setTemplate('cancelemail');
+
+
+                        if ($email_result = $mailer->deliver()) {
+
+                            $news = $this->getTableLocator()->get('NewsletterSubscriptions');
+
+                            $this->request->allowMethod(['post', 'delete']);
+                            $customerEmail = $this->getRequest()->getSession()->read('email');
+
+
+                            $newsletterSubscription = $news->find()->where(['customer_email' => $customerEmail])->first();
+
+
+                            $this->loadModel('NewsletterSubscriptions')->delete($newsletterSubscription);
+                            return $this->redirect(['action' => 'unsubscribe1']);
+
+
+                        }
+
+
+                    }
+                }
+
+
+            }
+            if ($newsletterSubscription != null) {
+
+                $news = $this->getTableLocator()->get('NewsletterSubscriptions');
+
+                $this->request->allowMethod(['post', 'delete']);
+                $customerEmail = $this->request->getData('email');
+
+
+                $newsletterSubscription = $news->find()->where(['customer_email' => $customerEmail])->first();
+
+
+                $this->loadModel('NewsletterSubscriptions')->delete($newsletterSubscription);
+                $mailer = new Mailer('default');
+                $mailer
+                    ->setEmailFormat('html')
+                    ->setTo($customerEmail)
+                    ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                    ->setReplyTo(Configure::read('NewsletterSubscriptionEmail.from'))
+                    ->setSubject("Newsletter Subscription Cancellation")
+                    ->viewBuilder()
+                    ->disableAutoLayout()
+                    ->setTemplate('cancelemail');
+                $email_result = $mailer->deliver();
+                return $this->redirect(['action' => 'unsubscribe1']);
+
+
+            }
+
+        }
+
+
     }
 
 
@@ -167,9 +326,15 @@ class NewsletterSubscriptionsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+
+    public function unsubscribe1($id = null)
+    {
+    }
+
     public function display()
-{  if ($this->request->is('post')) {
-    $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+    {
+        if ($this->request->is('post')) {
+            $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
             $this->loadModel('Customers');
             $email = $this->getRequest()->getSession()->read('email');
 
@@ -180,61 +345,91 @@ class NewsletterSubscriptionsController extends AppController
             $newsletterSubscriptions['customer_name'] = $name;
 
 
+            $this->NewsletterSubscriptions->save($newsletterSubscriptions);
+            $this->set(compact('newsletterSubscriptions'));
+
+            $mailer = new Mailer('default');
+            $mailer
+                ->setEmailFormat('html')
+                ->setTo($newsletterSubscriptions->customer_email)
+                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                ->setReplyTo($newsletterSubscriptions->customer_email)
+                ->setSubject("Newsletter Subscription Confirmation")
+                ->viewBuilder()
+                ->disableAutoLayout()
+                ->setTemplate('newslettersubscription');
+            $email_result = $mailer->deliver();
+
+
+        }
+    }
+
+    public function display1()
+    {
+        $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+        $this->loadModel('Customers');
+        $email = $this->getRequest()->getSession()->read('email');
+
+        $fname = $this->getRequest()->getSession()->read('family_name');
+        $gname = $this->getRequest()->getSession()->read('given_name');
+        $name = $gname . ' ' . $fname;
+        $newsletterSubscriptions['customer_email'] = $email;
+        $newsletterSubscriptions['customer_name'] = $name;
+
+
+        $this->NewsletterSubscriptions->save($newsletterSubscriptions);
+        $this->set(compact('newsletterSubscriptions'));
+
+        $mailer = new Mailer('default');
+        $mailer
+            ->setEmailFormat('html')
+            ->setTo($newsletterSubscriptions->customer_email)
+            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+            ->setReplyTo($newsletterSubscriptions->customer_email)
+            ->setSubject("Newsletter Subscription Confirmation")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('newslettersubscription');
+        $email_result = $mailer->deliver();
+
+
+    }
+
+    public function display2()
+    {
+
+            $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
+            $this->loadModel('Customers');
+            $email = $this->getRequest()->getSession()->read('email');
+
+            $fname = $this->getRequest()->getSession()->read('family_name');
+            $gname = $this->getRequest()->getSession()->read('given_name');
+            $name = $gname . ' ' . $fname;
+            $newsletterSubscriptions['customer_email'] = $email;
+            $newsletterSubscriptions['customer_name'] = $name;
+
 
             $this->NewsletterSubscriptions->save($newsletterSubscriptions);
             $this->set(compact('newsletterSubscriptions'));
 
             $mailer = new Mailer('default');
-                        $mailer
-                            ->setEmailFormat('html')
-                            ->setTo($newsletterSubscriptions->customer_email)
-                            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
-                            ->setReplyTo($newsletterSubscriptions->customer_email)
-                            ->setSubject("Newsletter Subscription Confirmation")
-                            ->viewBuilder()
-                            ->disableAutoLayout()
-                            ->setTemplate('newslettersubscription');
-                            $email_result = $mailer->deliver();
+            $mailer
+                ->setEmailFormat('html')
+                ->setTo($newsletterSubscriptions->customer_email)
+                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+                ->setReplyTo($newsletterSubscriptions->customer_email)
+                ->setSubject("Newsletter Subscription Confirmation")
+                ->viewBuilder()
+                ->disableAutoLayout()
+                ->setTemplate('newslettersubscription');
+            $email_result = $mailer->deliver();
 
 
 
-    }}
-
-    public function display1()
-        {
-        $newsletterSubscriptions = $this->NewsletterSubscriptions->newEmptyEntity();
-                $this->loadModel('Customers');
-                $email = $this->getRequest()->getSession()->read('email');
-
-                $fname = $this->getRequest()->getSession()->read('family_name');
-                $gname = $this->getRequest()->getSession()->read('given_name');
-                $name = $gname . ' ' . $fname;
-                $newsletterSubscriptions['customer_email'] = $email;
-                $newsletterSubscriptions['customer_name'] = $name;
+    }
 
 
-
-                $this->NewsletterSubscriptions->save($newsletterSubscriptions);
-                $this->set(compact('newsletterSubscriptions'));
-
-                $mailer = new Mailer('default');
-                            $mailer
-                                ->setEmailFormat('html')
-                                ->setTo($newsletterSubscriptions->customer_email)
-                                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
-                                ->setReplyTo($newsletterSubscriptions->customer_email)
-                                ->setSubject("Newsletter Subscription Confirmation")
-                                ->viewBuilder()
-                                ->disableAutoLayout()
-                                ->setTemplate('newslettersubscription');
-                                $email_result = $mailer->deliver();
-
-
-
-        }
-
-
-    public function add_customer()
+    public function addcustomer1()
     {
         $newsletterSubscription = $this->NewsletterSubscriptions->newEmptyEntity();
         $this->loadModel('Customers');
@@ -253,19 +448,18 @@ class NewsletterSubscriptionsController extends AppController
         $this->NewsletterSubscriptions->save($newsletterSubscription);
 
         $mailer = new Mailer('default');
-                    $mailer
-                        ->setEmailFormat('html')
-                        ->setTo($newsletterSubscriptions->customer_email)
-                        ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
-                        ->setReplyTo($newsletterSubscriptions->customer_email)
-                        ->setSubject("Newsletter Subscription Confirmation")
-                        ->viewBuilder()
-                        ->disableAutoLayout()
-                        ->setTemplate('newsletterSubscriptionemail');
+        $mailer
+            ->setEmailFormat('html')
+            ->setTo($newsletterSubscription->customer_email)
+            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+            ->setReplyTo(Configure::read('NewsletterSubscriptionEmail.from'))
+            ->setSubject("Newsletter Subscription Confirmation")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('newslettersubscription');
 
 
-
-                    $email_result = $mailer->deliver();
+        $email_result = $mailer->deliver();
 
 
     }
@@ -282,30 +476,30 @@ class NewsletterSubscriptionsController extends AppController
 
 
     public function mark($id = null)
-        {
+    {
 
-            $mailer = new Mailer('default');
-            $mailer
-                ->setEmailFormat('html')
-                ->setTo($newsletterSubscriptions->customer_email)
-                ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
-                ->setReplyTo($newsletterSubscriptions->customer_email)
-                ->setSubject("Newsletter Subscription Confirmation")
-                ->viewBuilder()
-                ->disableAutoLayout()
-                ->setTemplate('newsletterSubscriptionemail');
+        $mailer = new Mailer('default');
+        $mailer
+            ->setEmailFormat('html')
+            ->setTo($newsletterSubscriptions->customer_email)
+            ->setFrom(Configure::read('NewsletterSubscriptionEmail.from'))
+            ->setReplyTo($newsletterSubscriptions->customer_email)
+            ->setSubject("Newsletter Subscription Confirmation")
+            ->viewBuilder()
+            ->disableAutoLayout()
+            ->setTemplate('newslettersubscription');
 
 
+        $email_result = $mailer->deliver();
+        return $this->redirect(['action' => 'index']);
+    }
 
-            $email_result = $mailer->deliver();
-            return $this->redirect(['action' => 'index']);
-        }
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
         // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions(['addcustomer','addCustomer','display']);
+        $this->Authentication->addUnauthenticatedActions(['addforcustomer', 'addcustomer', 'addCustomer', 'display','display2', 'unsubscribe', 'unsubscribe1']);
     }
 
 }
