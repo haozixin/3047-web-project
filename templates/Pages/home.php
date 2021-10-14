@@ -271,10 +271,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         <!-- Content Column -->
                         <div class="content-column col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-column">
-                                <h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span>
+                                <h1><span class="first-letter">Healthy</span><span class="second-letter">Honey</span>
                                 </h1>
-                                <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                <div class="text">100% organic raw honey infused with wildcrafted organic tea tree oil, widely regarded
+                                    for its remarkable antioxidants, antimicrobial and antibacterial properties.
                                 </div>
                                 <div class="btns-box" onclick="swal('The function is coming soon')">
                                     <a class="theme-btn btn-style-one clearfix"><span
@@ -313,8 +313,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="inner-column">
                                 <h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span>
                                 </h1>
-                                <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                <div class="text">A delicious new way to enjoy honey with the mother for better gut health and digestion,
+                                    and the antioxidant and prebiotic benefits of organic raw honey to help support your immune system.
                                 </div>
                                 <div class="btns-box" onclick="swal('The function is coming soon')">
                                     <a class="theme-btn btn-style-one clearfix"><span
@@ -351,10 +351,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         <!-- Content Column -->
                         <div class="content-column col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-column">
-                                <h1><span class="first-letter">Heathly</span><span class="second-letter">Honey</span>
+                                <h1><span class="first-letter">Healthy</span><span class="second-letter">Honey</span>
                                 </h1>
-                                <div class="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                <div class="text">The sweet floral flavour of 100% pure raw honey, combined with the tart
+                                    and floral flavour of Davidson Plum.
                                 </div>
                                 <div class="btns-box" onclick="swal('The function is coming soon')">
                                     <a class="theme-btn btn-style-one clearfix"><span
@@ -411,9 +411,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="title">Drink for Health</div>
                             <h2>Fresh Honey-mixed <span class="theme_color">Juices</span></h2>
                             <div class="separate"></div>
-                            <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae intellegam.
-                                Ansed dictas accumsan. Nam sint atqui voluptatibus an, pro ne malis semper perpetua. Nam
-                                sint atqui voluptatibus an, pro ne malis semper perpetua.
+                            <div class="text">8 out of 10 Owners who Expressed a Preference said Their Cats Preferred Honey.
+                                You'll Look a Little Lovelier Each Day with Fabulous Pink Honey.
                             </div>
                         </div>
                         <div onclick="swal('The function is coming soon')">
@@ -444,10 +443,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-1.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-1.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Milkshake</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Pancake With Honey</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -457,10 +456,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-2.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-2.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Frappe</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Lemon Tea</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -470,10 +469,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-3.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-3.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Boba Drinks</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Strawberry Smoothie</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -483,10 +482,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-4.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-4.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Mojito</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Comb Cake </a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -496,10 +495,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-5.jpg" alt=""/></a>
+                            <a onclick="swal('The function is coming soon')"><img src="webroot/img/resource/beverage-5.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Slushy</a></h6>
+                            <h6><a href="#">Honey Garlic Chicken Wings</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -509,10 +508,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-6.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-6.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Hot Chocolate</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Comb Sugar</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -522,10 +521,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-7.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-7.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">Honey</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Taffy</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -535,10 +534,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="beverage-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="milkshake.html"><img src="webroot/img/resource/beverage-8.jpg" alt=""/></a>
+                            <a href="#"><img src="webroot/img/resource/beverage-8.jpg" alt=""/></a>
                         </div>
                         <div class="lower-content">
-                            <h6><a href="milkshake.html">coffee</a></h6>
+                            <h6><a onclick="swal('The function is coming soon')">Honey Butter Spared On Bread</a></h6>
                             <div class="products">3 products</div>
                         </div>
                     </div>
@@ -564,26 +563,17 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <div class="box-inner">
                     <!-- Sec Title -->
                     <div class="sec-title light centered">
-                        <div class="title">30% Off For Honey</div>
+                        <div class="title">30% off for the first order</div>
                         <h2>Big Deals of the Week</h2>
                         <br/>
-                        <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae <br>
-                            intellegam. Ansed dictas accumsan.
+                        <div class="text">Buy three get one free! Rush to us to grab the best! Hurry up!
+                            <br>
+                            <br>
+                            <br>
+                            Buy three get one free selected honey! Rush to us to grab the best! Hurry up!
                         </div>
                     </div>
-                    <!-- Email Form -->
-                    <div class="email-form">
-                        <br/>
-                        <div class="email-title">To Get New Of Our Deals</div>
-                        <form method="post" action="contact.html">
-                            <div class="form-group">
-                                <input type="email" name="email" value="" placeholder="type your email" required>
-                                <button type="submit" class="submit-btn"><span class="icon flaticon-send"></span>
 
-                                </button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -615,8 +605,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="recipe-block">
                                 <div class="inner-box">
                                     <div class="icon"><img src="webroot/img/resource/recipe-1.png" alt=""/></div>
-                                    <h6><a href="menu.html">Cucumber</a></h6>
-                                    <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae
+                                    <h6><a href="menu.html">Flower</a></h6>
+                                    <div class="text">Fresh flowers for bees to continuously collect nectar
                                     </div>
                                 </div>
                             </div>
@@ -625,8 +615,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="recipe-block">
                                 <div class="inner-box">
                                     <div class="icon"><img src="webroot/img/resource/recipe-2.png" alt=""/></div>
-                                    <h6><a href="menu.html">Apple</a></h6>
-                                    <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae
+                                    <h6><a href="menu.html">Sun</a></h6>
+                                    <div class="text">The good geographical location allows sufficient sunshine, and the honeys can have enough energy to produce honey
                                     </div>
                                 </div>
                             </div>
@@ -651,8 +641,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="recipe-block style-two">
                                 <div class="inner-box">
                                     <div class="icon"><img src="webroot/img/resource/recipe-3.png" alt=""/></div>
-                                    <h6><a href="menu.html">Lemon</a></h6>
-                                    <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae
+                                    <h6><a href="menu.html">Temperature </a></h6>
+                                    <div class="text">We control the temperature of the honeycomb in real time to ensure the production of high-quality honey
                                     </div>
                                 </div>
                             </div>
@@ -661,8 +651,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="recipe-block style-two">
                                 <div class="inner-box">
                                     <div class="icon"><img src="webroot/img/resource/recipe-4.png" alt=""/></div>
-                                    <h6><a href="menu.html">Fresh Water</a></h6>
-                                    <div class="text">Us percipit urbanitas referrentur ea. Mei at numquam molestiae
+                                    <h6><a href="menu.html">Professional bee farmer</a></h6>
+                                    <div class="text">Professional beekeepers check the status of the hive in real time to ensure the health of bees and the quality of honey
                                     </div>
                                 </div>
                             </div>
@@ -687,9 +677,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                     <div class="sec-title">
                         <h2>Upcoming Our <br> Honey mix Beverage</h2>
                         <div class="separate"></div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <div class="text">Mead is an alcoholic beverage created by fermenting honey with water,
+                            sometimes with various fruits, spices, grains, or hops. The alcoholic content ranges from about 3.5% ABV to more than 18%.
+                            The defining characteristic of mead is that the majority of the beverage's fermentable sugar is derived from honey.
                         </div>
                     </div>
                     <!-- Button Box -->
@@ -729,9 +719,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="author-image">
                                 <img src="webroot/img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud exercitation <br> ullamco.”
+                            <div class="text">“The best honey I have ever tried.
+                                Will be buying again.<br>This honey taste amazing and it is a great compliment to my teas and electuaries. Thank you Hearty healthy honey!!”
                             </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
@@ -743,9 +732,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="author-image">
                                 <img src="webroot/img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud exercitation <br> ullamco.”
+                            <div class="text">“The best honey I have ever tried.
+                                Will be buying again.<br>This honey taste amazing and it is a great compliment to my teas and electuaries. Thank you Hearty healthy honey!!”
                             </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
@@ -757,9 +745,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <div class="author-image">
                                 <img src="webroot/img/resource/author-1.jpg" alt=""/>
                             </div>
-                            <div class="text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud exercitation <br> ullamco.”
+                            <div class="text">“Such a delicious infusion of honey and reishi! Excellent product and great to help save the bees!
+                                <br>This honey taste amazing and it is a great compliment to my teas and electuaries. Thank you Hearty healthy honey!!”
                             </div>
                             <div class="designation">Meredith Grant <span>- Host Mother</span></div>
                         </div>
@@ -778,10 +765,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <!-- Sec Title -->
             <div class="sec-title centered">
                 <div class="title">News & Recipe</div>
-                <h2>Our Fruitsome Blog</h2>
+                <h2>About our honey</h2>
                 <div class="separate"></div>
-                <div class="text">Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, <br>
-                    vel scelerisque nisl consectetur et.
+                <div class="text">Our honey is freshly make with professional, we made sure every step is transparent and safe!
+                    <br>Have you had your honey today?
                 </div>
             </div>
             <div class="row clearfix">
@@ -802,12 +789,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">Papaya honey</div>
-                            <h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">Farm</div>
+                            <h6><a onclick="swal('The function is coming soon')">Check how honey is being made here</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="">Share</a></li>
+                                <li><a>Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -829,12 +816,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">Citrus Honey</div>
-                            <h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">Recipe</div>
+                            <h6><a onclick="swal('The function is coming soon')">Honey pistachio cake</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="">Share</a></li>
+                                <li><a>Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -856,12 +843,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="category">Banana Honey Smoothie</div>
-                            <h6><a href="">Broad bean and goats’ cheese bruschetta</a></h6>
+                            <div class="category">Package</div>
+                            <h6><a onclick="swal('The function is coming soon')">Customize your honey bottle</a></h6>
                             <ul class="post-info">
                                 <li>May 21, 2021</li>
                                 <li>2 Comments</li>
-                                <li><a href="">Share</a></li>
+                                <li><a>Share</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1083,7 +1070,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     <div class="text">6Fifth Avenue 5501, Broadway, New York Morris Street London 1234
                                     </div>
                                     <ul class="contact-list">
-                                        <li><span class="icon fa fa-send"></span>Your mail @ gmail.com</li>
+                                        <li><span class="icon fa fa-send"></span>admins@heartyHoney.com</li>
                                         <li><span class="icon fa fa-phone"></span><a>(123) 4567 89000</a></li>
                                     </ul>
                                 </div>
@@ -1150,7 +1137,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; 2021 foodily All Rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.
+                <div class="copyright">&copy; 2021 foodily All Rights By Agile Amigos.
                 </div>
             </div>
         </div>
