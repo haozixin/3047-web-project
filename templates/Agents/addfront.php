@@ -285,6 +285,7 @@ $countries = array(
             echo $this->Form->control('street');
             echo $this->Form->control('user_name');
             echo $this->Form->control('password');
+            echo "Please select Yes for subscribing our Newsletter!!";
             echo $this->Form->control('subscription_status',['options' => $Yesno]);
             ?>
 
