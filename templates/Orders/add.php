@@ -79,12 +79,13 @@ $agentId = $this->getRequest()->getSession()->read('id');
                                             'min' => 10,
                                             'max' => $this->getRequest()->getSession()->read('quantity'),
                                         ));
+                                        echo"deal date means the date that you wanted to process thie order";
                                         echo $this->Form->control('deal_date', [
                                             'type' => 'date',
                                             'required',
                                             'default' => date('Y-m-d'), // Show default Todays date,
                                             'min' => date('Y-m-d'),
-                                            
+
 
                                         ]);
                                         echo $this->Form->control('deal_comment');
