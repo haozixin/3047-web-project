@@ -93,7 +93,7 @@ class OrdersController extends AppController
             $order->product_id = $id;
             $order_price = (int)$order_total * (int)$order_quantity;
             $order->total_price = $order_price;
-            
+
 
             if ($this->Orders->save($order)) {
 
@@ -163,7 +163,46 @@ class OrdersController extends AppController
 
         if($order->Paid=='Yes'){
         $this->Flash->error(__('The order is Paid. Please, try again.'));
-        }else if ($this->Orders->delete($order)) {
+        }else if($order->Paid=='No'){
+        $this->loadModel('Orders');
+                $order = $this->Orders->get($id, [
+                    'contain' => [],
+                ]);
+                $quantity = $this->getRequest()->getSession()->read('quantity');
+                 $name = $this->getRequest()->getSession()->read('name');
+                $order_quantity = $order->quantity;
+                $mailer = new Mailer('default');
+                                $mailer
+                                    ->setEmailFormat('html')
+                                    ->setTo($order->agent_email)
+                                    ->setFrom(Configure::read('OrderEmail.from'))
+                                    ->setReplyTo(Configure::read('OrderEmail.from'))
+                                    ->setSubject(" Order request rejected")
+                                    ->viewBuilder()
+                                    ->disableAutoLayout()
+                                    ->setTemplate('ordercancelemail');
+
+                                $mailer->setViewVars([
+                                    'content' => $order->body,
+                                    'name'=> $name,
+                                    'email' => $order->agent_email,
+                                    'deal_date' => $order->deal_date,
+                                    'quantity' => $order->quantity,
+                                    'price' => $order->total_price,
+                                    'email_id' => $order->id]);
+
+
+                                $email_result = $mailer->deliver();
+
+
+
+
+        }
+
+
+
+
+        if ($this->Orders->delete($order)) {
             $this->Flash->success(__('The order has been deleted.'));
             $this->redirect(['controller' => 'Products', 'action' => 'cancel']);
         } else {
@@ -174,7 +213,7 @@ class OrdersController extends AppController
     }
 
     /**
-     * Delete method
+     * mark method
      *
      * @param string|null $id Order id.
      * @return \Cake\Http\Response|null|void Redirects to index.

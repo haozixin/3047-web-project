@@ -244,9 +244,11 @@ class AgentsController extends AppController
             // request data from the user form
             $userEmailFromForm = $this->request->getData('email');
             $selectedUser = $agents->find()->where(['email' => $userEmailFromForm])->first();
-            $email = $selectedUser->email;
+
+            if ($selectedUser!=null){$email = $selectedUser->email;
             $username = $selectedUser->user_name;
             $password = $selectedUser->password;
+
             if ($userEmailFromForm == $email) {
 
 
@@ -269,8 +271,11 @@ class AgentsController extends AppController
                 $email_result = $mailer->deliver();
 
             } else {
-                $this->Flash->error(__('Please check whether you sent Email sent before or did the agent paid yet!'));
-            }
+                $this->Flash->error(__('Please check you entered the correct Email!'));
+            }}if ($selectedUser==null) {
+
+                $this->redirect(['action' => '/forgot2']);
+                         }
 
             return $this->redirect(['action' => '/forgot1']);
         }
@@ -280,6 +285,51 @@ class AgentsController extends AppController
     {
     }
 
+    public function forgot2()
+    {
+        if ($this->request->is('post')) {
+
+            $agents = $this->getTableLocator()->get('Agents');
+            $this->loadModel('Agents');
+            // request data from the user form
+            $userEmailFromForm = $this->request->getData('email');
+            $selectedUser = $agents->find()->where(['email' => $userEmailFromForm])->first();
+
+            if ($selectedUser!=null){$email = $selectedUser->email;
+                $username = $selectedUser->user_name;
+                $password = $selectedUser->password;
+
+                if ($userEmailFromForm == $email) {
+
+
+                    $mailer = new Mailer('default');
+                    $mailer
+                        ->setEmailFormat('html')
+                        ->setTo($email)
+                        ->setFrom(Configure::read('OrderEmail.from'))
+                        ->setReplyTo(Configure::read('OrderEmail.from'))
+                        ->setSubject(" Forgot password Email ")
+                        ->viewBuilder()
+                        ->disableAutoLayout()
+                        ->setTemplate('forgotpassword');
+
+                    $mailer->setViewVars([
+
+                        'email' => $email, 'username' => $username, 'password' => $password]);
+
+
+                    $email_result = $mailer->deliver();
+
+                } else {
+                    $this->Flash->error(__('Please check you entered the correct Email!'));
+                }}if ($selectedUser==null) {
+
+                $this->redirect(['action' => '/forgot2']);
+            }
+
+            return $this->redirect(['action' => '/forgot1']);
+        }
+    }
     public function logout()
     {
         $result = $this->Authentication->getResult();
@@ -295,7 +345,7 @@ class AgentsController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['addfront', 'forgot', 'forgot1', 'add']);
+        $this->Authentication->addUnauthenticatedActions(['addfront', 'forgot', 'forgot1','forgot2', 'add']);
 
 
 //'addfront','forgot','add'

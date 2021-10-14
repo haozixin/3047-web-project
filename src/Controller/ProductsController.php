@@ -53,7 +53,7 @@ class ProductsController extends AppController
         $product_name = $product->name;
         $product_quantity = $product->quantity;
         $product__type = $product->product_type;
-        $product_price = $product->customer_price;
+        $product_price = $product->agent_price;
         $product_desc = $product->description;
         $product_photo = '/img' . DS . $product->photo;
 

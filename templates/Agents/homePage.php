@@ -58,7 +58,7 @@ $agentId = $this->getRequest()->getSession()->read('id')
                                 <div class="inner-column">
                                     <!-- Title Box --><div class="title-box">
                                         <h2>Honey's Agents'!</h2>
-                                        <div class="text">Please use this as ur best way to buy honey!!</div>
+                                        <div class="text">Please use this as the best way to buy honey!!</div>
                                     </div>
                                     <ul class="book-list">
                                         <li><img src="../webroot/img/resource/book-list-1.png" alt=""/></li>
@@ -81,8 +81,8 @@ $agentId = $this->getRequest()->getSession()->read('id')
                     </section>
                     <!-- End Fluid Section Two -->
                     <section class="video-section">
-                        <h2>Honey's Agents'!</h2>
-                        <div class="text">Please use this as ur best way to buy honey!!</div>
+                        <h2>Welcome to the Agent's HomePage!!</h2>
+                        <div class="text">Navigate around and see what could you do!</div>
 <!--                        <div class="image-layer" style="background-image: url('http://localhost/team104-app_fit3047/webroot/img/background/5.jpg')"></div>-->
                         <div class="auto-container">
 
