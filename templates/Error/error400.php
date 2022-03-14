@@ -5,11 +5,8 @@
  * @var string $message
  * @var string $url
  */
-
 use Cake\Core\Configure;
 use Cake\Error\Debugger;
-
-$this->layout = 'error';
 
 if (Configure::read('debug')) :
     $this->layout = 'dev_error';
@@ -35,8 +32,41 @@ if (Configure::read('debug')) :
     $this->end();
 endif;
 ?>
-<h2><?= h($message) ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= __d('cake', 'The requested address {0} was not found on this server.', "<strong>'{$url}'</strong>") ?>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?= $this->fetch('webroot'); ?>
+    <?= $this->fetch('lib'); ?>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<header class="margin-top-0">
+
+    <!-- Hero Start -->
+    <div class="hero" id="home" style="margin-bottom: 13%">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Page not found</h1>
+                            <p class="error">
+                                The page you are looking for does not exist
+                            </p>
+
+                        </div>
+                        <div class="hero-btn">
+                            <a class="btn" href="/">Return home</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 d-none d-md-block">
+                    <div class="hero-image">
+                        <?= $this->Html->image('Claudia-1.png', ['alt' => 'CakePHP']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+

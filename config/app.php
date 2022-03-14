@@ -5,6 +5,7 @@ use Cake\Database\Connection;
 use Cake\Database\Driver\Mysql;
 use Cake\Error\ExceptionRenderer;
 use Cake\Log\Engine\FileLog;
+use Cake\Mailer\Transport\MailTransport;
 
 return [
     /*
@@ -50,8 +51,7 @@ return [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
         'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
-        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'Australia/Melbourne'),
-        'uploadedFilesAsObjects' => true,
+        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'UTC'),
         'base' => false,
         'dir' => 'src',
         'webroot' => 'webroot',
@@ -225,7 +225,7 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => 'Mail',
+            'className' => MailTransport::class,
             /*
              * The keys host, port, timeout, username, password, client and tls
              * are used in SMTP transports
@@ -256,7 +256,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'example@gmail.com',
+            'from' => 'you@localhost',
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */
@@ -294,7 +294,11 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
-
+            'host' => 'localhost',
+            'username' => 'u21s1036_s2_devuser',
+            'password' => 'FIT3048Claudia',
+            'database' => 'u21s1036_s2_dev',
+            'url' => env('DATABASE_URL', null),
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */

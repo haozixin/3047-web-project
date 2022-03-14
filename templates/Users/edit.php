@@ -3,41 +3,36 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
  */
- $formTemplate = [
-     'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
-     'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
-     'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>',
-     'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
-     'label' => '<label{{attrs}}class="form-label">{{text}}</label>',
-     'textarea' => '<textarea name="{{name}}"class="form-control"{{attrs}}>{{value}}</textarea>',
-    'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
-    'error' => '<div class="error-message">{{content}}</div>',
-
- ];
- $this->Form->setTemplates($formTemplate);
 ?>
-<aside class="row">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="<?= $this->Url->build(['action' => 'index']) ?>"
-           class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-arrow-circle-left fa-sm text-white-50"></i>Go back</a>
-    </div>
-</aside>
-
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $user->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']
+            ) ?>
+            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+        </div>
+    </aside>
     <div class="column-responsive column-80">
         <div class="users form content">
             <?= $this->Form->create($user) ?>
             <fieldset>
                 <legend><?= __('Edit User') ?></legend>
                 <?php
-                echo $this->Form->control('username');
+                echo $this->Form->control('first_name');
+                echo $this->Form->control('last_name');
+                echo $this->Form->control('phone');
                 echo $this->Form->control('email');
+                echo $this->Form->control('country');
+                echo $this->Form->control('username');
                 echo $this->Form->control('password');
                 ?>
             </fieldset>
-             <br></br>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>
-
+</div>

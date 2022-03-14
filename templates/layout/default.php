@@ -1,320 +1,194 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
+ */
+
+
+$cakeDescription = 'Claudia Chavez';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-
     <?= $this->Html->charset() ?>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <?= $this->Html->meta('icon') ?>
-    <title>Healty Honey | Homepage </title>
-    <?= $this->Html->meta('icon') ?>
-    <title><?= $this->Html->meta('icon') ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="">
+    <?= $this->Html->css('style.css') ?>
 
-    <!-- Custom fonts for this template-->
-    <?= $this->Html->css('/vendor/fontawesome-free/css/all.min.css') ?>
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <!-- Favicon -->
+    <link href="webroot/img/favicon.ico" rel="icon">
 
-    <!-- Custom styles for this template-->
-    <?= $this->Html->css('sb-admin-2.min.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="webroot/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="webroot/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="webroot/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="webroot/css/style.css" rel="stylesheet">
+
+    <title>
+        <?= $cakeDescription ?>:
+        <?= $this->fetch('title') ?>
+    </title>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->Html->script('/vendor/jquery/jquery.min.js') ?>
+    <?= $this->fetch('script') ?>
+    <?= $this->fetch('img') ?>
 
 </head>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
 
-<body id="page-top">
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <img src="webroot/img/logo1.png" alt="Logo Image">
+        <a href="/" class="navbar-brand">Claudia Chavez</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center"
-           href="<?= $this->Url->build('/admins/homepage') ?>">
-
-            <div class="sidebar-brand-text mx-3">Hearty's Healthy Honey <sup>co</sup></div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <!-- Nav Item - Home Page -->
-        <li class="nav-item active">
-            <a class="nav-link" href="<?= $this->Url->build('/admins/homepage') ?>"/>
-            <i class="fas fa-home"></i>
-            <span> Home Page</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Functions
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="About" class="nav-item nav-link">About</a>
+                <a href="Service" class="nav-item nav-link">Services</a>
+                <a href="SuccessStories" class="nav-item nav-link">Success Stories</a>
+                <a href="Blog" class="nav-item nav-link">Blog</a>
+                <a href="BookPurchase" class="nav-item nav-link">Book</a>
+                <a href="Contact" class="nav-item nav-link">Contact</a>
+            </div>
         </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-address-card"></i>
-                <span>Customers</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Customers functions:</h6>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'index']) ?>">List all
-                        customers</a>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Customers', 'action' => 'add']) ?>">Add new
-                        customer</a>
-                </div>
-            </div>
-        </li>
+<main class="main">
+    <div>
+        <?= $this->Flash->render() ?>
+        <?= $this->fetch('content') ?>
+    </div>
+</main>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAgent"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="far fa-address-book"></i>
-                <span>Agents</span>
-            </a>
-            <div id="collapseAgent" class="collapse" aria-labelledby="headingAgent" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Agents functions:</h6>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'index']) ?>">List all
-                        agents</a>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Agents', 'action' => 'add']) ?>">Add new
-                        agent</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-file"></i>
-                <span>Recipes</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'add']) ?>">Add Recipes</a>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Recipes', 'action' => 'index']) ?>">List
-                        Recipes</a>
-
-                </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseproducts"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-beer"></i>
-                <span>Products</span>
-            </a>
-            <div id="collapseproducts" class="collapse" aria-labelledby="headingproducts"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'add']) ?>">Add Product</a>
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'Products', 'action' => 'index']) ?>">List
-                        Product</a>
-
-
-                </div>
-            </div>
-        </li>
-
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseinventory"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="	fas fa-box"></i>
-                <span>Orders</span>
-            </a>
-            <div id="collapseinventory" class="collapse" aria-labelledby="headinginventory"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'index']) ?>">Order Requests </a>
-                    <a class="collapse-item"
-                                           href="<?= $this->Url->build(['controller' => 'orders', 'action' => 'confirm']) ?>">Edit Order Status </a>
-
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsenewsletter"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-clipboard"></i>
-                <span>Newsletter</span>
-            </a>
-            <div id="collapsenewsletter" class="collapse" aria-labelledby="headingnewsletter"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Functions:</h6>
-
-                    <a class="collapse-item"
-                       href="<?= $this->Url->build(['controller' => 'NewsletterSubscriptions', 'action' => 'index']) ?>">List
-                        Subscribed Customers</a>
-                </div>
-            </div>
-        </li>
-
-
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-
-            <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
-
-                <div class="my-2"></div>
-                <a href="<?= $this->Url->build('/') ?>" class=" btn-icon-split"
-                   style="background-color:DarkOrange">
-                                                   
-
-                </a>
-                <div class="my-2"></div>
-
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin Account</span>
-
-                            <?= $this->Html->image('undraw_profile.svg', ['class' => 'img-profile rounded-circle']) ?>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="userDropdown">
-
-                            <!--                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">-->
-                            <!--                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
-                            <!--                            </a>-->
-                            <ul>
-                                <li><?= $this->Html->link("Logout", ['controller' => 'Admins', 'action' => 'logout']) ?></li>
-                                <li><?= $this->Html->link("Login_Users", ['controller' => 'Users', 'action' => 'index']) ?></li>
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="footer-content">
+                    <div class="footer-head">
+                        <div class="footer-logo">
+                            <h2 style="padding-top: 2%"><span>Claudia Chavez</span></h2>
+                            <ul style="padding-top: 5%; list-style-type: none">
+                                <li>
+                                    <a href="/About">About</a>
+                                </li>
+                                <li>
+                                    <a href="/Service">Services</a>
+                                </li>
+                                <li>
+                                    <a href="/Book">Book</a>
+                                </li>
+                                <li>
+                                    <a href="/Contact">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="/Users/Login">Admin login</a>
+                                </li>
                             </ul>
                         </div>
-
-
-                    </li>
-
-                </ul>
-
-            </nav>
-            <!-- End of Topbar -->
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <?= $this->Flash->render() ?>
-                <?= $this->fetch('content') ?>
-
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Heartys Healthy Honey 2021 </span>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!-- End of Footer -->
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="footer-content" style="padding-top: 5%">
+                    <div class="footer-head">
+                        <div class="footer-contacts">
+                            <p><span><i class="fa fa-mobile" style="color:#EF233C"></i></span> +61 410145111</p>
+                            <p><span><i class="fa fa-envelope" style="color:#EF233C"></i></span> claudia@presens.com.au
+                            </p>
+                            <p><span><i class="fa fa-map-marker" style="color:#EF233C"></i></span> Level 4, 57 Rundle
+                                Mall
+                                Adelaide SA 5000</p>
 
-    </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="footer-content" style="padding-top: 2%; padding-left: 15%">
+                    <div class="footer-head">
+                        <div class="footer-icons" style="padding-left: 5%">
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/claudia.chavez.9678/"><i
+                                            class="fab fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.linkedin.com/in/claudia-chavez-2a157036/"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a target="_blank"
+                                       href="https://www.youtube.com/channel/UCAyRlKXhFd3a75rzpbRveiQ/videos"><i
+                                            class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-contacts">
+                            <p style="font-size:100%;%">Copyright © 2021 Claudia Chavez</p>
+                        </div>
 
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript-->
-<?= $this->Html->script('/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>
+<!-- Footer End -->
 
 
-<!-- Core plugin JavaScript-->
-<?= $this->Html->script('/vendor/jquery-easing/jquery.easing.min.js') ?>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="webroot/lib/easing/easing.min.js"></script>
+<script src="webroot/lib/wow/wow.min.js"></script>
+<script src="webroot/lib/waypoints/waypoints.min.js"></script>
+<script src="webroot/lib/typed/typed.min.js"></script>
+<script src="webroot/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="webroot/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="webroot/lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+<!--     Contact Form JavaScript File-->
+<!-- Contact Form JavaScript File -->
+<script src="webroot/contactform/contactform.js"></script>
 
 
-<!-- Custom scripts for all pages-->
-<?= $this->Html->script('sb-admin-2.min.js') ?>
-
-
-<?= $this->fetch('script') ?>
 </body>
-
 </html>
-

@@ -5,13 +5,10 @@
  * @var string $message
  * @var string $url
  */
-
 use Cake\Core\Configure;
 use Cake\Error\Debugger;
 
 $this->layout = 'error';
-// inside templates/Error/error400.php
-$this->layout = 'my_error';
 
 if (Configure::read('debug')) :
     $this->layout = 'dev_error';

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Event\EventInterface;
+
 /**
  * Users Controller
  *
@@ -11,6 +13,13 @@ namespace App\Controller;
  */
 class UsersController extends AppController
 {
+
+    public function initialize(): void
+    {
+        parent::initialize();
+        $this->viewBuilder()->setLayout('users');
+    }
+
     /**
      * Index method
      *
@@ -46,6 +55,7 @@ class UsersController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->setLayout('admin');
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -58,80 +68,6 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
     }
-
-    public function addbyhand()
-    {
-        $user = $this->Users->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['controller'=>'Pages','action' => 'display']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
-        }
-        $this->set(compact('user'));
-    }
-
-        public function adduser (){
-            $user = $this->Users->newEmptyEntity();
-
-            $email = $this->getRequest()->getSession()->read('email');
-            $username = $this->getRequest()->getSession()->read('user_name');
-            $password = $this->getRequest()->getSession()->read('password');
-            $sub = $this->getRequest()->getSession()->read('status');
-
-
-
-
-
-            $user['email'] = $email;
-            $user['username'] = $username;
-            $user['password'] = $password;
-
-            $this->Users->save($user);
-            $this->set(compact('user'));
-
-
-
-
-            if ($sub == 'Yes') {
-             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display2']);   }
-
-             else return $this->Flash->success(__('The user has been saved.'));
-
-
-             }
- public function adduser1 (){
-            $user = $this->Users->newEmptyEntity();
-
-            $email = $this->getRequest()->getSession()->read('email');
-            $username = $this->getRequest()->getSession()->read('user_name');
-            $password = $this->getRequest()->getSession()->read('password');
-            $sub = $this->getRequest()->getSession()->read('status');
-
-
-
-
-
-            $user['email'] = $email;
-            $user['username'] = $username;
-            $user['password'] = $password;
-
-            $this->Users->save($user);
-            $this->set(compact('user'));
-
-
-
-            if ($sub == 'Yes') {
-             return  $this->redirect(['controller' => 'NewsletterSubscriptions', 'action' => 'display1']);   }
-
-             else return $this->Flash->success(__('The user has been saved.'));
-
-
-             }
-
 
     /**
      * Edit method
@@ -177,79 +113,46 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function beforeFilter(\Cake\Event\EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        // Configure the login action to not require authentication, preventing
-        // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login','addbyhand','adduser']);
-//,'adduser','adduser1','add','edit','index','view'
-    }
-
+    //Login Method
     public function login()
     {
-
-
-        $this->request->allowMethod(['get', 'post']);
-        $result = $this->Authentication->getResult();
-        //debug($this->request);
-
-
-
-
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result->isValid()) {
-            if(true){
-                $email = $this->request->getAttribute('authentication')->getIdentity()->email;
-                $domain = strstr($email,'@');
-                //if user email is not from hearty honey company
-                if($domain != "@heartyHoney.com"){
-
-
-                    $u = $this->request->getAttribute('authentication')->getIdentity()->id;
-                    $session = $this->getRequest()->getSession();
-                    $session->write(['id'=>$u]);
-                    $session->read('id');
-
-
-                    return $this->redirect([
-                        'controller' => 'Agents',
-                        'action' => 'homepage',
-                    ]);
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                if ($user['user_type'] == '0') {
+                    return $this->redirect(['controller' => 'admin']);
+                } else {
+                    return $this->redirect(['controller' => '/']);
                 }
+
             }
-
-
-            // redirect to /articles after login success
-//            debug($result->getData());
-//            exit;
-            $id = $result->getData()->id;
-            $username = $result->getData()->username;
-            $email = $result->getData()->email;
-            $data = [
-                'id' => $id,
-                'username' => $username,
-                'useremail' => $email
-            ];
-
-
-            $this->set($data);
-
-
-            $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'Pages',
-                'action' => 'home',
-
+            //Handle invalid login
+            $this->Flash->error('Invalid Login', [
+                'params' => [
+                    'class' => 'alert alert-danger']
             ]);
-
-
-            return $this->redirect($redirect);
-        }
-        // display error if user submitted and authentication failed
-        if ($this->request->is('post') && !$result->isValid()) {
-            $this->Flash->success(__('Invalid username or password'));
         }
     }
-    // in src/Controller/UsersController.php
 
+    //Logout Method
+    public function logout()
+    {
+        $this->Flash->success('You have logged out', [
+            'params' => [
+                'class' => 'alert alert-success']
+        ]);
+        return $this->redirect($this->Auth->logout());
+    }
+
+    public function beforeFilter(EventInterface $event)
+    {
+
+        parent::beforeFilter($event);
+        $this->Auth->allow('login');
+//        $this->Auth->allow('logout');
+//        $this->Auth->allow('index');
+        $this->Auth->allow('add');
+//        $this->Auth->allow('edit');
+    }
 }

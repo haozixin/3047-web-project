@@ -14,7 +14,6 @@ declare(strict_types=1);
  * @since         3.3.4
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\Controller;
 
 use Cake\Event\EventInterface;
@@ -44,6 +43,7 @@ class ErrorController extends AppController
      */
     public function beforeFilter(EventInterface $event)
     {
+
     }
 
     /**
@@ -55,7 +55,7 @@ class ErrorController extends AppController
     public function beforeRender(EventInterface $event)
     {
         parent::beforeRender($event);
-
+        $this->viewBuilder()->setLayout('layout2');
         $this->viewBuilder()->setTemplatePath('Error');
     }
 

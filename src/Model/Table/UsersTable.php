@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -54,10 +55,21 @@ class UsersTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('username')
-            ->maxLength('username', 64)
-            ->requirePresence('username', 'create')
-            ->notEmptyString('username');
+            ->scalar('first_name')
+            ->maxLength('first_name', 256)
+            ->requirePresence('first_name', 'create')
+            ->notEmptyString('first_name');
+
+        $validator
+            ->scalar('last_name')
+            ->maxLength('last_name', 256)
+            ->requirePresence('last_name', 'create')
+            ->notEmptyString('last_name');
+
+        $validator
+            ->scalar('phone')
+            ->maxLength('phone', 20)
+            ->allowEmptyString('phone');
 
         $validator
             ->email('email')
@@ -65,10 +77,19 @@ class UsersTable extends Table
             ->notEmptyString('email');
 
         $validator
+            ->scalar('country')
+            ->maxLength('country', 256)
+            ->allowEmptyString('country');
+
+        $validator
+            ->scalar('username')
+            ->maxLength('username', 256)
+            ->allowEmptyString('username');
+
+        $validator
             ->scalar('password')
-            ->maxLength('password', 64)
-            ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->maxLength('password', 256)
+            ->allowEmptyString('password');
 
         return $validator;
     }
@@ -82,8 +103,8 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['username']), ['errorField' => 'username']);
         $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
+        $rules->add($rules->isUnique(['username']), ['errorField' => 'username']);
 
         return $rules;
     }

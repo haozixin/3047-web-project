@@ -14,7 +14,6 @@ declare(strict_types=1);
  * @since         3.0.4
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\View;
 
 /**

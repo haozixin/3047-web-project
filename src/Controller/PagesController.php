@@ -14,15 +14,14 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\Controller;
-
 
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Event\EventInterface;
 
 /**
  * Static content controller
@@ -73,37 +72,10 @@ class PagesController extends AppController
         }
     }
 
-    public function about()
-    {
-        $this->pages = 'about';
-    }
-
-    public function switchAdmin()
-    {
-        $this->layout = 'default';
-    }
-
-    public function switchCustomer()
-    {
-        $this->layout = 'default_customer';
-    }
-
-
-    public function logout()
-    {
-        $result = $this->Authentication->getResult();
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result->isValid()) {
-            $this->Authentication->logout();
-            return $this->redirect(['controller' => 'Customers', 'action' => 'home']);
-        }
-    }
-    public function beforeFilter(\Cake\Event\EventInterface $event)
+    public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
-        // for all controllers in our application, make index and view
-        // actions public, skipping the authentication check
-        $this->Authentication->addUnauthenticatedActions([ 'display']);
+        $this->Auth->allow('display');
     }
 
 }
